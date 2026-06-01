@@ -10,8 +10,7 @@ const calculators = [
   },
   {
     title: "GPA Calculator",
-    description:
-      "Estimate GPA using grades, credits, and course weights.",
+    description: "Estimate GPA using grades, credits, and course weights.",
     href: "/student/gpa-calculator",
     status: "Planned",
   },
@@ -25,9 +24,26 @@ const calculators = [
 ];
 
 export const metadata = {
-  title: "Student Calculators",
+  title: "Student Calculators | GPA, Grades, Percentages & Study Tools",
   description:
-    "Use Numeravo student calculators for grades, GPA, percentages, math, and academic planning.",
+    "Use Numeravo student calculators to estimate GPA, grades, percentages, final exam scores, and academic planning numbers.",
+  alternates: {
+    canonical: "https://numeravo.com/student",
+  },
+  openGraph: {
+    title: "Student Calculators | Numeravo",
+    description:
+      "Calculate GPA, grades, percentages, and school planning numbers with Numeravo student calculators.",
+    url: "https://numeravo.com/student",
+    siteName: "Numeravo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Student Calculators | Numeravo",
+    description:
+      "Fast student calculators for GPA, grades, percentages, and academic planning.",
+  },
 };
 
 export default function StudentPage() {

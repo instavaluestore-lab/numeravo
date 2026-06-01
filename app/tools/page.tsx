@@ -17,17 +17,33 @@ const calculators = [
   },
   {
     title: "Age Calculator",
-    description:
-      "Calculate age from birth date and compare dates quickly.",
+    description: "Calculate age from birth date and compare dates quickly.",
     href: "/tools/age-calculator",
     status: "Planned",
   },
 ];
 
 export const metadata = {
-  title: "Utility Calculators",
+  title: "Utility Calculators | Percentage, Discount, Age & Date Tools",
   description:
-    "Use Numeravo utility calculators for percentages, discounts, age, dates, time, and everyday calculations.",
+    "Use Numeravo utility calculators for percentages, discounts, age, dates, time, and everyday calculation problems.",
+  alternates: {
+    canonical: "https://numeravo.com/tools",
+  },
+  openGraph: {
+    title: "Utility Calculators | Numeravo",
+    description:
+      "Solve everyday calculations like percentages, discounts, dates, age, and utility math with Numeravo.",
+    url: "https://numeravo.com/tools",
+    siteName: "Numeravo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Utility Calculators | Numeravo",
+    description:
+      "Fast utility calculators for percentages, discounts, age, dates, and everyday math.",
+  },
 };
 
 export default function ToolsPage() {

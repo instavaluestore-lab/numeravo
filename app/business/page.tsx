@@ -25,9 +25,26 @@ const calculators = [
 ];
 
 export const metadata = {
-  title: "Business Calculators",
+  title: "Business Calculators | Profit, Margin, Markup & Tax Tools",
   description:
-    "Use Numeravo business calculators for profit margin, break-even analysis, markup, pricing, and sales tax.",
+    "Use Numeravo business calculators to estimate profit margin, markup, break-even points, pricing, sales tax, revenue, and business planning numbers.",
+  alternates: {
+    canonical: "https://numeravo.com/business",
+  },
+  openGraph: {
+    title: "Business Calculators | Numeravo",
+    description:
+      "Calculate profit margin, markup, break-even points, sales tax, pricing, and business numbers with Numeravo.",
+    url: "https://numeravo.com/business",
+    siteName: "Numeravo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Business Calculators | Numeravo",
+    description:
+      "Fast business calculators for profit, margin, markup, break-even analysis, and sales tax.",
+  },
 };
 
 export default function BusinessPage() {

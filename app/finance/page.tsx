@@ -25,9 +25,26 @@ const calculators = [
 ];
 
 export const metadata = {
-  title: "Finance Calculators",
+  title: "Finance Calculators | Loans, Interest, Mortgage & ROI Tools",
   description:
-    "Use Numeravo finance calculators for compound interest, loans, mortgages, ROI, savings, and personal finance planning.",
+    "Use Numeravo finance calculators to estimate compound interest, loan payments, mortgage costs, ROI, savings, and personal finance planning numbers.",
+  alternates: {
+    canonical: "https://numeravo.com/finance",
+  },
+  openGraph: {
+    title: "Finance Calculators | Numeravo",
+    description:
+      "Calculate compound interest, loans, mortgages, ROI, savings, and personal finance numbers with Numeravo.",
+    url: "https://numeravo.com/finance",
+    siteName: "Numeravo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Finance Calculators | Numeravo",
+    description:
+      "Fast finance calculators for loans, interest, mortgages, ROI, and savings.",
+  },
 };
 
 export default function FinancePage() {

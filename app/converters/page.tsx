@@ -17,17 +17,33 @@ const calculators = [
   },
   {
     title: "Temperature Converter",
-    description:
-      "Convert Fahrenheit, Celsius, and Kelvin quickly.",
+    description: "Convert Fahrenheit, Celsius, and Kelvin quickly.",
     href: "/converters/temperature-converter",
     status: "Planned",
   },
 ];
 
 export const metadata = {
-  title: "Unit and Measurement Converters",
+  title: "Unit Converters | Length, Weight, Temperature & Measurement Tools",
   description:
-    "Use Numeravo converters for units, length, weight, temperature, measurements, and everyday conversions.",
+    "Use Numeravo unit converters to convert length, weight, temperature, measurements, and everyday units quickly and accurately.",
+  alternates: {
+    canonical: "https://numeravo.com/converters",
+  },
+  openGraph: {
+    title: "Unit and Measurement Converters | Numeravo",
+    description:
+      "Convert length, weight, temperature, measurements, and everyday units with fast Numeravo conversion tools.",
+    url: "https://numeravo.com/converters",
+    siteName: "Numeravo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Unit Converters | Numeravo",
+    description:
+      "Fast converters for length, weight, temperature, measurements, and everyday units.",
+  },
 };
 
 export default function ConvertersPage() {

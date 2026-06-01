@@ -6,7 +6,7 @@ const calculators = [
     description:
       "Estimate cubic feet, cubic yards, waste-adjusted concrete, and material cost.",
     href: "/construction/concrete-calculator",
-    status: "Coming next",
+    status: "Live",
   },
   {
     title: "Gravel Calculator",
@@ -25,9 +25,26 @@ const calculators = [
 ];
 
 export const metadata = {
-  title: "Construction Calculators",
+  title: "Construction Calculators | Concrete, Gravel & Project Tools",
   description:
-    "Use Numeravo construction calculators for concrete, gravel, square footage, materials, and project planning.",
+    "Use Numeravo construction calculators to estimate concrete, gravel, square footage, materials, measurements, and project planning costs.",
+  alternates: {
+    canonical: "https://numeravo.com/construction",
+  },
+  openGraph: {
+    title: "Construction Calculators | Numeravo",
+    description:
+      "Estimate concrete, gravel, square footage, materials, measurements, and construction project numbers with Numeravo.",
+    url: "https://numeravo.com/construction",
+    siteName: "Numeravo",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Construction Calculators | Numeravo",
+    description:
+      "Fast construction calculators for concrete, gravel, square footage, and project planning.",
+  },
 };
 
 export default function ConstructionPage() {
@@ -40,7 +57,8 @@ export default function ConstructionPage() {
           </p>
 
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Construction calculators for materials, measurements, and project planning.
+            Construction calculators for materials, measurements, and project
+            planning.
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-[#A0AEC0]">
