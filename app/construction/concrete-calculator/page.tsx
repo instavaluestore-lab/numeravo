@@ -2,110 +2,848 @@
 
 import { useMemo, useState } from "react";
 
-type ProjectType = "slab" | "footing" | "pier";
+type UnitSystem = "imperial" | "metric";
+
+type ProjectType =
+  | "slab"
+  | "circularPad"
+  | "lShapedSlab"
+  | "footing"
+  | "roundPier"
+  | "rectangularPier"
+  | "wall"
+  | "stairs"
+  | "curb";
 
 const projectTypes: {
   id: ProjectType;
   label: string;
   description: string;
+  uses: string[];
 }[] = [
   {
     id: "slab",
     label: "Slab / Pad",
-    description: "Best for patios, driveways, garage slabs, shed pads, and flat rectangular pours.",
+    description:
+      "Best for rectangular slabs, square pads, sidewalks, driveways, patios, garage floors, and shed pads.",
+    uses: [
+      "Rectangular slab",
+      "Square slab",
+      "Sidewalk",
+      "Driveway",
+      "Patio",
+      "Garage floor",
+      "Shed pad",
+      "Multiple slabs",
+    ],
+  },
+  {
+    id: "circularPad",
+    label: "Circular Pad",
+    description:
+      "Best for round patios, hot tub pads, circular equipment bases, and round concrete pads.",
+    uses: ["Round patio", "Hot tub pad", "Equipment base", "Circular pad"],
+  },
+  {
+    id: "lShapedSlab",
+    label: "L-Shaped Slab",
+    description:
+      "Best for L-shaped patios, irregular slabs made from two rectangles, and L-shaped walkways.",
+    uses: ["L-shaped patio", "L-shaped walkway", "Two-rectangle slab"],
   },
   {
     id: "footing",
     label: "Footing / Trench",
-    description: "Best for strip footings, trenches, and foundation runs.",
+    description:
+      "Best for continuous strip footings, trench footings, retaining wall footings, wall footings, and grade beams.",
+    uses: [
+      "Strip footing",
+      "Trench footing",
+      "Wall footing",
+      "Retaining wall footing",
+      "Grade beam",
+      "Multiple footing runs",
+    ],
   },
   {
-    id: "pier",
-    label: "Pier / Column",
-    description: "Best for deck posts, fence posts, sonotubes, and round columns.",
+    id: "roundPier",
+    label: "Round Pier / Sonotube",
+    description:
+      "Best for round piers, sonotubes, fence post holes, deck footings, pole barn post footings, and round columns.",
+    uses: [
+      "Round pier",
+      "Sonotube",
+      "Fence post hole",
+      "Deck footing",
+      "Pole barn footing",
+      "Round column",
+    ],
+  },
+  {
+    id: "rectangularPier",
+    label: "Square / Rectangular Pier",
+    description:
+      "Best for square piers, rectangular piers, concrete columns, and concrete pedestals.",
+    uses: [
+      "Square pier",
+      "Rectangular pier",
+      "Square column",
+      "Rectangular column",
+      "Concrete pedestal",
+    ],
+  },
+  {
+    id: "wall",
+    label: "Wall",
+    description:
+      "Best for concrete walls, foundation walls, retaining walls, stem walls, and short landscape walls.",
+    uses: [
+      "Concrete wall",
+      "Foundation wall",
+      "Retaining wall",
+      "Stem wall",
+      "Landscape wall",
+    ],
+  },
+  {
+    id: "stairs",
+    label: "Steps / Stairs",
+    description:
+      "Best for simple concrete steps, porch steps, and outdoor stairs. This is an approximate volume estimate.",
+    uses: ["Concrete steps", "Porch steps", "Outdoor stairs"],
+  },
+  {
+    id: "curb",
+    label: "Curb",
+    description:
+      "Best for concrete curbs, landscape curbs, driveway curbs, and parking curbs.",
+    uses: ["Concrete curb", "Landscape curb", "Driveway curb", "Parking curb"],
   },
 ];
 
+const toolGroupsByProjectType: Record<
+  ProjectType,
+  {
+    title: string;
+    tools: { title: string; text: string }[];
+  }[]
+> = {
+  slab: [
+    {
+      title: "Measuring & layout",
+      tools: [
+        {
+          title: "Tape Measure",
+          text: "Useful for checking slab length, width, and form layout.",
+        },
+        {
+          title: "Laser Distance Measure",
+          text: "Helpful for measuring larger slabs, driveways, and garage floors.",
+        },
+        {
+          title: "Chalk Line",
+          text: "Useful for marking straight layout lines before forming.",
+        },
+        {
+          title: "Level",
+          text: "Helps check form height, slope, and finished surface planning.",
+        },
+      ],
+    },
+    {
+      title: "Forming & prep",
+      tools: [
+        {
+          title: "Concrete Forms",
+          text: "Used to hold the slab shape while concrete is poured.",
+        },
+        {
+          title: "Form Stakes",
+          text: "Keeps forms secure and aligned during the pour.",
+        },
+        {
+          title: "Gravel Base",
+          text: "Commonly used below slabs for drainage and support.",
+        },
+        {
+          title: "Tamper / Compactor",
+          text: "Helps compact the base before placing concrete.",
+        },
+      ],
+    },
+    {
+      title: "Finishing",
+      tools: [
+        {
+          title: "Screed Board",
+          text: "Used to level wet concrete across the forms.",
+        },
+        {
+          title: "Magnesium Float",
+          text: "Helps smooth and level the concrete surface.",
+        },
+        {
+          title: "Concrete Trowel",
+          text: "Used for finishing and smoothing concrete.",
+        },
+        {
+          title: "Concrete Sealer",
+          text: "Helps protect finished concrete after curing.",
+        },
+      ],
+    },
+  ],
+  circularPad: [
+    {
+      title: "Measuring & layout",
+      tools: [
+        {
+          title: "Tape Measure",
+          text: "Used to measure diameter and layout the circular form.",
+        },
+        {
+          title: "Marking Paint",
+          text: "Helpful for marking the circle outline before excavation.",
+        },
+        {
+          title: "String Line",
+          text: "Can help create a clean radius from the center point.",
+        },
+        {
+          title: "Level",
+          text: "Useful for checking the circular form height.",
+        },
+      ],
+    },
+    {
+      title: "Forming & finishing",
+      tools: [
+        {
+          title: "Flexible Concrete Forms",
+          text: "Useful for forming round pads and curved edges.",
+        },
+        {
+          title: "Form Stakes",
+          text: "Keeps circular forms in place during the pour.",
+        },
+        {
+          title: "Concrete Trowel",
+          text: "Used to finish the circular pad surface.",
+        },
+        {
+          title: "Work Gloves",
+          text: "Protects hands while handling forms and concrete.",
+        },
+      ],
+    },
+  ],
+  lShapedSlab: [
+    {
+      title: "Measuring & layout",
+      tools: [
+        {
+          title: "Tape Measure",
+          text: "Needed to measure both rectangle sections of the L-shape.",
+        },
+        {
+          title: "Chalk Line",
+          text: "Helps mark clean straight edges and inside corners.",
+        },
+        {
+          title: "Framing Square",
+          text: "Useful for checking L-shaped corners.",
+        },
+        {
+          title: "Level",
+          text: "Helps verify form height and slope.",
+        },
+      ],
+    },
+    {
+      title: "Forming & finishing",
+      tools: [
+        {
+          title: "Concrete Forms",
+          text: "Used to create the outside and inside edges.",
+        },
+        {
+          title: "Form Stakes",
+          text: "Keeps the L-shaped forms locked in place.",
+        },
+        {
+          title: "Screed Board",
+          text: "Used to level concrete across each section.",
+        },
+        {
+          title: "Concrete Edger",
+          text: "Helps finish clean exposed slab edges.",
+        },
+      ],
+    },
+  ],
+  footing: [
+    {
+      title: "Excavation & layout",
+      tools: [
+        {
+          title: "Tape Measure",
+          text: "Used to check total footing length, width, and depth.",
+        },
+        {
+          title: "String Line",
+          text: "Helps keep footing trenches straight.",
+        },
+        {
+          title: "Trenching Shovel",
+          text: "Useful for digging and cleaning footing trenches.",
+        },
+        {
+          title: "Level",
+          text: "Helps check trench depth and form alignment.",
+        },
+      ],
+    },
+    {
+      title: "Pouring & reinforcement",
+      tools: [
+        {
+          title: "Rebar Chairs",
+          text: "Help position rebar inside the footing.",
+        },
+        {
+          title: "Rebar Tie Wire",
+          text: "Used to secure rebar before pouring concrete.",
+        },
+        {
+          title: "Concrete Rake",
+          text: "Helps move and spread concrete in long trenches.",
+        },
+        {
+          title: "Work Gloves",
+          text: "Protects hands while handling rebar and concrete.",
+        },
+      ],
+    },
+  ],
+  roundPier: [
+    {
+      title: "Digging & forming",
+      tools: [
+        {
+          title: "Post Hole Digger",
+          text: "Useful for digging round post holes and pier holes.",
+        },
+        {
+          title: "Auger",
+          text: "Speeds up digging for multiple post holes.",
+        },
+        {
+          title: "Sonotube Forms",
+          text: "Used to form clean round concrete piers.",
+        },
+        {
+          title: "Tape Measure",
+          text: "Used to verify diameter, depth, and post spacing.",
+        },
+      ],
+    },
+    {
+      title: "Setting & finishing",
+      tools: [
+        {
+          title: "Level",
+          text: "Helps keep posts and forms plumb.",
+        },
+        {
+          title: "Concrete Mixing Tub",
+          text: "Useful for small pier and post projects.",
+        },
+        {
+          title: "Concrete Trowel",
+          text: "Used to finish the top of round piers.",
+        },
+        {
+          title: "Safety Glasses",
+          text: "Protects eyes while digging, mixing, and pouring.",
+        },
+      ],
+    },
+  ],
+  rectangularPier: [
+    {
+      title: "Forming & measuring",
+      tools: [
+        {
+          title: "Tape Measure",
+          text: "Used to measure pier width, length, and height.",
+        },
+        {
+          title: "Concrete Forms",
+          text: "Used to shape square or rectangular piers.",
+        },
+        {
+          title: "Form Stakes",
+          text: "Keeps pier forms stable while pouring.",
+        },
+        {
+          title: "Level",
+          text: "Helps keep forms square and plumb.",
+        },
+      ],
+    },
+    {
+      title: "Pouring & finishing",
+      tools: [
+        {
+          title: "Concrete Mixer",
+          text: "Helpful for repeated pier or column pours.",
+        },
+        {
+          title: "Concrete Trowel",
+          text: "Used to finish the top surface.",
+        },
+        {
+          title: "Work Gloves",
+          text: "Protects hands when handling concrete and forms.",
+        },
+        {
+          title: "Rubber Boots",
+          text: "Useful when working around wet concrete.",
+        },
+      ],
+    },
+  ],
+  wall: [
+    {
+      title: "Layout & forming",
+      tools: [
+        {
+          title: "Tape Measure",
+          text: "Used to measure wall length, height, and thickness.",
+        },
+        {
+          title: "Level",
+          text: "Helps check forms and wall alignment.",
+        },
+        {
+          title: "Concrete Wall Forms",
+          text: "Used to hold poured concrete walls in shape.",
+        },
+        {
+          title: "Form Ties",
+          text: "Helps secure wall forms during the pour.",
+        },
+      ],
+    },
+    {
+      title: "Pouring & safety",
+      tools: [
+        {
+          title: "Concrete Vibrator",
+          text: "Helps consolidate concrete in wall forms.",
+        },
+        {
+          title: "Rebar Tie Wire",
+          text: "Used to secure wall reinforcement.",
+        },
+        {
+          title: "Work Gloves",
+          text: "Protects hands around forms, rebar, and concrete.",
+        },
+        {
+          title: "Safety Glasses",
+          text: "Protects eyes during forming and pouring.",
+        },
+      ],
+    },
+  ],
+  stairs: [
+    {
+      title: "Layout & forming",
+      tools: [
+        {
+          title: "Tape Measure",
+          text: "Used to measure rise, run, width, and number of steps.",
+        },
+        {
+          title: "Framing Square",
+          text: "Useful for laying out consistent stair dimensions.",
+        },
+        {
+          title: "Concrete Forms",
+          text: "Used to shape each stair tread and riser.",
+        },
+        {
+          title: "Level",
+          text: "Helps keep stair forms even and aligned.",
+        },
+      ],
+    },
+    {
+      title: "Finishing",
+      tools: [
+        {
+          title: "Concrete Edger",
+          text: "Helps create clean edges on stair treads.",
+        },
+        {
+          title: "Concrete Trowel",
+          text: "Used to finish step surfaces.",
+        },
+        {
+          title: "Broom",
+          text: "Can add slip-resistant texture to outdoor steps.",
+        },
+        {
+          title: "Knee Pads",
+          text: "Helpful when finishing low concrete steps.",
+        },
+      ],
+    },
+  ],
+  curb: [
+    {
+      title: "Layout & forming",
+      tools: [
+        {
+          title: "Tape Measure",
+          text: "Used to measure curb length, width, and height.",
+        },
+        {
+          title: "String Line",
+          text: "Helps keep curb runs straight.",
+        },
+        {
+          title: "Concrete Forms",
+          text: "Used to shape curb edges.",
+        },
+        {
+          title: "Form Stakes",
+          text: "Keeps curb forms secure.",
+        },
+      ],
+    },
+    {
+      title: "Finishing",
+      tools: [
+        {
+          title: "Concrete Edger",
+          text: "Helps round and finish exposed curb edges.",
+        },
+        {
+          title: "Concrete Trowel",
+          text: "Used to smooth curb surfaces.",
+        },
+        {
+          title: "Work Gloves",
+          text: "Protects hands while forming and finishing.",
+        },
+        {
+          title: "Safety Glasses",
+          text: "Protects eyes during cutting, forming, and pouring.",
+        },
+      ],
+    },
+  ],
+};
+
 export default function ConcreteCalculatorPage() {
+  const [unitSystem, setUnitSystem] = useState<UnitSystem>("imperial");
   const [projectType, setProjectType] = useState<ProjectType>("slab");
 
-  const [lengthFeet, setLengthFeet] = useState("10");
-  const [widthFeet, setWidthFeet] = useState("10");
-  const [thicknessInches, setThicknessInches] = useState("4");
+  const [slabLength, setSlabLength] = useState("10");
+  const [slabWidth, setSlabWidth] = useState("10");
+  const [slabThickness, setSlabThickness] = useState("4");
+  const [slabQuantity, setSlabQuantity] = useState("1");
 
-  const [footingLengthFeet, setFootingLengthFeet] = useState("40");
-  const [footingWidthInches, setFootingWidthInches] = useState("12");
-  const [footingDepthInches, setFootingDepthInches] = useState("12");
+  const [circleDiameter, setCircleDiameter] = useState("10");
+  const [circleThickness, setCircleThickness] = useState("4");
+  const [circleQuantity, setCircleQuantity] = useState("1");
 
-  const [pierDiameterInches, setPierDiameterInches] = useState("12");
-  const [pierDepthFeet, setPierDepthFeet] = useState("3");
-  const [pierQuantity, setPierQuantity] = useState("4");
+  const [lShapeLengthOne, setLShapeLengthOne] = useState("12");
+  const [lShapeWidthOne, setLShapeWidthOne] = useState("8");
+  const [lShapeLengthTwo, setLShapeLengthTwo] = useState("6");
+  const [lShapeWidthTwo, setLShapeWidthTwo] = useState("4");
+  const [lShapeThickness, setLShapeThickness] = useState("4");
+
+  const [footingLength, setFootingLength] = useState("40");
+  const [footingWidth, setFootingWidth] = useState("12");
+  const [footingDepth, setFootingDepth] = useState("12");
+  const [footingQuantity, setFootingQuantity] = useState("1");
+
+  const [roundPierDiameter, setRoundPierDiameter] = useState("12");
+  const [roundPierDepth, setRoundPierDepth] = useState("3");
+  const [roundPierQuantity, setRoundPierQuantity] = useState("4");
+
+  const [rectPierLength, setRectPierLength] = useState("2");
+  const [rectPierWidth, setRectPierWidth] = useState("2");
+  const [rectPierHeight, setRectPierHeight] = useState("3");
+  const [rectPierQuantity, setRectPierQuantity] = useState("1");
+
+  const [wallLength, setWallLength] = useState("20");
+  const [wallHeight, setWallHeight] = useState("4");
+  const [wallThickness, setWallThickness] = useState("8");
+
+  const [stairWidth, setStairWidth] = useState("4");
+  const [stairRun, setStairRun] = useState("11");
+  const [stairRise, setStairRise] = useState("7");
+  const [stairCount, setStairCount] = useState("4");
+
+  const [curbLength, setCurbLength] = useState("30");
+  const [curbWidth, setCurbWidth] = useState("6");
+  const [curbHeight, setCurbHeight] = useState("6");
 
   const [wastePercent, setWastePercent] = useState("10");
-  const [pricePerCubicYard, setPricePerCubicYard] = useState("150");
+  const [pricePerUnit, setPricePerUnit] = useState("150");
+  const [copied, setCopied] = useState(false);
+
+  const selectedProject = projectTypes.find((type) => type.id === projectType);
+  const selectedToolGroups = toolGroupsByProjectType[projectType];
+
+  const unitLabels =
+    unitSystem === "imperial"
+      ? {
+          long: "ft",
+          short: "in",
+          price: "/ yd³",
+          volumePrimary: "yd³",
+          priceLabel: "Concrete Price Per Cubic Yard",
+          recommendedRound: "nearest 0.25 yd³",
+        }
+      : {
+          long: "m",
+          short: "cm",
+          price: "/ m³",
+          volumePrimary: "m³",
+          priceLabel: "Concrete Price Per Cubic Meter",
+          recommendedRound: "nearest 0.1 m³",
+        };
 
   const results = useMemo(() => {
     const waste = toNumber(wastePercent);
-    const price = toNumber(pricePerCubicYard);
+    const price = toNumber(pricePerUnit);
 
-    let cubicFeet = 0;
+    let baseVolume = 0;
     let formulaLabel = "";
 
     if (projectType === "slab") {
-      const length = toNumber(lengthFeet);
-      const width = toNumber(widthFeet);
-      const thicknessFeet = toNumber(thicknessInches) / 12;
+      const length = toNumber(slabLength);
+      const width = toNumber(slabWidth);
+      const thickness =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(slabThickness))
+          : centimetersToMeters(toNumber(slabThickness));
+      const quantity = toNumber(slabQuantity);
 
-      cubicFeet = length * width * thicknessFeet;
-      formulaLabel = "Length × width × thickness";
+      baseVolume = length * width * thickness * quantity;
+      formulaLabel = "Length × width × thickness × quantity";
+    }
+
+    if (projectType === "circularPad") {
+      const diameter = toNumber(circleDiameter);
+      const radius = diameter / 2;
+      const thickness =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(circleThickness))
+          : centimetersToMeters(toNumber(circleThickness));
+      const quantity = toNumber(circleQuantity);
+
+      baseVolume = Math.PI * radius * radius * thickness * quantity;
+      formulaLabel = "π × radius² × thickness × quantity";
+    }
+
+    if (projectType === "lShapedSlab") {
+      const lengthOne = toNumber(lShapeLengthOne);
+      const widthOne = toNumber(lShapeWidthOne);
+      const lengthTwo = toNumber(lShapeLengthTwo);
+      const widthTwo = toNumber(lShapeWidthTwo);
+      const thickness =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(lShapeThickness))
+          : centimetersToMeters(toNumber(lShapeThickness));
+
+      baseVolume =
+        lengthOne * widthOne * thickness + lengthTwo * widthTwo * thickness;
+
+      formulaLabel = "Rectangle 1 volume + rectangle 2 volume";
     }
 
     if (projectType === "footing") {
-      const length = toNumber(footingLengthFeet);
-      const widthFeet = toNumber(footingWidthInches) / 12;
-      const depthFeet = toNumber(footingDepthInches) / 12;
+      const length = toNumber(footingLength);
+      const width =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(footingWidth))
+          : centimetersToMeters(toNumber(footingWidth));
+      const depth =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(footingDepth))
+          : centimetersToMeters(toNumber(footingDepth));
+      const quantity = toNumber(footingQuantity);
 
-      cubicFeet = length * widthFeet * depthFeet;
-      formulaLabel = "Length × width × depth";
+      baseVolume = length * width * depth * quantity;
+      formulaLabel = "Length × width × depth × quantity";
     }
 
-    if (projectType === "pier") {
-      const diameterFeet = toNumber(pierDiameterInches) / 12;
-      const radiusFeet = diameterFeet / 2;
-      const depthFeet = toNumber(pierDepthFeet);
-      const quantity = toNumber(pierQuantity);
+    if (projectType === "roundPier") {
+      const diameter =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(roundPierDiameter))
+          : centimetersToMeters(toNumber(roundPierDiameter));
+      const radius = diameter / 2;
+      const depth = toNumber(roundPierDepth);
+      const quantity = toNumber(roundPierQuantity);
 
-      cubicFeet = Math.PI * radiusFeet * radiusFeet * depthFeet * quantity;
+      baseVolume = Math.PI * radius * radius * depth * quantity;
       formulaLabel = "π × radius² × depth × quantity";
     }
 
-    const cubicYards = cubicFeet / 27;
-    const cubicYardsWithWaste = cubicYards * (1 + waste / 100);
-    const estimatedCost = cubicYardsWithWaste * price;
+    if (projectType === "rectangularPier") {
+      const length = toNumber(rectPierLength);
+      const width = toNumber(rectPierWidth);
+      const height = toNumber(rectPierHeight);
+      const quantity = toNumber(rectPierQuantity);
+
+      baseVolume = length * width * height * quantity;
+      formulaLabel = "Length × width × height × quantity";
+    }
+
+    if (projectType === "wall") {
+      const length = toNumber(wallLength);
+      const height = toNumber(wallHeight);
+      const thickness =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(wallThickness))
+          : centimetersToMeters(toNumber(wallThickness));
+
+      baseVolume = length * height * thickness;
+      formulaLabel = "Length × height × thickness";
+    }
+
+    if (projectType === "stairs") {
+      const width = toNumber(stairWidth);
+      const run =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(stairRun))
+          : centimetersToMeters(toNumber(stairRun));
+      const rise =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(stairRise))
+          : centimetersToMeters(toNumber(stairRise));
+      const count = toNumber(stairCount);
+
+      baseVolume = width * run * rise * count;
+      formulaLabel = "Width × run × rise × number of steps";
+    }
+
+    if (projectType === "curb") {
+      const length = toNumber(curbLength);
+      const width =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(curbWidth))
+          : centimetersToMeters(toNumber(curbWidth));
+      const height =
+        unitSystem === "imperial"
+          ? inchesToFeet(toNumber(curbHeight))
+          : centimetersToMeters(toNumber(curbHeight));
+
+      baseVolume = length * width * height;
+      formulaLabel = "Length × width × height";
+    }
+
+    const baseCubicFeet = unitSystem === "imperial" ? baseVolume : 0;
+    const baseCubicYards = unitSystem === "imperial" ? baseCubicFeet / 27 : 0;
+    const baseCubicMeters = unitSystem === "metric" ? baseVolume : 0;
+
+    const volumeWithWaste =
+      unitSystem === "imperial"
+        ? baseCubicYards * (1 + waste / 100)
+        : baseCubicMeters * (1 + waste / 100);
+
+    const recommendedOrder =
+      unitSystem === "imperial"
+        ? roundUpToIncrement(volumeWithWaste, 0.25)
+        : roundUpToIncrement(volumeWithWaste, 0.1);
+
+    const estimatedCost = recommendedOrder * price;
 
     return {
-      cubicFeet,
-      cubicYards,
-      cubicYardsWithWaste,
+      baseCubicFeet,
+      baseCubicYards,
+      baseCubicMeters,
+      volumeWithWaste,
+      recommendedOrder,
       estimatedCost,
       formulaLabel,
     };
   }, [
+    unitSystem,
     projectType,
-    lengthFeet,
-    widthFeet,
-    thicknessInches,
-    footingLengthFeet,
-    footingWidthInches,
-    footingDepthInches,
-    pierDiameterInches,
-    pierDepthFeet,
-    pierQuantity,
+    slabLength,
+    slabWidth,
+    slabThickness,
+    slabQuantity,
+    circleDiameter,
+    circleThickness,
+    circleQuantity,
+    lShapeLengthOne,
+    lShapeWidthOne,
+    lShapeLengthTwo,
+    lShapeWidthTwo,
+    lShapeThickness,
+    footingLength,
+    footingWidth,
+    footingDepth,
+    footingQuantity,
+    roundPierDiameter,
+    roundPierDepth,
+    roundPierQuantity,
+    rectPierLength,
+    rectPierWidth,
+    rectPierHeight,
+    rectPierQuantity,
+    wallLength,
+    wallHeight,
+    wallThickness,
+    stairWidth,
+    stairRun,
+    stairRise,
+    stairCount,
+    curbLength,
+    curbWidth,
+    curbHeight,
     wastePercent,
-    pricePerCubicYard,
+    pricePerUnit,
   ]);
 
-  const selectedProject = projectTypes.find((type) => type.id === projectType);
+  async function copyResults() {
+    const projectLabel = selectedProject?.label ?? "Concrete Project";
+
+    const resultText =
+      unitSystem === "imperial"
+        ? `Numeravo Concrete Estimate
+Project Type: ${projectLabel}
+Unit System: Imperial
+Cubic Feet: ${formatNumber(results.baseCubicFeet)} ft³
+Cubic Yards Before Waste: ${formatNumber(results.baseCubicYards)} yd³
+Concrete With Waste: ${formatNumber(results.volumeWithWaste)} yd³
+Recommended Order: ${formatNumber(results.recommendedOrder)} yd³
+Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`
+        : `Numeravo Concrete Estimate
+Project Type: ${projectLabel}
+Unit System: Metric
+Cubic Meters Before Waste: ${formatNumber(results.baseCubicMeters)} m³
+Concrete With Waste: ${formatNumber(results.volumeWithWaste)} m³
+Recommended Order: ${formatNumber(results.recommendedOrder)} m³
+Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
+
+    try {
+      await navigator.clipboard.writeText(resultText);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
+  }
 
   return (
     <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
@@ -120,17 +858,45 @@ export default function ConcreteCalculatorPage() {
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-[#A0AEC0]">
-            Calculate concrete volume and estimated material cost for slabs,
-            pads, footings, trenches, piers, posts, sonotubes, and round columns.
+            Calculate concrete volume, waste-adjusted order amount, and material
+            cost for slabs, pads, footings, trenches, piers, sonotubes, walls,
+            stairs, curbs, and columns.
           </p>
         </div>
 
         <div className="mt-10 rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-sm font-semibold text-white">Unit System</p>
+              <p className="mt-1 text-sm text-[#A0AEC0]">
+                Switch between imperial and metric measurements.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <ToggleButton
+                isActive={unitSystem === "imperial"}
+                label="Imperial"
+                description="Feet, inches, cubic yards"
+                onClick={() => setUnitSystem("imperial")}
+              />
+
+              <ToggleButton
+                isActive={unitSystem === "metric"}
+                label="Metric"
+                description="Meters, centimeters, cubic meters"
+                onClick={() => setUnitSystem("metric")}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
           <p className="mb-4 text-sm font-semibold text-white">
             Choose project type
           </p>
 
-          <div className="grid gap-3 md:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {projectTypes.map((type) => {
               const isActive = projectType === type.id;
 
@@ -174,28 +940,101 @@ export default function ConcreteCalculatorPage() {
               </span>
             </div>
 
+            <div className="mt-5 flex flex-wrap gap-2">
+              {selectedProject?.uses.map((use) => (
+                <span
+                  key={use}
+                  className="rounded-full border border-[#1F2937] bg-[#0B0F19] px-3 py-1 text-xs text-[#A0AEC0]"
+                >
+                  {use}
+                </span>
+              ))}
+            </div>
+
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
               {projectType === "slab" && (
                 <>
                   <NumberInput
                     label="Length"
-                    value={lengthFeet}
-                    onChange={setLengthFeet}
-                    suffix="ft"
+                    value={slabLength}
+                    onChange={setSlabLength}
+                    suffix={unitLabels.long}
                   />
-
                   <NumberInput
                     label="Width"
-                    value={widthFeet}
-                    onChange={setWidthFeet}
-                    suffix="ft"
+                    value={slabWidth}
+                    onChange={setSlabWidth}
+                    suffix={unitLabels.long}
                   />
-
                   <NumberInput
                     label="Thickness"
-                    value={thicknessInches}
-                    onChange={setThicknessInches}
-                    suffix="in"
+                    value={slabThickness}
+                    onChange={setSlabThickness}
+                    suffix={unitLabels.short}
+                  />
+                  <NumberInput
+                    label="Quantity"
+                    value={slabQuantity}
+                    onChange={setSlabQuantity}
+                    suffix="slabs"
+                  />
+                </>
+              )}
+
+              {projectType === "circularPad" && (
+                <>
+                  <NumberInput
+                    label="Diameter"
+                    value={circleDiameter}
+                    onChange={setCircleDiameter}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Thickness"
+                    value={circleThickness}
+                    onChange={setCircleThickness}
+                    suffix={unitLabels.short}
+                  />
+                  <NumberInput
+                    label="Quantity"
+                    value={circleQuantity}
+                    onChange={setCircleQuantity}
+                    suffix="pads"
+                  />
+                </>
+              )}
+
+              {projectType === "lShapedSlab" && (
+                <>
+                  <NumberInput
+                    label="Rectangle 1 Length"
+                    value={lShapeLengthOne}
+                    onChange={setLShapeLengthOne}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Rectangle 1 Width"
+                    value={lShapeWidthOne}
+                    onChange={setLShapeWidthOne}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Rectangle 2 Length"
+                    value={lShapeLengthTwo}
+                    onChange={setLShapeLengthTwo}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Rectangle 2 Width"
+                    value={lShapeWidthTwo}
+                    onChange={setLShapeWidthTwo}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Thickness"
+                    value={lShapeThickness}
+                    onChange={setLShapeThickness}
+                    suffix={unitLabels.short}
                   />
                 </>
               )}
@@ -204,48 +1043,154 @@ export default function ConcreteCalculatorPage() {
                 <>
                   <NumberInput
                     label="Total Length"
-                    value={footingLengthFeet}
-                    onChange={setFootingLengthFeet}
-                    suffix="ft"
+                    value={footingLength}
+                    onChange={setFootingLength}
+                    suffix={unitLabels.long}
                   />
-
                   <NumberInput
                     label="Footing Width"
-                    value={footingWidthInches}
-                    onChange={setFootingWidthInches}
-                    suffix="in"
+                    value={footingWidth}
+                    onChange={setFootingWidth}
+                    suffix={unitLabels.short}
                   />
-
                   <NumberInput
                     label="Footing Depth"
-                    value={footingDepthInches}
-                    onChange={setFootingDepthInches}
-                    suffix="in"
+                    value={footingDepth}
+                    onChange={setFootingDepth}
+                    suffix={unitLabels.short}
+                  />
+                  <NumberInput
+                    label="Quantity"
+                    value={footingQuantity}
+                    onChange={setFootingQuantity}
+                    suffix="runs"
                   />
                 </>
               )}
 
-              {projectType === "pier" && (
+              {projectType === "roundPier" && (
                 <>
                   <NumberInput
                     label="Diameter"
-                    value={pierDiameterInches}
-                    onChange={setPierDiameterInches}
-                    suffix="in"
+                    value={roundPierDiameter}
+                    onChange={setRoundPierDiameter}
+                    suffix={unitLabels.short}
                   />
-
                   <NumberInput
                     label="Depth"
-                    value={pierDepthFeet}
-                    onChange={setPierDepthFeet}
-                    suffix="ft"
+                    value={roundPierDepth}
+                    onChange={setRoundPierDepth}
+                    suffix={unitLabels.long}
                   />
-
                   <NumberInput
                     label="Quantity"
-                    value={pierQuantity}
-                    onChange={setPierQuantity}
-                    suffix="posts"
+                    value={roundPierQuantity}
+                    onChange={setRoundPierQuantity}
+                    suffix="piers"
+                  />
+                </>
+              )}
+
+              {projectType === "rectangularPier" && (
+                <>
+                  <NumberInput
+                    label="Length"
+                    value={rectPierLength}
+                    onChange={setRectPierLength}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Width"
+                    value={rectPierWidth}
+                    onChange={setRectPierWidth}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Height"
+                    value={rectPierHeight}
+                    onChange={setRectPierHeight}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Quantity"
+                    value={rectPierQuantity}
+                    onChange={setRectPierQuantity}
+                    suffix="piers"
+                  />
+                </>
+              )}
+
+              {projectType === "wall" && (
+                <>
+                  <NumberInput
+                    label="Length"
+                    value={wallLength}
+                    onChange={setWallLength}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Height"
+                    value={wallHeight}
+                    onChange={setWallHeight}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Thickness"
+                    value={wallThickness}
+                    onChange={setWallThickness}
+                    suffix={unitLabels.short}
+                  />
+                </>
+              )}
+
+              {projectType === "stairs" && (
+                <>
+                  <NumberInput
+                    label="Step Width"
+                    value={stairWidth}
+                    onChange={setStairWidth}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Step Run"
+                    value={stairRun}
+                    onChange={setStairRun}
+                    suffix={unitLabels.short}
+                  />
+                  <NumberInput
+                    label="Step Rise"
+                    value={stairRise}
+                    onChange={setStairRise}
+                    suffix={unitLabels.short}
+                  />
+                  <NumberInput
+                    label="Number of Steps"
+                    value={stairCount}
+                    onChange={setStairCount}
+                    suffix="steps"
+                  />
+                </>
+              )}
+
+              {projectType === "curb" && (
+                <>
+                  <NumberInput
+                    label="Length"
+                    value={curbLength}
+                    onChange={setCurbLength}
+                    suffix={unitLabels.long}
+                  />
+                  <NumberInput
+                    label="Curb Width"
+                    value={curbWidth}
+                    onChange={setCurbWidth}
+                    suffix={unitLabels.short}
+                  />
+                  <NumberInput
+                    label="Curb Height"
+                    value={curbHeight}
+                    onChange={setCurbHeight}
+                    suffix={unitLabels.short}
                   />
                 </>
               )}
@@ -258,18 +1203,28 @@ export default function ConcreteCalculatorPage() {
               />
 
               <NumberInput
-                label="Concrete Price Per Cubic Yard"
-                value={pricePerCubicYard}
-                onChange={setPricePerCubicYard}
+                label={unitLabels.priceLabel}
+                value={pricePerUnit}
+                onChange={setPricePerUnit}
                 prefix="$"
-                suffix="/ yd³"
+                suffix={unitLabels.price}
                 wide
               />
             </div>
           </div>
 
           <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
-            <h2 className="text-2xl font-semibold">Results</h2>
+            <div className="flex items-start justify-between gap-4">
+              <h2 className="text-2xl font-semibold">Results</h2>
+
+              <button
+                type="button"
+                onClick={copyResults}
+                className="rounded-xl border border-[#1F2937] px-3 py-2 text-xs font-semibold text-[#A0AEC0] hover:border-[#F97316] hover:text-white"
+              >
+                {copied ? "Copied" : "Copy Results"}
+              </button>
+            </div>
 
             <div className="mt-6 rounded-2xl border border-[#F97316] bg-[#0B0F19] p-5">
               <p className="text-sm text-[#A0AEC0]">
@@ -277,30 +1232,55 @@ export default function ConcreteCalculatorPage() {
               </p>
 
               <p className="mt-2 text-4xl font-bold text-[#F97316]">
-                {formatNumber(results.cubicYardsWithWaste)} yd³
+                {formatNumber(results.recommendedOrder)}{" "}
+                {unitLabels.volumePrimary}
               </p>
 
               <p className="mt-2 text-sm text-[#A0AEC0]">
-                Includes {formatNumber(toNumber(wastePercent))}% waste.
+                Rounded up to the {unitLabels.recommendedRound}.
               </p>
             </div>
 
             <div className="mt-5 space-y-4">
-              <ResultRow
-                label="Cubic Feet"
-                value={`${formatNumber(results.cubicFeet)} ft³`}
-              />
-
-              <ResultRow
-                label="Cubic Yards"
-                value={`${formatNumber(results.cubicYards)} yd³`}
-              />
-
-              <ResultRow
-                label="With Waste"
-                value={`${formatNumber(results.cubicYardsWithWaste)} yd³`}
-                highlight
-              />
+              {unitSystem === "imperial" ? (
+                <>
+                  <ResultRow
+                    label="Cubic Feet"
+                    value={`${formatNumber(results.baseCubicFeet)} ft³`}
+                  />
+                  <ResultRow
+                    label="Cubic Yards Before Waste"
+                    value={`${formatNumber(results.baseCubicYards)} yd³`}
+                  />
+                  <ResultRow
+                    label="Cubic Yards With Waste"
+                    value={`${formatNumber(results.volumeWithWaste)} yd³`}
+                    highlight
+                  />
+                  <ResultRow
+                    label="Recommended Order"
+                    value={`${formatNumber(results.recommendedOrder)} yd³`}
+                    highlight
+                  />
+                </>
+              ) : (
+                <>
+                  <ResultRow
+                    label="Cubic Meters Before Waste"
+                    value={`${formatNumber(results.baseCubicMeters)} m³`}
+                  />
+                  <ResultRow
+                    label="Cubic Meters With Waste"
+                    value={`${formatNumber(results.volumeWithWaste)} m³`}
+                    highlight
+                  />
+                  <ResultRow
+                    label="Recommended Order"
+                    value={`${formatNumber(results.recommendedOrder)} m³`}
+                    highlight
+                  />
+                </>
+              )}
 
               <ResultRow
                 label="Estimated Material Cost"
@@ -313,7 +1293,8 @@ export default function ConcreteCalculatorPage() {
               <p className="text-sm leading-6 text-[#A0AEC0]">
                 This estimate is for material planning only. Actual concrete
                 needs can change based on excavation, subgrade, formwork,
-                compaction, slope, and contractor requirements.
+                compaction, slope, reinforcement, waste, and contractor
+                requirements.
               </p>
             </div>
           </div>
@@ -326,16 +1307,16 @@ export default function ConcreteCalculatorPage() {
             </h2>
 
             <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
-              This calculator estimates concrete volume by converting your
-              project dimensions into cubic feet, then converting cubic feet into
-              cubic yards. Since ready-mix concrete is commonly ordered by the
-              cubic yard, the final order amount is shown in cubic yards.
+              This calculator estimates concrete volume using the selected
+              project type and shape. Imperial projects are converted into cubic
+              feet and cubic yards. Metric projects are calculated in cubic
+              meters.
             </p>
 
             <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
               The waste percentage adds extra concrete for spillage, uneven
-              excavation, form variation, and jobsite conditions. A common waste
-              range is 5% to 10%, but some projects may need more.
+              excavation, form variation, and jobsite conditions. The recommended
+              order amount rounds up to a practical ordering increment.
             </p>
           </div>
 
@@ -347,24 +1328,31 @@ export default function ConcreteCalculatorPage() {
             <div className="mt-5 space-y-4">
               <FormulaRow
                 label="Slab / Pad"
-                formula="Length × Width × Thickness"
+                formula="Length × Width × Thickness × Quantity"
               />
-
+              <FormulaRow
+                label="Circular Pad"
+                formula="π × Radius² × Thickness × Quantity"
+              />
+              <FormulaRow
+                label="L-Shaped Slab"
+                formula="Rectangle 1 Volume + Rectangle 2 Volume"
+              />
               <FormulaRow
                 label="Footing / Trench"
-                formula="Length × Width × Depth"
+                formula="Length × Width × Depth × Quantity"
               />
-
               <FormulaRow
-                label="Pier / Column"
+                label="Round Pier / Sonotube"
                 formula="π × Radius² × Depth × Quantity"
               />
-
-              <FormulaRow label="Cubic Yards" formula="Cubic Feet ÷ 27" />
-
+              <FormulaRow
+                label="Wall / Curb / Rectangular Pier"
+                formula="Length × Width/Height × Thickness"
+              />
               <FormulaRow
                 label="With Waste"
-                formula="Cubic Yards × (1 + Waste % ÷ 100)"
+                formula="Base Volume × (1 + Waste % ÷ 100)"
               />
             </div>
           </div>
@@ -380,12 +1368,10 @@ export default function ConcreteCalculatorPage() {
               title="10 × 10 slab, 4 inches thick"
               text="A 10 ft by 10 ft slab at 4 inches thick needs about 1.23 cubic yards before waste."
             />
-
             <ExampleCard
               title="40 ft footing, 12 × 12 inches"
               text="A 40 ft long footing that is 12 inches wide and 12 inches deep needs about 1.48 cubic yards before waste."
             />
-
             <ExampleCard
               title="Four 12-inch piers, 3 ft deep"
               text="Four round piers with 12 inch diameter and 3 ft depth need about 0.35 cubic yards before waste."
@@ -401,36 +1387,35 @@ export default function ConcreteCalculatorPage() {
               </p>
 
               <h2 className="mt-3 text-2xl font-semibold text-white">
-                Recommended tools for concrete projects
+                Recommended tools for this concrete project
               </h2>
             </div>
 
             <p className="max-w-md text-sm leading-6 text-[#A0AEC0]">
-              Placeholder section for future affiliate links. Keep these useful,
-              relevant, and below the calculator results.
+              Affiliate-ready section. Keep product links useful, relevant, and
+              below the calculator results.
             </p>
           </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <ToolCard
-              title="Tape Measure"
-              text="Useful for checking slab, footing, and form dimensions."
-            />
+          <div className="mt-6 grid gap-6 lg:grid-cols-3">
+            {selectedToolGroups.map((group) => (
+              <div
+                key={group.title}
+                className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5"
+              >
+                <h3 className="font-semibold text-white">{group.title}</h3>
 
-            <ToolCard
-              title="Concrete Trowel"
-              text="Used for finishing and smoothing concrete surfaces."
-            />
-
-            <ToolCard
-              title="Work Gloves"
-              text="Protects hands when handling concrete, forms, and tools."
-            />
-
-            <ToolCard
-              title="Mixing Tub"
-              text="Helpful for small concrete batches and repair projects."
-            />
+                <div className="mt-4 space-y-4">
+                  {group.tools.map((tool) => (
+                    <ToolCard
+                      key={tool.title}
+                      title={tool.title}
+                      text={tool.text}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -441,28 +1426,56 @@ export default function ConcreteCalculatorPage() {
 
           <div className="mt-6 space-y-5">
             <FAQItem
-              question="How many cubic feet are in one cubic yard of concrete?"
-              answer="One cubic yard contains 27 cubic feet. That is why this calculator divides cubic feet by 27 to estimate cubic yards."
+              question="Can this calculator handle metric and imperial units?"
+              answer="Yes. Use the unit system toggle to switch between imperial units like feet, inches, and cubic yards, or metric units like meters, centimeters, and cubic meters."
             />
-
+            <FAQItem
+              question="How many cubic feet are in one cubic yard of concrete?"
+              answer="One cubic yard contains 27 cubic feet. That is why imperial concrete estimates divide cubic feet by 27 to estimate cubic yards."
+            />
             <FAQItem
               question="How much waste should I add for concrete?"
-              answer="A common waste allowance is 5% to 10%. More complex projects, uneven excavation, or difficult pours may need a higher waste percentage."
+              answer="A common waste allowance is 5% to 10%. Complex pours, uneven excavation, difficult access, or multiple forms may need more."
             />
-
             <FAQItem
               question="Can this calculator be used for sonotubes?"
-              answer="Yes. Use the Pier / Column mode. Enter the tube diameter, depth, and quantity to estimate the required concrete."
+              answer="Yes. Use the Round Pier / Sonotube mode. Enter the tube diameter, depth, and quantity to estimate the required concrete."
             />
-
             <FAQItem
               question="Does this include labor or delivery fees?"
-              answer="No. The estimated cost only calculates material cost based on the cubic yards with waste and the price per cubic yard."
+              answer="No. The estimated cost only calculates material cost based on the recommended order amount and the price per cubic yard or cubic meter."
             />
           </div>
         </section>
       </section>
     </main>
+  );
+}
+
+function ToggleButton({
+  isActive,
+  label,
+  description,
+  onClick,
+}: {
+  isActive: boolean;
+  label: string;
+  description: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={
+        isActive
+          ? "rounded-xl border border-[#F97316] bg-[#1C2433] px-4 py-3 text-left"
+          : "rounded-xl border border-[#1F2937] bg-[#0B0F19] px-4 py-3 text-left hover:border-[#F97316]"
+      }
+    >
+      <span className="block text-sm font-semibold text-white">{label}</span>
+      <span className="mt-1 block text-xs text-[#A0AEC0]">{description}</span>
+    </button>
   );
 }
 
@@ -556,10 +1569,10 @@ function ExampleCard({ title, text }: { title: string; text: string }) {
 
 function ToolCard({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5">
-      <div className="mb-4 h-2 w-10 rounded-full bg-[#F97316]" />
-      <h3 className="font-semibold text-white">{title}</h3>
-      <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">{text}</p>
+    <div className="rounded-xl border border-[#1F2937] bg-[#121826] p-4">
+      <div className="mb-3 h-2 w-10 rounded-full bg-[#F97316]" />
+      <h4 className="font-semibold text-white">{title}</h4>
+      <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">{text}</p>
     </div>
   );
 }
@@ -576,11 +1589,27 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 function toNumber(value: string) {
   const number = Number(value);
 
-  if (Number.isNaN(number)) {
+  if (Number.isNaN(number) || number < 0) {
     return 0;
   }
 
   return number;
+}
+
+function inchesToFeet(value: number) {
+  return value / 12;
+}
+
+function centimetersToMeters(value: number) {
+  return value / 100;
+}
+
+function roundUpToIncrement(value: number, increment: number) {
+  if (value <= 0) {
+    return 0;
+  }
+
+  return Math.ceil(value / increment) * increment;
 }
 
 function formatNumber(value: number) {
