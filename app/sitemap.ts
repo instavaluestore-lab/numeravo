@@ -12,12 +12,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/business",
     "/converters",
     "/tools",
+    "/about",
+    "/contact",
+    "/privacy-policy",
+    "/terms",
   ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route.includes("concrete-calculator") ? 0.9 : 0.8,
+    priority:
+      route === ""
+        ? 1
+        : route.includes("concrete-calculator")
+          ? 0.9
+          : route === "/about" ||
+              route === "/contact" ||
+              route === "/privacy-policy" ||
+              route === "/terms"
+            ? 0.5
+            : 0.8,
   }));
 }
