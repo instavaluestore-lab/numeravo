@@ -4,9 +4,37 @@ const calculators = [
   {
     title: "Concrete Calculator",
     description:
-      "Estimate cubic feet, cubic yards, waste-adjusted concrete, and material cost.",
+      "Estimate concrete volume, waste, cost, slabs, footings, piers, walls, stairs, curbs, and more.",
     href: "/construction/concrete-calculator",
     status: "Live",
+  },
+  {
+    title: "Concrete Slab Calculator",
+    description:
+      "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",
+    href: "/construction/concrete-slab-calculator",
+    status: "Guide",
+  },
+  {
+    title: "Concrete Footing Calculator",
+    description:
+      "Estimate concrete for strip footings, trench footings, wall footings, and grade beams.",
+    href: "/construction/concrete-footing-calculator",
+    status: "Guide",
+  },
+  {
+    title: "Sonotube Concrete Calculator",
+    description:
+      "Estimate concrete for sonotubes, round piers, deck posts, fence posts, and post holes.",
+    href: "/construction/sonotube-concrete-calculator",
+    status: "Guide",
+  },
+  {
+    title: "Concrete Wall Calculator",
+    description:
+      "Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections.",
+    href: "/construction/concrete-wall-calculator",
+    status: "Guide",
   },
   {
     title: "Gravel Calculator",
@@ -57,13 +85,14 @@ export default function ConstructionPage() {
           </p>
 
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Construction calculators for materials, measurements, and project
-            planning.
+            Construction calculators for concrete, materials, measurements, and
+            project planning.
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-[#A0AEC0]">
-            Estimate concrete, gravel, square footage, and other construction
-            project numbers with fast, easy-to-use calculators.
+            Estimate concrete, footings, slabs, piers, walls, gravel, square
+            footage, and other construction project numbers with fast,
+            easy-to-use calculators and guides.
           </p>
         </div>
 
@@ -92,7 +121,55 @@ export default function ConstructionPage() {
             </Link>
           ))}
         </div>
+
+        <section className="mt-12 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold text-white">
+            Concrete calculators and guides
+          </h2>
+
+          <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
+            Start with the main concrete calculator for a full estimate across
+            slabs, pads, circular pads, L-shaped slabs, footings, trenches,
+            round piers, sonotubes, walls, stairs, curbs, and columns. Use the
+            specialized concrete pages when you want a focused explanation for a
+            specific project type.
+          </p>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <QuickLink
+              href="/construction/concrete-calculator"
+              label="Full Concrete Calculator"
+            />
+            <QuickLink
+              href="/construction/concrete-slab-calculator"
+              label="Concrete Slab Calculator"
+            />
+            <QuickLink
+              href="/construction/concrete-footing-calculator"
+              label="Concrete Footing Calculator"
+            />
+            <QuickLink
+              href="/construction/sonotube-concrete-calculator"
+              label="Sonotube Concrete Calculator"
+            />
+            <QuickLink
+              href="/construction/concrete-wall-calculator"
+              label="Concrete Wall Calculator"
+            />
+          </div>
+        </section>
       </section>
     </main>
+  );
+}
+
+function QuickLink({ href, label }: { href: string; label: string }) {
+  return (
+    <Link
+      href={href}
+      className="rounded-xl border border-[#1F2937] bg-[#0B0F19] px-4 py-3 text-sm font-semibold text-[#A0AEC0] transition hover:border-[#F97316] hover:text-white"
+    >
+      {label}
+    </Link>
   );
 }

@@ -7,6 +7,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/construction",
     "/construction/concrete-calculator",
+    "/construction/concrete-slab-calculator",
+    "/construction/concrete-footing-calculator",
+    "/construction/sonotube-concrete-calculator",
+    "/construction/concrete-wall-calculator",
     "/finance",
     "/student",
     "/business",
@@ -27,11 +31,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 1
         : route.includes("concrete-calculator")
           ? 0.9
-          : route === "/about" ||
-              route === "/contact" ||
-              route === "/privacy-policy" ||
-              route === "/terms"
-            ? 0.5
-            : 0.8,
+          : route.includes("concrete-slab-calculator") ||
+              route.includes("concrete-footing-calculator") ||
+              route.includes("sonotube-concrete-calculator") ||
+              route.includes("concrete-wall-calculator")
+            ? 0.85
+            : route === "/about" ||
+                route === "/contact" ||
+                route === "/privacy-policy" ||
+                route === "/terms"
+              ? 0.5
+              : 0.8,
   }));
 }
