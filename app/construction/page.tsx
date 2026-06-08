@@ -41,7 +41,7 @@ const calculators = [
     description:
       "Estimate gravel volume and material needs for driveways, patios, and base layers.",
     href: "/construction/gravel-calculator",
-    status: "Planned",
+    status: "Live",
   },
   {
     title: "Square Footage Calculator",
