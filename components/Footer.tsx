@@ -1,78 +1,97 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-[#1F2937] bg-[#0B0F19]">
-      <div className="mx-auto max-w-6xl px-6 py-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="text-lg font-bold text-white">
-              Numeravo
-            </Link>
+    <footer className="border-t border-[#1F2937] bg-[#0B0F19] px-6 py-12 text-white">
+      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+        <div>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/numeravo-logo.png"
+              alt="Numeravo logo"
+              width={44}
+              height={44}
+              className="rounded-full object-cover"
+            />
 
-            <p className="mt-2 max-w-sm text-sm leading-6 text-[#A0AEC0]">
-              Smart calculators, tools, and guides for everyday decisions.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-sm font-semibold text-white">Categories</h2>
-
-            <div className="mt-3 flex flex-col gap-2">
-              <Link href="/construction" className="text-sm text-[#A0AEC0] hover:text-white">
-                Construction
-              </Link>
-              <Link href="/finance" className="text-sm text-[#A0AEC0] hover:text-white">
-                Finance
-              </Link>
-              <Link href="/student" className="text-sm text-[#A0AEC0] hover:text-white">
-                Student
-              </Link>
+            <div>
+              <p className="font-bold leading-none">Numeravo</p>
+              <p className="mt-1 text-sm text-[#A0AEC0]">Smart calculators</p>
             </div>
-          </div>
+          </Link>
 
-          <div>
-            <h2 className="text-sm font-semibold text-white">Tools</h2>
-
-            <div className="mt-3 flex flex-col gap-2">
-              <Link href="/business" className="text-sm text-[#A0AEC0] hover:text-white">
-                Business
-              </Link>
-              <Link href="/converters" className="text-sm text-[#A0AEC0] hover:text-white">
-                Converters
-              </Link>
-              <Link href="/tools" className="text-sm text-[#A0AEC0] hover:text-white">
-                Utilities
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-sm font-semibold text-white">Company</h2>
-
-            <div className="mt-3 flex flex-col gap-2">
-              <Link href="/about" className="text-sm text-[#A0AEC0] hover:text-white">
-                About
-              </Link>
-              <Link href="/contact" className="text-sm text-[#A0AEC0] hover:text-white">
-                Contact
-              </Link>
-              <Link href="/privacy-policy" className="text-sm text-[#A0AEC0] hover:text-white">
-                Privacy
-              </Link>
-              <Link href="/terms" className="text-sm text-[#A0AEC0] hover:text-white">
-                Terms
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 border-t border-[#1F2937] pt-5">
-          <p className="text-sm text-[#A0AEC0]">
-            © 2026 Numeravo. All rights reserved.
+          <p className="mt-5 max-w-md text-sm leading-7 text-[#A0AEC0]">
+            Smart calculators, tools, and guides for everyday decisions across
+            construction, finance, student work, business, conversions, and
+            general utility tools.
           </p>
         </div>
+
+        <FooterGroup
+          title="Calculators"
+          links={[
+            { label: "Construction", href: "/construction" },
+            { label: "Finance", href: "/finance" },
+            { label: "Student", href: "/student" },
+            { label: "Business", href: "/business" },
+          ]}
+        />
+
+        <FooterGroup
+          title="Tools"
+          links={[
+            { label: "Converters", href: "/converters" },
+            { label: "Utilities", href: "/tools" },
+            {
+              label: "Concrete Calculator",
+              href: "/construction/concrete-calculator",
+            },
+          ]}
+        />
+
+        <FooterGroup
+          title="Company"
+          links={[
+            { label: "About", href: "/about" },
+            { label: "Contact", href: "/contact" },
+            { label: "Privacy Policy", href: "/privacy-policy" },
+            { label: "Terms", href: "/terms" },
+          ]}
+        />
+      </div>
+
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-[#1F2937] pt-6 text-sm text-[#A0AEC0] sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2026 Numeravo. All rights reserved.</p>
+
+        <p>Calculator results are estimates for planning purposes.</p>
       </div>
     </footer>
+  );
+}
+
+function FooterGroup({
+  title,
+  links,
+}: {
+  title: string;
+  links: { label: string; href: string }[];
+}) {
+  return (
+    <div>
+      <h2 className="font-semibold text-white">{title}</h2>
+
+      <div className="mt-4 space-y-3">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="block text-sm text-[#A0AEC0] transition hover:text-white"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
