@@ -25,7 +25,77 @@ export const metadata = {
 
 export default function ConcreteFootingCalculatorPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+  <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://numeravo.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Construction",
+                  item: "https://numeravo.com/construction",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Concrete Footing Calculator",
+                  item: "https://numeravo.com/construction/concrete-footing-calculator",
+                },
+              ],
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What measurements do I need for a footing estimate?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "You need the total footing length, footing width, footing depth, quantity if there are multiple runs, waste percentage, and concrete price.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can this estimate trench footings?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. Use the Footing / Trench mode in the main concrete calculator and enter the trench length, width, and depth.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Does this account for rebar?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "No. This page estimates concrete volume only. Rebar, chairs, tie wire, labor, excavation, gravel, and inspections are separate.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I use metric units?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. The Numeravo concrete calculator supports metric footing estimates using meters, centimeters, and cubic meters.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      }}
+    />
       <section className="mx-auto max-w-5xl">
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
           Concrete Footing Calculator

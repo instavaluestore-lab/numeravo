@@ -26,7 +26,77 @@ export const metadata = {
 
 export default function SonotubeConcreteCalculatorPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+  <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://numeravo.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Construction",
+                  item: "https://numeravo.com/construction",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Sonotube Concrete Calculator",
+                  item: "https://numeravo.com/construction/sonotube-concrete-calculator",
+                },
+              ],
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What measurements do I need for a sonotube estimate?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "You need the tube diameter, depth or height, quantity of tubes, waste percentage, and concrete price.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Is a sonotube calculated as a cylinder?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. A sonotube is a cylindrical form, so the volume formula uses pi times radius squared times depth.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can this be used for fence post holes?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. Use the Round Pier / Sonotube mode in the main concrete calculator and enter the hole diameter, depth, and quantity.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Does this include the post volume?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "No. This estimate assumes the hole or tube is filled with concrete. If a post displaces concrete volume, the actual amount may be slightly lower.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      }}
+    />
       <section className="mx-auto max-w-5xl">
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
           Sonotube Concrete Calculator

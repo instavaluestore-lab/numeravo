@@ -25,7 +25,77 @@ export const metadata = {
 
 export default function ConcreteSlabCalculatorPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+  <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://numeravo.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Construction",
+                  item: "https://numeravo.com/construction",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Concrete Slab Calculator",
+                  item: "https://numeravo.com/construction/concrete-slab-calculator",
+                },
+              ],
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "How thick should a concrete slab be?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Many patios, sidewalks, and shed pads use 4 inches as a common slab thickness, but requirements can vary by project, soil, load, reinforcement, and local code.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Should I add waste to a slab estimate?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. A 5% to 10% waste allowance is commonly used for planning because real pours can require extra concrete.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I calculate concrete slabs in metric units?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. The Numeravo concrete calculator supports metric inputs using meters and centimeters and outputs cubic meters.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Does the slab calculator include labor?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "No. The calculator estimates concrete volume and material cost only. Labor, delivery, forms, reinforcement, gravel, and finishing costs are separate.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      }}
+    />
       <section className="mx-auto max-w-5xl">
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
           Concrete Slab Calculator

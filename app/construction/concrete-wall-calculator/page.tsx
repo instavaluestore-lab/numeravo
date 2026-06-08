@@ -25,7 +25,77 @@ export const metadata = {
 
 export default function ConcreteWallCalculatorPage() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+  <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://numeravo.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Construction",
+                  item: "https://numeravo.com/construction",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Concrete Wall Calculator",
+                  item: "https://numeravo.com/construction/concrete-wall-calculator",
+                },
+              ],
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What measurements do I need for a concrete wall estimate?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "You need wall length, wall height, wall thickness, waste percentage, and concrete price. For imperial estimates, length and height are usually entered in feet and thickness in inches.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can this estimate retaining walls?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. Use the Wall mode in the main concrete calculator to estimate concrete volume for simple retaining wall sections.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Does this include forms or rebar?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "No. This estimate covers concrete volume and material cost only. Forms, bracing, reinforcement, labor, excavation, drainage, and engineering are separate.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I calculate wall concrete in metric units?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. The Numeravo concrete calculator supports metric wall estimates using meters, centimeters, and cubic meters.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      }}
+    />
       <section className="mx-auto max-w-5xl">
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
           Concrete Wall Calculator
