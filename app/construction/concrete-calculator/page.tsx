@@ -846,7 +846,99 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   }
 
   return (
-    <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+  <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "SoftwareApplication",
+              name: "Numeravo Concrete Calculator",
+              applicationCategory: "UtilitiesApplication",
+              operatingSystem: "Web",
+              url: "https://numeravo.com/construction/concrete-calculator",
+              description:
+                "Estimate concrete volume, waste-adjusted order amount, and material cost for slabs, pads, footings, trenches, piers, sonotubes, walls, stairs, curbs, and columns.",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://numeravo.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Construction",
+                  item: "https://numeravo.com/construction",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: "Concrete Calculator",
+                  item: "https://numeravo.com/construction/concrete-calculator",
+                },
+              ],
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Can this calculator handle metric and imperial units?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. Use the unit system toggle to switch between imperial units like feet, inches, and cubic yards, or metric units like meters, centimeters, and cubic meters.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How many cubic feet are in one cubic yard of concrete?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "One cubic yard contains 27 cubic feet. That is why imperial concrete estimates divide cubic feet by 27 to estimate cubic yards.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How much waste should I add for concrete?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "A common waste allowance is 5% to 10%. Complex pours, uneven excavation, difficult access, or multiple forms may need more.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can this calculator be used for sonotubes?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. Use the Round Pier / Sonotube mode. Enter the tube diameter, depth, and quantity to estimate the required concrete.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Does this include labor or delivery fees?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "No. The estimated cost only calculates material cost based on the recommended order amount and the price per cubic yard or cubic meter.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      }}
+    />
       <section className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
