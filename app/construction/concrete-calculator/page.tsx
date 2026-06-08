@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type UnitSystem = "imperial" | "metric";
@@ -121,432 +122,6 @@ const projectTypes: {
   },
 ];
 
-const toolGroupsByProjectType: Record<
-  ProjectType,
-  {
-    title: string;
-    tools: { title: string; text: string }[];
-  }[]
-> = {
-  slab: [
-    {
-      title: "Measuring & layout",
-      tools: [
-        {
-          title: "Tape Measure",
-          text: "Useful for checking slab length, width, and form layout.",
-        },
-        {
-          title: "Laser Distance Measure",
-          text: "Helpful for measuring larger slabs, driveways, and garage floors.",
-        },
-        {
-          title: "Chalk Line",
-          text: "Useful for marking straight layout lines before forming.",
-        },
-        {
-          title: "Level",
-          text: "Helps check form height, slope, and finished surface planning.",
-        },
-      ],
-    },
-    {
-      title: "Forming & prep",
-      tools: [
-        {
-          title: "Concrete Forms",
-          text: "Used to hold the slab shape while concrete is poured.",
-        },
-        {
-          title: "Form Stakes",
-          text: "Keeps forms secure and aligned during the pour.",
-        },
-        {
-          title: "Gravel Base",
-          text: "Commonly used below slabs for drainage and support.",
-        },
-        {
-          title: "Tamper / Compactor",
-          text: "Helps compact the base before placing concrete.",
-        },
-      ],
-    },
-    {
-      title: "Finishing",
-      tools: [
-        {
-          title: "Screed Board",
-          text: "Used to level wet concrete across the forms.",
-        },
-        {
-          title: "Magnesium Float",
-          text: "Helps smooth and level the concrete surface.",
-        },
-        {
-          title: "Concrete Trowel",
-          text: "Used for finishing and smoothing concrete.",
-        },
-        {
-          title: "Concrete Sealer",
-          text: "Helps protect finished concrete after curing.",
-        },
-      ],
-    },
-  ],
-  circularPad: [
-    {
-      title: "Measuring & layout",
-      tools: [
-        {
-          title: "Tape Measure",
-          text: "Used to measure diameter and layout the circular form.",
-        },
-        {
-          title: "Marking Paint",
-          text: "Helpful for marking the circle outline before excavation.",
-        },
-        {
-          title: "String Line",
-          text: "Can help create a clean radius from the center point.",
-        },
-        {
-          title: "Level",
-          text: "Useful for checking the circular form height.",
-        },
-      ],
-    },
-    {
-      title: "Forming & finishing",
-      tools: [
-        {
-          title: "Flexible Concrete Forms",
-          text: "Useful for forming round pads and curved edges.",
-        },
-        {
-          title: "Form Stakes",
-          text: "Keeps circular forms in place during the pour.",
-        },
-        {
-          title: "Concrete Trowel",
-          text: "Used to finish the circular pad surface.",
-        },
-        {
-          title: "Work Gloves",
-          text: "Protects hands while handling forms and concrete.",
-        },
-      ],
-    },
-  ],
-  lShapedSlab: [
-    {
-      title: "Measuring & layout",
-      tools: [
-        {
-          title: "Tape Measure",
-          text: "Needed to measure both rectangle sections of the L-shape.",
-        },
-        {
-          title: "Chalk Line",
-          text: "Helps mark clean straight edges and inside corners.",
-        },
-        {
-          title: "Framing Square",
-          text: "Useful for checking L-shaped corners.",
-        },
-        {
-          title: "Level",
-          text: "Helps verify form height and slope.",
-        },
-      ],
-    },
-    {
-      title: "Forming & finishing",
-      tools: [
-        {
-          title: "Concrete Forms",
-          text: "Used to create the outside and inside edges.",
-        },
-        {
-          title: "Form Stakes",
-          text: "Keeps the L-shaped forms locked in place.",
-        },
-        {
-          title: "Screed Board",
-          text: "Used to level concrete across each section.",
-        },
-        {
-          title: "Concrete Edger",
-          text: "Helps finish clean exposed slab edges.",
-        },
-      ],
-    },
-  ],
-  footing: [
-    {
-      title: "Excavation & layout",
-      tools: [
-        {
-          title: "Tape Measure",
-          text: "Used to check total footing length, width, and depth.",
-        },
-        {
-          title: "String Line",
-          text: "Helps keep footing trenches straight.",
-        },
-        {
-          title: "Trenching Shovel",
-          text: "Useful for digging and cleaning footing trenches.",
-        },
-        {
-          title: "Level",
-          text: "Helps check trench depth and form alignment.",
-        },
-      ],
-    },
-    {
-      title: "Pouring & reinforcement",
-      tools: [
-        {
-          title: "Rebar Chairs",
-          text: "Help position rebar inside the footing.",
-        },
-        {
-          title: "Rebar Tie Wire",
-          text: "Used to secure rebar before pouring concrete.",
-        },
-        {
-          title: "Concrete Rake",
-          text: "Helps move and spread concrete in long trenches.",
-        },
-        {
-          title: "Work Gloves",
-          text: "Protects hands while handling rebar and concrete.",
-        },
-      ],
-    },
-  ],
-  roundPier: [
-    {
-      title: "Digging & forming",
-      tools: [
-        {
-          title: "Post Hole Digger",
-          text: "Useful for digging round post holes and pier holes.",
-        },
-        {
-          title: "Auger",
-          text: "Speeds up digging for multiple post holes.",
-        },
-        {
-          title: "Sonotube Forms",
-          text: "Used to form clean round concrete piers.",
-        },
-        {
-          title: "Tape Measure",
-          text: "Used to verify diameter, depth, and post spacing.",
-        },
-      ],
-    },
-    {
-      title: "Setting & finishing",
-      tools: [
-        {
-          title: "Level",
-          text: "Helps keep posts and forms plumb.",
-        },
-        {
-          title: "Concrete Mixing Tub",
-          text: "Useful for small pier and post projects.",
-        },
-        {
-          title: "Concrete Trowel",
-          text: "Used to finish the top of round piers.",
-        },
-        {
-          title: "Safety Glasses",
-          text: "Protects eyes while digging, mixing, and pouring.",
-        },
-      ],
-    },
-  ],
-  rectangularPier: [
-    {
-      title: "Forming & measuring",
-      tools: [
-        {
-          title: "Tape Measure",
-          text: "Used to measure pier width, length, and height.",
-        },
-        {
-          title: "Concrete Forms",
-          text: "Used to shape square or rectangular piers.",
-        },
-        {
-          title: "Form Stakes",
-          text: "Keeps pier forms stable while pouring.",
-        },
-        {
-          title: "Level",
-          text: "Helps keep forms square and plumb.",
-        },
-      ],
-    },
-    {
-      title: "Pouring & finishing",
-      tools: [
-        {
-          title: "Concrete Mixer",
-          text: "Helpful for repeated pier or column pours.",
-        },
-        {
-          title: "Concrete Trowel",
-          text: "Used to finish the top surface.",
-        },
-        {
-          title: "Work Gloves",
-          text: "Protects hands when handling concrete and forms.",
-        },
-        {
-          title: "Rubber Boots",
-          text: "Useful when working around wet concrete.",
-        },
-      ],
-    },
-  ],
-  wall: [
-    {
-      title: "Layout & forming",
-      tools: [
-        {
-          title: "Tape Measure",
-          text: "Used to measure wall length, height, and thickness.",
-        },
-        {
-          title: "Level",
-          text: "Helps check forms and wall alignment.",
-        },
-        {
-          title: "Concrete Wall Forms",
-          text: "Used to hold poured concrete walls in shape.",
-        },
-        {
-          title: "Form Ties",
-          text: "Helps secure wall forms during the pour.",
-        },
-      ],
-    },
-    {
-      title: "Pouring & safety",
-      tools: [
-        {
-          title: "Concrete Vibrator",
-          text: "Helps consolidate concrete in wall forms.",
-        },
-        {
-          title: "Rebar Tie Wire",
-          text: "Used to secure wall reinforcement.",
-        },
-        {
-          title: "Work Gloves",
-          text: "Protects hands around forms, rebar, and concrete.",
-        },
-        {
-          title: "Safety Glasses",
-          text: "Protects eyes during forming and pouring.",
-        },
-      ],
-    },
-  ],
-  stairs: [
-    {
-      title: "Layout & forming",
-      tools: [
-        {
-          title: "Tape Measure",
-          text: "Used to measure rise, run, width, and number of steps.",
-        },
-        {
-          title: "Framing Square",
-          text: "Useful for laying out consistent stair dimensions.",
-        },
-        {
-          title: "Concrete Forms",
-          text: "Used to shape each stair tread and riser.",
-        },
-        {
-          title: "Level",
-          text: "Helps keep stair forms even and aligned.",
-        },
-      ],
-    },
-    {
-      title: "Finishing",
-      tools: [
-        {
-          title: "Concrete Edger",
-          text: "Helps create clean edges on stair treads.",
-        },
-        {
-          title: "Concrete Trowel",
-          text: "Used to finish step surfaces.",
-        },
-        {
-          title: "Broom",
-          text: "Can add slip-resistant texture to outdoor steps.",
-        },
-        {
-          title: "Knee Pads",
-          text: "Helpful when finishing low concrete steps.",
-        },
-      ],
-    },
-  ],
-  curb: [
-    {
-      title: "Layout & forming",
-      tools: [
-        {
-          title: "Tape Measure",
-          text: "Used to measure curb length, width, and height.",
-        },
-        {
-          title: "String Line",
-          text: "Helps keep curb runs straight.",
-        },
-        {
-          title: "Concrete Forms",
-          text: "Used to shape curb edges.",
-        },
-        {
-          title: "Form Stakes",
-          text: "Keeps curb forms secure.",
-        },
-      ],
-    },
-    {
-      title: "Finishing",
-      tools: [
-        {
-          title: "Concrete Edger",
-          text: "Helps round and finish exposed curb edges.",
-        },
-        {
-          title: "Concrete Trowel",
-          text: "Used to smooth curb surfaces.",
-        },
-        {
-          title: "Work Gloves",
-          text: "Protects hands while forming and finishing.",
-        },
-        {
-          title: "Safety Glasses",
-          text: "Protects eyes during cutting, forming, and pouring.",
-        },
-      ],
-    },
-  ],
-};
-
 export default function ConcreteCalculatorPage() {
   const [unitSystem, setUnitSystem] = useState<UnitSystem>("imperial");
   const [projectType, setProjectType] = useState<ProjectType>("slab");
@@ -598,7 +173,6 @@ export default function ConcreteCalculatorPage() {
   const [copied, setCopied] = useState(false);
 
   const selectedProject = projectTypes.find((type) => type.id === projectType);
-  const selectedToolGroups = toolGroupsByProjectType[projectType];
 
   const unitLabels =
     unitSystem === "imperial"
@@ -846,99 +420,100 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   }
 
   return (
-  <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "SoftwareApplication",
-              name: "Numeravo Concrete Calculator",
-              applicationCategory: "UtilitiesApplication",
-              operatingSystem: "Web",
-              url: "https://numeravo.com/construction/concrete-calculator",
-              description:
-                "Estimate concrete volume, waste-adjusted order amount, and material cost for slabs, pads, footings, trenches, piers, sonotubes, walls, stairs, curbs, and columns.",
-              offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
+    <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "SoftwareApplication",
+                name: "Numeravo Concrete Calculator",
+                applicationCategory: "UtilitiesApplication",
+                operatingSystem: "Web",
+                url: "https://numeravo.com/construction/concrete-calculator",
+                description:
+                  "Estimate concrete volume, waste-adjusted order amount, and material cost for slabs, pads, footings, trenches, piers, sonotubes, walls, stairs, curbs, and columns.",
+                offers: {
+                  "@type": "Offer",
+                  price: "0",
+                  priceCurrency: "USD",
+                },
               },
-            },
-            {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://numeravo.com",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Construction",
-                  item: "https://numeravo.com/construction",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
-                  name: "Concrete Calculator",
-                  item: "https://numeravo.com/construction/concrete-calculator",
-                },
-              ],
-            },
-            {
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "Can this calculator handle metric and imperial units?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes. Use the unit system toggle to switch between imperial units like feet, inches, and cubic yards, or metric units like meters, centimeters, and cubic meters.",
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://numeravo.com",
                   },
-                },
-                {
-                  "@type": "Question",
-                  name: "How many cubic feet are in one cubic yard of concrete?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "One cubic yard contains 27 cubic feet. That is why imperial concrete estimates divide cubic feet by 27 to estimate cubic yards.",
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Construction",
+                    item: "https://numeravo.com/construction",
                   },
-                },
-                {
-                  "@type": "Question",
-                  name: "How much waste should I add for concrete?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "A common waste allowance is 5% to 10%. Complex pours, uneven excavation, difficult access, or multiple forms may need more.",
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Concrete Calculator",
+                    item: "https://numeravo.com/construction/concrete-calculator",
                   },
-                },
-                {
-                  "@type": "Question",
-                  name: "Can this calculator be used for sonotubes?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes. Use the Round Pier / Sonotube mode. Enter the tube diameter, depth, and quantity to estimate the required concrete.",
+                ],
+              },
+              {
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "Can this calculator handle metric and imperial units?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Use the unit system toggle to switch between imperial units like feet, inches, and cubic yards, or metric units like meters, centimeters, and cubic meters.",
+                    },
                   },
-                },
-                {
-                  "@type": "Question",
-                  name: "Does this include labor or delivery fees?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "No. The estimated cost only calculates material cost based on the recommended order amount and the price per cubic yard or cubic meter.",
+                  {
+                    "@type": "Question",
+                    name: "How many cubic feet are in one cubic yard of concrete?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "One cubic yard contains 27 cubic feet. That is why imperial concrete estimates divide cubic feet by 27 to estimate cubic yards.",
+                    },
                   },
-                },
-              ],
-            },
-          ],
-        }),
-      }}
-    />
+                  {
+                    "@type": "Question",
+                    name: "How much waste should I add for concrete?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "A common waste allowance is 5% to 10%. Complex pours, uneven excavation, difficult access, or multiple forms may need more.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can this calculator be used for sonotubes?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Use the Round Pier / Sonotube mode. Enter the tube diameter, depth, and quantity to estimate the required concrete.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Does this include labor or delivery fees?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "No. The estimated cost only calculates material cost based on the recommended order amount and the price per cubic yard or cubic meter.",
+                    },
+                  },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
+
       <section className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
@@ -1382,6 +957,50 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             </div>
           </div>
         </div>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
+              Concrete guides
+            </p>
+
+            <h2 className="mt-3 text-2xl font-semibold text-white">
+              More concrete calculators and guides
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
+              Use these focused concrete guides for specific project types, or
+              continue using the full concrete calculator above for slabs,
+              footings, piers, walls, stairs, curbs, and columns.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <GuideLink
+              href="/construction/concrete-slab-calculator"
+              title="Concrete Slab Calculator"
+              text="Estimate concrete for patios, driveways, sidewalks, garage floors, and shed pads."
+            />
+
+            <GuideLink
+              href="/construction/concrete-footing-calculator"
+              title="Concrete Footing Calculator"
+              text="Estimate concrete for strip footings, trenches, wall footings, and grade beams."
+            />
+
+            <GuideLink
+              href="/construction/sonotube-concrete-calculator"
+              title="Sonotube Concrete Calculator"
+              text="Estimate concrete for sonotubes, deck posts, fence posts, round piers, and post holes."
+            />
+
+            <GuideLink
+              href="/construction/concrete-wall-calculator"
+              title="Concrete Wall Calculator"
+              text="Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections."
+            />
+          </div>
+        </section>
       </section>
     </main>
   );
@@ -1481,6 +1100,29 @@ function ResultRow({
         {value}
       </span>
     </div>
+  );
+}
+
+function GuideLink({
+  href,
+  title,
+  text,
+}: {
+  href: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5 transition hover:border-[#F97316]"
+    >
+      <div className="mb-4 h-2 w-10 rounded-full bg-[#F97316]" />
+
+      <h3 className="font-semibold text-white">{title}</h3>
+
+      <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">{text}</p>
+    </Link>
   );
 }
 
