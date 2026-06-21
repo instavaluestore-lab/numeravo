@@ -86,8 +86,14 @@ const calculators = [
   status: "Guide",
 },
 {
- 
-  title: "Square Footage Calculator",
+  title: "Crushed Stone Calculator",
+  description:
+    "Estimate crushed stone cubic yards, tons, waste, and cost using the upgraded gravel calculator material preset.",
+  href: "/construction/crushed-stone-calculator",
+  status: "Guide",
+},
+{
+   title: "Square Footage Calculator",
   description:
     "Calculate area for flooring, paint, drywall, landscaping, and project planning.",
   href: "/construction/square-footage-calculator",
@@ -202,6 +208,10 @@ export default function ConstructionPage() {
             <QuickLink
   href="/construction/crushed-stone-vs-gravel"
   label="Crushed Stone vs Gravel"
+/>
+<QuickLink
+  href="/construction/crushed-stone-calculator"
+  label="Crushed Stone Calculator"
 />
 <QuickLink
   href="/construction/gravel-cost-per-ton"
