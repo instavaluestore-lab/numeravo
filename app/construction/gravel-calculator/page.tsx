@@ -682,6 +682,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             />
 
             <RelatedLink
+  href="/construction/crushed-stone-calculator"
+  title="Crushed Stone Calculator"
+  text="Estimate crushed stone cubic yards, tons, waste, and cost using the Crushed Stone material preset."
+/>
+
+            <RelatedLink
               href="/construction/concrete-calculator"
               title="Concrete Calculator"
               text="Estimate concrete volume, waste, and material cost."
