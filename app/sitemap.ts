@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("gravel-cost-calculator") ||
               route.includes("how-much-gravel-do-i-need") ||
               route.includes("gravel-cost-per-ton") ||
-              route.includes("crushed-stone-vs-gravel")
+              route.includes("crushed-stone-vs-gravel") ||
               route.includes("crushed-stone-calculator")
             ? 0.85
             : route === "/about" ||
