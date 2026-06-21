@@ -5,6 +5,65 @@ import { useMemo, useState } from "react";
 
 type UnitSystem = "imperial" | "metric";
 
+const materialPresets = [
+  {
+    title: "Gravel",
+    tonsPerCubicYard: "1.4",
+    tonnesPerCubicMeter: "1.7",
+    pricePerTon: "45",
+    description: "General gravel estimate for driveways, paths, patios, and base layers.",
+  },
+  {
+    title: "Crushed Stone",
+    tonsPerCubicYard: "1.4",
+    tonnesPerCubicMeter: "1.7",
+    pricePerTon: "50",
+    description: "Common for driveways, drainage, concrete bases, and compacted layers.",
+  },
+  {
+    title: "Road Base",
+    tonsPerCubicYard: "1.5",
+    tonnesPerCubicMeter: "1.8",
+    pricePerTon: "42",
+    description: "Useful for compacted driveway base, parking pads, and road prep.",
+  },
+  {
+    title: "Pea Gravel",
+    tonsPerCubicYard: "1.3",
+    tonnesPerCubicMeter: "1.55",
+    pricePerTon: "55",
+    description: "Common for landscaping, paths, garden beds, and decorative areas.",
+  },
+  {
+    title: "River Rock",
+    tonsPerCubicYard: "1.35",
+    tonnesPerCubicMeter: "1.6",
+    pricePerTon: "75",
+    description: "Useful for decorative landscaping, drainage beds, and borders.",
+  },
+  {
+    title: "Paver Base",
+    tonsPerCubicYard: "1.5",
+    tonnesPerCubicMeter: "1.8",
+    pricePerTon: "48",
+    description: "Common for patios, walkways, and compacted paver base layers.",
+  },
+  {
+    title: "Drainage Rock",
+    tonsPerCubicYard: "1.35",
+    tonnesPerCubicMeter: "1.6",
+    pricePerTon: "52",
+    description: "Useful for French drains, drainage trenches, and water management.",
+  },
+  {
+    title: "Decomposed Granite",
+    tonsPerCubicYard: "1.45",
+    tonnesPerCubicMeter: "1.75",
+    pricePerTon: "65",
+    description: "Common for paths, patios, landscape areas, and compacted surfaces.",
+  },
+];
+
 const projectPresets = [
   {
     title: "Driveway Gravel",
@@ -46,6 +105,8 @@ const projectPresets = [
 
 export default function GravelCalculatorPage() {
   const [unitSystem, setUnitSystem] = useState<UnitSystem>("imperial");
+
+  const [selectedMaterial, setSelectedMaterial] = useState("Gravel");
 
   const [length, setLength] = useState("20");
   const [width, setWidth] = useState("10");
@@ -91,8 +152,7 @@ export default function GravelCalculatorPage() {
       const cubicFeet = lengthNumber * widthNumber * depthFeet;
       const cubicYards = cubicFeet / 27;
       const cubicYardsWithWaste = cubicYards * (1 + waste / 100);
-      const estimatedTons =
-        cubicYardsWithWaste * toNumber(tonsPerCubicYard);
+      const estimatedTons = cubicYardsWithWaste * toNumber(tonsPerCubicYard);
       const estimatedCost = estimatedTons * price;
 
       return {
@@ -135,6 +195,7 @@ export default function GravelCalculatorPage() {
     const resultText =
       unitSystem === "imperial"
         ? `Numeravo Gravel Estimate
+Material: ${selectedMaterial}
 Unit System: Imperial
 Area: ${length} ft × ${width} ft
 Depth: ${depth} in
@@ -144,6 +205,7 @@ Cubic Yards With Waste: ${formatNumber(results.volumeWithWaste)} yd³
 Estimated Tons: ${formatNumber(results.estimatedWeight)} tons
 Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`
         : `Numeravo Gravel Estimate
+Material: ${selectedMaterial}
 Unit System: Metric
 Area: ${length} m × ${width} m
 Depth: ${depth} cm
@@ -161,8 +223,15 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
     }
   }
 
-  function applyPreset(depthImperial: string, depthMetric: string) {
+  function applyProjectPreset(depthImperial: string, depthMetric: string) {
     setDepth(unitSystem === "imperial" ? depthImperial : depthMetric);
+  }
+
+  function applyMaterialPreset(material: (typeof materialPresets)[number]) {
+    setSelectedMaterial(material.title);
+    setTonsPerCubicYard(material.tonsPerCubicYard);
+    setTonnesPerCubicMeter(material.tonnesPerCubicMeter);
+    setPricePerTon(material.pricePerTon);
   }
 
   return (
@@ -180,7 +249,7 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 operatingSystem: "Web",
                 url: "https://numeravo.com/construction/gravel-calculator",
                 description:
-                  "Estimate gravel volume, cubic yards, cubic meters, tons, tonnes, waste, and material cost for driveways, patios, walkways, concrete base layers, drainage, and landscaping.",
+                  "Estimate gravel, crushed stone, road base, pea gravel, river rock, paver base, drainage rock, and decomposed granite volume, weight, waste, and material cost.",
                 offers: {
                   "@type": "Offer",
                   price: "0",
@@ -215,6 +284,14 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 mainEntity: [
                   {
                     "@type": "Question",
+                    name: "Can this calculator estimate crushed stone and road base?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. The calculator includes material presets for gravel, crushed stone, road base, pea gravel, river rock, paver base, drainage rock, and decomposed granite.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
                     name: "How do I calculate how much gravel I need?",
                     acceptedAnswer: {
                       "@type": "Answer",
@@ -227,14 +304,6 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: "A common planning estimate is about 1.4 tons per cubic yard of gravel, but actual weight varies by material type, moisture, and compaction.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "How much gravel do I need under a concrete slab?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Many concrete slab bases use 4 to 6 inches of compacted gravel, but requirements depend on soil, drainage, load, slab design, and local conditions.",
                     },
                   },
                   {
@@ -263,9 +332,9 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-[#A0AEC0]">
-            Estimate gravel volume, cubic yards, cubic meters, tons, tonnes, and
-            material cost for driveways, patios, walkways, concrete base layers,
-            drainage, and landscaping projects.
+            Estimate gravel, crushed stone, road base, pea gravel, river rock,
+            paver base, drainage rock, and decomposed granite volume, weight,
+            waste, and material cost.
           </p>
         </div>
 
@@ -297,11 +366,49 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
         </div>
 
         <section className="mt-6 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold">Material Presets</h2>
+
+          <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+            Select a material to update the default density and price. You can
+            still edit the numbers manually.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {materialPresets.map((material) => (
+              <button
+                key={material.title}
+                type="button"
+                onClick={() => applyMaterialPreset(material)}
+                className={
+                  selectedMaterial === material.title
+                    ? "rounded-xl border border-[#F97316] bg-[#1C2433] p-4 text-left"
+                    : "rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4 text-left transition hover:border-[#F97316]"
+                }
+              >
+                <div className="mb-4 h-2 w-10 rounded-full bg-[#F97316]" />
+
+                <h3 className="font-semibold text-white">{material.title}</h3>
+
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  {material.description}
+                </p>
+
+                <p className="mt-3 text-xs font-semibold text-[#F97316]">
+                  {unitSystem === "imperial"
+                    ? `${material.tonsPerCubicYard} tons / yd³`
+                    : `${material.tonnesPerCubicMeter} tonnes / m³`}
+                </p>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold">Project Presets</h2>
 
           <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-            Choose a preset to quickly set a common gravel depth. You can still
-            edit the depth afterward.
+            Choose a preset to quickly set a common depth. You can still edit
+            the depth afterward.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -310,7 +417,7 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 key={preset.title}
                 type="button"
                 onClick={() =>
-                  applyPreset(preset.depthImperial, preset.depthMetric)
+                  applyProjectPreset(preset.depthImperial, preset.depthMetric)
                 }
                 className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4 text-left transition hover:border-[#F97316]"
               >
@@ -338,8 +445,8 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             <h2 className="text-2xl font-semibold">Project Inputs</h2>
 
             <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-              Enter the project area, gravel depth, waste allowance, material
-              density, and price.
+              Enter the project area, depth, waste allowance, material density,
+              and price.
             </p>
 
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -412,7 +519,7 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
             <div className="mt-6 rounded-2xl border border-[#F97316] bg-[#0B0F19] p-5">
               <p className="text-sm text-[#A0AEC0]">
-                Estimated order weight
+                Estimated {selectedMaterial.toLowerCase()} order weight
               </p>
 
               <p className="mt-2 text-4xl font-bold text-[#F97316]">
@@ -474,7 +581,7 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
             <div className="mt-6 rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
               <p className="text-sm leading-6 text-[#A0AEC0]">
-                Gravel weight varies by material type, moisture, compaction, and
+                Material weight varies by stone type, moisture, compaction, and
                 supplier. Use this as a planning estimate and confirm final
                 quantities with your supplier.
               </p>
@@ -485,14 +592,14 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
         <section className="mt-8 grid gap-6 lg:grid-cols-[1fr_0.9fr]">
           <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
             <h2 className="text-2xl font-semibold">
-              How to calculate gravel
+              How to calculate gravel and stone
             </h2>
 
             <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
-              To estimate gravel, multiply length by width by depth. For
-              imperial projects, convert depth from inches to feet, calculate
-              cubic feet, then divide by 27 to get cubic yards. Multiply cubic
-              yards by tons per cubic yard to estimate weight.
+              To estimate gravel or stone, multiply length by width by depth.
+              For imperial projects, convert depth from inches to feet,
+              calculate cubic feet, then divide by 27 to get cubic yards.
+              Multiply cubic yards by tons per cubic yard to estimate weight.
             </p>
 
             <div className="mt-5 rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
@@ -515,7 +622,7 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
           </div>
 
           <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
-            <h2 className="text-2xl font-semibold">Gravel depth guide</h2>
+            <h2 className="text-2xl font-semibold">Depth guide</h2>
 
             <div className="mt-5 space-y-3">
               <DepthGuideRow label="Walkway" value="2–3 inches" />
@@ -529,80 +636,74 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
         </section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
-  <h2 className="text-2xl font-semibold">Related construction tools</h2>
+          <h2 className="text-2xl font-semibold">Related construction tools</h2>
 
-  <p className="mt-4 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
-    Gravel is often used below concrete slabs, patios, walkways, and
-    pads. Use these related calculators and guides to plan the full
-    project.
-  </p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
+            Gravel and stone are often used below concrete slabs, patios,
+            walkways, driveways, and drainage projects. Use these related
+            calculators and guides to plan the full project.
+          </p>
 
-<div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-    <RelatedLink
-      href="/construction/gravel-driveway-calculator"
-      title="Gravel Driveway Calculator"
-      text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."
-    />
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <RelatedLink
+              href="/construction/gravel-driveway-calculator"
+              title="Gravel Driveway Calculator"
+              text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."
+            />
 
-    <RelatedLink
-  href="/construction/gravel-driveway-cost"
-  title="Gravel Driveway Cost"
-  text="Estimate driveway gravel cost using size, depth, tons, price per ton, delivery, and project factors."
-/>
+            <RelatedLink
+              href="/construction/gravel-driveway-cost"
+              title="Gravel Driveway Cost"
+              text="Estimate driveway gravel cost using size, depth, tons, price per ton, delivery, and project factors."
+            />
 
-<RelatedLink
-  href="/construction/gravel-cost-calculator"
-  title="Gravel Cost Calculator"
-  text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
-/>
+            <RelatedLink
+              href="/construction/gravel-cost-calculator"
+              title="Gravel Cost Calculator"
+              text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
+            />
 
-    <RelatedLink
-  href="/construction/how-much-gravel-do-i-need"
-  title="How Much Gravel Do I Need?"
-  text="Learn how to estimate gravel volume, cubic yards, tons, depth, waste, and cost."
-/>
+            <RelatedLink
+              href="/construction/how-much-gravel-do-i-need"
+              title="How Much Gravel Do I Need?"
+              text="Learn how to estimate gravel volume, cubic yards, tons, depth, waste, and cost."
+            />
 
-<RelatedLink
-  href="/construction/gravel-driveway-cost"
-  title="Gravel Driveway Cost"
-  text="Estimate total gravel driveway cost using driveway size, depth, tons, price per ton, delivery, and project factors."
-/>
+            <RelatedLink
+              href="/construction/gravel-cost-per-ton"
+              title="Gravel Cost Per Ton"
+              text="Learn how gravel price per ton works and estimate total material cost."
+            />
 
-<RelatedLink
-  href="/construction/gravel-cost-per-ton"
-  title="Gravel Cost Per Ton"
-  text="Learn how gravel price per ton works and estimate total material cost."
-/>
+            <RelatedLink
+              href="/construction/crushed-stone-vs-gravel"
+              title="Crushed Stone vs Gravel"
+              text="Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers."
+            />
 
-    <RelatedLink
-      href="/construction/concrete-calculator"
-      title="Concrete Calculator"
-      text="Estimate concrete volume, waste, and material cost."
-    />
+            <RelatedLink
+              href="/construction/concrete-calculator"
+              title="Concrete Calculator"
+              text="Estimate concrete volume, waste, and material cost."
+            />
 
-    <RelatedLink
-      href="/construction/concrete-slab-calculator"
-      title="Concrete Slab Calculator"
-      text="Estimate concrete for patios, driveways, and pads."
-    />
+            <RelatedLink
+              href="/construction/concrete-slab-calculator"
+              title="Concrete Slab Calculator"
+              text="Estimate concrete for patios, driveways, and pads."
+            />
 
-    <RelatedLink
-      href="/construction"
-      title="Construction Calculators"
-      text="View all Numeravo construction tools and guides."
-    />
-
-    <RelatedLink
-  href="/construction/crushed-stone-vs-gravel"
-  title="Crushed Stone vs Gravel"
-  text="Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers."
-/>
-  </div>
-</section>
+            <RelatedLink
+              href="/construction"
+              title="Construction Calculators"
+              text="View all Numeravo construction tools and guides."
+            />
+          </div>
+        </section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold">
-            Recommended tools for gravel projects
+            Recommended tools for gravel and stone projects
           </h2>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -625,7 +726,7 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 <h3 className="font-semibold text-white">{tool}</h3>
                 <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">
                   Useful for measuring, spreading, compacting, and finishing
-                  gravel projects.
+                  gravel or stone projects.
                 </p>
               </div>
             ))}
@@ -637,13 +738,18 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
           <div className="mt-6 space-y-5">
             <FAQItem
+              question="Can this calculator estimate crushed stone and road base?"
+              answer="Yes. Use the material presets to estimate gravel, crushed stone, road base, pea gravel, river rock, paver base, drainage rock, and decomposed granite."
+            />
+
+            <FAQItem
               question="How do I calculate how much gravel I need?"
               answer="Multiply length by width by depth to calculate gravel volume. For imperial estimates, convert depth from inches to feet, calculate cubic feet, then divide by 27 to get cubic yards."
             />
 
             <FAQItem
               question="How many tons are in a cubic yard of gravel?"
-              answer="A common estimate is about 1.4 tons per cubic yard of gravel, but actual weight varies by gravel type, moisture, and compaction."
+              answer="A common estimate is about 1.4 tons per cubic yard of gravel, but actual weight varies by material type, moisture, and compaction."
             />
 
             <FAQItem
