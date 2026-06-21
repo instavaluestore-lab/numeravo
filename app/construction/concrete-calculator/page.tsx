@@ -976,30 +976,36 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <GuideLink
-              href="/construction/concrete-slab-calculator"
-              title="Concrete Slab Calculator"
-              text="Estimate concrete for patios, driveways, sidewalks, garage floors, and shed pads."
-            />
+  <GuideLink
+    href="/construction/concrete-slab-calculator"
+    title="Concrete Slab Calculator"
+    text="Estimate concrete for patios, driveways, sidewalks, garage floors, and shed pads."
+  />
 
-            <GuideLink
-              href="/construction/concrete-footing-calculator"
-              title="Concrete Footing Calculator"
-              text="Estimate concrete for strip footings, trenches, wall footings, and grade beams."
-            />
+  <GuideLink
+    href="/construction/concrete-footing-calculator"
+    title="Concrete Footing Calculator"
+    text="Estimate concrete for strip footings, trenches, wall footings, and grade beams."
+  />
 
-            <GuideLink
-              href="/construction/sonotube-concrete-calculator"
-              title="Sonotube Concrete Calculator"
-              text="Estimate concrete for sonotubes, deck posts, fence posts, round piers, and post holes."
-            />
+  <GuideLink
+    href="/construction/sonotube-concrete-calculator"
+    title="Sonotube Concrete Calculator"
+    text="Estimate concrete for sonotubes, deck posts, fence posts, round piers, and post holes."
+  />
 
-            <GuideLink
-              href="/construction/concrete-wall-calculator"
-              title="Concrete Wall Calculator"
-              text="Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections."
-            />
-          </div>
+  <GuideLink
+    href="/construction/concrete-wall-calculator"
+    title="Concrete Wall Calculator"
+    text="Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections."
+  />
+
+  <GuideLink
+    href="/construction/gravel-calculator"
+    title="Gravel Calculator"
+    text="Estimate gravel base material for concrete slabs, patios, driveways, walkways, and pads."
+  />
+</div>
         </section>
       </section>
     </main>
