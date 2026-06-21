@@ -711,6 +711,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             />
 
             <RelatedLink
+  href="/construction/how-to-prepare-ground-for-concrete-slab"
+  title="How to Prepare Ground for Concrete Slab"
+  text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."
+/>
+
+            <RelatedLink
               href="/construction"
               title="Construction Calculators"
               text="View all Numeravo construction tools and guides."
