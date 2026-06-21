@@ -51,6 +51,13 @@ const calculators = [
   status: "Guide",
 },
 {
+  title: "Gravel Driveway Cost",
+  description:
+    "Estimate gravel driveway cost using driveway size, gravel depth, tons, price per ton, delivery, and project factors.",
+  href: "/construction/gravel-driveway-cost",
+  status: "Guide",
+},
+{
   title: "How Much Gravel Do I Need?",
   description:
     "Learn how to estimate gravel volume, cubic yards, tons, depth, waste, and material cost.",
@@ -216,6 +223,10 @@ export default function ConstructionPage() {
               href="/construction/gravel-driveway-calculator"
               label="Gravel Driveway Calculator"
             />
+            <QuickLink
+  href="/construction/gravel-driveway-cost"
+  label="Gravel Driveway Cost"
+/>
             <QuickLink
   href="/construction/how-much-gravel-do-i-need"
   label="How Much Gravel Do I Need?"
