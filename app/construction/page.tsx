@@ -44,6 +44,13 @@ const calculators = [
     status: "Live",
   },
   {
+    {
+  title: "Gravel Driveway Calculator",
+  description:
+    "Estimate gravel tons, cubic yards, depth, waste, and material cost for driveway projects.",
+  href: "/construction/gravel-driveway-calculator",
+  status: "Guide",
+},
     title: "Square Footage Calculator",
     description:
       "Calculate area for flooring, paint, drywall, landscaping, and project planning.",
