@@ -301,6 +301,12 @@ export default function CrushedStoneVsGravelPage() {
             />
 
             <RelatedLink
+  href="/construction/gravel-driveway-cost"
+  title="Gravel Driveway Cost"
+  text="Estimate total gravel driveway cost using driveway size, depth, tons, price per ton, delivery, and project factors."
+/>
+
+            <RelatedLink
               href="/construction/concrete-calculator"
               title="Concrete Calculator"
               text="Estimate concrete volume, waste, and cost for slabs, footings, piers, and pads."
