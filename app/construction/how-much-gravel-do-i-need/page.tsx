@@ -258,6 +258,11 @@ export default function HowMuchGravelDoINeedPage() {
   title="Gravel Cost Calculator"
   text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
 />
+<RelatedLink
+  href="/construction/road-base-calculator"
+  title="Road Base Calculator"
+  text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
+/>
 
             <RelatedLink
               href="/construction/gravel-driveway-calculator"
