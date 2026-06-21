@@ -267,6 +267,12 @@ export default function GravelCostPerTonPage() {
             />
 
             <RelatedLink
+  href="/construction/gravel-driveway-cost"
+  title="Gravel Driveway Cost"
+  text="Estimate total driveway cost using gravel depth, tons, price per ton, delivery, and project factors."
+/>
+
+            <RelatedLink
               href="/construction/concrete-calculator"
               title="Concrete Calculator"
               text="Estimate concrete volume, waste, and cost for slabs, footings, piers, and pads."
@@ -277,6 +283,7 @@ export default function GravelCostPerTonPage() {
               title="Construction Calculators"
               text="View all Numeravo construction calculators and project guides."
             />
+
           </div>
         </section>
 
