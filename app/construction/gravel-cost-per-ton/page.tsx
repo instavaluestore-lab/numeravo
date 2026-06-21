@@ -267,6 +267,12 @@ export default function GravelCostPerTonPage() {
             />
 
             <RelatedLink
+  href="/construction/gravel-cost-calculator"
+  title="Gravel Cost Calculator"
+  text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
+/>
+
+            <RelatedLink
   href="/construction/gravel-driveway-cost"
   title="Gravel Driveway Cost"
   text="Estimate total driveway cost using gravel depth, tons, price per ton, delivery, and project factors."
