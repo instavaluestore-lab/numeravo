@@ -537,12 +537,18 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
     project.
   </p>
 
-  <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+<div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
     <RelatedLink
       href="/construction/gravel-driveway-calculator"
       title="Gravel Driveway Calculator"
       text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."
     />
+
+    <RelatedLink
+  href="/construction/how-much-gravel-do-i-need"
+  title="How Much Gravel Do I Need?"
+  text="Learn how to estimate gravel volume, cubic yards, tons, depth, waste, and cost."
+/>
 
     <RelatedLink
       href="/construction/concrete-calculator"
