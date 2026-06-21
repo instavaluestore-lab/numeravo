@@ -93,6 +93,13 @@ const calculators = [
   status: "Guide",
 },
 {
+  title: "Road Base Calculator",
+  description:
+    "Estimate road base cubic yards, tons, waste, and cost using the upgraded gravel calculator material preset.",
+  href: "/construction/road-base-calculator",
+  status: "Guide",
+},
+{
    title: "Square Footage Calculator",
   description:
     "Calculate area for flooring, paint, drywall, landscaping, and project planning.",
@@ -212,6 +219,10 @@ export default function ConstructionPage() {
 <QuickLink
   href="/construction/crushed-stone-calculator"
   label="Crushed Stone Calculator"
+/>
+<QuickLink
+  href="/construction/road-base-calculator"
+  label="Road Base Calculator"
 />
 <QuickLink
   href="/construction/gravel-cost-per-ton"
