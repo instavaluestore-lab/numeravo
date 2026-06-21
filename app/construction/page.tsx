@@ -65,6 +65,14 @@ const calculators = [
   status: "Guide",
 },
 {
+  title: "Crushed Stone vs Gravel",
+  description:
+    "Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers.",
+  href: "/construction/crushed-stone-vs-gravel",
+  status: "Guide",
+},
+{
+ 
   title: "Square Footage Calculator",
   description:
     "Calculate area for flooring, paint, drywall, landscaping, and project planning.",
@@ -177,6 +185,14 @@ export default function ConstructionPage() {
               href="/construction/concrete-wall-calculator"
               label="Concrete Wall Calculator"
             />
+            <QuickLink
+  href="/construction/crushed-stone-vs-gravel"
+  label="Crushed Stone vs Gravel"
+/>
+<QuickLink
+  href="/construction/gravel-cost-per-ton"
+  label="Gravel Cost Per Ton"
+/>
           </div>
         </section>
 
