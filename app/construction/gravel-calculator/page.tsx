@@ -530,7 +530,11 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold">Related construction tools</h2>
-
+<RelatedLink
+  href="/construction/gravel-driveway-calculator"
+  title="Gravel Driveway Calculator"
+  text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."
+/>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
             Gravel is often used below concrete slabs, patios, walkways, and
             pads. Use these related calculators and guides to plan the full
