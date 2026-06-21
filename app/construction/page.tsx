@@ -44,13 +44,13 @@ const calculators = [
     status: "Live",
   },
   {
-    {
-  title: "Gravel Driveway Calculator",
-  description:
-    "Estimate gravel tons, cubic yards, depth, waste, and material cost for driveway projects.",
-  href: "/construction/gravel-driveway-calculator",
-  status: "Guide",
-},
+    title: "Gravel Driveway Calculator",
+    description:
+      "Estimate gravel tons, cubic yards, depth, waste, and material cost for driveway projects.",
+    href: "/construction/gravel-driveway-calculator",
+    status: "Guide",
+  },
+  {
     title: "Square Footage Calculator",
     description:
       "Calculate area for flooring, paint, drywall, landscaping, and project planning.",
@@ -162,6 +162,29 @@ export default function ConstructionPage() {
             <QuickLink
               href="/construction/concrete-wall-calculator"
               label="Concrete Wall Calculator"
+            />
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold text-white">
+            Gravel calculators and guides
+          </h2>
+
+          <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
+            Use the gravel calculator to estimate volume, tons, waste, and
+            material cost. Use the driveway guide when planning gravel depth,
+            driveway size, and common residential driveway material needs.
+          </p>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <QuickLink
+              href="/construction/gravel-calculator"
+              label="Full Gravel Calculator"
+            />
+            <QuickLink
+              href="/construction/gravel-driveway-calculator"
+              label="Gravel Driveway Calculator"
             />
           </div>
         </section>
