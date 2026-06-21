@@ -267,6 +267,12 @@ export default function GravelCostPerTonPage() {
             />
 
             <RelatedLink
+  href="/construction/crushed-stone-calculator"
+  title="Crushed Stone Calculator"
+  text="Estimate crushed stone cubic yards, tons, waste, and cost using the Crushed Stone material preset."
+/>
+
+            <RelatedLink
   href="/construction/gravel-cost-calculator"
   title="Gravel Cost Calculator"
   text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
