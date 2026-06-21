@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   },
   description:
     "Numeravo provides smart calculators, tools, and guides for everyday decisions across construction, finance, student work, business, conversions, and utility tools.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -22,11 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-  <Header />
-  {children}
-  <Footer />
-  <Analytics />
-</body>
+        <Header />
+        {children}
+        <Footer />
+        <Analytics />
+      </body>
     </html>
   );
 }
