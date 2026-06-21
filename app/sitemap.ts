@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/gravel-driveway-calculator",
     "/construction/how-much-gravel-do-i-need",
     "/construction/gravel-cost-per-ton",
+    "/construction/crushed-stone-vs-gravel",
     "/finance",
     "/student",
     "/business",
@@ -42,7 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 route.includes("gravel-calculator") ||
 route.includes("gravel-driveway-calculator") ||
 route.includes("how-much-gravel-do-i-need") ||
-route.includes("gravel-cost-per-ton")
+route.includes("gravel-cost-per-ton") ||
+route.includes("crushed-stone-vs-gravel")
             ? 0.85
             : route === "/about" ||
                 route === "/contact" ||
