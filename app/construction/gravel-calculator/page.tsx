@@ -687,6 +687,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   text="Estimate crushed stone cubic yards, tons, waste, and cost using the Crushed Stone material preset."
 />
 
+<RelatedLink
+  href="/construction/road-base-calculator"
+  title="Road Base Calculator"
+  text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
+/>
+
             <RelatedLink
               href="/construction/concrete-calculator"
               title="Concrete Calculator"
