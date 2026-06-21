@@ -264,6 +264,12 @@ export default function HowMuchGravelDoINeedPage() {
               title="Concrete Calculator"
               text="Estimate concrete volume, waste, and cost for slabs, footings, piers, walls, and pads."
             />
+
+            <RelatedLink
+  href="/construction/gravel-driveway-cost"
+  title="Gravel Driveway Cost"
+  text="Estimate gravel driveway cost using driveway size, depth, tons, delivery, and price per ton."
+/>
           </div>
         </section>
 
