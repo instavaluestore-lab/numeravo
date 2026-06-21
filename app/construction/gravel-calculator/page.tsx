@@ -550,6 +550,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   text="Learn how to estimate gravel volume, cubic yards, tons, depth, waste, and cost."
 />
 
+<RelatedLink
+  href="/construction/gravel-cost-per-ton"
+  title="Gravel Cost Per Ton"
+  text="Learn how gravel price per ton works and estimate total material cost."
+/>
+
     <RelatedLink
       href="/construction/concrete-calculator"
       title="Concrete Calculator"
