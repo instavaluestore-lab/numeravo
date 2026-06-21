@@ -44,19 +44,26 @@ const calculators = [
     status: "Live",
   },
   {
-    title: "Gravel Driveway Calculator",
-    description:
-      "Estimate gravel tons, cubic yards, depth, waste, and material cost for driveway projects.",
-    href: "/construction/gravel-driveway-calculator",
-    status: "Guide",
-  },
-  {
-    title: "Square Footage Calculator",
-    description:
-      "Calculate area for flooring, paint, drywall, landscaping, and project planning.",
-    href: "/construction/square-footage-calculator",
-    status: "Planned",
-  },
+  title: "Gravel Driveway Calculator",
+  description:
+    "Estimate gravel tons, cubic yards, depth, waste, and material cost for driveway projects.",
+  href: "/construction/gravel-driveway-calculator",
+  status: "Guide",
+},
+{
+  title: "How Much Gravel Do I Need?",
+  description:
+    "Learn how to estimate gravel volume, cubic yards, tons, depth, waste, and material cost.",
+  href: "/construction/how-much-gravel-do-i-need",
+  status: "Guide",
+},
+{
+  title: "Square Footage Calculator",
+  description:
+    "Calculate area for flooring, paint, drywall, landscaping, and project planning.",
+  href: "/construction/square-footage-calculator",
+  status: "Planned",
+},
 ];
 
 export const metadata = {
@@ -186,6 +193,10 @@ export default function ConstructionPage() {
               href="/construction/gravel-driveway-calculator"
               label="Gravel Driveway Calculator"
             />
+            <QuickLink
+  href="/construction/how-much-gravel-do-i-need"
+  label="How Much Gravel Do I Need?"
+/>
           </div>
         </section>
       </section>
