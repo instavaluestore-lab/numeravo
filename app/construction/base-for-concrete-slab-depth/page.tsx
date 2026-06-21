@@ -265,6 +265,12 @@ export default function BaseForConcreteSlabDepthPage() {
             />
 
             <RelatedLink
+  href="/construction/how-to-prepare-ground-for-concrete-slab"
+  title="How to Prepare Ground for Concrete Slab"
+  text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."
+/>
+
+            <RelatedLink
               href="/construction/crushed-stone-calculator"
               title="Crushed Stone Calculator"
               text="Estimate crushed stone cubic yards, tons, waste, and cost using the Crushed Stone preset."
