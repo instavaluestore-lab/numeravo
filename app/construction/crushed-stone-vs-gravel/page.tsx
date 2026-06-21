@@ -313,6 +313,12 @@ export default function CrushedStoneVsGravelPage() {
             />
 
             <RelatedLink
+  href="/construction/gravel-cost-calculator"
+  title="Gravel Cost Calculator"
+  text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
+/>
+
+            <RelatedLink
               href="/construction"
               title="Construction Calculators"
               text="View all Numeravo construction calculators and project guides."
