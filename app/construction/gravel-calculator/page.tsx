@@ -573,6 +573,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
       title="Construction Calculators"
       text="View all Numeravo construction tools and guides."
     />
+
+    <RelatedLink
+  href="/construction/crushed-stone-vs-gravel"
+  title="Crushed Stone vs Gravel"
+  text="Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers."
+/>
   </div>
 </section>
 
