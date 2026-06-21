@@ -529,38 +529,40 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
         </section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
-          <h2 className="text-2xl font-semibold">Related construction tools</h2>
-<RelatedLink
-  href="/construction/gravel-driveway-calculator"
-  title="Gravel Driveway Calculator"
-  text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."
-/>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
-            Gravel is often used below concrete slabs, patios, walkways, and
-            pads. Use these related calculators and guides to plan the full
-            project.
-          </p>
+  <h2 className="text-2xl font-semibold">Related construction tools</h2>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            <RelatedLink
-              href="/construction/concrete-calculator"
-              title="Concrete Calculator"
-              text="Estimate concrete volume, waste, and material cost."
-            />
+  <p className="mt-4 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
+    Gravel is often used below concrete slabs, patios, walkways, and
+    pads. Use these related calculators and guides to plan the full
+    project.
+  </p>
 
-            <RelatedLink
-              href="/construction/concrete-slab-calculator"
-              title="Concrete Slab Calculator"
-              text="Estimate concrete for patios, driveways, and pads."
-            />
+  <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <RelatedLink
+      href="/construction/gravel-driveway-calculator"
+      title="Gravel Driveway Calculator"
+      text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."
+    />
 
-            <RelatedLink
-              href="/construction"
-              title="Construction Calculators"
-              text="View all Numeravo construction tools and guides."
-            />
-          </div>
-        </section>
+    <RelatedLink
+      href="/construction/concrete-calculator"
+      title="Concrete Calculator"
+      text="Estimate concrete volume, waste, and material cost."
+    />
+
+    <RelatedLink
+      href="/construction/concrete-slab-calculator"
+      title="Concrete Slab Calculator"
+      text="Estimate concrete for patios, driveways, and pads."
+    />
+
+    <RelatedLink
+      href="/construction"
+      title="Construction Calculators"
+      text="View all Numeravo construction tools and guides."
+    />
+  </div>
+</section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold">
