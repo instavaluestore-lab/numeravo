@@ -305,6 +305,11 @@ export default function CrushedStoneVsGravelPage() {
   title="Gravel Driveway Cost"
   text="Estimate total gravel driveway cost using driveway size, depth, tons, price per ton, delivery, and project factors."
 />
+<RelatedLink
+  href="/construction/base-for-concrete-slab-depth"
+  title="Base for Concrete Slab Depth"
+  text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."
+/>
 
             <RelatedLink
               href="/construction/concrete-calculator"
@@ -316,6 +321,12 @@ export default function CrushedStoneVsGravelPage() {
   href="/construction/gravel-cost-calculator"
   title="Gravel Cost Calculator"
   text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
+/>
+
+<RelatedLink
+  href="/construction/road-base-calculator"
+  title="Road Base Calculator"
+  text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
 />
 
 <RelatedLink
