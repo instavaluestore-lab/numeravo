@@ -308,6 +308,12 @@ export default function GravelCostCalculatorPage() {
             />
 
             <RelatedLink
+  href="/construction/crushed-stone-calculator"
+  title="Crushed Stone Calculator"
+  text="Estimate crushed stone cubic yards, tons, waste, and cost using the Crushed Stone material preset."
+/>
+
+            <RelatedLink
               href="/construction/crushed-stone-vs-gravel"
               title="Crushed Stone vs Gravel"
               text="Compare crushed stone and gravel for driveways, drainage, landscaping, and base layers."
