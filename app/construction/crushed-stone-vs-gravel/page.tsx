@@ -318,6 +318,12 @@ export default function CrushedStoneVsGravelPage() {
   text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
 />
 
+<RelatedLink
+  href="/construction/crushed-stone-calculator"
+  title="Crushed Stone Calculator"
+  text="Estimate crushed stone cubic yards, tons, waste, and cost using the Crushed Stone material preset."
+/>
+
             <RelatedLink
               href="/construction"
               title="Construction Calculators"
