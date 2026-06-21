@@ -37,13 +37,13 @@ const calculators = [
     status: "Guide",
   },
   {
-    title: "Gravel Calculator",
-    description:
-      "Estimate gravel volume and material needs for driveways, patios, and base layers.",
-    href: "/construction/gravel-calculator",
-    status: "Live",
-  },
-  {
+  title: "Gravel Calculator",
+  description:
+    "Estimate gravel volume and material needs for driveways, patios, and base layers.",
+  href: "/construction/gravel-calculator",
+  status: "Live",
+},
+{
   title: "Gravel Driveway Calculator",
   description:
     "Estimate gravel tons, cubic yards, depth, waste, and material cost for driveway projects.",
@@ -55,6 +55,13 @@ const calculators = [
   description:
     "Learn how to estimate gravel volume, cubic yards, tons, depth, waste, and material cost.",
   href: "/construction/how-much-gravel-do-i-need",
+  status: "Guide",
+},
+{
+  title: "Gravel Cost Per Ton",
+  description:
+    "Learn how gravel price per ton works and estimate total material cost for gravel projects.",
+  href: "/construction/gravel-cost-per-ton",
   status: "Guide",
 },
 {
@@ -196,6 +203,10 @@ export default function ConstructionPage() {
             <QuickLink
   href="/construction/how-much-gravel-do-i-need"
   label="How Much Gravel Do I Need?"
+/>
+<QuickLink
+  href="/construction/gravel-cost-per-ton"
+  label="Gravel Cost Per Ton"
 />
           </div>
         </section>
