@@ -550,6 +550,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   text="Estimate driveway gravel cost using size, depth, tons, price per ton, delivery, and project factors."
 />
 
+<RelatedLink
+  href="/construction/gravel-cost-calculator"
+  title="Gravel Cost Calculator"
+  text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
+/>
+
     <RelatedLink
   href="/construction/how-much-gravel-do-i-need"
   title="How Much Gravel Do I Need?"
