@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/concrete-wall-calculator",
     "/construction/gravel-calculator",
     "/construction/gravel-driveway-calculator",
+    "/construction/how-much-gravel-do-i-need",
     "/finance",
     "/student",
     "/business",
@@ -38,7 +39,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("sonotube-concrete-calculator") ||
               route.includes("concrete-wall-calculator") ||
 route.includes("gravel-calculator") ||
-route.includes("gravel-driveway-calculator")
+route.includes("gravel-driveway-calculator") ||
+route.includes("how-much-gravel-do-i-need")
             ? 0.85
             : route === "/about" ||
                 route === "/contact" ||
