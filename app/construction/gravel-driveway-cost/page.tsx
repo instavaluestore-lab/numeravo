@@ -298,6 +298,12 @@ export default function GravelDrivewayCostPage() {
             />
 
             <RelatedLink
+  href="/construction/gravel-cost-calculator"
+  title="Gravel Cost Calculator"
+  text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
+/>
+
+            <RelatedLink
               href="/construction/how-much-gravel-do-i-need"
               title="How Much Gravel Do I Need?"
               text="Learn how to estimate gravel volume, depth, cubic yards, tons, and waste."
