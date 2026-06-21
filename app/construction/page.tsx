@@ -100,6 +100,20 @@ const calculators = [
   status: "Guide",
 },
 {
+  title: "Base for Concrete Slab Depth",
+  description:
+    "Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, shed pads, and garage slabs.",
+  href: "/construction/base-for-concrete-slab-depth",
+  status: "Guide",
+},
+{
+  title: "How to Prepare Ground for Concrete Slab",
+  description:
+    "Learn how to prepare ground for a concrete slab, including excavation, grading, gravel base, compaction, forms, and final checks.",
+  href: "/construction/how-to-prepare-ground-for-concrete-slab",
+  status: "Guide",
+},
+{
    title: "Square Footage Calculator",
   description:
     "Calculate area for flooring, paint, drywall, landscaping, and project planning.",
@@ -223,6 +237,14 @@ export default function ConstructionPage() {
 <QuickLink
   href="/construction/road-base-calculator"
   label="Road Base Calculator"
+/>
+<QuickLink
+  href="/construction/base-for-concrete-slab-depth"
+  label="Base for Concrete Slab Depth"
+/>
+<QuickLink
+  href="/construction/how-to-prepare-ground-for-concrete-slab"
+  label="How to Prepare Ground for Concrete Slab"
 />
 <QuickLink
   href="/construction/gravel-cost-per-ton"
