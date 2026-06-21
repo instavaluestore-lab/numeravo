@@ -693,6 +693,11 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
 />
 
+<RelatedLink
+  href="/construction/base-for-concrete-slab-depth"
+  title="Base for Concrete Slab Depth"
+  text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."
+/>
             <RelatedLink
               href="/construction/concrete-calculator"
               title="Concrete Calculator"
