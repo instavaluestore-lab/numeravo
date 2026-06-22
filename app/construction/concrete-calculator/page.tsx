@@ -983,6 +983,30 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/base-for-concrete-slab-depth"
+    title="Base for Concrete Slab Depth"
+    text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."
+  />
+
+  <GuideLink
+    href="/construction/how-to-prepare-ground-for-concrete-slab"
+    title="How to Prepare Ground for Concrete Slab"
+    text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."
+  />
+
+  <GuideLink
+    href="/construction/gravel-calculator"
+    title="Gravel Calculator"
+    text="Estimate gravel base material for concrete slabs, patios, driveways, walkways, and pads."
+  />
+
+  <GuideLink
+    href="/construction/road-base-calculator"
+    title="Road Base Calculator"
+    text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
+  />
+
+  <GuideLink
     href="/construction/concrete-footing-calculator"
     title="Concrete Footing Calculator"
     text="Estimate concrete for strip footings, trenches, wall footings, and grade beams."
@@ -998,12 +1022,6 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
     href="/construction/concrete-wall-calculator"
     title="Concrete Wall Calculator"
     text="Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections."
-  />
-
-  <GuideLink
-    href="/construction/gravel-calculator"
-    title="Gravel Calculator"
-    text="Estimate gravel base material for concrete slabs, patios, driveways, walkways, and pads."
   />
 </div>
         </section>
