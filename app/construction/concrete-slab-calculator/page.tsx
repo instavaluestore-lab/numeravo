@@ -25,77 +25,78 @@ export const metadata = {
 
 export default function ConcreteSlabCalculatorPage() {
   return (
-  <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://numeravo.com",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Construction",
-                  item: "https://numeravo.com/construction",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
-                  name: "Concrete Slab Calculator",
-                  item: "https://numeravo.com/construction/concrete-slab-calculator",
-                },
-              ],
-            },
-            {
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "How thick should a concrete slab be?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Many patios, sidewalks, and shed pads use 4 inches as a common slab thickness, but requirements can vary by project, soil, load, reinforcement, and local code.",
+    <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://numeravo.com",
                   },
-                },
-                {
-                  "@type": "Question",
-                  name: "Should I add waste to a slab estimate?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes. A 5% to 10% waste allowance is commonly used for planning because real pours can require extra concrete.",
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Construction",
+                    item: "https://numeravo.com/construction",
                   },
-                },
-                {
-                  "@type": "Question",
-                  name: "Can I calculate concrete slabs in metric units?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes. The Numeravo concrete calculator supports metric inputs using meters and centimeters and outputs cubic meters.",
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Concrete Slab Calculator",
+                    item: "https://numeravo.com/construction/concrete-slab-calculator",
                   },
-                },
-                {
-                  "@type": "Question",
-                  name: "Does the slab calculator include labor?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "No. The calculator estimates concrete volume and material cost only. Labor, delivery, forms, reinforcement, gravel, and finishing costs are separate.",
+                ],
+              },
+              {
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "How thick should a concrete slab be?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Many patios, sidewalks, and shed pads use 4 inches as a common slab thickness, but requirements can vary by project, soil, load, reinforcement, and local code.",
+                    },
                   },
-                },
-              ],
-            },
-          ],
-        }),
-      }}
-    />
+                  {
+                    "@type": "Question",
+                    name: "Should I add waste to a slab estimate?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. A 5% to 10% waste allowance is commonly used for planning because real pours can require extra concrete.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I calculate concrete slabs in metric units?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. The Numeravo concrete calculator supports metric inputs using meters and centimeters and outputs cubic meters.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Does the slab calculator include labor?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "No. The calculator estimates concrete volume and material cost only. Labor, delivery, forms, reinforcement, gravel, and finishing costs are separate.",
+                    },
+                  },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
+
       <section className="mx-auto max-w-5xl">
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
           Concrete Slab Calculator
@@ -193,6 +194,66 @@ export default function ConcreteSlabCalculatorPage() {
         </section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold">Related slab tools</h2>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <RelatedLink
+              href="/construction/concrete-calculator"
+              title="Concrete Calculator"
+              text="Estimate concrete volume, cubic yards, waste, and material cost for slabs, footings, piers, columns, and walls."
+            />
+
+            <RelatedLink
+              href="/construction/base-for-concrete-slab-depth"
+              title="Base for Concrete Slab Depth"
+              text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."
+            />
+
+            <RelatedLink
+              href="/construction/how-to-prepare-ground-for-concrete-slab"
+              title="How to Prepare Ground for Concrete Slab"
+              text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."
+            />
+
+            <RelatedLink
+              href="/construction/gravel-calculator"
+              title="Gravel Calculator"
+              text="Estimate gravel, crushed stone, road base, pea gravel, river rock, paver base, and drainage rock."
+            />
+
+            <RelatedLink
+              href="/construction/road-base-calculator"
+              title="Road Base Calculator"
+              text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
+            />
+
+            <RelatedLink
+              href="/construction/concrete-footing-calculator"
+              title="Concrete Footing Calculator"
+              text="Estimate concrete for footings, trenches, foundation strips, and other support pours."
+            />
+
+            <RelatedLink
+              href="/construction/concrete-wall-calculator"
+              title="Concrete Wall Calculator"
+              text="Estimate concrete volume for poured walls, retaining walls, stem walls, and wall sections."
+            />
+
+            <RelatedLink
+              href="/construction/sonotube-concrete-calculator"
+              title="Sonotube Concrete Calculator"
+              text="Estimate concrete for round piers, post holes, deck footings, and column forms."
+            />
+
+            <RelatedLink
+              href="/construction"
+              title="Construction Calculators"
+              text="Browse concrete, gravel, base, and construction estimating calculators."
+            />
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold">Slab calculator FAQ</h2>
 
           <div className="mt-6 space-y-5">
@@ -219,6 +280,27 @@ export default function ConcreteSlabCalculatorPage() {
         </section>
       </section>
     </main>
+  );
+}
+
+function RelatedLink({
+  href,
+  title,
+  text,
+}: {
+  href: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5 transition hover:border-[#F97316]"
+    >
+      <div className="mb-4 h-2 w-10 rounded-full bg-[#F97316]" />
+      <h3 className="font-semibold text-white">{title}</h3>
+      <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">{text}</p>
+    </Link>
   );
 }
 
