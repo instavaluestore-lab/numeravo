@@ -114,11 +114,11 @@ const calculators = [
   status: "Guide",
 },
 {
-   title: "Square Footage Calculator",
+   title: "Area Calculator",
   description:
-    "Calculate area for flooring, paint, drywall, landscaping, and project planning.",
-  href: "/construction/square-footage-calculator",
-  status: "Planned",
+    "Calculate square feet, square yards, square meters, acres, waste-adjusted area, and estimated material cost for multiple rooms or project areas.",
+  href: "/construction/area-calculator",
+  status: "Live",
 },
 ];
 
