@@ -150,10 +150,26 @@ export default function CrushedStoneCalculatorPage() {
             </p>
 
             <div className="mt-5 grid gap-4 md:grid-cols-4">
-              <StepCard number="1" title="Open calculator" text="Go to the Gravel Calculator." />
-              <StepCard number="2" title="Select material" text="Choose Crushed Stone." />
-              <StepCard number="3" title="Enter dimensions" text="Add length, width, and depth." />
-              <StepCard number="4" title="Review results" text="Check yards, tons, and cost." />
+              <StepCard
+                number="1"
+                title="Open calculator"
+                text="Go to the Gravel Calculator."
+              />
+              <StepCard
+                number="2"
+                title="Select material"
+                text="Choose Crushed Stone."
+              />
+              <StepCard
+                number="3"
+                title="Enter dimensions"
+                text="Add length, width, and depth."
+              />
+              <StepCard
+                number="4"
+                title="Review results"
+                text="Check yards, tons, and cost."
+              />
             </div>
 
             <Link
@@ -322,10 +338,22 @@ export default function CrushedStoneCalculatorPage() {
             />
 
             <RelatedLink
-  href="/construction/road-base-calculator"
-  title="Road Base Calculator"
-  text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
-/>
+              href="/construction/road-base-calculator"
+              title="Road Base Calculator"
+              text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
+            />
+
+            <RelatedLink
+              href="/construction/base-for-concrete-slab-depth"
+              title="Base for Concrete Slab Depth"
+              text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."
+            />
+
+            <RelatedLink
+              href="/construction/how-to-prepare-ground-for-concrete-slab"
+              title="How to Prepare Ground for Concrete Slab"
+              text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."
+            />
 
             <RelatedLink
               href="/construction/gravel-cost-calculator"
