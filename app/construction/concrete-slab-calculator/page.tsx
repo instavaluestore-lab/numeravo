@@ -198,6 +198,12 @@ export default function ConcreteSlabCalculatorPage() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <RelatedLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating concrete for a slab."
+            />
+
+            <RelatedLink
               href="/construction/concrete-calculator"
               title="Concrete Calculator"
               text="Estimate concrete volume, cubic yards, waste, and material cost for slabs, footings, piers, columns, and walls."
