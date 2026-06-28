@@ -222,6 +222,27 @@ export default function ConcreteWallCalculatorPage() {
   );
 }
 
+function RelatedLink({
+  href,
+  title,
+  text,
+}: {
+  href: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5 transition hover:border-[#F97316]"
+    >
+      <div className="mb-4 h-2 w-10 rounded-full bg-[#F97316]" />
+      <h3 className="font-semibold text-white">{title}</h3>
+      <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">{text}</p>
+    </Link>
+  );
+}
+
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   return (
     <div className="border-b border-[#1F2937] pb-5 last:border-b-0 last:pb-0">
