@@ -192,6 +192,54 @@ export default function ConcreteFootingCalculatorPage() {
         </section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold">Related footing tools</h2>
+
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
+            Use these related calculators to estimate project area, concrete volume,
+            slab quantities, wall pours, sonotubes, gravel base, and overall
+            construction material needs.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <RelatedLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating footing materials."
+            />
+
+            <RelatedLink
+              href="/construction/concrete-calculator"
+              title="Concrete Calculator"
+              text="Estimate concrete volume, waste, and material cost for slabs, footings, piers, walls, stairs, curbs, and columns."
+            />
+
+            <RelatedLink
+              href="/construction/concrete-slab-calculator"
+              title="Concrete Slab Calculator"
+              text="Estimate concrete needed for patios, pads, driveways, garage floors, and slab projects."
+            />
+
+            <RelatedLink
+              href="/construction/concrete-wall-calculator"
+              title="Concrete Wall Calculator"
+              text="Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections."
+            />
+
+            <RelatedLink
+              href="/construction/sonotube-concrete-calculator"
+              title="Sonotube Concrete Calculator"
+              text="Estimate concrete for round piers, post holes, deck posts, fence posts, and sonotube forms."
+            />
+
+            <RelatedLink
+              href="/construction/gravel-calculator"
+              title="Gravel Calculator"
+              text="Estimate gravel, crushed stone, road base, cubic yards, tons, waste, and cost for footing base preparation."
+            />
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold">Footing calculator FAQ</h2>
 
           <div className="mt-6 space-y-5">
@@ -218,6 +266,27 @@ export default function ConcreteFootingCalculatorPage() {
         </section>
       </section>
     </main>
+  );
+}
+
+function RelatedLink({
+  href,
+  title,
+  text,
+}: {
+  href: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5 transition hover:border-[#F97316]"
+    >
+      <div className="mb-4 h-2 w-10 rounded-full bg-[#F97316]" />
+      <h3 className="font-semibold text-white">{title}</h3>
+      <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">{text}</p>
+    </Link>
   );
 }
 
