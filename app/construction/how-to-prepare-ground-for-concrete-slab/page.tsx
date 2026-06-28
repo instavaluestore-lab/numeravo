@@ -300,6 +300,12 @@ export default function PrepareGroundForConcreteSlabPage() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <RelatedLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before preparing a concrete slab area."
+            />
+
+            <RelatedLink
               href="/construction/base-for-concrete-slab-depth"
               title="Base for Concrete Slab Depth"
               text="Learn common gravel, crushed stone, and road base depths for concrete slabs."
