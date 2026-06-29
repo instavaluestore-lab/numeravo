@@ -289,6 +289,12 @@ export default function BaseForConcreteSlabDepthPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-cost-calculator"
+              title="Concrete Cost Calculator"
+              text="Estimate concrete price, base material, rebar, labor, prep, delivery fees, and total project cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-slab-calculator"
               title="Concrete Slab Calculator"
               text="Estimate concrete needed for patios, pads, driveways, and slabs."
