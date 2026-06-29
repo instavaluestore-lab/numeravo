@@ -168,8 +168,282 @@ export default function ConcreteCostCalculatorClient() {
             </div>
           </aside>
         </div>
+
+        <section className="mt-8 grid gap-6 lg:grid-cols-3">
+          <FormulaCard
+            title="Concrete volume"
+            formula="Length × Width × Thickness"
+            text="Thickness is converted from inches to feet before calculating cubic feet and cubic yards."
+          />
+
+          <FormulaCard
+            title="Concrete material cost"
+            formula="Cubic Yards With Waste × Price Per Yard"
+            text="Waste helps account for uneven subgrade, over-excavation, spillage, and ordering buffer."
+          />
+
+          <FormulaCard
+            title="Total installed estimate"
+            formula="Concrete + Base + Rebar + Labor + Prep + Fees"
+            text="A realistic concrete estimate includes more than ready-mix material."
+          />
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold">Concrete cost breakdown</h2>
+
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
+            Concrete project pricing usually includes ready-mix concrete, delivery,
+            base material, reinforcement, labor, preparation, and job-specific fees.
+            This calculator separates those cost layers so you can see what drives
+            the final estimate.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <BreakdownCard
+              label="Concrete"
+              value={formatCurrency(results.concreteCost)}
+              text={`${formatNumber(results.cubicYardsWithWaste)} cubic yards with waste`}
+            />
+
+            <BreakdownCard
+              label="Base material"
+              value={formatCurrency(results.baseCost)}
+              text={`${formatNumber(results.baseTons)} tons estimated`}
+            />
+
+            <BreakdownCard
+              label="Rebar / mesh"
+              value={formatCurrency(results.rebarCost)}
+              text="Planning allowance per square foot"
+            />
+
+            <BreakdownCard
+              label="Labor + prep"
+              value={formatCurrency(results.laborCost + results.prepCost)}
+              text="Installed-cost allowance"
+            />
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold">Common concrete project sizes</h2>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <CommonSizeCard
+              title="10 × 10 slab"
+              area="100 sq ft"
+              use="Small pad, shed base, or utility slab"
+            />
+
+            <CommonSizeCard
+              title="12 × 20 patio"
+              area="240 sq ft"
+              use="Backyard patio or outdoor seating area"
+            />
+
+            <CommonSizeCard
+              title="20 × 20 garage"
+              area="400 sq ft"
+              use="Garage floor slab or shop pad"
+            />
+
+            <CommonSizeCard
+              title="20 × 30 driveway"
+              area="600 sq ft"
+              use="Residential driveway planning"
+            />
+          </div>
+        </section>
+
+        <section className="mt-8 grid gap-6 lg:grid-cols-[1fr_0.9fr]">
+          <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+            <h2 className="text-2xl font-semibold">
+              How to use this concrete cost calculator
+            </h2>
+
+            <ol className="mt-5 space-y-3 text-sm leading-7 text-[#A0AEC0]">
+              <li>1. Enter the project length, width, and concrete thickness.</li>
+              <li>2. Set your concrete price per cubic yard and waste percentage.</li>
+              <li>3. Add delivery and short-load fees if they apply.</li>
+              <li>4. Include base depth, base price, reinforcement, labor, and prep.</li>
+              <li>5. Review the estimated total and cost per square foot.</li>
+            </ol>
+          </div>
+
+          <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+            <h2 className="text-2xl font-semibold">Common cost mistakes</h2>
+
+            <ul className="mt-5 space-y-3 text-sm leading-7 text-[#A0AEC0]">
+              <li>• Estimating only concrete yards and forgetting base material.</li>
+              <li>• Not adding waste for uneven ground, form variation, or spillage.</li>
+              <li>• Forgetting delivery, short-load, or pump truck fees.</li>
+              <li>• Leaving out rebar, wire mesh, forms, labor, and finishing.</li>
+              <li>• Using national averages without checking local supplier pricing.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold">Related concrete calculators</h2>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <RelatedLink
+              href="/construction/concrete-calculator"
+              title="Concrete Calculator"
+              text="Estimate concrete volume for slabs, footings, piers, walls, columns, stairs, and curbs."
+            />
+
+            <RelatedLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost."
+            />
+
+            <RelatedLink
+              href="/construction/concrete-slab-calculator"
+              title="Concrete Slab Calculator"
+              text="Estimate concrete needed for patios, driveways, garage floors, and shed pads."
+            />
+
+            <RelatedLink
+              href="/construction/gravel-calculator"
+              title="Gravel Calculator"
+              text="Estimate gravel, crushed stone, road base, cubic yards, tons, waste, and cost."
+            />
+
+            <RelatedLink
+              href="/construction/base-for-concrete-slab-depth"
+              title="Base for Concrete Slab Depth"
+              text="Learn common gravel base depths for slabs, patios, driveways, and shed pads."
+            />
+
+            <RelatedLink
+              href="/construction"
+              title="Construction Calculators"
+              text="Browse all Numeravo construction calculators and project guides."
+            />
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold">Concrete cost calculator FAQ</h2>
+
+          <div className="mt-6 space-y-5">
+            <FAQItem
+              question="How much does concrete cost per cubic yard?"
+              answer="Concrete pricing varies by region, supplier, mix design, delivery distance, fuel cost, and order size. Use your local ready-mix price for the most accurate estimate."
+            />
+
+            <FAQItem
+              question="Should I include gravel base in a concrete estimate?"
+              answer="Yes for many slabs, patios, driveways, shed pads, and garage slabs. A compacted gravel or crushed stone base can improve drainage, support, and subgrade stability."
+            />
+
+            <FAQItem
+              question="Does this calculator include rebar or wire mesh?"
+              answer="Yes. The calculator includes a reinforcement cost per square foot field for estimating rebar, wire mesh, chairs, and related reinforcement materials."
+            />
+
+            <FAQItem
+              question="Why is total project cost higher than concrete material cost?"
+              answer="Concrete material is only one part of the project. Base material, reinforcement, labor, finishing, preparation, delivery, and fees can significantly increase the installed cost."
+            />
+
+            <FAQItem
+              question="Is this calculator a contractor quote?"
+              answer="No. This is a planning estimate. Confirm final pricing with local suppliers, contractors, or qualified professionals, especially for structural or code-regulated concrete work."
+            />
+          </div>
+        </section>
       </section>
     </main>
+  );
+}
+
+function FormulaCard({
+  title,
+  formula,
+  text,
+}: {
+  title: string;
+  formula: string;
+  text: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+      <h3 className="text-lg font-semibold text-white">{title}</h3>
+      <p className="mt-4 rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4 text-sm font-semibold text-[#F97316]">
+        {formula}
+      </p>
+      <p className="mt-4 text-sm leading-6 text-[#A0AEC0]">{text}</p>
+    </div>
+  );
+}
+
+function BreakdownCard({
+  label,
+  value,
+  text,
+}: {
+  label: string;
+  value: string;
+  text: string;
+}) {
+  return (
+    <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5">
+      <p className="text-sm text-[#A0AEC0]">{label}</p>
+      <p className="mt-2 text-xl font-bold text-[#F97316]">{value}</p>
+      <p className="mt-2 text-xs leading-5 text-[#A0AEC0]">{text}</p>
+    </div>
+  );
+}
+
+function CommonSizeCard({
+  title,
+  area,
+  use,
+}: {
+  title: string;
+  area: string;
+  use: string;
+}) {
+  return (
+    <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5">
+      <h3 className="font-semibold text-white">{title}</h3>
+      <p className="mt-2 text-xl font-bold text-[#F97316]">{area}</p>
+      <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">{use}</p>
+    </div>
+  );
+}
+
+function RelatedLink({
+  href,
+  title,
+  text,
+}: {
+  href: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5 transition hover:border-[#F97316]"
+    >
+      <div className="mb-4 h-2 w-10 rounded-full bg-[#F97316]" />
+      <h3 className="font-semibold text-white">{title}</h3>
+      <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">{text}</p>
+    </Link>
+  );
+}
+
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  return (
+    <div className="border-b border-[#1F2937] pb-5 last:border-b-0 last:pb-0">
+      <h3 className="font-semibold text-white">{question}</h3>
+      <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">{answer}</p>
+    </div>
   );
 }
 
