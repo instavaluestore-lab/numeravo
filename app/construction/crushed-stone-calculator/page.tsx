@@ -326,6 +326,12 @@ export default function CrushedStoneCalculatorPage() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <RelatedLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating crushed stone volume and tons."
+            />
+
+            <RelatedLink
               href="/construction/gravel-calculator"
               title="Gravel Calculator"
               text="Estimate gravel, crushed stone, road base, pea gravel, river rock, paver base, and drainage rock."
