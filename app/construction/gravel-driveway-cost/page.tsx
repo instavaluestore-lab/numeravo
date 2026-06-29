@@ -280,6 +280,12 @@ export default function GravelDrivewayCostPage() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <RelatedLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate driveway square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating gravel driveway cost."
+            />
+
+            <RelatedLink
               href="/construction/gravel-calculator"
               title="Gravel Calculator"
               text="Estimate gravel volume, cubic yards, tons, waste, and material cost."
