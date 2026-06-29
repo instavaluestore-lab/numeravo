@@ -646,6 +646,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <RelatedLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating gravel volume, tons, and depth."
+            />
+
+            <RelatedLink
               href="/construction/gravel-driveway-calculator"
               title="Gravel Driveway Calculator"
               text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."
