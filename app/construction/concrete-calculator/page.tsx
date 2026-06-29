@@ -977,6 +977,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
   <GuideLink
+    href="/construction/area-calculator"
+    title="Area Calculator"
+    text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating concrete volume."
+  />
+
+  <GuideLink
     href="/construction/concrete-slab-calculator"
     title="Concrete Slab Calculator"
     text="Estimate concrete for patios, driveways, sidewalks, garage floors, and shed pads."
