@@ -9,6 +9,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Cost Calculator",
+    description:
+      "Estimate concrete price, cubic yards, base material, rebar, labor, prep, delivery fees, and total project cost.",
+    href: "/construction/concrete-cost-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",
