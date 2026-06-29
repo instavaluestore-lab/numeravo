@@ -983,6 +983,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/concrete-cost-calculator"
+    title="Concrete Cost Calculator"
+    text="Estimate concrete price, cubic yards, base material, rebar, labor, prep, delivery fees, and total project cost."
+  />
+
+  <GuideLink
     href="/construction/concrete-slab-calculator"
     title="Concrete Slab Calculator"
     text="Estimate concrete for patios, driveways, sidewalks, garage floors, and shed pads."
