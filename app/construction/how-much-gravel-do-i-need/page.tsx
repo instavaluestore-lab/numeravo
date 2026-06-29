@@ -248,6 +248,12 @@ export default function HowMuchGravelDoINeedPage() {
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <RelatedLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating how much gravel you need."
+            />
+
+            <RelatedLink
               href="/construction/gravel-calculator"
               title="Gravel Calculator"
               text="Estimate gravel volume, cubic yards, tons, waste, and material cost."
