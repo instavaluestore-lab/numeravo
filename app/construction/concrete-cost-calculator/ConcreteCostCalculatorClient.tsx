@@ -10,6 +10,15 @@ export default function ConcreteCostCalculatorClient() {
   const [wastePercent, setWastePercent] = useState("10");
   const [pricePerYard, setPricePerYard] = useState("150");
   const [deliveryFee, setDeliveryFee] = useState("150");
+  const [shortLoadFee, setShortLoadFee] = useState("0");
+
+  const [baseDepth, setBaseDepth] = useState("4");
+  const [basePricePerTon, setBasePricePerTon] = useState("45");
+  const [baseTonsPerCubicYard, setBaseTonsPerCubicYard] = useState("1.4");
+
+  const [rebarPerSqFt, setRebarPerSqFt] = useState("1.5");
+  const [laborPerSqFt, setLaborPerSqFt] = useState("4");
+  const [prepPerSqFt, setPrepPerSqFt] = useState("2");
 
   const results = useMemo(() => {
     const lengthNumber = toNumber(length);
@@ -18,13 +27,32 @@ export default function ConcreteCostCalculatorClient() {
     const wasteNumber = toNumber(wastePercent);
     const priceNumber = toNumber(pricePerYard);
     const deliveryNumber = toNumber(deliveryFee);
+    const shortLoadNumber = toNumber(shortLoadFee);
 
     const area = lengthNumber * widthNumber;
     const cubicFeet = area * (thicknessNumber / 12);
     const cubicYards = cubicFeet / 27;
     const cubicYardsWithWaste = cubicYards * (1 + wasteNumber / 100);
     const concreteCost = cubicYardsWithWaste * priceNumber;
-    const totalCost = concreteCost + deliveryNumber;
+
+    const baseCubicFeet = area * (toNumber(baseDepth) / 12);
+    const baseCubicYards = baseCubicFeet / 27;
+    const baseTons = baseCubicYards * toNumber(baseTonsPerCubicYard);
+    const baseCost = baseTons * toNumber(basePricePerTon);
+
+    const rebarCost = area * toNumber(rebarPerSqFt);
+    const laborCost = area * toNumber(laborPerSqFt);
+    const prepCost = area * toNumber(prepPerSqFt);
+
+    const totalCost =
+      concreteCost +
+      deliveryNumber +
+      shortLoadNumber +
+      baseCost +
+      rebarCost +
+      laborCost +
+      prepCost;
+
     const costPerSqFt = area > 0 ? totalCost / area : 0;
 
     return {
@@ -33,10 +61,30 @@ export default function ConcreteCostCalculatorClient() {
       cubicYards,
       cubicYardsWithWaste,
       concreteCost,
+      baseCubicYards,
+      baseTons,
+      baseCost,
+      rebarCost,
+      laborCost,
+      prepCost,
       totalCost,
       costPerSqFt,
     };
-  }, [length, width, thickness, wastePercent, pricePerYard, deliveryFee]);
+  }, [
+    length,
+    width,
+    thickness,
+    wastePercent,
+    pricePerYard,
+    deliveryFee,
+    shortLoadFee,
+    baseDepth,
+    basePricePerTon,
+    baseTonsPerCubicYard,
+    rebarPerSqFt,
+    laborPerSqFt,
+    prepPerSqFt,
+  ]);
 
   return (
     <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
@@ -88,6 +136,13 @@ export default function ConcreteCostCalculatorClient() {
               <NumberInput label="Waste" value={wastePercent} onChange={setWastePercent} suffix="%" />
               <NumberInput label="Concrete Price" value={pricePerYard} onChange={setPricePerYard} prefix="$" suffix="/ yd³" />
               <NumberInput label="Delivery Fee" value={deliveryFee} onChange={setDeliveryFee} prefix="$" />
+              <NumberInput label="Short-Load Fee" value={shortLoadFee} onChange={setShortLoadFee} prefix="$" />
+              <NumberInput label="Base Depth" value={baseDepth} onChange={setBaseDepth} suffix="in" />
+              <NumberInput label="Base Price" value={basePricePerTon} onChange={setBasePricePerTon} prefix="$" suffix="/ ton" />
+              <NumberInput label="Base Tons Per Yard" value={baseTonsPerCubicYard} onChange={setBaseTonsPerCubicYard} suffix="tons / yd³" />
+              <NumberInput label="Rebar / Mesh" value={rebarPerSqFt} onChange={setRebarPerSqFt} prefix="$" suffix="/ sq ft" />
+              <NumberInput label="Labor" value={laborPerSqFt} onChange={setLaborPerSqFt} prefix="$" suffix="/ sq ft" />
+              <NumberInput label="Prep" value={prepPerSqFt} onChange={setPrepPerSqFt} prefix="$" suffix="/ sq ft" />
             </div>
           </section>
 
@@ -104,6 +159,11 @@ export default function ConcreteCostCalculatorClient() {
               <ResultRow label="Area" value={`${formatNumber(results.area)} sq ft`} />
               <ResultRow label="Concrete" value={`${formatNumber(results.cubicYardsWithWaste)} yd³`} />
               <ResultRow label="Material Cost" value={formatCurrency(results.concreteCost)} />
+              <ResultRow label="Base Material" value={formatCurrency(results.baseCost)} />
+              <ResultRow label="Base Tons" value={`${formatNumber(results.baseTons)} tons`} />
+              <ResultRow label="Rebar / Mesh" value={formatCurrency(results.rebarCost)} />
+              <ResultRow label="Labor" value={formatCurrency(results.laborCost)} />
+              <ResultRow label="Prep" value={formatCurrency(results.prepCost)} />
               <ResultRow label="Cost Per Sq Ft" value={formatCurrency(results.costPerSqFt)} />
             </div>
           </aside>
