@@ -525,6 +525,12 @@ export default function AreaCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-cost-calculator"
+              title="Concrete Cost Calculator"
+              text="Estimate concrete price, base material, rebar, labor, prep, delivery fees, and total project cost."
+            />
+
+            <RelatedLink
               href="/construction/gravel-calculator"
               title="Gravel Calculator"
               text="Estimate gravel, crushed stone, road base, pea gravel, and drainage rock."
