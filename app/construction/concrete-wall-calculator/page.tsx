@@ -193,6 +193,54 @@ export default function ConcreteWallCalculatorPage() {
         </section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <h2 className="text-2xl font-semibold">Related wall tools</h2>
+
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
+            Use these related calculators to estimate wall area, concrete volume,
+            footing needs, slab quantities, gravel base, and overall construction
+            material planning.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <RelatedLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating wall or formwork areas."
+            />
+
+            <RelatedLink
+              href="/construction/concrete-calculator"
+              title="Concrete Calculator"
+              text="Estimate concrete volume, waste, and material cost for slabs, footings, piers, walls, stairs, curbs, and columns."
+            />
+
+            <RelatedLink
+              href="/construction/concrete-footing-calculator"
+              title="Concrete Footing Calculator"
+              text="Estimate concrete for strip footings, trench footings, wall footings, and grade beams."
+            />
+
+            <RelatedLink
+              href="/construction/concrete-slab-calculator"
+              title="Concrete Slab Calculator"
+              text="Estimate concrete needed for patios, pads, driveways, garage floors, and slab projects."
+            />
+
+            <RelatedLink
+              href="/construction/gravel-calculator"
+              title="Gravel Calculator"
+              text="Estimate gravel, crushed stone, road base, cubic yards, tons, waste, and cost for base preparation."
+            />
+
+            <RelatedLink
+              href="/construction"
+              title="Construction Calculators"
+              text="Browse concrete, gravel, base, area, and construction estimating calculators."
+            />
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold">Wall calculator FAQ</h2>
 
           <div className="mt-6 space-y-5">
