@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type UnitSystem = "imperial" | "metric";
+type ConcreteOrderMode = "readyMix" | "bags";
 
 type ProjectType =
   | "slab"
@@ -170,6 +171,10 @@ export default function ConcreteCalculatorPage() {
 
   const [wastePercent, setWastePercent] = useState("10");
   const [pricePerUnit, setPricePerUnit] = useState("150");
+  const [concreteOrderMode, setConcreteOrderMode] =
+    useState<ConcreteOrderMode>("readyMix");
+  const [pricePer80LbBag, setPricePer80LbBag] = useState("6.50");
+  const [pricePer60LbBag, setPricePer60LbBag] = useState("5.50");
   const [copied, setCopied] = useState(false);
 
   const selectedProject = projectTypes.find((type) => type.id === projectType);
@@ -340,6 +345,36 @@ export default function ConcreteCalculatorPage() {
 
     const estimatedCost = recommendedOrder * price;
 
+    const recommendedCubicYards =
+      unitSystem === "imperial" ? recommendedOrder : recommendedOrder * 1.30795;
+
+    const truckLoads =
+      recommendedCubicYards > 0 ? Math.ceil(recommendedCubicYards / 10) : 0;
+
+    const eightyLbBagYieldYards = 0.022;
+    const sixtyLbBagYieldYards = 0.0167;
+
+    const eightyLbBags =
+      recommendedCubicYards > 0
+        ? Math.ceil(recommendedCubicYards / eightyLbBagYieldYards)
+        : 0;
+
+    const sixtyLbBags =
+      recommendedCubicYards > 0
+        ? Math.ceil(recommendedCubicYards / sixtyLbBagYieldYards)
+        : 0;
+
+    const eightyLbPallets =
+      eightyLbBags > 0 ? Math.ceil(eightyLbBags / 42) : 0;
+
+    const sixtyLbPallets =
+      sixtyLbBags > 0 ? Math.ceil(sixtyLbBags / 56) : 0;
+
+    const eightyLbBagCost = eightyLbBags * toNumber(pricePer80LbBag);
+    const sixtyLbBagCost = sixtyLbBags * toNumber(pricePer60LbBag);
+
+    const exceedsOnePickupPallet = eightyLbBags > 42 || sixtyLbBags > 56;
+
     return {
       baseCubicFeet,
       baseCubicYards,
@@ -347,6 +382,15 @@ export default function ConcreteCalculatorPage() {
       volumeWithWaste,
       recommendedOrder,
       estimatedCost,
+      recommendedCubicYards,
+      truckLoads,
+      eightyLbBags,
+      sixtyLbBags,
+      eightyLbPallets,
+      sixtyLbPallets,
+      eightyLbBagCost,
+      sixtyLbBagCost,
+      exceedsOnePickupPallet,
       formulaLabel,
     };
   }, [
@@ -387,6 +431,8 @@ export default function ConcreteCalculatorPage() {
     curbHeight,
     wastePercent,
     pricePerUnit,
+    pricePer80LbBag,
+    pricePer60LbBag,
   ]);
 
   async function copyResults() {
@@ -397,11 +443,22 @@ export default function ConcreteCalculatorPage() {
         ? `Numeravo Concrete Estimate
 Project Type: ${projectLabel}
 Unit System: Imperial
+Order Method: ${concreteOrderMode === "bags" ? "Concrete Bags" : "Ready-Mix Truck"}
 Cubic Feet: ${formatNumber(results.baseCubicFeet)} ft³
 Cubic Yards Before Waste: ${formatNumber(results.baseCubicYards)} yd³
 Concrete With Waste: ${formatNumber(results.volumeWithWaste)} yd³
 Recommended Order: ${formatNumber(results.recommendedOrder)} yd³
-Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`
+Estimated Material Cost: ${formatCurrency(results.estimatedCost)}
+${concreteOrderMode === "readyMix" ? `Standard Truck Capacity: 10 yd³ maximum legal load
+Estimated Truck Loads: ${results.truckLoads}` : `80 lb Bags Needed: ${results.eightyLbBags}
+80 lb Pallets: ${results.eightyLbPallets} pallet${results.eightyLbPallets === 1 ? "" : "s"} at 42 bags per pallet
+Cost Per 80 lb Bag: ${formatCurrency(toNumber(pricePer80LbBag))}
+Estimated 80 lb Bag Cost: ${formatCurrency(results.eightyLbBagCost)}
+60 lb Bags Needed: ${results.sixtyLbBags}
+60 lb Pallets: ${results.sixtyLbPallets} pallet${results.sixtyLbPallets === 1 ? "" : "s"} at 56 bags per pallet
+Cost Per 60 lb Bag: ${formatCurrency(toNumber(pricePer60LbBag))}
+Estimated 60 lb Bag Cost: ${formatCurrency(results.sixtyLbBagCost)}
+Recommendation: ${results.exceedsOnePickupPallet ? "This exceeds one pickup-load pallet. Consider ready-mix truck delivery." : "This is within one common pickup-load pallet."}`}`
         : `Numeravo Concrete Estimate
 Project Type: ${projectLabel}
 Unit System: Metric
@@ -588,6 +645,35 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 </button>
               );
             })}
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-sm font-semibold text-white">
+                Concrete Order Method
+              </p>
+              <p className="mt-1 text-sm text-[#A0AEC0]">
+                Show results as ready-mix cubic yards or concrete bags and pallets.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <ToggleButton
+                isActive={concreteOrderMode === "readyMix"}
+                label="Ready-Mix Truck"
+                description="Cubic yards, truck loads"
+                onClick={() => setConcreteOrderMode("readyMix")}
+              />
+
+              <ToggleButton
+                isActive={concreteOrderMode === "bags"}
+                label="Concrete Bags"
+                description="60 lb, 80 lb, pallets"
+                onClick={() => setConcreteOrderMode("bags")}
+              />
+            </div>
           </div>
         </div>
 
@@ -877,6 +963,26 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 suffix={unitLabels.price}
                 wide
               />
+
+              {concreteOrderMode === "bags" && (
+                <>
+                  <NumberInput
+                    label="Cost Per 80 lb Bag"
+                    value={pricePer80LbBag}
+                    onChange={setPricePer80LbBag}
+                    prefix="$"
+                    suffix="/ bag"
+                  />
+
+                  <NumberInput
+                    label="Cost Per 60 lb Bag"
+                    value={pricePer60LbBag}
+                    onChange={setPricePer60LbBag}
+                    prefix="$"
+                    suffix="/ bag"
+                  />
+                </>
+              )}
             </div>
           </div>
 
@@ -895,16 +1001,21 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
             <div className="mt-6 rounded-2xl border border-[#F97316] bg-[#0B0F19] p-5">
               <p className="text-sm text-[#A0AEC0]">
-                Recommended order amount
+                {concreteOrderMode === "bags"
+                  ? "Recommended bag estimate"
+                  : "Recommended order amount"}
               </p>
 
               <p className="mt-2 text-4xl font-bold text-[#F97316]">
-                {formatNumber(results.recommendedOrder)}{" "}
-                {unitLabels.volumePrimary}
+                {concreteOrderMode === "bags"
+                  ? `${results.eightyLbBags} 80 lb bags`
+                  : `${formatNumber(results.recommendedOrder)} ${unitLabels.volumePrimary}`}
               </p>
 
               <p className="mt-2 text-sm text-[#A0AEC0]">
-                Rounded up to the {unitLabels.recommendedRound}.
+                {concreteOrderMode === "bags"
+                  ? `Alternative: ${results.sixtyLbBags} bags at 60 lb each.`
+                  : `Rounded up to the ${unitLabels.recommendedRound}.`}
               </p>
             </div>
 
@@ -954,6 +1065,74 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 value={formatCurrency(results.estimatedCost)}
                 highlight
               />
+
+              {unitSystem === "imperial" && concreteOrderMode === "readyMix" && (
+                <>
+                  <ResultRow
+                    label="Standard Truck Capacity"
+                    value="10 yd³ maximum legal load"
+                  />
+                  <ResultRow
+                    label="Estimated Truck Loads"
+                    value={`${results.truckLoads} load${results.truckLoads === 1 ? "" : "s"}`}
+                    highlight={results.truckLoads > 1}
+                  />
+                </>
+              )}
+
+              {unitSystem === "imperial" && concreteOrderMode === "bags" && (
+                <>
+                  <ResultRow
+                    label="80 lb Bags Needed"
+                    value={`${results.eightyLbBags} bags`}
+                    highlight
+                  />
+                  <ResultRow
+                    label="80 lb Pallets"
+                    value={`${results.eightyLbPallets} pallet${results.eightyLbPallets === 1 ? "" : "s"} at 42 bags per pallet`}
+                  />
+                  <ResultRow
+                    label="Cost Per 80 lb Bag"
+                    value={formatCurrency(toNumber(pricePer80LbBag))}
+                  />
+                  <ResultRow
+                    label="Estimated 80 lb Bag Cost"
+                    value={formatCurrency(results.eightyLbBagCost)}
+                    highlight
+                  />
+                  <ResultRow
+                    label="60 lb Bags Needed"
+                    value={`${results.sixtyLbBags} bags`}
+                  />
+                  <ResultRow
+                    label="60 lb Pallets"
+                    value={`${results.sixtyLbPallets} pallet${results.sixtyLbPallets === 1 ? "" : "s"} at 56 bags per pallet`}
+                  />
+                  <ResultRow
+                    label="Cost Per 60 lb Bag"
+                    value={formatCurrency(toNumber(pricePer60LbBag))}
+                  />
+                  <ResultRow
+                    label="Estimated 60 lb Bag Cost"
+                    value={formatCurrency(results.sixtyLbBagCost)}
+                  />
+
+                  {results.exceedsOnePickupPallet && (
+                    <div className="rounded-xl border border-[#F97316] bg-[#0B0F19] p-4 text-sm leading-6 text-[#A0AEC0]">
+                      <p className="font-semibold text-white">
+                        Truck delivery recommended
+                      </p>
+                      <p className="mt-2">
+                        This estimate exceeds one pickup-load pallet. One pallet
+                        is commonly 42 bags of 80 lb concrete or 56 bags of 60 lb
+                        concrete. For more than one pallet, consider ready-mix
+                        truck delivery instead of pickup from a home improvement
+                        store.
+                      </p>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           </div>
         </div>
