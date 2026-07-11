@@ -215,6 +215,12 @@ export default function ConcreteWallCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-cost-calculator"
+              title="Concrete Cost Calculator"
+              text="Estimate wall concrete price, base material, rebar, labor, prep, delivery fees, and total project cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-footing-calculator"
               title="Concrete Footing Calculator"
               text="Estimate concrete for strip footings, trench footings, wall footings, and grade beams."
