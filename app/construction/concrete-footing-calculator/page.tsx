@@ -214,6 +214,12 @@ export default function ConcreteFootingCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-cost-calculator"
+              title="Concrete Cost Calculator"
+              text="Estimate footing concrete price, base material, rebar, labor, prep, delivery fees, and total project cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-slab-calculator"
               title="Concrete Slab Calculator"
               text="Estimate concrete needed for patios, pads, driveways, garage floors, and slab projects."
