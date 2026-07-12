@@ -1138,6 +1138,61 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
         </div>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
+              Bags vs Ready-Mix
+            </p>
+
+            <h2 className="mt-3 text-2xl font-semibold text-white">
+              Concrete bags vs ready-mix truck delivery
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
+              Concrete bags are usually best for small pours, post holes, patch
+              work, small pads, and jobs where a truck cannot easily access the
+              site. Ready-mix truck delivery is usually better for larger slabs,
+              driveways, patios, footings, and projects that need more than one
+              pallet of bagged concrete.
+            </p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Bagged concrete
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  Good for small projects. This calculator estimates both 80 lb
+                  and 60 lb bag counts, including pallet quantities and estimated
+                  bag cost.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Pickup truck limit
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  One common pickup-load pallet is about 42 bags of 80 lb
+                  concrete or 56 bags of 60 lb concrete. If your estimate exceeds
+                  one pallet, truck delivery may be safer and more practical.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Ready-mix truck
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  Ready-mix is typically ordered by the cubic yard. A standard
+                  concrete truck is commonly limited to about 10 cubic yards per
+                  legal load, so larger pours may require multiple loads.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
               Concrete guides
