@@ -561,7 +561,7 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                     name: "How many bags of concrete are on a pallet?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "A common pallet contains about 42 bags of 80 lb concrete or 56 bags of 60 lb concrete. The calculator estimates both bag sizes and pallet counts for imperial concrete projects.",
+                      text: "A common pallet contains about 42 bags of 80 lb concrete or 56 bags of 60 lb concrete. Both pallet types contain about 3,360 lb of concrete before adding the wood pallet weight. With the pallet included, a loaded pallet is commonly around 3,400 to 3,450 lb. Always check your truck or trailer payload rating before pickup.",
                     },
                   },
                   {
@@ -1261,8 +1261,11 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-[#A0AEC0]">
                   A common pallet contains about 42 bags of 80 lb concrete or
-                  56 bags of 60 lb concrete. The calculator estimates both bag
-                  sizes and pallet counts for imperial concrete projects.
+                  56 bags of 60 lb concrete. Both pallet types contain about
+                  3,360 lb of concrete before adding the wood pallet weight.
+                  With the pallet included, a loaded pallet is commonly around
+                  3,400 to 3,450 lb. Always check your truck or trailer payload
+                  rating before pickup.
                 </p>
               </div>
 
