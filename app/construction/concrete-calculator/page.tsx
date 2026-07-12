@@ -1296,6 +1296,18 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
               <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5">
                 <h3 className="text-sm font-semibold text-white">
+                  How many cubic yards does one bag of concrete make?
+                </h3>
+                <p className="mt-2 text-sm leading-7 text-[#A0AEC0]">
+                  This calculator uses approximate planning yields of 0.022 cubic
+                  yards per 80 lb bag and 0.0167 cubic yards per 60 lb bag.
+                  Actual yield can vary by product, mix design, water amount,
+                  compaction, waste, and manufacturer.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5">
+                <h3 className="text-sm font-semibold text-white">
                   How many cubic yards fit in a standard concrete truck?
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-[#A0AEC0]">
