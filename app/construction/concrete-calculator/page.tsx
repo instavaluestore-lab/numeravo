@@ -1189,6 +1189,42 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 </p>
               </div>
             </div>
+
+            <div className="mt-6 rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+              <h3 className="text-sm font-semibold text-white">
+                Compare bags vs truck delivery by project type
+              </h3>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <Link
+                  href="/construction/concrete-slab-calculator"
+                  className="rounded-lg border border-[#1F2937] px-4 py-3 text-sm text-[#A0AEC0] transition hover:border-[#F97316] hover:text-white"
+                >
+                  Slabs, patios, driveways, and pads
+                </Link>
+
+                <Link
+                  href="/construction/concrete-footing-calculator"
+                  className="rounded-lg border border-[#1F2937] px-4 py-3 text-sm text-[#A0AEC0] transition hover:border-[#F97316] hover:text-white"
+                >
+                  Footings, trenches, and grade beams
+                </Link>
+
+                <Link
+                  href="/construction/sonotube-concrete-calculator"
+                  className="rounded-lg border border-[#1F2937] px-4 py-3 text-sm text-[#A0AEC0] transition hover:border-[#F97316] hover:text-white"
+                >
+                  Sonotubes, post holes, and piers
+                </Link>
+
+                <Link
+                  href="/construction/concrete-wall-calculator"
+                  className="rounded-lg border border-[#1F2937] px-4 py-3 text-sm text-[#A0AEC0] transition hover:border-[#F97316] hover:text-white"
+                >
+                  Walls, stem walls, and retaining walls
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
