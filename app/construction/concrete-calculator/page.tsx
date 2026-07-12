@@ -1133,6 +1133,19 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                     value={formatCurrency(results.sixtyLbBagCost)}
                   />
 
+                  <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4 text-sm leading-6 text-[#A0AEC0]">
+                    <p className="font-semibold text-white">
+                      Pallet weight warning
+                    </p>
+                    <p className="mt-2">
+                      A full pallet of bagged concrete is heavy. 42 bags of
+                      80 lb concrete or 56 bags of 60 lb concrete equals about
+                      3,360 lb before the wood pallet weight. With the pallet
+                      included, expect roughly 3,400 to 3,450 lb. Always check
+                      your pickup truck or trailer payload rating before loading.
+                    </p>
+                  </div>
+
                   {results.exceedsOnePickupPallet && (
                     <div className="rounded-xl border border-[#F97316] bg-[#0B0F19] p-4 text-sm leading-6 text-[#A0AEC0]">
                       <p className="font-semibold text-white">
