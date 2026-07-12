@@ -192,6 +192,69 @@ export default function ConcreteFootingCalculatorPage() {
         </section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
+              Bags vs Truck Delivery
+            </p>
+
+            <h2 className="mt-3 text-2xl font-semibold text-white">
+              Should you use concrete bags or ready-mix for footings?
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
+              Small footing runs, deck footings, fence post holes, and short
+              trenches can sometimes be handled with bagged concrete. Longer
+              wall footings, retaining wall footings, grade beams, and foundation
+              runs usually make more sense with ready-mix truck delivery.
+            </p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Bagged concrete
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  Best for smaller footing projects where access is limited or
+                  the quantity is low. The main concrete calculator can estimate
+                  80 lb bags, 60 lb bags, pallet counts, and bag cost.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  One-pallet rule
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  One common pickup-load pallet is about 42 bags of 80 lb
+                  concrete or 56 bags of 60 lb concrete. If your footing estimate
+                  exceeds one pallet, ready-mix delivery may be the better option.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Ready-mix truck
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  Ready-mix is typically better for long trenches, wall footings,
+                  grade beams, and structural pours. A standard concrete truck is
+                  commonly limited to about 10 cubic yards per legal load.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <Link
+                href="/construction/concrete-calculator"
+                className="inline-flex rounded-xl bg-[#F97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#EA580C]"
+              >
+                Calculate footing bags, pallets, and truck loads
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold">Related footing tools</h2>
 
           <p className="mt-4 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
