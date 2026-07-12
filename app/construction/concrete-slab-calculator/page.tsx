@@ -194,6 +194,70 @@ export default function ConcreteSlabCalculatorPage() {
         </section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
+              Bags vs Truck Delivery
+            </p>
+
+            <h2 className="mt-3 text-2xl font-semibold text-white">
+              Should you use concrete bags or a ready-mix truck for a slab?
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
+              Small concrete slabs can sometimes be poured with bagged concrete,
+              but larger patios, driveways, garage floors, and shed pads usually
+              make more sense with ready-mix truck delivery. The main concrete
+              calculator can now estimate 80 lb bags, 60 lb bags, pallet counts,
+              bag cost, cubic yards, and truck loads.
+            </p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Bagged concrete
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  Best for very small slabs, patch work, small pads, and areas
+                  where a concrete truck cannot reach. Bagged concrete becomes
+                  labor-heavy as slab size increases.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  One-pallet rule
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  One common pickup-load pallet is about 42 bags of 80 lb
+                  concrete or 56 bags of 60 lb concrete. If your slab needs more
+                  than one pallet, consider ready-mix delivery.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Ready-mix truck
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  Ready-mix is usually better for larger slabs. A standard
+                  concrete truck is commonly limited to about 10 cubic yards per
+                  legal load.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <Link
+                href="/construction/concrete-calculator"
+                className="inline-flex rounded-xl bg-[#F97316] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#EA580C]"
+              >
+                Calculate bags, pallets, and truck loads
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold">Related slab tools</h2>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
