@@ -1245,6 +1245,55 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
         </section>
 
         <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
+              Concrete Bag FAQ
+            </p>
+
+            <h2 className="mt-3 text-2xl font-semibold text-white">
+              Concrete bags, pallets, and ready-mix FAQs
+            </h2>
+
+            <div className="mt-6 space-y-5">
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5">
+                <h3 className="text-sm font-semibold text-white">
+                  How many bags of concrete are on a pallet?
+                </h3>
+                <p className="mt-2 text-sm leading-7 text-[#A0AEC0]">
+                  A common pallet contains about 42 bags of 80 lb concrete or
+                  56 bags of 60 lb concrete. The calculator estimates both bag
+                  sizes and pallet counts for imperial concrete projects.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5">
+                <h3 className="text-sm font-semibold text-white">
+                  When should I use concrete bags instead of a ready-mix truck?
+                </h3>
+                <p className="mt-2 text-sm leading-7 text-[#A0AEC0]">
+                  Concrete bags are usually best for small pours, post holes,
+                  small pads, patch work, and projects where a truck cannot
+                  easily access the site. If the estimate exceeds one pallet of
+                  bags, ready-mix truck delivery may be safer and more practical.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-5">
+                <h3 className="text-sm font-semibold text-white">
+                  How many cubic yards fit in a standard concrete truck?
+                </h3>
+                <p className="mt-2 text-sm leading-7 text-[#A0AEC0]">
+                  A standard concrete truck is commonly limited to about 10 cubic
+                  yards per legal load. Larger projects may require multiple
+                  loads, while very small orders may involve short-load fees from
+                  the supplier.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
               Concrete guides
