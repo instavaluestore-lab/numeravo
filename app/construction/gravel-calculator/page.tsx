@@ -623,6 +623,68 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
           </section>
         </div>
 
+        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
+              Gravel Delivery
+            </p>
+
+            <h2 className="mt-3 text-2xl font-semibold text-white">
+              Gravel delivery: cubic yards, tons, and truckloads
+            </h2>
+
+            <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
+              Gravel and stone are often ordered by the ton, but many projects
+              are measured in cubic yards. This calculator converts area and
+              depth into cubic yards, estimates tons using the selected material
+              density, and then shows approximate truckload counts for delivery
+              planning.
+            </p>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Small dump truck
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  A small dump truck may carry around 5 tons per load. This can
+                  be useful for smaller landscaping projects, paths, and tight
+                  access jobs.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Standard dump truck
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  A standard dump truck is often planned around 10 tons per load.
+                  This is a common delivery estimate for driveways, slab bases,
+                  drainage rock, and general gravel projects.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
+                <h3 className="text-sm font-semibold text-white">
+                  Large truck / tri-axle
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
+                  Larger dump trucks or tri-axle trucks may carry around 15 tons
+                  per load, depending on local road limits, truck configuration,
+                  supplier policy, and material moisture.
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-6 text-sm leading-7 text-[#A0AEC0]">
+              Truckload estimates are planning numbers only. Gravel weight varies
+              by material type, stone size, moisture, compaction, and supplier.
+              Confirm final delivery capacity, minimum order rules, and fees with
+              the gravel yard before ordering.
+            </p>
+          </div>
+        </section>
+
         <section className="mt-8 grid gap-6 lg:grid-cols-[1fr_0.9fr]">
           <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
             <h2 className="text-2xl font-semibold">
