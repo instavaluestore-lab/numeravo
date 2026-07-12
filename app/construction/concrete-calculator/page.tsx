@@ -558,6 +558,22 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                   },
                   {
                     "@type": "Question",
+                    name: "How many bags of concrete are on a pallet?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "A common pallet contains about 42 bags of 80 lb concrete or 56 bags of 60 lb concrete. The calculator estimates both bag sizes and pallet counts for imperial concrete projects.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "When should I use concrete bags instead of a ready-mix truck?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Concrete bags are usually best for small pours, post holes, small pads, patch work, and projects where a truck cannot easily access the site. If the estimate exceeds one pallet of bags, ready-mix truck delivery may be safer and more practical.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
                     name: "Does this include labor or delivery fees?",
                     acceptedAnswer: {
                       "@type": "Answer",
