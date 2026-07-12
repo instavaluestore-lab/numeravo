@@ -154,6 +154,10 @@ export default function GravelCalculatorPage() {
       const cubicYardsWithWaste = cubicYards * (1 + waste / 100);
       const estimatedTons = cubicYardsWithWaste * toNumber(tonsPerCubicYard);
       const estimatedCost = estimatedTons * price;
+      const smallTruckLoads = estimatedTons > 0 ? Math.ceil(estimatedTons / 5) : 0;
+      const standardTruckLoads =
+        estimatedTons > 0 ? Math.ceil(estimatedTons / 10) : 0;
+      const largeTruckLoads = estimatedTons > 0 ? Math.ceil(estimatedTons / 15) : 0;
 
       return {
         cubicFeet,
@@ -162,6 +166,9 @@ export default function GravelCalculatorPage() {
         volumeWithWaste: cubicYardsWithWaste,
         estimatedWeight: estimatedTons,
         estimatedCost,
+        smallTruckLoads,
+        standardTruckLoads,
+        largeTruckLoads,
       };
     }
 
@@ -171,6 +178,12 @@ export default function GravelCalculatorPage() {
     const estimatedTonnes =
       cubicMetersWithWaste * toNumber(tonnesPerCubicMeter);
     const estimatedCost = estimatedTonnes * price;
+    const smallTruckLoads =
+      estimatedTonnes > 0 ? Math.ceil(estimatedTonnes / 5) : 0;
+    const standardTruckLoads =
+      estimatedTonnes > 0 ? Math.ceil(estimatedTonnes / 10) : 0;
+    const largeTruckLoads =
+      estimatedTonnes > 0 ? Math.ceil(estimatedTonnes / 15) : 0;
 
     return {
       cubicFeet: cubicMeters * 35.3147,
@@ -179,6 +192,9 @@ export default function GravelCalculatorPage() {
       volumeWithWaste: cubicMetersWithWaste,
       estimatedWeight: estimatedTonnes,
       estimatedCost,
+      smallTruckLoads,
+      standardTruckLoads,
+      largeTruckLoads,
     };
   }, [
     unitSystem,
@@ -577,13 +593,31 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 value={formatCurrency(results.estimatedCost)}
                 highlight
               />
+
+              <ResultRow
+                label="Small Dump Truck Loads"
+                value={`${results.smallTruckLoads} load${results.smallTruckLoads === 1 ? "" : "s"} at about 5 ${unitLabels.weight} per load`}
+              />
+
+              <ResultRow
+                label="Standard Dump Truck Loads"
+                value={`${results.standardTruckLoads} load${results.standardTruckLoads === 1 ? "" : "s"} at about 10 ${unitLabels.weight} per load`}
+                highlight
+              />
+
+              <ResultRow
+                label="Large Dump Truck / Tri-Axle Loads"
+                value={`${results.largeTruckLoads} load${results.largeTruckLoads === 1 ? "" : "s"} at about 15 ${unitLabels.weight} per load`}
+              />
             </div>
 
             <div className="mt-6 rounded-xl border border-[#1F2937] bg-[#0B0F19] p-4">
               <p className="text-sm leading-6 text-[#A0AEC0]">
                 Material weight varies by stone type, moisture, compaction, and
-                supplier. Use this as a planning estimate and confirm final
-                quantities with your supplier.
+                supplier. Truck capacities also vary by truck size, road limits,
+                supplier policy, and material moisture. Use this as a planning
+                estimate and confirm final quantities and delivery options with
+                your supplier.
               </p>
             </div>
           </section>
