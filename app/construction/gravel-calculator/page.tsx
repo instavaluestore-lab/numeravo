@@ -330,6 +330,30 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                       text: "Yes. A 5% to 10% waste allowance is commonly used for gravel estimates to account for spreading, compaction, uneven ground, and material loss.",
                     },
                   },
+                  {
+                    "@type": "Question",
+                    name: "How many tons of gravel fit in a dump truck?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "A small dump truck may carry about 5 tons of gravel, a standard dump truck is often estimated around 10 tons, and a larger dump truck or tri-axle may carry about 15 tons. Actual capacity depends on truck type, road limits, supplier policy, material moisture, and local weight rules.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How many cubic yards of gravel are in a dump truck?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "The cubic yards in a dump truck depend on the gravel density and truck weight capacity. Since gravel is often ordered by the ton, convert cubic yards to tons using the selected material density, then divide by the truck capacity.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Should I order gravel by the ton or cubic yard?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Most gravel suppliers price and deliver by the ton because weight is easier to measure at the yard. Project plans often start with cubic yards, so use cubic yards for volume planning and tons for ordering and delivery estimates.",
+                    },
+                  },
                 ],
               },
             ],
@@ -896,6 +920,21 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             <FAQItem
               question="Should I add waste to a gravel estimate?"
               answer="Yes. A 5% to 10% waste allowance is commonly used to account for spreading, compaction, uneven ground, and material loss."
+            />
+
+            <FAQItem
+              question="How many tons of gravel fit in a dump truck?"
+              answer="A small dump truck may carry about 5 tons of gravel, a standard dump truck is often estimated around 10 tons, and a larger dump truck or tri-axle may carry about 15 tons. Actual capacity depends on truck type, road limits, supplier policy, material moisture, and local weight rules."
+            />
+
+            <FAQItem
+              question="How many cubic yards of gravel are in a dump truck?"
+              answer="The cubic yards in a dump truck depend on gravel density and truck weight capacity. Since gravel is often ordered by the ton, convert cubic yards to tons using the selected material density, then divide by the truck capacity."
+            />
+
+            <FAQItem
+              question="Should I order gravel by the ton or cubic yard?"
+              answer="Most gravel suppliers price and deliver by the ton because weight is easier to measure at the yard. Project plans often start with cubic yards, so use cubic yards for volume planning and tons for ordering and delivery estimates."
             />
 
             <FAQItem
