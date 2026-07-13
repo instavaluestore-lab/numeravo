@@ -333,15 +333,16 @@ export default function GravelDrivewayCostPage() {
             />
 
             <RelatedLink
-  href="/construction/gravel-cost-calculator"
-  title="Gravel Cost Calculator"
-  text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
-/>
-<RelatedLink
-  href="/construction/road-base-calculator"
-  title="Road Base Calculator"
-  text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
-/>
+              href="/construction/gravel-cost-calculator"
+              title="Gravel Cost Calculator"
+              text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
+            />
+
+            <RelatedLink
+              href="/construction/road-base-calculator"
+              title="Road Base Calculator"
+              text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
+            />
 
             <RelatedLink
               href="/construction/how-much-gravel-do-i-need"
