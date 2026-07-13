@@ -92,6 +92,30 @@ export default function GravelDrivewayCostPage() {
                       text: "Not always. Gravel material pricing is often listed per ton, while delivery fees, minimum order charges, fuel surcharges, spreading, grading, and compaction may be separate.",
                     },
                   },
+                  {
+                    "@type": "Question",
+                    name: "How much does a gravel driveway cost per square foot?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Gravel driveway cost per square foot depends on gravel depth, price per ton, delivery, site prep, spreading, and compaction. Divide the estimated total project cost by the driveway square footage to estimate cost per square foot.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How many truckloads of gravel does a driveway need?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Truckloads depend on estimated tons and truck capacity. A small dump truck may carry about 5 tons, a standard dump truck about 10 tons, and a larger dump truck or tri-axle about 15 tons, but capacity varies by supplier and road limits.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What is included in a gravel driveway cost estimate?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "A complete gravel driveway cost estimate may include gravel material, delivery, site prep, grading, drainage work, landscape fabric, spreading, compaction, edging, and waste allowance.",
+                    },
+                  },
                 ],
               },
             ],
@@ -363,6 +387,21 @@ export default function GravelDrivewayCostPage() {
             <FAQItem
               question="Does gravel driveway cost include delivery?"
               answer="Not always. Gravel is often priced per ton as material only. Delivery fees, fuel surcharges, minimum order charges, spreading, and compaction may be separate."
+            />
+
+            <FAQItem
+              question="How much does a gravel driveway cost per square foot?"
+              answer="Gravel driveway cost per square foot depends on gravel depth, price per ton, delivery, site prep, spreading, and compaction. Divide the estimated total project cost by the driveway square footage to estimate cost per square foot."
+            />
+
+            <FAQItem
+              question="How many truckloads of gravel does a driveway need?"
+              answer="Truckloads depend on estimated tons and truck capacity. A small dump truck may carry about 5 tons, a standard dump truck about 10 tons, and a larger dump truck or tri-axle about 15 tons, but capacity varies by supplier and road limits."
+            />
+
+            <FAQItem
+              question="What is included in a gravel driveway cost estimate?"
+              answer="A complete gravel driveway cost estimate may include gravel material, delivery, site prep, grading, drainage work, landscape fabric, spreading, compaction, edging, and waste allowance."
             />
           </div>
         </section>
