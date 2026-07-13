@@ -92,6 +92,30 @@ export default function GravelDrivewayCalculatorPage() {
                       text: "Yes. A 5% to 10% waste allowance is commonly used for driveway gravel to account for spreading, compaction, uneven ground, and material loss.",
                     },
                   },
+                  {
+                    "@type": "Question",
+                    name: "How many tons of gravel do I need for a driveway?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "The tons of gravel needed for a driveway depend on driveway length, width, gravel depth, waste allowance, and gravel density. Multiply length by width by depth to get volume, convert to cubic yards, add waste, then multiply by tons per cubic yard.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How many truckloads of gravel do I need for a driveway?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Truckloads depend on total estimated tons and truck capacity. A small dump truck may carry about 5 tons, a standard dump truck about 10 tons, and a larger dump truck or tri-axle about 15 tons, but actual capacity varies by supplier and local weight limits.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How much does gravel driveway delivery cost?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Gravel driveway delivery cost depends on supplier distance, truck size, fuel charges, minimum order rules, dump location access, and local pricing. This calculator lets you enter a delivery fee so you can estimate material plus delivery total.",
+                    },
+                  },
                 ],
               },
             ],
@@ -292,6 +316,21 @@ export default function GravelDrivewayCalculatorPage() {
             <FAQItem
               question="Should I add waste to a gravel driveway estimate?"
               answer="Yes. A 5% to 10% waste allowance is useful for spreading, compaction, uneven ground, and material loss."
+            />
+
+            <FAQItem
+              question="How many tons of gravel do I need for a driveway?"
+              answer="The tons of gravel needed for a driveway depend on driveway length, width, gravel depth, waste allowance, and gravel density. Multiply length by width by depth, convert to cubic yards, add waste, then multiply by tons per cubic yard."
+            />
+
+            <FAQItem
+              question="How many truckloads of gravel do I need for a driveway?"
+              answer="Truckloads depend on total estimated tons and truck capacity. A small dump truck may carry about 5 tons, a standard dump truck about 10 tons, and a larger dump truck or tri-axle about 15 tons, but actual capacity varies by supplier and local weight limits."
+            />
+
+            <FAQItem
+              question="How much does gravel driveway delivery cost?"
+              answer="Gravel driveway delivery cost depends on supplier distance, truck size, fuel charges, minimum order rules, dump location access, and local pricing. This calculator lets you enter a delivery fee so you can estimate material plus delivery total."
             />
           </div>
         </section>
