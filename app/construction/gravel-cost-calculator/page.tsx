@@ -92,6 +92,30 @@ export default function GravelCostCalculatorPage() {
                       text: "Yes. A 5% to 10% waste allowance is commonly useful for uneven ground, compaction, spreading loss, and measurement differences.",
                     },
                   },
+                  {
+                    "@type": "Question",
+                    name: "How much does gravel cost per square foot?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Gravel cost per square foot depends on gravel depth, tons per cubic yard, price per ton, delivery, labor, and site prep. Divide the estimated total project cost by the project square footage to estimate cost per square foot.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How do I estimate gravel delivery cost?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Estimate gravel delivery cost by asking the supplier for delivery fees, minimum order rules, fuel surcharges, truckload capacity, and distance-based charges. This calculator lets you enter a delivery fee and include it in the total estimate.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What is included in a gravel cost estimate?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "A gravel cost estimate may include material cost, delivery, labor or spreading, site prep, grading, waste allowance, and truckload planning. Final cost can change based on supplier pricing, access, moisture, and project conditions.",
+                    },
+                  },
                 ],
               },
             ],
@@ -365,6 +389,21 @@ export default function GravelCostCalculatorPage() {
             <FAQItem
               question="Should I include waste in gravel cost?"
               answer="Yes. A 5% to 10% waste allowance helps account for uneven ground, compaction, spreading loss, and small measurement differences."
+            />
+
+            <FAQItem
+              question="How much does gravel cost per square foot?"
+              answer="Gravel cost per square foot depends on gravel depth, tons per cubic yard, price per ton, delivery, labor, and site prep. Divide the estimated total project cost by the project square footage to estimate cost per square foot."
+            />
+
+            <FAQItem
+              question="How do I estimate gravel delivery cost?"
+              answer="Estimate gravel delivery cost by asking the supplier for delivery fees, minimum order rules, fuel surcharges, truckload capacity, and distance-based charges. This calculator lets you enter a delivery fee and include it in the total estimate."
+            />
+
+            <FAQItem
+              question="What is included in a gravel cost estimate?"
+              answer="A gravel cost estimate may include material cost, delivery, labor or spreading, site prep, grading, waste allowance, and truckload planning. Final cost can change based on supplier pricing, access, moisture, and project conditions."
             />
           </div>
         </section>
