@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HowMuchGravelCalculatorClient from "./HowMuchGravelCalculatorClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -115,12 +116,12 @@ export default function HowMuchGravelDoINeedPage() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/construction/gravel-calculator"
+            <a
+              href="#how-much-gravel-calculator"
               className="rounded-xl bg-[#F97316] px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#fb8a3c]"
             >
-              Open Gravel Calculator
-            </Link>
+              Use Gravel Calculator
+            </a>
 
             <Link
               href="/construction/gravel-driveway-calculator"
@@ -129,6 +130,10 @@ export default function HowMuchGravelDoINeedPage() {
               Gravel Driveway Guide
             </Link>
           </div>
+        </div>
+
+        <div id="how-much-gravel-calculator">
+          <HowMuchGravelCalculatorClient />
         </div>
 
         <section className="mt-12 grid gap-6 lg:grid-cols-[1fr_0.85fr]">
