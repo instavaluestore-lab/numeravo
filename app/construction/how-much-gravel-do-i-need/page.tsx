@@ -265,20 +265,22 @@ export default function HowMuchGravelDoINeedPage() {
             />
 
             <RelatedLink
-  href="/construction/gravel-cost-calculator"
-  title="Gravel Cost Calculator"
-  text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
-/>
-<RelatedLink
-  href="/construction/road-base-calculator"
-  title="Road Base Calculator"
-  text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
-/>
-<RelatedLink
-  href="/construction/base-for-concrete-slab-depth"
-  title="Base for Concrete Slab Depth"
-  text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."
-/>
+              href="/construction/gravel-cost-calculator"
+              title="Gravel Cost Calculator"
+              text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
+            />
+
+            <RelatedLink
+              href="/construction/road-base-calculator"
+              title="Road Base Calculator"
+              text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
+            />
+
+            <RelatedLink
+              href="/construction/base-for-concrete-slab-depth"
+              title="Base for Concrete Slab Depth"
+              text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."
+            />
 
             <RelatedLink
               href="/construction/gravel-driveway-calculator"
@@ -293,10 +295,10 @@ export default function HowMuchGravelDoINeedPage() {
             />
 
             <RelatedLink
-  href="/construction/gravel-driveway-cost"
-  title="Gravel Driveway Cost"
-  text="Estimate gravel driveway cost using driveway size, depth, tons, delivery, and price per ton."
-/>
+              href="/construction/gravel-driveway-cost"
+              title="Gravel Driveway Cost"
+              text="Estimate gravel driveway cost using driveway size, depth, tons, delivery, and price per ton."
+            />
           </div>
         </section>
 
