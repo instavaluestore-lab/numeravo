@@ -351,16 +351,16 @@ export default function RoadBaseCalculatorPage() {
             />
 
             <RelatedLink
-  href="/construction/how-to-prepare-ground-for-concrete-slab"
-  title="How to Prepare Ground for Concrete Slab"
-  text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."
-/>
+              href="/construction/how-to-prepare-ground-for-concrete-slab"
+              title="How to Prepare Ground for Concrete Slab"
+              text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."
+            />
 
             <RelatedLink
-  href="/construction/base-for-concrete-slab-depth"
-  title="Base for Concrete Slab Depth"
-  text="Learn common road base, gravel, and crushed stone depths for concrete slabs, patios, driveways, and shed pads."
-/>
+              href="/construction/base-for-concrete-slab-depth"
+              title="Base for Concrete Slab Depth"
+              text="Learn common road base, gravel, and crushed stone depths for concrete slabs, patios, driveways, and shed pads."
+            />
 
             <RelatedLink
               href="/construction/crushed-stone-vs-gravel"
