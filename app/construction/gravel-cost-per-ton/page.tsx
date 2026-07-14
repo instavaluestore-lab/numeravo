@@ -278,28 +278,28 @@ export default function GravelCostPerTonPage() {
             />
 
             <RelatedLink
-  href="/construction/crushed-stone-calculator"
-  title="Crushed Stone Calculator"
-  text="Estimate crushed stone cubic yards, tons, waste, and cost using the Crushed Stone material preset."
-/>
-
-<RelatedLink
-  href="/construction/road-base-calculator"
-  title="Road Base Calculator"
-  text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
-/>
+              href="/construction/crushed-stone-calculator"
+              title="Crushed Stone Calculator"
+              text="Estimate crushed stone cubic yards, tons, waste, and cost using the Crushed Stone material preset."
+            />
 
             <RelatedLink
-  href="/construction/gravel-cost-calculator"
-  title="Gravel Cost Calculator"
-  text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
-/>
+              href="/construction/road-base-calculator"
+              title="Road Base Calculator"
+              text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
+            />
 
             <RelatedLink
-  href="/construction/gravel-driveway-cost"
-  title="Gravel Driveway Cost"
-  text="Estimate total driveway cost using gravel depth, tons, price per ton, delivery, and project factors."
-/>
+              href="/construction/gravel-cost-calculator"
+              title="Gravel Cost Calculator"
+              text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
+            />
+
+            <RelatedLink
+              href="/construction/gravel-driveway-cost"
+              title="Gravel Driveway Cost"
+              text="Estimate total driveway cost using gravel depth, tons, price per ton, delivery, and project factors."
+            />
 
             <RelatedLink
               href="/construction/concrete-calculator"
