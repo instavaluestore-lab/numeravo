@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CrushedStoneVsGravelClient from "./CrushedStoneVsGravelClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -115,12 +116,12 @@ export default function CrushedStoneVsGravelPage() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/construction/gravel-calculator"
+            <a
+              href="#crushed-stone-vs-gravel-estimator"
               className="rounded-xl bg-[#F97316] px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#fb8a3c]"
             >
-              Open Gravel Calculator
-            </Link>
+              Use Comparison Estimator
+            </a>
 
             <Link
               href="/construction/how-much-gravel-do-i-need"
@@ -129,6 +130,10 @@ export default function CrushedStoneVsGravelPage() {
               How Much Gravel Do I Need?
             </Link>
           </div>
+        </div>
+
+        <div id="crushed-stone-vs-gravel-estimator">
+          <CrushedStoneVsGravelClient />
         </div>
 
         <section className="mt-12 grid gap-6 lg:grid-cols-2">
