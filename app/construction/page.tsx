@@ -93,6 +93,13 @@ const calculators = [
   status: "Live",
 },
 {
+  title: "River Rock Calculator",
+  description:
+    "Estimate river rock cubic yards, tons, cost, delivery, and coverage for landscaping beds, dry creek beds, drainage areas, borders, and decorative ground cover.",
+  href: "/construction/river-rock-calculator",
+  status: "Live",
+},
+{
   title: "Crushed Stone vs Gravel",
   description:
     "Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers.",
@@ -268,6 +275,10 @@ export default function ConstructionPage() {
   href="/construction/pea-gravel-calculator"
   label="Pea Gravel Calculator"
 />
+<QuickLink
+  href="/construction/river-rock-calculator"
+  label="River Rock Calculator"
+/>
           </div>
         </section>
 
@@ -306,6 +317,14 @@ export default function ConstructionPage() {
 <QuickLink
   href="/construction/gravel-cost-per-ton"
   label="Gravel Cost Per Ton"
+/>
+<QuickLink
+  href="/construction/pea-gravel-calculator"
+  label="Pea Gravel Calculator"
+/>
+<QuickLink
+  href="/construction/river-rock-calculator"
+  label="River Rock Calculator"
 />
           </div>
         </section>
