@@ -100,6 +100,13 @@ const calculators = [
   status: "Live",
 },
 {
+  title: "Decomposed Granite Calculator",
+  description:
+    "Estimate decomposed granite cubic yards, tons, cost, delivery, stabilizer add-ons, and coverage for patios, walkways, dog runs, garden paths, and compacted landscape surfaces.",
+  href: "/construction/decomposed-granite-calculator",
+  status: "Live",
+},
+{
   title: "Crushed Stone vs Gravel",
   description:
     "Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers.",
@@ -279,6 +286,10 @@ export default function ConstructionPage() {
   href="/construction/river-rock-calculator"
   label="River Rock Calculator"
 />
+<QuickLink
+  href="/construction/decomposed-granite-calculator"
+  label="Decomposed Granite Calculator"
+/>
           </div>
         </section>
 
@@ -325,6 +336,10 @@ export default function ConstructionPage() {
 <QuickLink
   href="/construction/river-rock-calculator"
   label="River Rock Calculator"
+/>
+<QuickLink
+  href="/construction/decomposed-granite-calculator"
+  label="Decomposed Granite Calculator"
 />
           </div>
         </section>
