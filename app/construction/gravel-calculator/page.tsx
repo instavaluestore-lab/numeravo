@@ -802,6 +802,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             />
 
             <RelatedLink
+              href="/construction/pea-gravel-calculator"
+              title="Pea Gravel Calculator"
+              text="Estimate pea gravel cubic yards, tons, delivery, and cost for patios, walkways, landscaping, drainage, and ground cover."
+            />
+
+            <RelatedLink
               href="/construction/crushed-stone-vs-gravel"
               title="Crushed Stone vs Gravel"
               text="Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers."

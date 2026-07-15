@@ -306,6 +306,12 @@ export default function CrushedStoneVsGravelPage() {
             />
 
             <RelatedLink
+              href="/construction/pea-gravel-calculator"
+              title="Pea Gravel Calculator"
+              text="Estimate pea gravel cubic yards, tons, delivery, and cost for landscaping, patios, walkways, and drainage projects."
+            />
+
+            <RelatedLink
               href="/construction/gravel-driveway-calculator"
               title="Gravel Driveway Calculator"
               text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."

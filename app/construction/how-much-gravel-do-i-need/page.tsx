@@ -271,6 +271,12 @@ export default function HowMuchGravelDoINeedPage() {
             />
 
             <RelatedLink
+              href="/construction/pea-gravel-calculator"
+              title="Pea Gravel Calculator"
+              text="Estimate pea gravel cubic yards, tons, delivery, and cost for landscaping, patios, walkways, and drainage projects."
+            />
+
+            <RelatedLink
               href="/construction/road-base-calculator"
               title="Road Base Calculator"
               text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
