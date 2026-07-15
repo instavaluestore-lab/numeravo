@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/gravel-cost-calculator",
     "/construction/how-much-gravel-do-i-need",
     "/construction/gravel-cost-per-ton",
+    "/construction/pea-gravel-calculator",
     "/construction/crushed-stone-vs-gravel",
     "/construction/crushed-stone-calculator",
     "/construction/road-base-calculator",
@@ -54,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("gravel-cost-calculator") ||
               route.includes("how-much-gravel-do-i-need") ||
               route.includes("gravel-cost-per-ton") ||
+              route.includes("pea-gravel-calculator") ||
 route.includes("crushed-stone-vs-gravel") ||
 route.includes("crushed-stone-calculator") ||
 route.includes("road-base-calculator") ||
