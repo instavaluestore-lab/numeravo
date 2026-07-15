@@ -808,6 +808,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             />
 
             <RelatedLink
+              href="/construction/river-rock-calculator"
+              title="River Rock Calculator"
+              text="Estimate river rock cubic yards, tons, delivery, and cost for landscaping beds, dry creek beds, drainage, and decorative ground cover."
+            />
+
+            <RelatedLink
               href="/construction/crushed-stone-vs-gravel"
               title="Crushed Stone vs Gravel"
               text="Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers."

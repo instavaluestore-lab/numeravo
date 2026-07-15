@@ -312,6 +312,12 @@ export default function CrushedStoneVsGravelPage() {
             />
 
             <RelatedLink
+              href="/construction/river-rock-calculator"
+              title="River Rock Calculator"
+              text="Estimate river rock cubic yards, tons, delivery, and cost for landscaping beds, dry creek beds, drainage, and decorative ground cover."
+            />
+
+            <RelatedLink
               href="/construction/gravel-driveway-calculator"
               title="Gravel Driveway Calculator"
               text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."

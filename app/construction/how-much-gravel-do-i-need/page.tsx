@@ -277,6 +277,12 @@ export default function HowMuchGravelDoINeedPage() {
             />
 
             <RelatedLink
+              href="/construction/river-rock-calculator"
+              title="River Rock Calculator"
+              text="Estimate river rock cubic yards, tons, delivery, and cost for landscaping beds, dry creek beds, drainage, and decorative ground cover."
+            />
+
+            <RelatedLink
               href="/construction/road-base-calculator"
               title="Road Base Calculator"
               text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."

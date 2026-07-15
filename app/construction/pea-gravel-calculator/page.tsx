@@ -236,6 +236,12 @@ export default function PeaGravelCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/river-rock-calculator"
+              title="River Rock Calculator"
+              text="Estimate river rock cubic yards, tons, delivery, and cost for landscaping beds, dry creek beds, drainage, and decorative ground cover."
+            />
+
+            <RelatedLink
               href="/construction/crushed-stone-calculator"
               title="Crushed Stone Calculator"
               text="Estimate crushed stone cubic yards, tons, waste, and cost."
