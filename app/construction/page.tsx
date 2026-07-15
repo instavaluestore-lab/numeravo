@@ -86,6 +86,13 @@ const calculators = [
   status: "Guide",
 },
 {
+  title: "Pea Gravel Calculator",
+  description:
+    "Estimate pea gravel cubic yards, tons, cost, delivery, and coverage for landscaping, patios, walkways, playground areas, and drainage projects.",
+  href: "/construction/pea-gravel-calculator",
+  status: "Live",
+},
+{
   title: "Crushed Stone vs Gravel",
   description:
     "Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers.",
@@ -256,6 +263,10 @@ export default function ConstructionPage() {
 <QuickLink
   href="/construction/gravel-cost-per-ton"
   label="Gravel Cost Per Ton"
+/>
+<QuickLink
+  href="/construction/pea-gravel-calculator"
+  label="Pea Gravel Calculator"
 />
           </div>
         </section>
