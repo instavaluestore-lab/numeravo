@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/crushed-stone-vs-gravel",
     "/construction/crushed-stone-calculator",
     "/construction/road-base-calculator",
+    "/construction/paver-base-calculator",
     "/construction/base-for-concrete-slab-depth",
     "/construction/how-to-prepare-ground-for-concrete-slab",
     "/finance",
@@ -63,6 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 route.includes("crushed-stone-vs-gravel") ||
 route.includes("crushed-stone-calculator") ||
 route.includes("road-base-calculator") ||
+              route.includes("paver-base-calculator") ||
 route.includes("base-for-concrete-slab-depth") ||
 route.includes("how-to-prepare-ground-for-concrete-slab")
             ? 0.85
