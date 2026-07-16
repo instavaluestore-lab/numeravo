@@ -100,6 +100,13 @@ const calculators = [
   status: "Live",
 },
 {
+  title: "Drainage Rock Calculator",
+  description:
+    "Estimate drainage rock cubic yards, tons, delivery, and cost for French drains, trench drains, dry wells, retaining walls, and landscape drainage beds.",
+  href: "/construction/drainage-rock-calculator",
+  status: "Live",
+},
+{
   title: "Decomposed Granite Calculator",
   description:
     "Estimate decomposed granite cubic yards, tons, cost, delivery, stabilizer add-ons, and coverage for patios, walkways, dog runs, garden paths, and compacted landscape surfaces.",
