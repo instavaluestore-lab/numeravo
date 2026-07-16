@@ -128,6 +128,13 @@ const calculators = [
   status: "Guide",
 },
 {
+  title: "Paver Base Calculator",
+  description:
+    "Estimate compacted paver base gravel, bedding sand, cubic yards, tons, delivery, and cost for patios, walkways, driveways, and hardscape projects.",
+  href: "/construction/paver-base-calculator",
+  status: "Live",
+},
+{
   title: "Base for Concrete Slab Depth",
   description:
     "Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, shed pads, and garage slabs.",
@@ -267,6 +274,10 @@ export default function ConstructionPage() {
   label="Road Base Calculator"
 />
 <QuickLink
+  href="/construction/paver-base-calculator"
+  label="Paver Base Calculator"
+/>
+<QuickLink
   href="/construction/base-for-concrete-slab-depth"
   label="Base for Concrete Slab Depth"
 />
@@ -289,6 +300,10 @@ export default function ConstructionPage() {
 <QuickLink
   href="/construction/decomposed-granite-calculator"
   label="Decomposed Granite Calculator"
+/>
+<QuickLink
+  href="/construction/paver-base-calculator"
+  label="Paver Base Calculator"
 />
           </div>
         </section>
