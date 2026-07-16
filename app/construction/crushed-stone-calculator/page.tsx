@@ -361,6 +361,12 @@ export default function CrushedStoneCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/decomposed-granite-calculator"
+              title="Decomposed Granite Calculator"
+              text="Estimate decomposed granite cubic yards, tons, delivery, stabilizer add-ons, and cost for patios, walkways, dog runs, garden paths, and compacted landscape surfaces."
+            />
+
+            <RelatedLink
               href="/construction/road-base-calculator"
               title="Road Base Calculator"
               text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."

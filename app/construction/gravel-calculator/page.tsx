@@ -814,6 +814,13 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             />
 
             <RelatedLink
+              href="/construction/decomposed-granite-calculator"
+              title="Decomposed Granite Calculator"
+              text="Estimate decomposed granite cubic yards, tons, delivery, stabilizer add-ons, and cost for patios, walkways, dog runs, garden paths, and compacted landscape surfaces."
+            />
+
+
+            <RelatedLink
               href="/construction/crushed-stone-vs-gravel"
               title="Crushed Stone vs Gravel"
               text="Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers."

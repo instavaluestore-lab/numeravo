@@ -318,6 +318,12 @@ export default function CrushedStoneVsGravelPage() {
             />
 
             <RelatedLink
+              href="/construction/decomposed-granite-calculator"
+              title="Decomposed Granite Calculator"
+              text="Estimate decomposed granite cubic yards, tons, delivery, stabilizer add-ons, and cost for patios, walkways, dog runs, garden paths, and compacted landscape surfaces."
+            />
+
+            <RelatedLink
               href="/construction/gravel-driveway-calculator"
               title="Gravel Driveway Calculator"
               text="Estimate gravel tons, cubic yards, depth, waste, and cost for driveway projects."
