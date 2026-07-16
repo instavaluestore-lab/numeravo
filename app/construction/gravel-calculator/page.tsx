@@ -814,6 +814,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             />
 
             <RelatedLink
+              href="/construction/drainage-rock-calculator"
+              title="Drainage Rock Calculator"
+              text="Estimate drainage rock cubic yards, tons, delivery, and cost for French drains, trench drains, dry wells, retaining walls, and landscape drainage beds."
+            />
+
+            <RelatedLink
               href="/construction/decomposed-granite-calculator"
               title="Decomposed Granite Calculator"
               text="Estimate decomposed granite cubic yards, tons, delivery, stabilizer add-ons, and cost for patios, walkways, dog runs, garden paths, and compacted landscape surfaces."

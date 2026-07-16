@@ -339,6 +339,12 @@ export default function RoadBaseCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/drainage-rock-calculator"
+              title="Drainage Rock Calculator"
+              text="Estimate drainage rock cubic yards, tons, delivery, and cost for French drains, trench drains, dry wells, retaining walls, and landscape drainage beds."
+            />
+
+            <RelatedLink
               href="/construction/paver-base-calculator"
               title="Paver Base Calculator"
               text="Estimate compacted paver base gravel, bedding sand, cubic yards, tons, delivery, and cost for patios, walkways, driveways, and hardscape projects."

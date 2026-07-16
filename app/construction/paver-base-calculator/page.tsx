@@ -226,6 +226,12 @@ export default function PaverBaseCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/drainage-rock-calculator"
+              title="Drainage Rock Calculator"
+              text="Estimate drainage rock cubic yards, tons, delivery, and cost for French drains, trench drains, dry wells, retaining walls, and landscape drainage beds."
+            />
+
+            <RelatedLink
               href="/construction/crushed-stone-calculator"
               title="Crushed Stone Calculator"
               text="Estimate crushed stone cubic yards, tons, waste, and cost."
