@@ -271,6 +271,12 @@ export default function BaseForConcreteSlabDepthPage() {
             />
 
             <RelatedLink
+              href="/construction/paver-base-calculator"
+              title="Paver Base Calculator"
+              text="Estimate compacted paver base gravel, bedding sand, cubic yards, tons, delivery, and cost for patios, walkways, driveways, and hardscape projects."
+            />
+
+            <RelatedLink
   href="/construction/how-to-prepare-ground-for-concrete-slab"
   title="How to Prepare Ground for Concrete Slab"
   text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."

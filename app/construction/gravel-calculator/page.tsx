@@ -839,6 +839,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             />
 
             <RelatedLink
+              href="/construction/paver-base-calculator"
+              title="Paver Base Calculator"
+              text="Estimate compacted paver base gravel, bedding sand, cubic yards, tons, delivery, and cost for patios, walkways, driveways, and hardscape projects."
+            />
+
+            <RelatedLink
               href="/construction/base-for-concrete-slab-depth"
               title="Base for Concrete Slab Depth"
               text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."

@@ -339,6 +339,12 @@ export default function RoadBaseCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/paver-base-calculator"
+              title="Paver Base Calculator"
+              text="Estimate compacted paver base gravel, bedding sand, cubic yards, tons, delivery, and cost for patios, walkways, driveways, and hardscape projects."
+            />
+
+            <RelatedLink
               href="/construction/gravel-cost-calculator"
               title="Gravel Cost Calculator"
               text="Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery."
