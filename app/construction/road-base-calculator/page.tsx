@@ -345,6 +345,12 @@ export default function RoadBaseCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-driveway-calculator"
+              title="Concrete Driveway Calculator"
+              text="Estimate concrete driveway cubic yards, gravel base, reinforcement, labor, delivery, and total project cost."
+            />
+
+            <RelatedLink
               href="/construction/paver-base-calculator"
               title="Paver Base Calculator"
               text="Estimate compacted paver base gravel, bedding sand, cubic yards, tons, delivery, and cost for patios, walkways, driveways, and hardscape projects."

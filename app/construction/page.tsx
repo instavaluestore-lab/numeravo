@@ -30,6 +30,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Driveway Calculator",
+    description:
+      "Estimate concrete driveway cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total project cost.",
+    href: "/construction/concrete-driveway-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

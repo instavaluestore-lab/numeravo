@@ -301,6 +301,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-driveway-calculator"
+              title="Concrete Driveway Calculator"
+              text="Estimate concrete driveway yards, base material, reinforcement, labor, delivery, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/rebar-calculator"
               title="Rebar Calculator"
               text="Estimate rebar pieces, spacing, linear feet, stock length, weight, waste, and material cost."

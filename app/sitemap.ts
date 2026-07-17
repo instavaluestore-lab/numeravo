@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/concrete-cost-calculator",
     "/construction/concrete-bag-calculator",
     "/construction/rebar-calculator",
+    "/construction/concrete-driveway-calculator",
     "/construction/concrete-slab-calculator",
     "/construction/concrete-footing-calculator",
     "/construction/sonotube-concrete-calculator",
@@ -57,6 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("concrete-cost-calculator") ||
               route.includes("concrete-bag-calculator") ||
               route.includes("rebar-calculator") ||
+              route.includes("concrete-driveway-calculator") ||
               route.includes("gravel-calculator") ||
               route.includes("gravel-driveway-calculator") ||
               route.includes("gravel-driveway-cost") ||

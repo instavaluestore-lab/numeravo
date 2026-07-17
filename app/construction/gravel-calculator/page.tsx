@@ -839,6 +839,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             />
 
             <RelatedLink
+              href="/construction/concrete-driveway-calculator"
+              title="Concrete Driveway Calculator"
+              text="Estimate concrete driveway cubic yards, gravel base, reinforcement, delivery, labor, finishing, and total project cost."
+            />
+
+            <RelatedLink
               href="/construction/road-base-calculator"
               title="Road Base Calculator"
               text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."

@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-driveway-calculator"
+              title="Concrete Driveway Calculator"
+              text="Estimate concrete driveway cubic yards, slab thickness, base material, reinforcement, labor, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/rebar-calculator"
               title="Rebar Calculator"
               text="Estimate rebar size, spacing, linear feet, stick count, weight, lap allowance, and material cost for slab reinforcement."
