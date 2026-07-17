@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-bag-calculator"
+              title="Concrete Bag Calculator"
+              text="Estimate how many bags of concrete are needed for small slabs, pads, patios, and repairs."
+            />
+
+            <RelatedLink
               href="/construction/concrete-cost-calculator"
               title="Concrete Cost Calculator"
               text="Estimate concrete price, base material, rebar, labor, prep, delivery fees, and total slab project cost."

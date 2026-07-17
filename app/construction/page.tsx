@@ -16,6 +16,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Bag Calculator",
+    description:
+      "Estimate how many 40 lb, 50 lb, 60 lb, or 80 lb bags of concrete you need for slabs, pads, post holes, footings, patios, and small concrete projects.",
+    href: "/construction/concrete-bag-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

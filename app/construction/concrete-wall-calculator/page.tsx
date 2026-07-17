@@ -291,6 +291,12 @@ export default function ConcreteWallCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-bag-calculator"
+              title="Concrete Bag Calculator"
+              text="Estimate bagged concrete quantities for smaller pours, pads, repairs, and support projects."
+            />
+
+            <RelatedLink
               href="/construction/concrete-slab-calculator"
               title="Concrete Slab Calculator"
               text="Estimate concrete needed for patios, pads, driveways, garage floors, and slab projects."

@@ -292,6 +292,12 @@ export default function SonotubeConcreteCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-bag-calculator"
+              title="Concrete Bag Calculator"
+              text="Estimate how many bags of concrete are needed for post holes, sonotubes, small piers, and deck footings."
+            />
+
+            <RelatedLink
               href="/construction/concrete-slab-calculator"
               title="Concrete Slab Calculator"
               text="Estimate concrete needed for patios, pads, driveways, garage floors, and slab projects."

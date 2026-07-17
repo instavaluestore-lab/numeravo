@@ -283,6 +283,12 @@ export default function ConcreteFootingCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-bag-calculator"
+              title="Concrete Bag Calculator"
+              text="Estimate bagged concrete needs for small footings, post holes, pads, repairs, and support pours."
+            />
+
+            <RelatedLink
               href="/construction/concrete-slab-calculator"
               title="Concrete Slab Calculator"
               text="Estimate concrete needed for patios, pads, driveways, garage floors, and slab projects."
