@@ -1352,6 +1352,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/concrete-patio-calculator"
+    title="Concrete Patio Calculator"
+    text="Estimate concrete patio cubic yards, slab thickness, gravel base, reinforcement, waste, delivery, labor, finishing, and total project cost."
+  />
+
+  <GuideLink
     href="/construction/concrete-driveway-calculator"
     title="Concrete Driveway Calculator"
     text="Estimate concrete driveway cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total project cost."

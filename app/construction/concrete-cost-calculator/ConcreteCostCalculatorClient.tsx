@@ -301,6 +301,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-patio-calculator"
+              title="Concrete Patio Calculator"
+              text="Estimate concrete patio yards, base material, reinforcement, labor, finishing, delivery, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-driveway-calculator"
               title="Concrete Driveway Calculator"
               text="Estimate concrete driveway yards, base material, reinforcement, labor, delivery, and total cost."

@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-patio-calculator"
+              title="Concrete Patio Calculator"
+              text="Estimate concrete patio cubic yards, slab thickness, base material, reinforcement, finishing, labor, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-driveway-calculator"
               title="Concrete Driveway Calculator"
               text="Estimate concrete driveway cubic yards, slab thickness, base material, reinforcement, labor, and total cost."

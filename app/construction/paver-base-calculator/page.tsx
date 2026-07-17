@@ -244,6 +244,12 @@ export default function PaverBaseCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-patio-calculator"
+              title="Concrete Patio Calculator"
+              text="Estimate concrete patio cubic yards, gravel base, reinforcement, finishing, labor, delivery, and total project cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-slab-calculator"
               title="Concrete Slab Calculator"
               text="Estimate concrete slab volume, yards, cost, and material needs."
