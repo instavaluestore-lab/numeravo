@@ -23,6 +23,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Rebar Calculator",
+    description:
+      "Estimate rebar pieces, spacing, linear feet, stick count, weight, lap allowance, waste, and material cost for slabs, footings, patios, and concrete reinforcement grids.",
+    href: "/construction/rebar-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

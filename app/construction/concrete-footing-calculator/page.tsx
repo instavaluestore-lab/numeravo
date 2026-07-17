@@ -283,6 +283,12 @@ export default function ConcreteFootingCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-calculator"
+              title="Rebar Calculator"
+              text="Estimate rebar runs, stock length, total feet, weight, waste, and cost for concrete footings."
+            />
+
+            <RelatedLink
               href="/construction/concrete-bag-calculator"
               title="Concrete Bag Calculator"
               text="Estimate bagged concrete needs for small footings, post holes, pads, repairs, and support pours."

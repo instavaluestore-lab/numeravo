@@ -291,6 +291,12 @@ export default function ConcreteWallCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-calculator"
+              title="Rebar Calculator"
+              text="Estimate rebar quantity, spacing, weight, stock length, waste, and material cost for concrete reinforcement."
+            />
+
+            <RelatedLink
               href="/construction/concrete-bag-calculator"
               title="Concrete Bag Calculator"
               text="Estimate bagged concrete quantities for smaller pours, pads, repairs, and support projects."

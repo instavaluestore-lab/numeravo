@@ -292,6 +292,12 @@ export default function SonotubeConcreteCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-calculator"
+              title="Rebar Calculator"
+              text="Estimate rebar length, weight, waste, and cost for piers, posts, sonotubes, and concrete reinforcement."
+            />
+
+            <RelatedLink
               href="/construction/concrete-bag-calculator"
               title="Concrete Bag Calculator"
               text="Estimate how many bags of concrete are needed for post holes, sonotubes, small piers, and deck footings."

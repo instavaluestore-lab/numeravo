@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-calculator"
+              title="Rebar Calculator"
+              text="Estimate rebar size, spacing, linear feet, stick count, weight, lap allowance, and material cost for slab reinforcement."
+            />
+
+            <RelatedLink
               href="/construction/concrete-bag-calculator"
               title="Concrete Bag Calculator"
               text="Estimate how many bags of concrete are needed for small slabs, pads, patios, and repairs."

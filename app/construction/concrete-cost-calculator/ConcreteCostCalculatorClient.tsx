@@ -301,6 +301,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/rebar-calculator"
+              title="Rebar Calculator"
+              text="Estimate rebar pieces, spacing, linear feet, stock length, weight, waste, and material cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-bag-calculator"
               title="Concrete Bag Calculator"
               text="Estimate bagged concrete needs, total bags, cubic yards, waste, and material cost for small concrete projects."

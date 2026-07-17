@@ -223,6 +223,7 @@ export default function ConcreteBagCalculatorPage() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
+            <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-footing-calculator" label="Concrete Footing Calculator" />
             <RelatedLink href="/construction/sonotube-concrete-calculator" label="Sonotube Concrete Calculator" />

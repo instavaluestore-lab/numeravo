@@ -1352,6 +1352,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/rebar-calculator"
+    title="Rebar Calculator"
+    text="Estimate rebar size, spacing, linear feet, stick count, weight, lap allowance, waste, and material cost."
+  />
+
+  <GuideLink
     href="/construction/concrete-bag-calculator"
     title="Concrete Bag Calculator"
     text="Estimate how many 40 lb, 50 lb, 60 lb, or 80 lb bags of concrete you need for slabs, pads, footings, and post holes."
