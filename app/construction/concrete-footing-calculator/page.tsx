@@ -283,6 +283,12 @@ export default function ConcreteFootingCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-stairs-calculator"
+              title="Concrete Stairs Calculator"
+              text="Estimate concrete stair volume, risers, treads, formwork, reinforcement, labor, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/rebar-calculator"
               title="Rebar Calculator"
               text="Estimate rebar runs, stock length, total feet, weight, waste, and cost for concrete footings."

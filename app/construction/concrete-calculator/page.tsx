@@ -1352,6 +1352,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/concrete-stairs-calculator"
+    title="Concrete Stairs Calculator"
+    text="Estimate concrete stair cubic yards, step count, riser height, tread depth, forms, reinforcement, waste, delivery, labor, and total cost."
+  />
+
+  <GuideLink
     href="/construction/concrete-pad-calculator"
     title="Concrete Pad Calculator"
     text="Estimate concrete pad cubic yards, thickness, gravel base, forms, reinforcement, waste, delivery, labor, finishing, and total project cost."

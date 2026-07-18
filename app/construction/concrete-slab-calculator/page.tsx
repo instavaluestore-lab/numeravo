@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-stairs-calculator"
+              title="Concrete Stairs Calculator"
+              text="Estimate concrete stair volume, step count, risers, treads, forms, labor, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-pad-calculator"
               title="Concrete Pad Calculator"
               text="Estimate small concrete pad yards, thickness, base material, forms, reinforcement, labor, and total cost."

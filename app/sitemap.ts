@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/concrete-patio-calculator",
     "/construction/concrete-sidewalk-calculator",
     "/construction/concrete-pad-calculator",
+    "/construction/concrete-stairs-calculator",
     "/construction/concrete-slab-calculator",
     "/construction/concrete-footing-calculator",
     "/construction/sonotube-concrete-calculator",
@@ -65,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("concrete-patio-calculator") ||
               route.includes("concrete-sidewalk-calculator") ||
               route.includes("concrete-pad-calculator") ||
+              route.includes("concrete-stairs-calculator") ||
               route.includes("gravel-calculator") ||
               route.includes("gravel-driveway-calculator") ||
               route.includes("gravel-driveway-cost") ||

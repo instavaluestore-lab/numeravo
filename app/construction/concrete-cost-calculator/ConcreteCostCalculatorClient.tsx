@@ -301,6 +301,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-stairs-calculator"
+              title="Concrete Stairs Calculator"
+              text="Estimate concrete stair yards, step count, riser height, tread depth, formwork, labor, delivery, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-pad-calculator"
               title="Concrete Pad Calculator"
               text="Estimate concrete pad yards, base material, forms, reinforcement, labor, delivery, and total cost."

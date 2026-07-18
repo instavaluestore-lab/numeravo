@@ -1,40 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ConcretePadCalculatorClient from "./ConcretePadCalculatorClient";
+import ConcreteStairsCalculatorClient from "./ConcreteStairsCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Pad Calculator | Yards, Cost, Base & Rebar",
+  title: "Concrete Stairs Calculator | Steps, Yards, Forms & Cost",
   description:
-    "Free concrete pad calculator. Estimate concrete cubic yards, pad thickness, gravel base, rebar, forms, waste, delivery, labor, and total pad cost.",
+    "Free concrete stairs calculator. Estimate concrete stair cubic yards, number of steps, riser height, tread depth, forms, waste, delivery, labor, and total cost.",
   alternates: {
-    canonical: "https://numeravo.com/construction/concrete-pad-calculator",
+    canonical: "https://numeravo.com/construction/concrete-stairs-calculator",
   },
   openGraph: {
-    title: "Concrete Pad Calculator",
+    title: "Concrete Stairs Calculator",
     description:
-      "Estimate concrete pad yards, slab thickness, gravel base, reinforcement, forms, labor, waste, delivery, and total cost.",
-    url: "https://numeravo.com/construction/concrete-pad-calculator",
+      "Estimate concrete stairs, steps, cubic yards, formwork, reinforcement allowance, delivery, labor, waste, and total project cost.",
+    url: "https://numeravo.com/construction/concrete-stairs-calculator",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Pad Calculator",
+    title: "Concrete Stairs Calculator",
     description:
-      "Calculate concrete pad cubic yards, base, forms, reinforcement, delivery, labor, waste, and total cost.",
+      "Calculate concrete stair cubic yards, step count, risers, treads, forms, labor, delivery, waste, and total cost.",
   },
 };
 
-export default function ConcretePadCalculatorPage() {
+export default function ConcreteStairsCalculatorPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Concrete Pad Calculator",
+    name: "Concrete Stairs Calculator",
     applicationCategory: "ConstructionApplication",
     operatingSystem: "Web",
-    url: "https://numeravo.com/construction/concrete-pad-calculator",
+    url: "https://numeravo.com/construction/concrete-stairs-calculator",
     description:
-      "Estimate concrete pad cubic yards, thickness, gravel base, forms, reinforcement, waste, delivery, labor, and total project cost.",
+      "Estimate concrete stairs, step count, cubic yards, risers, treads, forms, waste, delivery, labor, reinforcement allowance, and total cost.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -48,26 +48,26 @@ export default function ConcretePadCalculatorPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "How thick should a concrete pad be?",
+        name: "How do you estimate concrete stairs?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Many small concrete pads are 4 inches thick, but hot tubs, generators, equipment pads, heavy storage, or poor soil may require thicker concrete or engineered design.",
+          text: "Estimate concrete stairs by calculating the volume of the step profile, multiplying by the stair width, converting cubic feet to cubic yards, and adding waste.",
         },
       },
       {
         "@type": "Question",
-        name: "How much concrete do I need for a pad?",
+        name: "What is a comfortable riser height for concrete steps?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Multiply pad length by width by thickness in feet to get cubic feet, then divide by 27 to convert to cubic yards. Add waste or overage.",
+          text: "Many steps use riser heights around 6 to 7.5 inches, but final stair dimensions must follow local building code and project requirements.",
         },
       },
       {
         "@type": "Question",
-        name: "What can this concrete pad calculator be used for?",
+        name: "Does this calculator replace stair code requirements?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "This calculator can estimate small concrete pads for sheds, AC units, generators, hot tubs, trash bins, equipment, utility areas, and small slab projects.",
+          text: "No. This calculator is for estimating concrete quantity and project cost. Stair rise, run, landing, handrail, and code requirements must be verified locally.",
         },
       },
     ],
@@ -100,18 +100,18 @@ export default function ConcretePadCalculatorPage() {
               Construction Calculator
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Concrete Pad Calculator
+              Concrete Stairs Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate concrete yards, pad thickness, gravel base, reinforcement,
-              forms, waste, delivery, labor, finishing, and total cost for small
-              concrete pads, shed pads, AC pads, generator pads, and equipment pads.
+              Estimate concrete stair volume, step count, riser height, tread depth,
+              formwork, reinforcement allowance, delivery, labor, waste, and total
+              cost for small concrete steps and stair projects.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Best for</p>
-                <p className="mt-1 font-semibold text-white">Small pads</p>
+                <p className="mt-1 font-semibold text-white">Steps</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Calculates</p>
@@ -119,67 +119,67 @@ export default function ConcretePadCalculatorPage() {
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Includes</p>
-                <p className="mt-1 font-semibold text-white">Base + forms</p>
+                <p className="mt-1 font-semibold text-white">Forms + labor</p>
               </div>
             </div>
           </div>
 
           <div className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 shadow-2xl">
-            <h2 className="text-2xl font-semibold text-white">Pad estimating note</h2>
+            <h2 className="text-2xl font-semibold text-white">Stair estimating note</h2>
             <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">
-              Small pads are simple to measure, but final cost can change fast when
-              you include base prep, reinforcement, forms, delivery fees, access,
-              finishing, and whether the pad supports equipment or heavy loads.
+              Concrete stairs need careful planning. This calculator estimates
+              material and cost, but final stair dimensions, landings, handrails,
+              drainage, reinforcement, and safety details must follow local code.
             </p>
             <div className="mt-5 rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <p className="text-sm text-[#A0AEC0]">Common small pad thickness</p>
-              <p className="mt-2 text-2xl font-bold text-white">4 inches</p>
+              <p className="text-sm text-[#A0AEC0]">Common riser range</p>
+              <p className="mt-2 text-2xl font-bold text-white">6–7.5 inches</p>
               <p className="mt-2 text-xs leading-5 text-[#A0AEC0]">
-                Hot tubs, generators, and heavy equipment may need more.
+                Verify stair geometry with local code before building.
               </p>
             </div>
           </div>
         </div>
 
         <div className="mt-10">
-          <ConcretePadCalculatorClient />
+          <ConcreteStairsCalculatorClient />
         </div>
 
         <section className="mt-12 grid gap-6 lg:grid-cols-3">
           <InfoCard
             title="For homeowners"
-            text="Estimate small concrete pads for sheds, AC units, generators, grills, trash bins, utility areas, and backyard upgrades."
+            text="Estimate small concrete steps for entries, porches, patios, walkways, side doors, backyard paths, and utility access."
           />
           <InfoCard
             title="For contractors"
-            text="Quickly estimate pad yards, form length, base material, reinforcement, labor, delivery, finishing, and total pricing assumptions."
+            text="Quickly check stair volume, step geometry, formwork allowance, labor, delivery, reinforcement allowance, and total project assumptions."
           />
           <InfoCard
             title="For property managers"
-            text="Use the calculator to plan concrete pads for equipment, utilities, storage, maintenance areas, and property upgrades."
+            text="Plan concrete step repair or replacement for rental properties, apartment entries, commercial access points, and maintenance upgrades."
           />
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold text-white">
-            Concrete pad calculator FAQs
+            Concrete stairs calculator FAQs
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Faq
-              question="How thick should a concrete pad be?"
-              answer="Many small residential pads are 4 inches thick. Heavy equipment, hot tubs, generators, vehicle loads, poor soil, or local requirements may need thicker concrete."
+              question="How do I calculate concrete for stairs?"
+              answer="This calculator estimates stair volume using the step profile, stair width, and number of steps, then converts cubic feet to cubic yards and adds waste."
             />
             <Faq
-              question="How do I calculate concrete for a pad?"
-              answer="Multiply length by width by thickness in feet to get cubic feet. Divide by 27 to convert to cubic yards, then add waste or overage."
+              question="What riser height should I use?"
+              answer="Many stairs use risers around 6 to 7.5 inches, but final rise and run must meet local code and project requirements."
             />
             <Faq
-              question="Does a concrete pad need gravel base?"
-              answer="A compacted gravel base is commonly used to improve support and drainage. Base depth depends on soil, climate, drainage, and load requirements."
+              question="Does this include forms?"
+              answer="Yes. The calculator includes a formwork allowance so you can estimate additional material or labor for forming concrete stairs."
             />
             <Faq
-              question="Can I use bags instead of ready-mix?"
-              answer="Small pads may be possible with bagged concrete, but larger pads usually become easier with ready-mix delivery. Use the Concrete Bag Calculator to compare bag count."
+              question="Does this replace engineering or code review?"
+              answer="No. This is a planning calculator. Stair dimensions, handrails, landings, reinforcement, frost depth, drainage, and code compliance must be verified separately."
             />
           </div>
         </section>
@@ -191,10 +191,9 @@ export default function ConcretePadCalculatorPage() {
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />
-            <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
-            <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
-            <RelatedLink href="/construction/concrete-stairs-calculator" label="Concrete Stairs Calculator" />
+            <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
+            <RelatedLink href="/construction/concrete-footing-calculator" label="Concrete Footing Calculator" />
             <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
             <RelatedLink href="/construction/gravel-calculator" label="Gravel Calculator" />
           </div>

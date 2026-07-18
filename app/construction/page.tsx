@@ -58,6 +58,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Stairs Calculator",
+    description:
+      "Estimate concrete stair cubic yards, step count, riser height, tread depth, forms, reinforcement, waste, delivery, labor, finishing, and total project cost.",
+    href: "/construction/concrete-stairs-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",
