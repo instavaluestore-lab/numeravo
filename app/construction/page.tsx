@@ -37,6 +37,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Rebar Weight Calculator",
+    description:
+      "Estimate rebar weight by size, bar length, quantity, total linear feet, pounds, tons, and material cost.",
+    href: "/construction/rebar-weight-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Driveway Calculator",
     description:
       "Estimate concrete driveway cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total project cost.",

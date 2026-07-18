@@ -289,6 +289,12 @@ export default function ConcreteFootingCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-weight-calculator"
+              title="Rebar Weight Calculator"
+              text="Estimate rebar weight by size, length, quantity, pounds, tons, and material cost."
+            />
+
+            <RelatedLink
               href="/construction/rebar-calculator"
               title="Rebar Calculator"
               text="Estimate rebar runs, stock length, total feet, weight, waste, and cost for concrete footings."

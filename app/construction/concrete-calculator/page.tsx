@@ -1352,6 +1352,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/rebar-weight-calculator"
+    title="Rebar Weight Calculator"
+    text="Estimate rebar weight by size, length, quantity, total linear feet, pounds, tons, and material cost."
+  />
+
+  <GuideLink
     href="/construction/rebar-spacing-for-concrete-slab"
     title="Rebar Spacing for Concrete Slab"
     text="Estimate slab rebar spacing, grid layout, bar count, linear feet, lap allowance, waste, weight, and material cost."

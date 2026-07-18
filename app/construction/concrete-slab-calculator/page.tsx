@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-weight-calculator"
+              title="Rebar Weight Calculator"
+              text="Estimate rebar weight by size, length, quantity, pounds, tons, and material cost."
+            />
+
+            <RelatedLink
               href="/construction/rebar-spacing-for-concrete-slab"
               title="Rebar Spacing for Concrete Slab"
               text="Estimate slab rebar spacing, grid layout, bar count, linear feet, lap allowance, weight, and cost."
