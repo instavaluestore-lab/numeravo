@@ -319,6 +319,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/12x12-concrete-slab-cost"
+              title="12x12 Concrete Slab Cost Calculator"
+              text="Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 144 square foot slab."
+            />
+
+            <RelatedLink
               href="/construction/10x10-concrete-slab-cost"
               title="10x10 Concrete Slab Cost Calculator"
               text="Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 100 square foot slab."
