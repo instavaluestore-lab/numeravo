@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-truckload-calculator"
+              title="Concrete Truckload Calculator"
+              text="Estimate ready-mix concrete truckloads, order quantity, delivery cost, short-load fees, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-stairs-calculator"
               title="Concrete Stairs Calculator"
               text="Estimate concrete stair volume, step count, risers, treads, forms, labor, and total cost."

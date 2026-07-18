@@ -1,40 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ConcreteStairsCalculatorClient from "./ConcreteStairsCalculatorClient";
+import ConcreteTruckloadCalculatorClient from "./ConcreteTruckloadCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Stairs Calculator | Steps, Yards, Forms & Cost",
+  title: "Concrete Truckload Calculator | Ready-Mix Loads, Yards & Cost",
   description:
-    "Free concrete stairs calculator. Estimate concrete stair cubic yards, number of steps, riser height, tread depth, forms, waste, delivery, labor, and total cost.",
+    "Free concrete truckload calculator. Estimate ready-mix truckloads, cubic yards, order rounding, short-load fees, delivery cost, concrete weight, and total concrete delivery cost.",
   alternates: {
-    canonical: "https://numeravo.com/construction/concrete-stairs-calculator",
+    canonical: "https://numeravo.com/construction/concrete-truckload-calculator",
   },
   openGraph: {
-    title: "Concrete Stairs Calculator",
+    title: "Concrete Truckload Calculator",
     description:
-      "Estimate concrete stairs, steps, cubic yards, formwork, reinforcement allowance, delivery, labor, waste, and total project cost.",
-    url: "https://numeravo.com/construction/concrete-stairs-calculator",
+      "Estimate ready-mix concrete truckloads, cubic yards, order quantity, delivery fees, short-load fees, and total cost.",
+    url: "https://numeravo.com/construction/concrete-truckload-calculator",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Stairs Calculator",
+    title: "Concrete Truckload Calculator",
     description:
-      "Calculate concrete stair cubic yards, step count, risers, treads, forms, labor, delivery, waste, and total cost.",
+      "Calculate concrete truckloads, ready-mix yards, delivery cost, short-load fees, and total order cost.",
   },
 };
 
-export default function ConcreteStairsCalculatorPage() {
+export default function ConcreteTruckloadCalculatorPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Concrete Stairs Calculator",
+    name: "Concrete Truckload Calculator",
     applicationCategory: "ConstructionApplication",
     operatingSystem: "Web",
-    url: "https://numeravo.com/construction/concrete-stairs-calculator",
+    url: "https://numeravo.com/construction/concrete-truckload-calculator",
     description:
-      "Estimate concrete stairs, step count, cubic yards, risers, treads, forms, waste, delivery, labor, reinforcement allowance, and total cost.",
+      "Estimate ready-mix concrete truckloads, cubic yards, order rounding, short-load fees, delivery fees, concrete weight, and total delivery cost.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -48,26 +48,26 @@ export default function ConcreteStairsCalculatorPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "How do you estimate concrete stairs?",
+        name: "How many cubic yards are in a concrete truck?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Estimate concrete stairs by calculating the volume of the step profile, multiplying by the stair width, converting cubic feet to cubic yards, and adding waste.",
+          text: "Many ready-mix concrete trucks carry about 8 to 10 cubic yards, but exact capacity depends on the supplier, truck type, and local weight limits.",
         },
       },
       {
         "@type": "Question",
-        name: "What is a comfortable riser height for concrete steps?",
+        name: "What is a short-load fee for concrete?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Many steps use riser heights around 6 to 7.5 inches, but final stair dimensions must follow local building code and project requirements.",
+          text: "A short-load fee is an extra charge many suppliers add when a concrete order is below their minimum delivery quantity.",
         },
       },
       {
         "@type": "Question",
-        name: "Does this calculator replace stair code requirements?",
+        name: "How much extra concrete should I order?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. This calculator is for estimating concrete quantity and project cost. Stair rise, run, landing, handrail, and code requirements must be verified locally.",
+          text: "Many projects add 5% to 10% waste or overage so the pour does not run short. Complex shapes, uneven subgrade, and forms can require more allowance.",
         },
       },
     ],
@@ -100,86 +100,86 @@ export default function ConcreteStairsCalculatorPage() {
               Construction Calculator
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Concrete Stairs Calculator
+              Concrete Truckload Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate concrete stair volume, step count, riser height, tread depth,
-              formwork, reinforcement allowance, delivery, labor, waste, and total
-              cost for small concrete steps and stair projects.
+              Estimate ready-mix concrete truckloads, cubic yards to order, truck
+              capacity, delivery fees, short-load fees, concrete weight, and total
+              concrete delivery cost for slabs, driveways, patios, footings, and pads.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Best for</p>
-                <p className="mt-1 font-semibold text-white">Steps</p>
+                <p className="mt-1 font-semibold text-white">Ready-mix</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Calculates</p>
-                <p className="mt-1 font-semibold text-white">Yards + cost</p>
+                <p className="mt-1 font-semibold text-white">Loads + cost</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Includes</p>
-                <p className="mt-1 font-semibold text-white">Forms + labor</p>
+                <p className="mt-1 font-semibold text-white">Short-load fees</p>
               </div>
             </div>
           </div>
 
           <div className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 shadow-2xl">
-            <h2 className="text-2xl font-semibold text-white">Stair estimating note</h2>
+            <h2 className="text-2xl font-semibold text-white">Ready-mix planning note</h2>
             <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">
-              Concrete stairs need careful planning. This calculator estimates
-              material and cost, but final stair dimensions, landings, handrails,
-              drainage, reinforcement, and safety details must follow local code.
+              Truck capacity, minimum orders, fuel surcharges, short-load fees, waiting
+              time, and delivery zones vary by supplier. Use this calculator to plan
+              the order, then confirm final pricing with the ready-mix company.
             </p>
             <div className="mt-5 rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <p className="text-sm text-[#A0AEC0]">Common riser range</p>
-              <p className="mt-2 text-2xl font-bold text-white">6–7.5 inches</p>
+              <p className="text-sm text-[#A0AEC0]">Common truck capacity</p>
+              <p className="mt-2 text-2xl font-bold text-white">8–10 yd³</p>
               <p className="mt-2 text-xs leading-5 text-[#A0AEC0]">
-                Verify stair geometry with local code before building.
+                Actual capacity depends on supplier, truck, and local weight limits.
               </p>
             </div>
           </div>
         </div>
 
         <div className="mt-10">
-          <ConcreteStairsCalculatorClient />
+          <ConcreteTruckloadCalculatorClient />
         </div>
 
         <section className="mt-12 grid gap-6 lg:grid-cols-3">
           <InfoCard
             title="For homeowners"
-            text="Estimate small concrete steps for entries, porches, patios, walkways, side doors, backyard paths, and utility access."
+            text="Use the calculator to understand whether your project may require bagged concrete, a partial ready-mix order, or one or more truckloads."
           />
           <InfoCard
             title="For contractors"
-            text="Quickly check stair volume, step geometry, formwork allowance, labor, delivery, reinforcement allowance, and total project assumptions."
+            text="Estimate ready-mix order size, truckloads, delivery cost, short-load fees, and total concrete cost before calling the supplier."
           />
           <InfoCard
             title="For property managers"
-            text="Plan concrete step repair or replacement for rental properties, apartment entries, commercial access points, and maintenance upgrades."
+            text="Plan concrete delivery budgets for pads, sidewalks, patios, driveways, repairs, and multi-property maintenance projects."
           />
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold text-white">
-            Concrete stairs calculator FAQs
+            Concrete truckload calculator FAQs
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Faq
-              question="How do I calculate concrete for stairs?"
-              answer="This calculator estimates stair volume using the step profile, stair width, and number of steps, then converts cubic feet to cubic yards and adds waste."
+              question="How many yards are in a concrete truck?"
+              answer="Many ready-mix trucks carry around 8 to 10 cubic yards. Some trucks carry less or more depending on supplier, truck size, and legal weight limits."
             />
             <Faq
-              question="What riser height should I use?"
-              answer="Many stairs use risers around 6 to 7.5 inches, but final rise and run must meet local code and project requirements."
+              question="What is a short-load fee?"
+              answer="A short-load fee is an extra charge for concrete orders below a supplier's minimum delivery quantity. It helps cover delivery cost on small orders."
             />
             <Faq
-              question="Does this include forms?"
-              answer="Yes. The calculator includes a formwork allowance so you can estimate additional material or labor for forming concrete stairs."
+              question="Should I round concrete orders up?"
+              answer="Usually yes. Ordering slightly more concrete helps avoid running short during a pour. Many projects use 5% to 10% overage."
             />
             <Faq
-              question="Does this replace engineering or code review?"
-              answer="No. This is a planning calculator. Stair dimensions, handrails, landings, reinforcement, frost depth, drainage, and code compliance must be verified separately."
+              question="Does this calculator guarantee supplier pricing?"
+              answer="No. Supplier pricing varies by market, mix design, fuel surcharge, delivery zone, minimum order, waiting time, and local fees."
             />
           </div>
         </section>
@@ -190,13 +190,12 @@ export default function ConcreteStairsCalculatorPage() {
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
-            <RelatedLink href="/construction/concrete-truckload-calculator" label="Concrete Truckload Calculator" />
-            <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />
-            <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
+            <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
+            <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
-            <RelatedLink href="/construction/concrete-footing-calculator" label="Concrete Footing Calculator" />
-            <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
-            <RelatedLink href="/construction/gravel-calculator" label="Gravel Calculator" />
+            <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
+            <RelatedLink href="/construction/concrete-stairs-calculator" label="Concrete Stairs Calculator" />
+            <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />
           </div>
         </section>
       </section>

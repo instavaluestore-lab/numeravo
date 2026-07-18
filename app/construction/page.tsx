@@ -65,6 +65,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Truckload Calculator",
+    description:
+      "Estimate ready-mix concrete truckloads, cubic yards to order, truck capacity, delivery fees, short-load fees, concrete weight, and total delivery cost.",
+    href: "/construction/concrete-truckload-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

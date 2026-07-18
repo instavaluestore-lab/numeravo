@@ -1352,6 +1352,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/concrete-truckload-calculator"
+    title="Concrete Truckload Calculator"
+    text="Estimate ready-mix concrete truckloads, cubic yards to order, delivery fees, short-load fees, concrete weight, and total delivery cost."
+  />
+
+  <GuideLink
     href="/construction/concrete-stairs-calculator"
     title="Concrete Stairs Calculator"
     text="Estimate concrete stair cubic yards, step count, riser height, tread depth, forms, reinforcement, waste, delivery, labor, and total cost."

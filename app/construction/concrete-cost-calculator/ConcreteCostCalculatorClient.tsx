@@ -301,6 +301,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-truckload-calculator"
+              title="Concrete Truckload Calculator"
+              text="Estimate ready-mix truckloads, order quantity, delivery fees, short-load fees, and total concrete delivery cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-stairs-calculator"
               title="Concrete Stairs Calculator"
               text="Estimate concrete stair yards, step count, riser height, tread depth, formwork, labor, delivery, and total cost."
