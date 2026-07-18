@@ -44,6 +44,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Wire Mesh Calculator",
+    description:
+      "Estimate welded wire mesh sheets or rolls, slab area, overlap, waste, total mesh quantity, material cost, and cost per square foot.",
+    href: "/construction/wire-mesh-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Driveway Calculator",
     description:
       "Estimate concrete driveway cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total project cost.",

@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/wire-mesh-calculator"
+              title="Wire Mesh Calculator"
+              text="Estimate welded wire mesh sheets or rolls, overlap, waste, coverage, and material cost."
+            />
+
+            <RelatedLink
               href="/construction/rebar-weight-calculator"
               title="Rebar Weight Calculator"
               text="Estimate rebar weight by size, length, quantity, pounds, tons, and material cost."

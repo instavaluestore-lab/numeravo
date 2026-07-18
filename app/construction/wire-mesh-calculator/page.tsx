@@ -1,40 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import RebarWeightCalculatorClient from "./RebarWeightCalculatorClient";
+import WireMeshCalculatorClient from "./WireMeshCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Rebar Weight Calculator | Rebar Weight, Length & Cost",
+  title: "Wire Mesh Calculator | Concrete Slab Mesh Rolls & Sheets",
   description:
-    "Free rebar weight calculator. Estimate rebar weight by size, length, quantity, stock bars, total feet, total pounds, tons, and material cost.",
+    "Free wire mesh calculator for concrete slabs. Estimate welded wire mesh sheets or rolls, slab area, overlap, waste, total mesh, material cost, and cost per square foot.",
   alternates: {
-    canonical: "https://numeravo.com/construction/rebar-weight-calculator",
+    canonical: "https://numeravo.com/construction/wire-mesh-calculator",
   },
   openGraph: {
-    title: "Rebar Weight Calculator",
+    title: "Wire Mesh Calculator",
     description:
-      "Calculate rebar weight, total feet, pounds, tons, stock bar count, and material cost by rebar size and length.",
-    url: "https://numeravo.com/construction/rebar-weight-calculator",
+      "Calculate concrete slab wire mesh sheets, rolls, overlap, waste, coverage, material cost, and cost per square foot.",
+    url: "https://numeravo.com/construction/wire-mesh-calculator",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rebar Weight Calculator",
+    title: "Wire Mesh Calculator",
     description:
-      "Estimate rebar weight, length, quantity, pounds, tons, and cost for construction material takeoffs.",
+      "Estimate welded wire mesh sheets or rolls for concrete slabs, driveways, patios, sidewalks, and pads.",
   },
 };
 
-export default function RebarWeightCalculatorPage() {
+export default function WireMeshCalculatorPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Rebar Weight Calculator",
+    name: "Wire Mesh Calculator",
     applicationCategory: "ConstructionApplication",
     operatingSystem: "Web",
-    url: "https://numeravo.com/construction/rebar-weight-calculator",
+    url: "https://numeravo.com/construction/wire-mesh-calculator",
     description:
-      "Estimate rebar weight by size, bar length, quantity, total linear feet, pounds, tons, and material cost.",
+      "Estimate welded wire mesh sheets or rolls, slab area, overlap, waste allowance, total mesh quantity, and material cost.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -48,26 +48,26 @@ export default function RebarWeightCalculatorPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "How much does rebar weigh per foot?",
+        name: "How do you calculate wire mesh for a concrete slab?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "#3 rebar weighs about 0.376 lb per foot, #4 about 0.668 lb per foot, #5 about 1.043 lb per foot, and #6 about 1.502 lb per foot.",
+          text: "Calculate the slab area, divide by the coverage area of each wire mesh sheet or roll, then add overlap and waste allowance.",
         },
       },
       {
         "@type": "Question",
-        name: "How do you calculate rebar weight?",
+        name: "How much should wire mesh overlap?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Multiply the total linear feet of rebar by the weight per foot for the selected rebar size. Divide pounds by 2,000 to estimate tons.",
+          text: "Wire mesh overlap varies by project specification, but many small slab estimates use several inches of overlap between sheets or roll runs. Follow project plans and local requirements.",
         },
       },
       {
         "@type": "Question",
-        name: "Why calculate rebar weight?",
+        name: "Is wire mesh the same as rebar?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Rebar weight helps estimate material cost, delivery requirements, handling needs, hauling loads, and construction takeoff quantities.",
+          text: "No. Welded wire mesh and rebar are different reinforcement products. Mesh is often used for light slabs, while rebar may be used where heavier reinforcement is required.",
         },
       },
     ],
@@ -100,82 +100,85 @@ export default function RebarWeightCalculatorPage() {
               Construction Calculator
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Rebar Weight Calculator
+              Wire Mesh Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate rebar weight by bar size, bar length, quantity, total linear
-              feet, pounds, tons, and material cost for slabs, footings, walls,
-              driveways, patios, pads, and reinforcement takeoffs.
+              Estimate welded wire mesh sheets or rolls for concrete slabs,
+              driveways, patios, sidewalks, shed pads, garage floors, and small
+              flatwork projects. Calculate slab area, overlap, waste, total mesh,
+              material cost, and cost per square foot.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Best for</p>
-                <p className="mt-1 font-semibold text-white">Rebar takeoffs</p>
+                <p className="mt-1 font-semibold text-white">Slab mesh</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Calculates</p>
-                <p className="mt-1 font-semibold text-white">Weight + tons</p>
+                <p className="mt-1 font-semibold text-white">Sheets + rolls</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Includes</p>
-                <p className="mt-1 font-semibold text-white">Cost estimate</p>
+                <p className="mt-1 font-semibold text-white">Waste + cost</p>
               </div>
             </div>
           </div>
 
           <div className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 shadow-2xl">
-            <h2 className="text-2xl font-semibold text-white">Common rebar weights</h2>
-            <div className="mt-5 grid gap-3">
-              <WeightRow label="#3 rebar" value="0.376 lb/ft" />
-              <WeightRow label="#4 rebar" value="0.668 lb/ft" />
-              <WeightRow label="#5 rebar" value="1.043 lb/ft" />
-              <WeightRow label="#6 rebar" value="1.502 lb/ft" />
-            </div>
-            <p className="mt-4 text-xs leading-5 text-[#A0AEC0]">
-              Use supplier data for final ordering when exact grade, coating, or bar
-              specifications matter.
+            <h2 className="text-2xl font-semibold text-white">Mesh planning note</h2>
+            <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">
+              Wire mesh helps control cracking in many light concrete slabs, but
+              reinforcement requirements depend on slab use, thickness, subbase,
+              loads, jointing, local code, and project specifications.
             </p>
+            <div className="mt-5 rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
+              <p className="text-sm text-[#A0AEC0]">Common formats</p>
+              <p className="mt-2 text-2xl font-bold text-white">Sheets or rolls</p>
+              <p className="mt-2 text-xs leading-5 text-[#A0AEC0]">
+                Always confirm product dimensions and lap requirements before ordering.
+              </p>
+            </div>
           </div>
         </div>
 
         <div className="mt-10">
-          <RebarWeightCalculatorClient />
+          <WireMeshCalculatorClient />
         </div>
 
         <section className="mt-12 grid gap-6 lg:grid-cols-3">
           <InfoCard
-            title="For material takeoffs"
-            text="Estimate total rebar feet, pounds, tons, and number of stock bars needed before ordering."
+            title="For slab reinforcement"
+            text="Estimate wire mesh coverage for slabs, patios, sidewalks, garage floors, and small concrete pads."
           />
           <InfoCard
-            title="For delivery planning"
-            text="Use estimated weight to plan handling, hauling, jobsite delivery, and storage requirements."
+            title="For material ordering"
+            text="Calculate sheets or rolls needed after overlap and waste so the order is less likely to run short."
           />
           <InfoCard
-            title="For cost estimating"
-            text="Calculate estimated rebar material cost using price per foot, price per pound, or price per stock bar."
+            title="For cost estimates"
+            text="Estimate total mesh cost and cost per square foot for better concrete project budgeting."
           />
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6">
-          <h2 className="text-2xl font-semibold text-white">Rebar weight calculator FAQs</h2>
+          <h2 className="text-2xl font-semibold text-white">Wire mesh calculator FAQs</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Faq
-              question="How much does #4 rebar weigh?"
-              answer="#4 rebar weighs about 0.668 pounds per foot. A 20-foot stick weighs about 13.36 pounds before rounding."
+              question="How much wire mesh do I need?"
+              answer="Divide the slab area by the coverage of each sheet or roll, then add overlap and waste allowance. This calculator handles those steps."
             />
             <Faq
-              question="How do I convert rebar pounds to tons?"
-              answer="Divide total rebar pounds by 2,000 to estimate short tons."
+              question="Should wire mesh overlap?"
+              answer="Usually yes. Overlap depends on mesh type and project specification. Use the overlap setting to account for extra material."
             />
             <Faq
-              question="Does epoxy-coated rebar weigh the same?"
-              answer="The steel weight is generally based on the bar size. Coatings can add small differences, so supplier data should be used for final ordering."
+              question="Is wire mesh better than rebar?"
+              answer="Neither is automatically better. Wire mesh and rebar serve different reinforcement needs. The right choice depends on slab loads, thickness, use, soil, and design requirements."
             />
             <Faq
-              question="Can this calculator estimate cost?"
-              answer="Yes. You can estimate cost by price per foot, price per pound, or price per stock bar."
+              question="Does this replace project specifications?"
+              answer="No. Use this for estimating material quantities. Follow plans, supplier information, local code, and engineering requirements where applicable."
             />
           </div>
         </section>
@@ -184,10 +187,9 @@ export default function RebarWeightCalculatorPage() {
           <h2 className="text-2xl font-semibold text-white">Related calculators</h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
-            <RelatedLink href="/construction/wire-mesh-calculator" label="Wire Mesh Calculator" />
             <RelatedLink href="/construction/rebar-spacing-for-concrete-slab" label="Rebar Spacing for Concrete Slab" />
+            <RelatedLink href="/construction/rebar-weight-calculator" label="Rebar Weight Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
-            <RelatedLink href="/construction/concrete-footing-calculator" label="Concrete Footing Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
@@ -197,15 +199,6 @@ export default function RebarWeightCalculatorPage() {
         </section>
       </section>
     </main>
-  );
-}
-
-function WeightRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-center justify-between rounded-xl border border-[#1F2937] bg-[#0B0F19] px-4 py-3">
-      <span className="text-sm text-[#A0AEC0]">{label}</span>
-      <span className="font-semibold text-white">{value}</span>
-    </div>
   );
 }
 
