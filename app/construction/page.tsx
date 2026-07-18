@@ -51,6 +51,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Pad Calculator",
+    description:
+      "Estimate concrete pad cubic yards, thickness, gravel base, forms, reinforcement, waste, delivery, labor, finishing, and total project cost.",
+    href: "/construction/concrete-pad-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

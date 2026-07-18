@@ -301,6 +301,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-pad-calculator"
+              title="Concrete Pad Calculator"
+              text="Estimate concrete pad yards, base material, forms, reinforcement, labor, delivery, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-sidewalk-calculator"
               title="Concrete Sidewalk Calculator"
               text="Estimate concrete sidewalk yards, base material, forms, labor, finishing, delivery, and total cost."

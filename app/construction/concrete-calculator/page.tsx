@@ -1352,6 +1352,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/concrete-pad-calculator"
+    title="Concrete Pad Calculator"
+    text="Estimate concrete pad cubic yards, thickness, gravel base, forms, reinforcement, waste, delivery, labor, finishing, and total project cost."
+  />
+
+  <GuideLink
     href="/construction/concrete-sidewalk-calculator"
     title="Concrete Sidewalk Calculator"
     text="Estimate concrete sidewalk cubic yards, thickness, gravel base, forms, waste, delivery, labor, finishing, and total project cost."

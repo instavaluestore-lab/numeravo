@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-pad-calculator"
+              title="Concrete Pad Calculator"
+              text="Estimate small concrete pad yards, thickness, base material, forms, reinforcement, labor, and total cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-sidewalk-calculator"
               title="Concrete Sidewalk Calculator"
               text="Estimate concrete sidewalk cubic yards, thickness, base material, form boards, labor, and total cost."

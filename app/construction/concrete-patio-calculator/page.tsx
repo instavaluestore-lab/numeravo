@@ -192,6 +192,7 @@ export default function ConcretePatioCalculatorPage() {
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
+            <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
             <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
             <RelatedLink href="/construction/gravel-calculator" label="Gravel Calculator" />
