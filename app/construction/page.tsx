@@ -44,6 +44,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Sidewalk Calculator",
+    description:
+      "Estimate concrete sidewalk cubic yards, thickness, gravel base, forms, waste, delivery, labor, finishing, and total project cost.",
+    href: "/construction/concrete-sidewalk-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

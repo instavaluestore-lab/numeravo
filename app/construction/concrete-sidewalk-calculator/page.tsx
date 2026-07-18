@@ -1,40 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ConcretePatioCalculatorClient from "./ConcretePatioCalculatorClient";
+import ConcreteSidewalkCalculatorClient from "./ConcreteSidewalkCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Patio Calculator | Cost, Yards, Base & Rebar",
+  title: "Concrete Sidewalk Calculator | Yards, Cost, Base & Forms",
   description:
-    "Free concrete patio calculator. Estimate concrete cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total patio cost.",
+    "Free concrete sidewalk calculator. Estimate concrete cubic yards, sidewalk thickness, gravel base, forms, waste, delivery, labor, and total sidewalk cost.",
   alternates: {
-    canonical: "https://numeravo.com/construction/concrete-patio-calculator",
+    canonical: "https://numeravo.com/construction/concrete-sidewalk-calculator",
   },
   openGraph: {
-    title: "Concrete Patio Calculator",
+    title: "Concrete Sidewalk Calculator",
     description:
-      "Estimate concrete patio cubic yards, cost, base material, reinforcement, labor, waste, and delivery.",
-    url: "https://numeravo.com/construction/concrete-patio-calculator",
+      "Estimate concrete sidewalk yards, slab thickness, base material, forms, labor, waste, delivery, and total cost.",
+    url: "https://numeravo.com/construction/concrete-sidewalk-calculator",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Patio Calculator",
+    title: "Concrete Sidewalk Calculator",
     description:
-      "Calculate concrete patio yards, slab thickness, base, reinforcement, labor, delivery, and total cost.",
+      "Calculate concrete sidewalk cubic yards, base, forms, labor, delivery, waste, and total cost.",
   },
 };
 
-export default function ConcretePatioCalculatorPage() {
+export default function ConcreteSidewalkCalculatorPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Concrete Patio Calculator",
+    name: "Concrete Sidewalk Calculator",
     applicationCategory: "ConstructionApplication",
     operatingSystem: "Web",
-    url: "https://numeravo.com/construction/concrete-patio-calculator",
+    url: "https://numeravo.com/construction/concrete-sidewalk-calculator",
     description:
-      "Estimate concrete patio cubic yards, slab thickness, base material, reinforcement, labor, delivery, waste, and total project cost.",
+      "Estimate concrete sidewalk cubic yards, thickness, gravel base, forms, waste, delivery, labor, and total project cost.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -48,26 +48,26 @@ export default function ConcretePatioCalculatorPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "How thick should a concrete patio be?",
+        name: "How thick should a concrete sidewalk be?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Many residential concrete patios are 4 inches thick, but thicker slabs may be needed for heavier loads, poor soil, or local requirements.",
+          text: "Many residential concrete sidewalks are 4 inches thick for foot traffic. Heavier loads, driveway crossings, or local requirements may need thicker concrete.",
         },
       },
       {
         "@type": "Question",
-        name: "How much concrete do I need for a patio?",
+        name: "How much concrete do I need for a sidewalk?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Multiply patio length by width by thickness in feet to get cubic feet, then divide by 27 to convert to cubic yards. Add waste or overage.",
+          text: "Multiply sidewalk length by width by thickness in feet to get cubic feet, then divide by 27 to convert to cubic yards. Add waste or overage.",
         },
       },
       {
         "@type": "Question",
-        name: "Do concrete patios need gravel base?",
+        name: "Do sidewalks need gravel base?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Most patio slabs benefit from a compacted gravel base to improve support, drainage, and long-term performance.",
+          text: "A compacted gravel base can improve drainage and support. Base depth depends on soil, climate, drainage, and local requirements.",
         },
       },
     ],
@@ -100,18 +100,18 @@ export default function ConcretePatioCalculatorPage() {
               Construction Calculator
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Concrete Patio Calculator
+              Concrete Sidewalk Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate concrete yards, patio slab thickness, gravel base, reinforcement,
-              labor, finishing, delivery, waste, and total project cost. Built for
-              homeowners, contractors, property managers, and outdoor living projects.
+              Estimate concrete yards, sidewalk thickness, gravel base, forms,
+              waste, delivery, labor, finishing, and total sidewalk cost. Built for
+              homeowners, contractors, property managers, and concrete flatwork planning.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Best for</p>
-                <p className="mt-1 font-semibold text-white">Patios</p>
+                <p className="mt-1 font-semibold text-white">Walkways</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Calculates</p>
@@ -119,67 +119,67 @@ export default function ConcretePatioCalculatorPage() {
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Includes</p>
-                <p className="mt-1 font-semibold text-white">Base + finish</p>
+                <p className="mt-1 font-semibold text-white">Forms + base</p>
               </div>
             </div>
           </div>
 
           <div className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 shadow-2xl">
-            <h2 className="text-2xl font-semibold text-white">Patio estimating note</h2>
+            <h2 className="text-2xl font-semibold text-white">Sidewalk estimating note</h2>
             <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">
-              Patio cost is not only concrete volume. Base prep, forms, reinforcement,
-              finish type, labor, delivery, access, and demolition can all change the
-              final installed price.
+              Sidewalk cost depends on more than concrete volume. Length, width,
+              thickness, base depth, form boards, excavation, finishing, and access
+              can all change the final installed price.
             </p>
             <div className="mt-5 rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <p className="text-sm text-[#A0AEC0]">Common patio thickness</p>
+              <p className="text-sm text-[#A0AEC0]">Common sidewalk thickness</p>
               <p className="mt-2 text-2xl font-bold text-white">4 inches</p>
               <p className="mt-2 text-xs leading-5 text-[#A0AEC0]">
-                Heavier loads, weak soil, or special designs may require more.
+                Driveway crossings or heavier loads may need thicker concrete.
               </p>
             </div>
           </div>
         </div>
 
         <div className="mt-10">
-          <ConcretePatioCalculatorClient />
+          <ConcreteSidewalkCalculatorClient />
         </div>
 
         <section className="mt-12 grid gap-6 lg:grid-cols-3">
           <InfoCard
             title="For homeowners"
-            text="Use the estimate to plan patio material quantities, understand cost drivers, and compare contractor quotes more confidently."
+            text="Use the estimate to plan a new sidewalk, walkway, garden path, or replacement section before getting contractor quotes."
           />
           <InfoCard
             title="For contractors"
-            text="Quickly estimate patio yards, base material, reinforcement allowance, finish cost, delivery, and total project pricing assumptions."
+            text="Quickly estimate sidewalk yards, form length, base material, labor, delivery, finishing, and total project cost."
           />
           <InfoCard
             title="For property managers"
-            text="Use the calculator to compare patio repair, replacement, or outdoor living upgrades across rental and managed properties."
+            text="Use the calculator to compare sidewalk repair or replacement scopes across rentals, commercial properties, and managed sites."
           />
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold text-white">
-            Concrete patio calculator FAQs
+            Concrete sidewalk calculator FAQs
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Faq
-              question="How thick should a concrete patio be?"
-              answer="Many residential patios are 4 inches thick. Thicker slabs may be needed for hot tubs, outdoor kitchens, heavy furniture, poor soil, or local requirements."
+              question="How thick should a concrete sidewalk be?"
+              answer="Many residential sidewalks are 4 inches thick for foot traffic. Sidewalks that cross driveways or support heavier loads may need thicker concrete."
             />
             <Faq
-              question="How do I calculate concrete for a patio?"
-              answer="Multiply length by width by slab thickness in feet to get cubic feet. Divide by 27 to convert cubic feet to cubic yards, then add waste."
+              question="How do I calculate concrete for a sidewalk?"
+              answer="Multiply length by width by thickness in feet to get cubic feet. Divide by 27 to convert to cubic yards, then add waste."
             />
             <Faq
-              question="Should a patio have gravel base?"
-              answer="A compacted gravel base usually improves drainage and support. Base depth depends on soil, drainage, climate, and the patio design."
+              question="How much form board do I need for a sidewalk?"
+              answer="For a straight sidewalk, estimate form board length as both sides of the sidewalk, or length multiplied by two. Add extra for cuts, stakes, curves, and waste."
             />
             <Faq
-              question="Does this calculator include stamped concrete?"
-              answer="The calculator includes a finish cost input, so you can enter a higher finish cost per square foot for stamped, stained, broom-finished, or decorative concrete."
+              question="Does this include demolition?"
+              answer="No. This calculator focuses on new sidewalk material and installation assumptions. Add demolition, haul-off, permits, or special access separately."
             />
           </div>
         </section>
@@ -192,10 +192,9 @@ export default function ConcretePatioCalculatorPage() {
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
-            <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
+            <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
             <RelatedLink href="/construction/gravel-calculator" label="Gravel Calculator" />
-            <RelatedLink href="/construction/paver-base-calculator" label="Paver Base Calculator" />
             <RelatedLink href="/construction/area-calculator" label="Area Calculator" />
           </div>
         </section>
