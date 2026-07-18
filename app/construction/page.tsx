@@ -114,6 +114,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Cost Per Yard Calculator",
+    description:
+      "Estimate ready-mix concrete price per cubic yard, delivery fees, short-load charges, fuel fees, waste, tax, and total delivered cost.",
+    href: "/construction/concrete-cost-per-yard",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

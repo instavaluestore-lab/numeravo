@@ -1,40 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ConcreteTruckloadCalculatorClient from "./ConcreteTruckloadCalculatorClient";
+import ConcreteCostPerYardClient from "./ConcreteCostPerYardClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Truckload Calculator | Ready-Mix Loads, Yards & Cost",
+  title: "Concrete Cost Per Yard Calculator | Ready-Mix Price Estimator",
   description:
-    "Free concrete truckload calculator. Estimate ready-mix truckloads, cubic yards, order rounding, short-load fees, delivery cost, concrete weight, and total concrete delivery cost.",
+    "Free concrete cost per yard calculator. Estimate ready-mix concrete price, delivery fees, short-load charges, fuel fees, waste, tax, total cost, and cost per square foot.",
   alternates: {
-    canonical: "https://numeravo.com/construction/concrete-truckload-calculator",
+    canonical: "https://numeravo.com/construction/concrete-cost-per-yard",
   },
   openGraph: {
-    title: "Concrete Truckload Calculator",
+    title: "Concrete Cost Per Yard Calculator",
     description:
-      "Estimate ready-mix concrete truckloads, cubic yards, order quantity, delivery fees, short-load fees, and total cost.",
-    url: "https://numeravo.com/construction/concrete-truckload-calculator",
+      "Estimate ready-mix concrete cost per cubic yard, delivery fees, short-load fees, waste, tax, and total project cost.",
+    url: "https://numeravo.com/construction/concrete-cost-per-yard",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Truckload Calculator",
+    title: "Concrete Cost Per Yard Calculator",
     description:
-      "Calculate concrete truckloads, ready-mix yards, delivery cost, short-load fees, and total order cost.",
+      "Calculate concrete cost per yard, delivery charges, short-load fees, waste, tax, and total ready-mix cost.",
   },
 };
 
-export default function ConcreteTruckloadCalculatorPage() {
+export default function ConcreteCostPerYardPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Concrete Truckload Calculator",
+    name: "Concrete Cost Per Yard Calculator",
     applicationCategory: "ConstructionApplication",
     operatingSystem: "Web",
-    url: "https://numeravo.com/construction/concrete-truckload-calculator",
+    url: "https://numeravo.com/construction/concrete-cost-per-yard",
     description:
-      "Estimate ready-mix concrete truckloads, cubic yards, order rounding, short-load fees, delivery fees, concrete weight, and total delivery cost.",
+      "Estimate ready-mix concrete cost per cubic yard, delivery fees, short-load fees, waste allowance, tax, and total project cost.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -48,10 +48,10 @@ export default function ConcreteTruckloadCalculatorPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "How many cubic yards are in a concrete truck?",
+        name: "How much does concrete cost per yard?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Many ready-mix concrete trucks carry about 8 to 10 cubic yards, but exact capacity depends on the supplier, truck type, and local weight limits.",
+          text: "Concrete cost per cubic yard varies by region, mix design, supplier, order size, delivery distance, fuel fees, short-load fees, and taxes. This calculator lets you enter your local price per yard and estimate the full delivered cost.",
         },
       },
       {
@@ -59,15 +59,15 @@ export default function ConcreteTruckloadCalculatorPage() {
         name: "What is a short-load fee for concrete?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A short-load fee is an extra charge many suppliers add when a concrete order is below their minimum delivery quantity.",
+          text: "A short-load fee is an extra charge that may apply when a concrete order is below the supplier's minimum delivery amount. It helps cover truck and delivery costs for small orders.",
         },
       },
       {
         "@type": "Question",
-        name: "How much extra concrete should I order?",
+        name: "Does concrete cost per yard include delivery?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Many projects add 5% to 10% waste or overage so the pour does not run short. Complex shapes, uneven subgrade, and forms can require more allowance.",
+          text: "Sometimes it does, but many suppliers list concrete price separately from delivery, fuel, environmental, short-load, waiting time, and tax charges. Always confirm what is included in the quoted price.",
         },
       },
     ],
@@ -100,86 +100,82 @@ export default function ConcreteTruckloadCalculatorPage() {
               Construction Calculator
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Concrete Truckload Calculator
+              Concrete Cost Per Yard Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate ready-mix concrete truckloads, cubic yards to order, truck
-              capacity, delivery fees, short-load fees, concrete weight, and total
-              concrete delivery cost for slabs, driveways, patios, footings, and pads.
+              Estimate ready-mix concrete cost per cubic yard, delivery charges,
+              short-load fees, fuel fees, waste allowance, tax, and total project
+              cost for slabs, patios, driveways, sidewalks, footings, and pads.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Best for</p>
-                <p className="mt-1 font-semibold text-white">Ready-mix</p>
+                <p className="mt-1 font-semibold text-white">Ready-mix pricing</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Calculates</p>
-                <p className="mt-1 font-semibold text-white">Loads + cost</p>
+                <p className="mt-1 font-semibold text-white">Delivered cost</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Includes</p>
-                <p className="mt-1 font-semibold text-white">Short-load fees</p>
+                <p className="mt-1 font-semibold text-white">Fees + tax</p>
               </div>
             </div>
           </div>
 
           <div className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 shadow-2xl">
-            <h2 className="text-2xl font-semibold text-white">Ready-mix planning note</h2>
-            <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">
-              Truck capacity, minimum orders, fuel surcharges, short-load fees, waiting
-              time, and delivery zones vary by supplier. Use this calculator to plan
-              the order, then confirm final pricing with the ready-mix company.
-            </p>
-            <div className="mt-5 rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <p className="text-sm text-[#A0AEC0]">Common truck capacity</p>
-              <p className="mt-2 text-2xl font-bold text-white">8–10 yd³</p>
-              <p className="mt-2 text-xs leading-5 text-[#A0AEC0]">
-                Actual capacity depends on supplier, truck, and local weight limits.
-              </p>
+            <h2 className="text-2xl font-semibold text-white">Common cost drivers</h2>
+            <div className="mt-5 grid gap-3">
+              <CostRow label="Concrete price" value="$/yd³" />
+              <CostRow label="Delivery fee" value="Trip charge" />
+              <CostRow label="Short-load fee" value="Small orders" />
+              <CostRow label="Waste allowance" value="Extra yards" />
             </div>
+            <p className="mt-4 text-xs leading-5 text-[#A0AEC0]">
+              Supplier quotes vary by location, PSI, additives, truck access, distance,
+              order size, and local fees.
+            </p>
           </div>
         </div>
 
         <div className="mt-10">
-          <ConcreteTruckloadCalculatorClient />
+          <ConcreteCostPerYardClient />
         </div>
 
         <section className="mt-12 grid gap-6 lg:grid-cols-3">
           <InfoCard
             title="For homeowners"
-            text="Use the calculator to understand whether your project may require bagged concrete, a partial ready-mix order, or one or more truckloads."
+            text="Estimate the real delivered cost before calling suppliers or approving a driveway, patio, sidewalk, or slab quote."
           />
           <InfoCard
             title="For contractors"
-            text="Estimate ready-mix order size, truckloads, delivery cost, short-load fees, and total concrete cost before calling the supplier."
+            text="Quickly check concrete material cost, delivered price per yard, cost per square foot, and short-load impact."
           />
           <InfoCard
-            title="For property managers"
-            text="Plan concrete delivery budgets for pads, sidewalks, patios, driveways, repairs, and multi-property maintenance projects."
+            title="For better ordering"
+            text="Compare base concrete cost against delivery fees, waste allowance, tax, and extra supplier charges."
           />
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6">
-          <h2 className="text-2xl font-semibold text-white">
-            Concrete truckload calculator FAQs
-          </h2>
+          <h2 className="text-2xl font-semibold text-white">Concrete cost per yard FAQs</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Faq
-              question="How many yards are in a concrete truck?"
-              answer="Many ready-mix trucks carry around 8 to 10 cubic yards. Some trucks carry less or more depending on supplier, truck size, and legal weight limits."
+              question="What affects concrete cost per cubic yard?"
+              answer="Concrete cost depends on local supplier pricing, PSI, mix design, additives, order size, delivery distance, short-load fees, fuel fees, taxes, and waiting time."
             />
             <Faq
-              question="What is a short-load fee?"
-              answer="A short-load fee is an extra charge for concrete orders below a supplier's minimum delivery quantity. It helps cover delivery cost on small orders."
+              question="How do I estimate delivered concrete cost?"
+              answer="Multiply cubic yards by price per yard, then add delivery fees, short-load fees, fuel or environmental fees, waiting time, waste allowance, and tax if applicable."
             />
             <Faq
-              question="Should I round concrete orders up?"
-              answer="Usually yes. Ordering slightly more concrete helps avoid running short during a pour. Many projects use 5% to 10% overage."
+              question="Should I include waste when ordering concrete?"
+              answer="Yes. Many projects include a waste allowance because forms, excavation, grade variation, and ordering short can create costly problems."
             />
             <Faq
-              question="Does this calculator guarantee supplier pricing?"
-              answer="No. Supplier pricing varies by market, mix design, fuel surcharge, delivery zone, minimum order, waiting time, and local fees."
+              question="Is bagged concrete cheaper than ready-mix?"
+              answer="Bagged concrete may work for small jobs, but ready-mix is usually more practical for larger slabs, driveways, footings, patios, and pads."
             />
           </div>
         </section>
@@ -188,19 +184,27 @@ export default function ConcreteTruckloadCalculatorPage() {
           <h2 className="text-2xl font-semibold text-white">Related calculators</h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />
-            <RelatedLink href="/construction/concrete-cost-per-yard" label="Concrete Cost Per Yard Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
+            <RelatedLink href="/construction/concrete-truckload-calculator" label="Concrete Truckload Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
-            <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
             <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
-            <RelatedLink href="/construction/concrete-stairs-calculator" label="Concrete Stairs Calculator" />
+            <RelatedLink href="/construction/concrete-mix-ratio" label="Concrete Mix Ratio Calculator" />
             <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />
           </div>
         </section>
       </section>
     </main>
+  );
+}
+
+function CostRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-center justify-between rounded-xl border border-[#1F2937] bg-[#0B0F19] px-4 py-3">
+      <span className="text-sm text-[#A0AEC0]">{label}</span>
+      <span className="font-semibold text-white">{value}</span>
+    </div>
   );
 }
 
