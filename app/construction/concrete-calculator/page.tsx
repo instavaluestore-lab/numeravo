@@ -1370,6 +1370,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/10x10-concrete-slab-cost"
+    title="10x10 Concrete Slab Cost Calculator"
+    text="Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 100 square foot slab."
+  />
+
+  <GuideLink
     href="/construction/concrete-cost-per-yard"
     title="Concrete Cost Per Yard Calculator"
     text="Estimate ready-mix concrete price per cubic yard, delivery fees, short-load charges, fuel fees, waste, tax, and total delivered cost."

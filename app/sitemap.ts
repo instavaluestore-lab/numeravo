@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/concrete-slab-thickness",
     "/construction/concrete-cure-time",
     "/construction/concrete-cost-per-yard",
+    "/construction/10x10-concrete-slab-cost",
     "/construction/concrete-slab-calculator",
     "/construction/concrete-footing-calculator",
     "/construction/sonotube-concrete-calculator",
@@ -83,6 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("concrete-slab-thickness") ||
               route.includes("concrete-cure-time") ||
               route.includes("concrete-cost-per-yard") ||
+              route.includes("10x10-concrete-slab-cost") ||
               route.includes("gravel-calculator") ||
               route.includes("gravel-driveway-calculator") ||
               route.includes("gravel-driveway-cost") ||

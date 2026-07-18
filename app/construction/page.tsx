@@ -121,6 +121,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "10x10 Concrete Slab Cost Calculator",
+    description:
+      "Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 100 square foot slab.",
+    href: "/construction/10x10-concrete-slab-cost",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",
