@@ -100,6 +100,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Slab Thickness Calculator",
+    description:
+      "Estimate recommended slab thickness, concrete yards, base depth, reinforcement notes, weight, and material cost for common concrete slab projects.",
+    href: "/construction/concrete-slab-thickness",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

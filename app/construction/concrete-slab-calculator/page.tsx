@@ -292,6 +292,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-slab-thickness"
+              title="Concrete Slab Thickness Calculator"
+              text="Estimate recommended slab thickness, concrete yards, base depth, reinforcement notes, weight, and material cost."
+            />
+
+<RelatedLink
               href="/construction/concrete-mix-ratio"
               title="Concrete Mix Ratio Calculator"
               text="Estimate cement, sand, gravel, water, cement bags, and material quantities for common concrete mix ratios."
