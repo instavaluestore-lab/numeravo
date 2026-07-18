@@ -107,6 +107,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Cure Time Calculator",
+    description:
+      "Estimate when new concrete may be ready for walking, light use, vehicles, sealing, form removal, and full cure based on temperature and weather.",
+    href: "/construction/concrete-cure-time",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

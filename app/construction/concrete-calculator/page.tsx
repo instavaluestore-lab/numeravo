@@ -1370,6 +1370,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/concrete-cure-time"
+    title="Concrete Cure Time Calculator"
+    text="Estimate when new concrete may be ready for walking, light use, vehicles, sealing, and full cure."
+  />
+
+  <GuideLink
     href="/construction/concrete-slab-thickness"
     title="Concrete Slab Thickness Calculator"
     text="Estimate recommended slab thickness, concrete yards, base depth, reinforcement notes, weight, and material cost."

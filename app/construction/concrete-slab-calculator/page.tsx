@@ -292,6 +292,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-cure-time"
+              title="Concrete Cure Time Calculator"
+              text="Estimate when new concrete may be ready for walking, light use, vehicles, sealing, and full cure."
+            />
+
+            <RelatedLink
               href="/construction/concrete-slab-thickness"
               title="Concrete Slab Thickness Calculator"
               text="Estimate recommended slab thickness, concrete yards, base depth, reinforcement notes, weight, and material cost."

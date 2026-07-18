@@ -189,6 +189,7 @@ export default function ConcreteSidewalkCalculatorPage() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
+            <RelatedLink href="/construction/concrete-cure-time" label="Concrete Cure Time Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
