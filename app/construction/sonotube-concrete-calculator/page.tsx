@@ -298,6 +298,12 @@ export default function SonotubeConcreteCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-mix-ratio"
+              title="Concrete Mix Ratio Calculator"
+              text="Estimate cement, sand, gravel, water, cement bags, and material quantities for common concrete mix ratios."
+            />
+
+            <RelatedLink
               href="/construction/concrete-bag-calculator"
               title="Concrete Bag Calculator"
               text="Estimate how many bags of concrete are needed for post holes, sonotubes, small piers, and deck footings."

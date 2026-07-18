@@ -319,6 +319,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-mix-ratio"
+              title="Concrete Mix Ratio Calculator"
+              text="Estimate cement, sand, gravel, water, cement bags, and material quantities for common concrete mix ratios."
+            />
+
+            <RelatedLink
               href="/construction/concrete-truckload-calculator"
               title="Concrete Truckload Calculator"
               text="Estimate ready-mix truckloads, order quantity, delivery fees, short-load fees, and total concrete delivery cost."

@@ -93,6 +93,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Mix Ratio Calculator",
+    description:
+      "Estimate cement, sand, gravel, water, cement bags, and material quantities for common concrete mix ratios.",
+    href: "/construction/concrete-mix-ratio",
+    status: "Live",
+  },
+  {
     title: "Concrete Slab Calculator",
     description:
       "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",

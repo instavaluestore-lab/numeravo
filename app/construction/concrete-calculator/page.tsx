@@ -1370,6 +1370,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/concrete-mix-ratio"
+    title="Concrete Mix Ratio Calculator"
+    text="Estimate cement, sand, gravel, water, cement bags, and material quantities for common concrete mix ratios."
+  />
+
+  <GuideLink
     href="/construction/concrete-truckload-calculator"
     title="Concrete Truckload Calculator"
     text="Estimate ready-mix concrete truckloads, cubic yards to order, delivery fees, short-load fees, concrete weight, and total delivery cost."

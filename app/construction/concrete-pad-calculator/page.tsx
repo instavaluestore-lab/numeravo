@@ -194,6 +194,7 @@ export default function ConcretePadCalculatorPage() {
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/rebar-spacing-for-concrete-slab" label="Rebar Spacing for Concrete Slab" />
+            <RelatedLink href="/construction/concrete-mix-ratio" label="Concrete Mix Ratio Calculator" />
             <RelatedLink href="/construction/concrete-truckload-calculator" label="Concrete Truckload Calculator" />
             <RelatedLink href="/construction/concrete-stairs-calculator" label="Concrete Stairs Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
