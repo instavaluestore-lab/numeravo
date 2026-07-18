@@ -193,6 +193,7 @@ export default function ConcreteSidewalkCalculatorPage() {
             <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
+            <RelatedLink href="/construction/rebar-spacing-for-concrete-slab" label="Rebar Spacing for Concrete Slab" />
             <RelatedLink href="/construction/concrete-truckload-calculator" label="Concrete Truckload Calculator" />
             <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
             <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />

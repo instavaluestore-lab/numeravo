@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/concrete-cost-calculator",
     "/construction/concrete-bag-calculator",
     "/construction/rebar-calculator",
+    "/construction/rebar-spacing-for-concrete-slab",
     "/construction/concrete-driveway-calculator",
     "/construction/concrete-patio-calculator",
     "/construction/concrete-sidewalk-calculator",
@@ -63,6 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("concrete-cost-calculator") ||
               route.includes("concrete-bag-calculator") ||
               route.includes("rebar-calculator") ||
+              route.includes("rebar-spacing-for-concrete-slab") ||
               route.includes("concrete-driveway-calculator") ||
               route.includes("concrete-patio-calculator") ||
               route.includes("concrete-sidewalk-calculator") ||

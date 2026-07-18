@@ -1352,6 +1352,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
   />
 
   <GuideLink
+    href="/construction/rebar-spacing-for-concrete-slab"
+    title="Rebar Spacing for Concrete Slab"
+    text="Estimate slab rebar spacing, grid layout, bar count, linear feet, lap allowance, waste, weight, and material cost."
+  />
+
+  <GuideLink
     href="/construction/concrete-truckload-calculator"
     title="Concrete Truckload Calculator"
     text="Estimate ready-mix concrete truckloads, cubic yards to order, delivery fees, short-load fees, concrete weight, and total delivery cost."

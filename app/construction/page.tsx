@@ -30,6 +30,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Rebar Spacing for Concrete Slab",
+    description:
+      "Estimate slab rebar spacing, grid layout, bar count, linear feet, lap allowance, waste, weight, and material cost.",
+    href: "/construction/rebar-spacing-for-concrete-slab",
+    status: "Live",
+  },
+  {
     title: "Concrete Driveway Calculator",
     description:
       "Estimate concrete driveway cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total project cost.",

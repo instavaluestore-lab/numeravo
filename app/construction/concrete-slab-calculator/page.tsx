@@ -274,6 +274,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-spacing-for-concrete-slab"
+              title="Rebar Spacing for Concrete Slab"
+              text="Estimate slab rebar spacing, grid layout, bar count, linear feet, lap allowance, weight, and cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-truckload-calculator"
               title="Concrete Truckload Calculator"
               text="Estimate ready-mix concrete truckloads, order quantity, delivery cost, short-load fees, and total cost."

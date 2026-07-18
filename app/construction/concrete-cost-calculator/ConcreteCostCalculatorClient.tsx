@@ -301,6 +301,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/rebar-spacing-for-concrete-slab"
+              title="Rebar Spacing for Concrete Slab"
+              text="Estimate slab rebar spacing, grid layout, bar count, linear feet, weight, and material cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-truckload-calculator"
               title="Concrete Truckload Calculator"
               text="Estimate ready-mix truckloads, order quantity, delivery fees, short-load fees, and total concrete delivery cost."

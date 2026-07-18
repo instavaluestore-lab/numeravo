@@ -1,40 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ConcretePatioCalculatorClient from "./ConcretePatioCalculatorClient";
+import RebarSpacingForConcreteSlabClient from "./RebarSpacingForConcreteSlabClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Patio Calculator | Cost, Yards, Base & Rebar",
+  title: "Rebar Spacing for Concrete Slab Calculator | Rebar Grid Layout",
   description:
-    "Free concrete patio calculator. Estimate concrete cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total patio cost.",
+    "Free rebar spacing for concrete slab calculator. Estimate rebar grid spacing, number of bars, linear feet, lap allowance, waste, weight, and material cost for concrete slabs.",
   alternates: {
-    canonical: "https://numeravo.com/construction/concrete-patio-calculator",
+    canonical: "https://numeravo.com/construction/rebar-spacing-for-concrete-slab",
   },
   openGraph: {
-    title: "Concrete Patio Calculator",
+    title: "Rebar Spacing for Concrete Slab Calculator",
     description:
-      "Estimate concrete patio cubic yards, cost, base material, reinforcement, labor, waste, and delivery.",
-    url: "https://numeravo.com/construction/concrete-patio-calculator",
+      "Calculate rebar spacing, bar count, grid layout, linear feet, lap allowance, waste, weight, and material cost for concrete slabs.",
+    url: "https://numeravo.com/construction/rebar-spacing-for-concrete-slab",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Patio Calculator",
+    title: "Rebar Spacing for Concrete Slab Calculator",
     description:
-      "Calculate concrete patio yards, slab thickness, base, reinforcement, labor, delivery, and total cost.",
+      "Estimate rebar spacing, grid layout, bar count, linear feet, weight, and cost for concrete slab reinforcement.",
   },
 };
 
-export default function ConcretePatioCalculatorPage() {
+export default function RebarSpacingForConcreteSlabPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Concrete Patio Calculator",
+    name: "Rebar Spacing for Concrete Slab Calculator",
     applicationCategory: "ConstructionApplication",
     operatingSystem: "Web",
-    url: "https://numeravo.com/construction/concrete-patio-calculator",
+    url: "https://numeravo.com/construction/rebar-spacing-for-concrete-slab",
     description:
-      "Estimate concrete patio cubic yards, slab thickness, base material, reinforcement, labor, delivery, waste, and total project cost.",
+      "Estimate concrete slab rebar spacing, grid layout, bar count, linear feet, lap allowance, waste, weight, and material cost.",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -48,26 +48,26 @@ export default function ConcretePatioCalculatorPage() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "How thick should a concrete patio be?",
+        name: "What is common rebar spacing for a concrete slab?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Many residential concrete patios are 4 inches thick, but thicker slabs may be needed for heavier loads, poor soil, or local requirements.",
+          text: "Common slab rebar spacing is often 12 inches, 16 inches, 18 inches, or 24 inches on center, depending on slab use, thickness, soil conditions, local code, and engineering requirements.",
         },
       },
       {
         "@type": "Question",
-        name: "How much concrete do I need for a patio?",
+        name: "Does closer rebar spacing make a slab stronger?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Multiply patio length by width by thickness in feet to get cubic feet, then divide by 27 to convert to cubic yards. Add waste or overage.",
+          text: "Closer spacing can increase reinforcement density, but slab performance also depends on concrete thickness, subbase, jointing, reinforcement size, placement depth, loads, and engineering design.",
         },
       },
       {
         "@type": "Question",
-        name: "Do concrete patios need gravel base?",
+        name: "How do you calculate rebar pieces for a slab?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Most patio slabs benefit from a compacted gravel base to improve support, drainage, and long-term performance.",
+          text: "Divide the slab dimension by the spacing, round up, and add one bar for each direction of the grid. Then calculate bar lengths, lap allowance, waste, and stock length requirements.",
         },
       },
     ],
@@ -100,86 +100,86 @@ export default function ConcretePatioCalculatorPage() {
               Construction Calculator
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Concrete Patio Calculator
+              Rebar Spacing for Concrete Slab Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate concrete yards, patio slab thickness, gravel base, reinforcement,
-              labor, finishing, delivery, waste, and total project cost. Built for
-              homeowners, contractors, property managers, and outdoor living projects.
+              Estimate slab rebar spacing, grid layout, bars in each direction,
+              total linear feet, lap allowance, waste, stick count, weight, and
+              material cost for reinforced concrete slabs.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Best for</p>
-                <p className="mt-1 font-semibold text-white">Patios</p>
+                <p className="mt-1 font-semibold text-white">Slabs + pads</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Calculates</p>
-                <p className="mt-1 font-semibold text-white">Yards + cost</p>
+                <p className="mt-1 font-semibold text-white">Grid spacing</p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
                 <p className="text-sm text-[#A0AEC0]">Includes</p>
-                <p className="mt-1 font-semibold text-white">Base + finish</p>
+                <p className="mt-1 font-semibold text-white">Weight + cost</p>
               </div>
             </div>
           </div>
 
           <div className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 shadow-2xl">
-            <h2 className="text-2xl font-semibold text-white">Patio estimating note</h2>
+            <h2 className="text-2xl font-semibold text-white">Spacing note</h2>
             <p className="mt-3 text-sm leading-6 text-[#A0AEC0]">
-              Patio cost is not only concrete volume. Base prep, forms, reinforcement,
-              finish type, labor, delivery, access, and demolition can all change the
-              final installed price.
+              This tool is for planning and material estimates. Structural slabs,
+              driveways, commercial work, foundations, suspended slabs, and heavy-load
+              areas may require engineering or local code requirements.
             </p>
             <div className="mt-5 rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <p className="text-sm text-[#A0AEC0]">Common patio thickness</p>
-              <p className="mt-2 text-2xl font-bold text-white">4 inches</p>
+              <p className="text-sm text-[#A0AEC0]">Common slab spacing</p>
+              <p className="mt-2 text-2xl font-bold text-white">12–24 in. OC</p>
               <p className="mt-2 text-xs leading-5 text-[#A0AEC0]">
-                Heavier loads, weak soil, or special designs may require more.
+                OC means on-center spacing between parallel bars.
               </p>
             </div>
           </div>
         </div>
 
         <div className="mt-10">
-          <ConcretePatioCalculatorClient />
+          <RebarSpacingForConcreteSlabClient />
         </div>
 
         <section className="mt-12 grid gap-6 lg:grid-cols-3">
           <InfoCard
-            title="For homeowners"
-            text="Use the estimate to plan patio material quantities, understand cost drivers, and compare contractor quotes more confidently."
+            title="For slab planning"
+            text="Estimate how many bars are needed in each direction before ordering reinforcement for a slab or pad."
           />
           <InfoCard
-            title="For contractors"
-            text="Quickly estimate patio yards, base material, reinforcement allowance, finish cost, delivery, and total project pricing assumptions."
+            title="For cost estimating"
+            text="Calculate total linear feet, stick count, weight, waste, lap allowance, and estimated material cost."
           />
           <InfoCard
-            title="For property managers"
-            text="Use the calculator to compare patio repair, replacement, or outdoor living upgrades across rental and managed properties."
+            title="For better takeoffs"
+            text="Use spacing, edge clearance, bar size, stock length, and lap settings to create a more realistic rebar takeoff."
           />
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold text-white">
-            Concrete patio calculator FAQs
+            Rebar spacing for concrete slab FAQs
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <Faq
-              question="How thick should a concrete patio be?"
-              answer="Many residential patios are 4 inches thick. Thicker slabs may be needed for hot tubs, outdoor kitchens, heavy furniture, poor soil, or local requirements."
+              question="What does rebar spacing on center mean?"
+              answer="On-center spacing means the distance from the center of one bar to the center of the next parallel bar."
             />
             <Faq
-              question="How do I calculate concrete for a patio?"
-              answer="Multiply length by width by slab thickness in feet to get cubic feet. Divide by 27 to convert cubic feet to cubic yards, then add waste."
+              question="Is 12 inch or 24 inch rebar spacing better?"
+              answer="Tighter spacing adds more reinforcement, but the correct spacing depends on slab use, loads, soil, thickness, local code, and engineering requirements."
             />
             <Faq
-              question="Should a patio have gravel base?"
-              answer="A compacted gravel base usually improves drainage and support. Base depth depends on soil, drainage, climate, and the patio design."
+              question="Do slabs always need rebar?"
+              answer="Not always. Some slabs use wire mesh, fiber reinforcement, or no steel reinforcement depending on project type, load, soil conditions, and local requirements."
             />
             <Faq
-              question="Does this calculator include stamped concrete?"
-              answer="The calculator includes a finish cost input, so you can enter a higher finish cost per square foot for stamped, stained, broom-finished, or decorative concrete."
+              question="Does this replace an engineer?"
+              answer="No. This calculator estimates material quantities. Structural design should follow local code, project specifications, and professional engineering when required."
             />
           </div>
         </section>
@@ -187,19 +187,15 @@ export default function ConcretePatioCalculatorPage() {
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold text-white">Related calculators</h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />
-            <RelatedLink href="/construction/rebar-spacing-for-concrete-slab" label="Rebar Spacing for Concrete Slab" />
-            <RelatedLink href="/construction/concrete-truckload-calculator" label="Concrete Truckload Calculator" />
-            <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
-            <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
-            <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />
-            <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
-            <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
-            <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
             <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
-            <RelatedLink href="/construction/gravel-calculator" label="Gravel Calculator" />
-            <RelatedLink href="/construction/paver-base-calculator" label="Paver Base Calculator" />
-            <RelatedLink href="/construction/area-calculator" label="Area Calculator" />
+            <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
+            <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />
+            <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
+            <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
+            <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
+            <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
+            <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
+            <RelatedLink href="/construction/concrete-truckload-calculator" label="Concrete Truckload Calculator" />
           </div>
         </section>
       </section>
