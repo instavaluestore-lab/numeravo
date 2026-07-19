@@ -2,6 +2,13 @@ import Link from "next/link";
 
 const calculators = [
   {
+    title: "Concrete Weight Calculator",
+    description:
+      "Estimate concrete weight in pounds, tons, kilograms, and metric tons from yards, cubic feet, slab dimensions, bags, truckloads, and density.",
+    href: "/construction/concrete-weight-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Yard Calculator",
     description:
       "Calculate cubic yards of concrete for slabs, patios, driveways, footings, walls, piers, pads, and known-volume projects.",

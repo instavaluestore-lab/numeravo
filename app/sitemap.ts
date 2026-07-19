@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/construction",
+    "/construction/concrete-weight-calculator",
     "/construction/concrete-yard-calculator",
     "/construction/how-much-concrete-do-i-need",
     "/construction/concrete-calculator",
@@ -65,7 +66,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       route === ""
         ? 1
-        : route.includes("concrete-yard-calculator") ||
+        : route.includes("concrete-weight-calculator") ||
+          route.includes("concrete-yard-calculator") ||
           route.includes("how-much-concrete-do-i-need") ||
           route.includes("concrete-calculator")
           ? 0.9
