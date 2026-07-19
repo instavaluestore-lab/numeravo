@@ -334,6 +334,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-control-joint-spacing"
+              title="Concrete Control Joint Spacing Calculator"
+              text="Estimate saw cut spacing, joint depth, panel layout, and total control joint cut length for concrete slabs."
+            />
+
+            <RelatedLink
               href="/construction/concrete-slab-thickness"
               title="Concrete Slab Thickness Calculator"
               text="Estimate recommended slab thickness, concrete yards, base depth, reinforcement notes, weight, and material cost."

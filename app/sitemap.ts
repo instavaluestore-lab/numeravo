@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/concrete-yard-calculator",
     "/construction/how-much-concrete-do-i-need",
     "/construction/concrete-calculator",
+    "/construction/concrete-control-joint-spacing",
     "/construction/concrete-cost-calculator",
     "/construction/concrete-bag-calculator",
     "/construction/rebar-calculator",
@@ -66,7 +67,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       route === ""
         ? 1
-        : route.includes("concrete-weight-calculator") ||
+        : route.includes("concrete-control-joint-spacing") ||
+          route.includes("concrete-weight-calculator") ||
           route.includes("concrete-yard-calculator") ||
           route.includes("how-much-concrete-do-i-need") ||
           route.includes("concrete-calculator")

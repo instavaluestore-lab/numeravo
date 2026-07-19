@@ -2,6 +2,13 @@ import Link from "next/link";
 
 const calculators = [
   {
+    title: "Concrete Control Joint Spacing Calculator",
+    description:
+      "Estimate concrete control joint spacing, saw cut depth, panel layout, number of cuts, and total cut length for slabs, driveways, patios, sidewalks, and pads.",
+    href: "/construction/concrete-control-joint-spacing",
+    status: "Live",
+  },
+  {
     title: "Concrete Weight Calculator",
     description:
       "Estimate concrete weight in pounds, tons, kilograms, and metric tons from yards, cubic feet, slab dimensions, bags, truckloads, and density.",

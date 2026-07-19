@@ -415,6 +415,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-control-joint-spacing"
+              title="Concrete Control Joint Spacing Calculator"
+              text="Estimate control joint spacing, saw cut depth, panel layout, and total cut length for concrete slabs."
+            />
+
+            <RelatedLink
               href="/construction/concrete-slab-calculator"
               title="Concrete Slab Calculator"
               text="Estimate concrete needed for patios, driveways, garage floors, and shed pads."
