@@ -292,6 +292,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-yard-calculator"
+              title="Concrete Yard Calculator"
+              text="Calculate cubic yards of concrete for slabs, patios, driveways, footings, walls, piers, pads, and known-volume projects."
+            />
+
+            <RelatedLink
               href="/construction/how-much-concrete-do-i-need"
               title="How Much Concrete Do I Need?"
               text="Estimate concrete yards, bags, ready-mix loads, waste allowance, weight, and material cost for common concrete projects."

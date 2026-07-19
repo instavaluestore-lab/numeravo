@@ -2,6 +2,13 @@ import Link from "next/link";
 
 const calculators = [
   {
+    title: "Concrete Yard Calculator",
+    description:
+      "Calculate cubic yards of concrete for slabs, patios, driveways, footings, walls, piers, pads, and known-volume projects.",
+    href: "/construction/concrete-yard-calculator",
+    status: "Live",
+  },
+  {
     title: "How Much Concrete Do I Need?",
     description:
       "Estimate concrete yards, bags, ready-mix loads, waste allowance, weight, and material cost for slabs, patios, driveways, footings, walls, piers, and more.",
