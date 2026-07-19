@@ -2,6 +2,13 @@ import Link from "next/link";
 
 const calculators = [
   {
+    title: "How Much Concrete Do I Need?",
+    description:
+      "Estimate concrete yards, bags, ready-mix loads, waste allowance, weight, and material cost for slabs, patios, driveways, footings, walls, piers, and more.",
+    href: "/construction/how-much-concrete-do-i-need",
+    status: "Live",
+  },
+  {
     title: "Concrete Calculator",
     description:
       "Estimate concrete volume, waste, cost, slabs, footings, piers, walls, stairs, curbs, and more.",
