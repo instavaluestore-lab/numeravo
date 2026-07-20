@@ -2,6 +2,13 @@ import Link from "next/link";
 
 const calculators = [
   {
+    title: "Concrete Delivery Cost Calculator",
+    description:
+      "Estimate ready-mix concrete delivery fees, short-load charges, fuel fees, distance fees, waiting time, tax, total delivered cost, and delivered cost per yard.",
+    href: "/construction/concrete-delivery-cost-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete PSI Calculator",
     description:
       "Estimate recommended concrete strength for slabs, driveways, patios, sidewalks, garage floors, footings, and pads based on project type, thickness, load, exposure, and reinforcement.",

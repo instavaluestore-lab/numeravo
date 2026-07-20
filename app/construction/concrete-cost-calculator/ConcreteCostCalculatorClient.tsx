@@ -343,6 +343,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-delivery-cost-calculator"
+              title="Concrete Delivery Cost Calculator"
+              text="Estimate ready-mix delivery fees, short-load charges, distance fees, waiting time, tax, and delivered cost per yard."
+            />
+
+            <RelatedLink
               href="/construction/concrete-cost-per-yard"
               title="Concrete Cost Per Yard Calculator"
               text="Estimate ready-mix concrete price per cubic yard, delivery fees, short-load charges, fuel fees, waste, tax, and total delivered cost."
