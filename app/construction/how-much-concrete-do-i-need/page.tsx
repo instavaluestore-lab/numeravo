@@ -237,6 +237,7 @@ export default function HowMuchConcreteDoINeedPage() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <RelatedLink href="/construction/concrete-weight-calculator" label="Concrete Weight Calculator" />
             <RelatedLink href="/construction/concrete-short-load-fee-calculator" label="Concrete Short Load Fee Calculator" />
+            <RelatedLink href="/construction/concrete-waste-calculator" label="Concrete Waste Calculator" />
             <RelatedLink href="/construction/concrete-delivery-cost-calculator" label="Concrete Delivery Cost Calculator" />
             <RelatedLink href="/construction/concrete-yard-calculator" label="Concrete Yard Calculator" />
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />

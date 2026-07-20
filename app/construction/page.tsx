@@ -30,6 +30,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Waste Calculator",
+    description:
+      "Estimate concrete waste allowance, extra yards, final order quantity, waste cost, truckload impact, and bag count impact.",
+    href: "/construction/concrete-waste-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Weight Calculator",
     description:
       "Estimate concrete weight in pounds, tons, kilograms, and metric tons from yards, cubic feet, slab dimensions, bags, truckloads, and density.",

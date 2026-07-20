@@ -343,6 +343,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-waste-calculator"
+              title="Concrete Waste Calculator"
+              text="Estimate extra concrete yards, waste cost, final order quantity, truckload impact, and bag count impact."
+            />
+
+            <RelatedLink
               href="/construction/concrete-short-load-fee-calculator"
               title="Concrete Short Load Fee Calculator"
               text="Estimate short-load charges for small ready-mix orders and compare exact yards, supplier minimum yards, or bagged concrete."
