@@ -190,6 +190,7 @@ export default function ConcreteSidewalkCalculatorPage() {
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-cure-time" label="Concrete Cure Time Calculator" />
+            <RelatedLink href="/construction/concrete-psi-calculator" label="Concrete PSI Calculator" />
             <RelatedLink href="/construction/concrete-control-joint-spacing" label="Concrete Control Joint Spacing Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />

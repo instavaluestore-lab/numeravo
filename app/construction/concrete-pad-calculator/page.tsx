@@ -198,6 +198,7 @@ export default function ConcretePadCalculatorPage() {
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/rebar-spacing-for-concrete-slab" label="Rebar Spacing for Concrete Slab" />
             <RelatedLink href="/construction/concrete-cure-time" label="Concrete Cure Time Calculator" />
+            <RelatedLink href="/construction/concrete-psi-calculator" label="Concrete PSI Calculator" />
             <RelatedLink href="/construction/concrete-control-joint-spacing" label="Concrete Control Joint Spacing Calculator" />
             <RelatedLink href="/construction/concrete-slab-thickness" label="Concrete Slab Thickness Calculator" />
             <RelatedLink href="/construction/concrete-mix-ratio" label="Concrete Mix Ratio Calculator" />

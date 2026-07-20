@@ -2,6 +2,13 @@ import Link from "next/link";
 
 const calculators = [
   {
+    title: "Concrete PSI Calculator",
+    description:
+      "Estimate recommended concrete strength for slabs, driveways, patios, sidewalks, garage floors, footings, and pads based on project type, thickness, load, exposure, and reinforcement.",
+    href: "/construction/concrete-psi-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Control Joint Spacing Calculator",
     description:
       "Estimate concrete control joint spacing, saw cut depth, panel layout, number of cuts, and total cut length for slabs, driveways, patios, sidewalks, and pads.",

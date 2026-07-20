@@ -191,6 +191,7 @@ export default function ConcreteCureTimePage() {
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
             <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
+            <RelatedLink href="/construction/concrete-psi-calculator" label="Concrete PSI Calculator" />
             <RelatedLink href="/construction/concrete-mix-ratio" label="Concrete Mix Ratio Calculator" />
           </div>
         </section>

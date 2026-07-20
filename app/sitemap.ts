@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/wire-mesh-calculator",
     "/construction/concrete-driveway-calculator",
     "/construction/concrete-patio-calculator",
+    "/construction/concrete-psi-calculator",
     "/construction/concrete-sidewalk-calculator",
     "/construction/concrete-pad-calculator",
     "/construction/concrete-stairs-calculator",
@@ -67,7 +68,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       route === ""
         ? 1
-        : route.includes("concrete-control-joint-spacing") ||
+        : route.includes("concrete-psi-calculator") ||
+          route.includes("concrete-control-joint-spacing") ||
           route.includes("concrete-weight-calculator") ||
           route.includes("concrete-yard-calculator") ||
           route.includes("how-much-concrete-do-i-need") ||
