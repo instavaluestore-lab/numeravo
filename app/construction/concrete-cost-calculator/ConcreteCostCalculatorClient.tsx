@@ -343,6 +343,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-short-load-fee-calculator"
+              title="Concrete Short Load Fee Calculator"
+              text="Estimate short-load charges for small ready-mix orders and compare exact yards, supplier minimum yards, or bagged concrete."
+            />
+
+            <RelatedLink
               href="/construction/concrete-delivery-cost-calculator"
               title="Concrete Delivery Cost Calculator"
               text="Estimate ready-mix delivery fees, short-load charges, distance fees, waiting time, tax, and delivered cost per yard."

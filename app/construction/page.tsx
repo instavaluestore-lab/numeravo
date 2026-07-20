@@ -2,6 +2,13 @@ import Link from "next/link";
 
 const calculators = [
   {
+    title: "Concrete Short Load Fee Calculator",
+    description:
+      "Estimate ready-mix short-load charges for small concrete orders and compare paying the fee, ordering supplier minimum yards, or using bagged concrete.",
+    href: "/construction/concrete-short-load-fee-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Delivery Cost Calculator",
     description:
       "Estimate ready-mix concrete delivery fees, short-load charges, fuel fees, distance fees, waiting time, tax, total delivered cost, and delivered cost per yard.",
