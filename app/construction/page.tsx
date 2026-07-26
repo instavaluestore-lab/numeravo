@@ -198,6 +198,13 @@ const calculators = [
     status: "Guide",
   },
   {
+    title: "Concrete Formwork Calculator",
+    description:
+      "Estimate concrete form boards, stakes, bracing, screws, form oil, labor, material cost, and total formwork cost.",
+    href: "/construction/concrete-formwork-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Footing Calculator",
     description:
       "Estimate concrete for strip footings, trench footings, wall footings, and grade beams.",

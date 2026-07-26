@@ -277,6 +277,12 @@ export default function ConcreteFootingCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-formwork-calculator"
+              title="Concrete Formwork Calculator"
+              text="Estimate footing forms, stakes, bracing, fasteners, labor, and total formwork cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-cost-calculator"
               title="Concrete Cost Calculator"
               text="Estimate footing concrete price, base material, rebar, labor, prep, delivery fees, and total project cost."

@@ -343,6 +343,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-formwork-calculator"
+              title="Concrete Formwork Calculator"
+              text="Estimate form boards, stakes, bracing, screws, form oil, labor, material cost, and total formwork cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-waste-calculator"
               title="Concrete Waste Calculator"
               text="Estimate extra concrete yards, waste cost, final order quantity, truckload impact, and bag count impact."

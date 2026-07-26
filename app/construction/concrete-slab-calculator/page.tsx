@@ -400,6 +400,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-formwork-calculator"
+              title="Concrete Formwork Calculator"
+              text="Estimate form boards, stakes, bracing, screws, form oil, labor, and total formwork cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-cost-calculator"
               title="Concrete Cost Calculator"
               text="Estimate concrete price, base material, rebar, labor, prep, delivery fees, and total slab project cost."

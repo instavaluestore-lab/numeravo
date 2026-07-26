@@ -279,6 +279,12 @@ export default function ConcreteWallCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-formwork-calculator"
+              title="Concrete Formwork Calculator"
+              text="Estimate wall forms, bracing, stakes, fasteners, labor, and total formwork cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-cost-calculator"
               title="Concrete Cost Calculator"
               text="Estimate wall concrete price, base material, rebar, labor, prep, delivery fees, and total project cost."
