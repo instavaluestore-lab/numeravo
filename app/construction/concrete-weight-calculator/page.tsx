@@ -235,6 +235,7 @@ export default function ConcreteWeightCalculatorPage() {
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold text-white">Related concrete calculators</h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <RelatedLink href="/construction/concrete-removal-cost-calculator" label="Concrete Removal Cost Calculator" />
             <RelatedLink href="/construction/concrete-yard-calculator" label="Concrete Yard Calculator" />
             <RelatedLink href="/construction/how-much-concrete-do-i-need" label="How Much Concrete Do I Need?" />
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />

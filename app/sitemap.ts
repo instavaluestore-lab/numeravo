@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/10x10-concrete-slab-cost",
     "/construction/12x12-concrete-slab-cost",
     "/construction/concrete-slab-calculator",
+    "/construction/concrete-removal-cost-calculator",
     "/construction/concrete-formwork-calculator",
     "/construction/concrete-footing-calculator",
     "/construction/sonotube-concrete-calculator",
@@ -76,6 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           route.includes("concrete-delivery-cost-calculator") ||
           route.includes("concrete-psi-calculator") ||
           route.includes("concrete-control-joint-spacing") ||
+          route.includes("concrete-removal-cost-calculator") ||
           route.includes("concrete-formwork-calculator") ||
           route.includes("concrete-waste-calculator") ||
           route.includes("concrete-weight-calculator") ||

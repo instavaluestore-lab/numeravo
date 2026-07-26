@@ -400,6 +400,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-removal-cost-calculator"
+              title="Concrete Removal Cost Calculator"
+              text="Estimate slab demolition, disposal, haul-off, labor, equipment, weight, and total removal cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-formwork-calculator"
               title="Concrete Formwork Calculator"
               text="Estimate form boards, stakes, bracing, screws, form oil, labor, and total formwork cost."

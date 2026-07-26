@@ -188,6 +188,7 @@ export default function ConcreteSidewalkCalculatorPage() {
           <h2 className="text-2xl font-semibold text-white">Related calculators</h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />
+            <RelatedLink href="/construction/concrete-removal-cost-calculator" label="Concrete Removal Cost Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-cure-time" label="Concrete Cure Time Calculator" />
             <RelatedLink href="/construction/concrete-psi-calculator" label="Concrete PSI Calculator" />

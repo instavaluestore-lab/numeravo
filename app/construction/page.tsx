@@ -198,6 +198,13 @@ const calculators = [
     status: "Guide",
   },
   {
+    title: "Concrete Removal Cost Calculator",
+    description:
+      "Estimate concrete demolition, disposal, haul-off, labor, equipment, slab weight, and total removal cost.",
+    href: "/construction/concrete-removal-cost-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Formwork Calculator",
     description:
       "Estimate concrete form boards, stakes, bracing, screws, form oil, labor, material cost, and total formwork cost.",
