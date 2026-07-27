@@ -343,6 +343,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-saw-cut-calculator"
+              title="Concrete Saw Cut Calculator"
+              text="Calculate saw cut depth, spacing, number of cuts, linear feet, control joint layout, and saw cutting cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-expansion-joint-spacing"
               title="Concrete Expansion Joint Spacing"
               text="Estimate expansion joint spacing, joint count, isolation joint length, material length, and joint cost."

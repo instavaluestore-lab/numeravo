@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ConcreteDemolitionCalculatorClient from "./ConcreteDemolitionCalculatorClient";
+import ConcreteSawCutCalculatorClient from "./ConcreteSawCutCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Demolition Calculator | Time, Weight & Crew Planning",
+  title: "Concrete Saw Cut Calculator | Joint Depth, Spacing & Cost",
   description:
-    "Estimate concrete demolition time, concrete weight, crew size, production rate, saw-cut length, equipment needs, haul-off loads, and demolition planning details.",
+    "Calculate concrete saw cut depth, saw cut spacing, number of cuts, linear feet, control joint layout, demolition cuts, and total saw cutting cost.",
   alternates: {
-    canonical: "https://numeravo.com/construction/concrete-demolition-calculator",
+    canonical: "https://numeravo.com/construction/concrete-saw-cut-calculator",
   },
   openGraph: {
-    title: "Concrete Demolition Calculator",
+    title: "Concrete Saw Cut Calculator",
     description:
-      "Plan concrete demolition by area, thickness, reinforcement, method, crew size, production rate, saw cuts, weight, and haul-off loads.",
-    url: "https://numeravo.com/construction/concrete-demolition-calculator",
+      "Estimate concrete saw cut depth, spacing, linear feet, joint layout, and saw cutting cost for slabs, driveways, patios, sidewalks, and demolition.",
+    url: "https://numeravo.com/construction/concrete-saw-cut-calculator",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Demolition Calculator",
+    title: "Concrete Saw Cut Calculator",
     description:
-      "Estimate demo hours, crew days, saw-cut length, concrete weight, and haul-off loads for concrete demolition.",
+      "Estimate concrete saw cut depth, spacing, linear feet, number of cuts, and total saw cutting cost.",
   },
 };
 
@@ -31,38 +31,38 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How do you estimate concrete demolition time?",
+      name: "How deep should concrete saw cuts be?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Concrete demolition time can be estimated from the surface area, slab thickness, reinforcement level, demolition method, crew size, production rate, saw cutting, loading time, and site access difficulty.",
+          "A common planning rule for control joints is to saw cut about one quarter of the slab thickness. For example, a 4 inch slab often uses a saw cut depth around 1 inch, depending on project requirements and local practice.",
       },
     },
     {
       "@type": "Question",
-      name: "What affects concrete demolition difficulty?",
+      name: "How far apart should saw cuts be in concrete?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Concrete demolition difficulty is affected by slab thickness, wire mesh or rebar, access, whether heavy equipment can reach the work area, saw cutting requirements, haul distance, and disposal limits.",
+          "Saw cut spacing depends on slab thickness, slab shape, reinforcement, mix design, weather, and project conditions. A common planning range is roughly 24 to 36 times the slab thickness in inches, converted to feet.",
       },
     },
     {
       "@type": "Question",
-      name: "Is reinforced concrete harder to demolish?",
+      name: "How do you calculate saw cut linear feet?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Yes. Wire mesh, rebar, thickened edges, footings, and heavy-duty slabs usually slow demolition because concrete must be broken, separated, cut, loaded, and hauled more carefully.",
+          "Saw cut linear feet can be estimated by counting the planned cuts running across the slab in each direction and multiplying each cut count by the length of the cut.",
       },
     },
     {
       "@type": "Question",
-      name: "How much does demolished concrete weigh?",
+      name: "Are saw cuts used for demolition too?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Normal concrete commonly weighs about 145 to 150 pounds per cubic foot. The calculator converts area and thickness into volume and estimated weight for haul-off planning.",
+          "Yes. Saw cuts are often used to create clean edges, isolate sections, reduce uncontrolled cracking, and divide concrete into manageable pieces for demolition and removal.",
       },
     },
   ],
@@ -71,12 +71,12 @@ const faqJsonLd = {
 const appJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "Concrete Demolition Calculator",
+  name: "Concrete Saw Cut Calculator",
   applicationCategory: "ConstructionApplication",
   operatingSystem: "Any",
-  url: "https://numeravo.com/construction/concrete-demolition-calculator",
+  url: "https://numeravo.com/construction/concrete-saw-cut-calculator",
   description:
-    "Estimate concrete demolition time, crew size, production rate, saw-cut length, equipment needs, concrete weight, and haul-off loads.",
+    "Calculate concrete saw cut depth, spacing, linear feet, number of cuts, joint layout, and total saw cutting cost.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -84,7 +84,7 @@ const appJsonLd = {
   },
 };
 
-export default function ConcreteDemolitionCalculatorPage() {
+export default function ConcreteSawCutCalculatorPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
       <script
@@ -107,93 +107,93 @@ export default function ConcreteDemolitionCalculatorPage() {
             </Link>
 
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
-              Concrete demolition planning
+              Concrete saw cutting and joint layout
             </p>
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
-              Concrete Demolition Calculator
+              Concrete Saw Cut Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate concrete demolition time, crew days, production rate,
-              saw-cut length, equipment needs, concrete weight, and haul-off
-              loads. Use it to plan driveway, patio, sidewalk, pad, garage slab,
-              and reinforced concrete demolition work.
+              Estimate concrete saw cut depth, saw cut spacing, number of cuts,
+              linear feet, joint layout, demolition cut planning, and total saw
+              cutting cost for slabs, driveways, patios, sidewalks, pads, and
+              removal work.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Main output</p>
+                <p className="text-sm text-[#A0AEC0]">Depth guide</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Demo hours
+                  1/4 slab
                 </p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Crew planning</p>
+                <p className="text-sm text-[#A0AEC0]">Layout</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Crew days
+                  Cut count
                 </p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Haul-off</p>
+                <p className="text-sm text-[#A0AEC0]">Cost</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Tons + loads
+                  $/linear ft
                 </p>
               </div>
             </div>
           </div>
 
           <div className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 shadow-2xl">
-            <h2 className="text-xl font-semibold">What this calculator plans</h2>
+            <h2 className="text-xl font-semibold">What this calculator includes</h2>
             <div className="mt-5 space-y-4 text-sm leading-6 text-[#A0AEC0]">
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Demolition speed</span>
-                <span className="font-semibold text-white">sq ft/hour</span>
+                <span>Saw cut depth</span>
+                <span className="font-semibold text-white">slab ÷ 4</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Crew schedule</span>
-                <span className="font-semibold text-white">hours + days</span>
+                <span>Cut spacing</span>
+                <span className="font-semibold text-white">target ft</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Concrete weight</span>
-                <span className="font-semibold text-white">lb + tons</span>
+                <span>Cut length</span>
+                <span className="font-semibold text-white">linear feet</span>
               </div>
               <div className="flex justify-between gap-4">
-                <span>Haul planning</span>
-                <span className="font-semibold text-white">loads</span>
+                <span>Cost estimate</span>
+                <span className="font-semibold text-white">labor + equipment</span>
               </div>
             </div>
           </div>
         </div>
 
-        <ConcreteDemolitionCalculatorClient />
+        <ConcreteSawCutCalculatorClient />
 
         <section className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8">
-          <h2 className="text-2xl font-bold">How the concrete demolition estimate works</h2>
+          <h2 className="text-2xl font-bold">How concrete saw cut estimates work</h2>
           <p className="mt-4 leading-7 text-[#A0AEC0]">
-            The calculator starts with concrete area and thickness, then applies
-            demolition method, reinforcement, crew size, production rate, access
-            difficulty, saw cutting, loading time, and haul-off assumptions. The
-            goal is to estimate the work plan before pricing the job.
+            This calculator estimates saw cut depth from slab thickness, then
+            lays out cuts in one or two directions based on target spacing. It
+            totals the linear feet of cutting and applies cost per linear foot,
+            setup cost, and optional minimum job cost.
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">1. Measure the concrete</h3>
+              <h3 className="font-semibold">1. Enter slab size</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Enter length, width, and thickness to calculate area, volume,
-                and estimated concrete weight.
+                Use length, width, and thickness to estimate cut depth and
+                layout.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">2. Select the method</h3>
+              <h3 className="font-semibold">2. Choose spacing</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Hand demolition, jackhammer, skid steer, mini excavator, and
-                saw-cut methods affect production rate.
+                Saw cut spacing controls the number of cuts and the final panel
+                size.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">3. Plan crew and haul-off</h3>
+              <h3 className="font-semibold">3. Estimate cost</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Convert demo hours into crew days, concrete tons, dump runs, and
-                estimated roll-off load requirements.
+                Add price per linear foot, setup cost, and minimum job charge to
+                estimate total saw cutting cost.
               </p>
             </div>
           </div>
@@ -202,23 +202,22 @@ export default function ConcreteDemolitionCalculatorPage() {
         <section className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8">
           <h2 className="text-2xl font-bold">Related concrete calculators</h2>
           <p className="mt-3 text-[#A0AEC0]">
-            Use these tools to plan removal cost, replacement concrete, forms,
-            delivery, waste, reinforcement, and slab quantities.
+            Use these tools to plan control joints, expansion joints, concrete
+            removal, demolition, replacement concrete, and slab costs.
           </p>
           <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            <RelatedLink href="/construction/concrete-saw-cut-calculator" label="Concrete Saw Cut Calculator" />
+            <RelatedLink href="/construction/concrete-control-joint-spacing" label="Concrete Control Joint Spacing" />
+            <RelatedLink href="/construction/concrete-expansion-joint-spacing" label="Concrete Expansion Joint Spacing" />
+            <RelatedLink href="/construction/concrete-demolition-calculator" label="Concrete Demolition Calculator" />
             <RelatedLink href="/construction/concrete-removal-cost-calculator" label="Concrete Removal Cost Calculator" />
-            <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
             <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
             <RelatedLink href="/construction/concrete-formwork-calculator" label="Concrete Formwork Calculator" />
-            <RelatedLink href="/construction/concrete-weight-calculator" label="Concrete Weight Calculator" />
+            <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-yard-calculator" label="Concrete Yard Calculator" />
-            <RelatedLink href="/construction/concrete-waste-calculator" label="Concrete Waste Calculator" />
-            <RelatedLink href="/construction/concrete-truckload-calculator" label="Concrete Truckload Calculator" />
           </div>
         </section>
       </section>

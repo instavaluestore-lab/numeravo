@@ -23,6 +23,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Saw Cut Calculator",
+    description:
+      "Calculate saw cut depth, spacing, number of cuts, linear feet, control joint layout, demolition cuts, and total saw cutting cost.",
+    href: "/construction/concrete-saw-cut-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Expansion Joint Spacing Calculator",
     description:
       "Estimate expansion joint spacing, joint count, joint layout, isolation joint length, material length, and joint cost.",
