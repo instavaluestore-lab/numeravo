@@ -23,6 +23,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Expansion Joint Spacing Calculator",
+    description:
+      "Estimate expansion joint spacing, joint count, joint layout, isolation joint length, material length, and joint cost.",
+    href: "/construction/concrete-expansion-joint-spacing",
+    status: "Live",
+  },
+  {
     title: "Concrete Control Joint Spacing Calculator",
     description:
       "Estimate concrete control joint spacing, saw cut depth, panel layout, number of cuts, and total cut length for slabs, driveways, patios, sidewalks, and pads.",

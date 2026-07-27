@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ConcreteRemovalCostCalculatorClient from "./ConcreteRemovalCostCalculatorClient";
+import ConcreteExpansionJointSpacingClient from "./ConcreteExpansionJointSpacingClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Removal Cost Calculator | Demo & Haul-Off Cost",
+  title: "Concrete Expansion Joint Spacing Calculator | Joint Layout",
   description:
-    "Estimate concrete removal cost by area, slab thickness, concrete weight, demolition labor, equipment, dumpster, disposal, haul-off, and total cost per square foot.",
+    "Calculate concrete expansion joint spacing, joint count, joint layout, isolation joints, joint material length, and estimated expansion joint cost for slabs, driveways, patios, and sidewalks.",
   alternates: {
-    canonical: "https://numeravo.com/construction/concrete-removal-cost-calculator",
+    canonical: "https://numeravo.com/construction/concrete-expansion-joint-spacing",
   },
   openGraph: {
-    title: "Concrete Removal Cost Calculator",
+    title: "Concrete Expansion Joint Spacing Calculator",
     description:
-      "Calculate concrete demolition, disposal, haul-off, equipment, labor, and total removal cost.",
-    url: "https://numeravo.com/construction/concrete-removal-cost-calculator",
+      "Estimate expansion joint spacing, joint count, layout, material length, and joint cost for concrete slabs, driveways, patios, and sidewalks.",
+    url: "https://numeravo.com/construction/concrete-expansion-joint-spacing",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Removal Cost Calculator",
+    title: "Concrete Expansion Joint Spacing Calculator",
     description:
-      "Estimate concrete removal cost, concrete weight, disposal, haul-off, and demolition labor.",
+      "Plan concrete expansion joint spacing, joint layout, isolation joints, and material length.",
   },
 };
 
@@ -31,38 +31,38 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How do you estimate concrete removal cost?",
+      name: "How far apart should concrete expansion joints be?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Concrete removal cost is commonly estimated by calculating the square footage, slab thickness, concrete volume, concrete weight, labor, equipment, disposal, haul-off, and any access or difficulty adjustments.",
+          "Expansion joint spacing depends on the slab type, dimensions, adjacent structures, exposure, and local practice. Many exterior slabs use expansion or isolation joints at fixed structures, transitions, and long runs, while control joints handle shrinkage cracking inside the slab.",
       },
     },
     {
       "@type": "Question",
-      name: "What affects concrete demolition cost?",
+      name: "Are expansion joints the same as control joints?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Major cost drivers include slab thickness, reinforcement, access, saw cutting, disposal fees, haul distance, equipment needs, labor rate, and whether the concrete is broken up by hand or machine.",
+          "No. Expansion joints separate concrete from fixed objects or adjacent slabs so movement can occur. Control joints are weakened planes cut or tooled into concrete to help control shrinkage cracking.",
       },
     },
     {
       "@type": "Question",
-      name: "How much does removed concrete weigh?",
+      name: "Where should expansion joints be placed in concrete?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Normal concrete weighs about 145 to 150 pounds per cubic foot. A thicker slab can add significant disposal and hauling weight even when the surface area is modest.",
+          "Expansion or isolation joints are commonly placed where concrete meets buildings, walls, steps, curbs, columns, existing slabs, driveway aprons, sidewalks, and other fixed objects.",
       },
     },
     {
       "@type": "Question",
-      name: "Is concrete removal priced per square foot?",
+      name: "How much expansion joint material do I need?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Many small concrete removal jobs are discussed as a cost per square foot, but the actual estimate should also account for thickness, weight, labor, equipment, disposal, hauling, and site access.",
+          "Expansion joint material length can be estimated by adding the planned joint runs across the slab, plus isolation joint length around fixed structures or edges that require separation.",
       },
     },
   ],
@@ -71,12 +71,12 @@ const faqJsonLd = {
 const appJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "Concrete Removal Cost Calculator",
+  name: "Concrete Expansion Joint Spacing Calculator",
   applicationCategory: "ConstructionApplication",
   operatingSystem: "Any",
-  url: "https://numeravo.com/construction/concrete-removal-cost-calculator",
+  url: "https://numeravo.com/construction/concrete-expansion-joint-spacing",
   description:
-    "Estimate concrete demolition, disposal, haul-off, labor, equipment, and total removal cost.",
+    "Calculate concrete expansion joint spacing, joint count, joint layout, isolation joint length, material length, and estimated joint cost.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -84,7 +84,7 @@ const appJsonLd = {
   },
 };
 
-export default function ConcreteRemovalCostCalculatorPage() {
+export default function ConcreteExpansionJointSpacingPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
       <script
@@ -107,35 +107,35 @@ export default function ConcreteRemovalCostCalculatorPage() {
             </Link>
 
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
-              Concrete demolition and haul-off
+              Concrete movement joint planning
             </p>
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
-              Concrete Removal Cost Calculator
+              Concrete Expansion Joint Spacing Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate concrete removal cost from square footage, slab thickness,
-              concrete weight, labor, equipment, dumpster or disposal fees,
-              haul-off, and site difficulty. Use it for patios, driveways,
-              sidewalks, pads, garage slabs, and small demolition jobs.
+              Estimate concrete expansion joint spacing, joint count, joint
+              layout, isolation joint length, material quantity, and estimated
+              joint material cost for slabs, driveways, patios, sidewalks, pads,
+              and garage slabs.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Core output</p>
+                <p className="text-sm text-[#A0AEC0]">Main output</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Total cost
+                  Joint spacing
                 </p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Weight planning</p>
+                <p className="text-sm text-[#A0AEC0]">Layout</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Tons removed
+                  Joint count
                 </p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Bid comparison</p>
+                <p className="text-sm text-[#A0AEC0]">Materials</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  $/sq ft
+                  Linear feet
                 </p>
               </div>
             </div>
@@ -145,56 +145,56 @@ export default function ConcreteRemovalCostCalculatorPage() {
             <h2 className="text-xl font-semibold">What this calculator includes</h2>
             <div className="mt-5 space-y-4 text-sm leading-6 text-[#A0AEC0]">
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Concrete quantity</span>
-                <span className="font-semibold text-white">sq ft × thickness</span>
+                <span>Expansion spacing</span>
+                <span className="font-semibold text-white">target ft</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Weight</span>
-                <span className="font-semibold text-white">lb + tons</span>
+                <span>Joint layout</span>
+                <span className="font-semibold text-white">runs + panels</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Cost drivers</span>
-                <span className="font-semibold text-white">labor + equipment</span>
+                <span>Isolation joints</span>
+                <span className="font-semibold text-white">edge length</span>
               </div>
               <div className="flex justify-between gap-4">
-                <span>Disposal</span>
-                <span className="font-semibold text-white">dumpster + haul-off</span>
+                <span>Material estimate</span>
+                <span className="font-semibold text-white">linear feet + cost</span>
               </div>
             </div>
           </div>
         </div>
 
-        <ConcreteRemovalCostCalculatorClient />
+        <ConcreteExpansionJointSpacingClient />
 
         <section className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8">
-          <h2 className="text-2xl font-bold">How the concrete removal estimate works</h2>
+          <h2 className="text-2xl font-bold">Expansion joints vs. control joints</h2>
           <p className="mt-4 leading-7 text-[#A0AEC0]">
-            The calculator converts the demolition area and slab thickness into
-            cubic feet and cubic yards, then estimates concrete weight using the
-            selected density. It then adds labor, equipment, disposal, hauling,
-            and site difficulty so the result is more useful than a flat
-            square-foot estimate.
+            Expansion joints and isolation joints separate concrete from fixed
+            objects or adjacent slabs so movement does not transfer directly
+            into the new pour. Control joints are different: they are saw-cut or
+            tooled lines used to guide shrinkage cracking within the slab. Most
+            concrete flatwork needs both concepts considered.
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
               <h3 className="font-semibold">1. Measure the slab</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Enter length, width, and thickness. Thicker slabs create more
-                weight and higher disposal costs.
+                Enter length and width so the calculator can estimate panel
+                runs and joint material length.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">2. Add demolition costs</h3>
+              <h3 className="font-semibold">2. Choose the joint spacing</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Include labor hours, labor rate, equipment rental, saw cutting,
-                and site access difficulty.
+                Use a preset or enter a custom expansion joint spacing based on
+                the job type and site conditions.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">3. Add disposal and hauling</h3>
+              <h3 className="font-semibold">3. Add isolation joints</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Estimate dumpster, landfill, concrete recycling, haul-off, and
-                cost per ton.
+                Add joint length around buildings, walls, steps, columns,
+                existing slabs, and other fixed objects.
               </p>
             </div>
           </div>
@@ -203,24 +203,22 @@ export default function ConcreteRemovalCostCalculatorPage() {
         <section className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8">
           <h2 className="text-2xl font-bold">Related concrete calculators</h2>
           <p className="mt-3 text-[#A0AEC0]">
-            Use these tools to estimate replacement concrete, forms, waste,
-            delivery, reinforcement, and slab costs.
+            Use these tools to plan concrete layout, control joints, slab cost,
+            formwork, removal, demolition, and replacement concrete.
           </p>
           <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            <RelatedLink href="/construction/concrete-expansion-joint-spacing" label="Concrete Expansion Joint Spacing" />
-            <RelatedLink href="/construction/concrete-demolition-calculator" label="Concrete Demolition Calculator" />
-            <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
+            <RelatedLink href="/construction/concrete-control-joint-spacing" label="Concrete Control Joint Spacing" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
             <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
             <RelatedLink href="/construction/concrete-formwork-calculator" label="Concrete Formwork Calculator" />
-            <RelatedLink href="/construction/concrete-waste-calculator" label="Concrete Waste Calculator" />
-            <RelatedLink href="/construction/concrete-weight-calculator" label="Concrete Weight Calculator" />
+            <RelatedLink href="/construction/concrete-removal-cost-calculator" label="Concrete Removal Cost Calculator" />
+            <RelatedLink href="/construction/concrete-demolition-calculator" label="Concrete Demolition Calculator" />
+            <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-yard-calculator" label="Concrete Yard Calculator" />
-            <RelatedLink href="/construction/concrete-delivery-cost-calculator" label="Concrete Delivery Cost Calculator" />
-            <RelatedLink href="/construction/concrete-short-load-fee-calculator" label="Concrete Short Load Fee Calculator" />
+            <RelatedLink href="/construction/concrete-waste-calculator" label="Concrete Waste Calculator" />
           </div>
         </section>
       </section>

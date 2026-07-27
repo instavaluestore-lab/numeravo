@@ -343,6 +343,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-expansion-joint-spacing"
+              title="Concrete Expansion Joint Spacing"
+              text="Estimate expansion joint spacing, joint count, isolation joint length, material length, and joint cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-demolition-calculator"
               title="Concrete Demolition Calculator"
               text="Estimate concrete demolition time, crew days, production rate, saw-cut length, concrete weight, and haul-off loads."

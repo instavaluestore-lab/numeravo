@@ -243,6 +243,7 @@ export default function ConcreteFormworkCalculatorPage() {
             <RelatedLink href="/construction/concrete-yard-calculator" label="Concrete Yard Calculator" />
             <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
             <RelatedLink href="/construction/wire-mesh-calculator" label="Wire Mesh Calculator" />
+            <RelatedLink href="/construction/concrete-expansion-joint-spacing" label="Concrete Expansion Joint Spacing" />
             <RelatedLink href="/construction/concrete-control-joint-spacing" label="Concrete Control Joint Spacing" />
           </div>
         </section>
