@@ -198,6 +198,13 @@ const calculators = [
     status: "Guide",
   },
   {
+    title: "Concrete Demolition Calculator",
+    description:
+      "Estimate concrete demolition time, crew days, production rate, saw-cut length, concrete weight, and haul-off loads.",
+    href: "/construction/concrete-demolition-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Removal Cost Calculator",
     description:
       "Estimate concrete demolition, disposal, haul-off, labor, equipment, slab weight, and total removal cost.",

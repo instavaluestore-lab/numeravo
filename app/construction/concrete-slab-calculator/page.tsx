@@ -400,6 +400,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-demolition-calculator"
+              title="Concrete Demolition Calculator"
+              text="Estimate slab demolition time, crew days, production rate, saw-cut length, concrete weight, and haul-off loads."
+            />
+
+            <RelatedLink
               href="/construction/concrete-removal-cost-calculator"
               title="Concrete Removal Cost Calculator"
               text="Estimate slab demolition, disposal, haul-off, labor, equipment, weight, and total removal cost."
