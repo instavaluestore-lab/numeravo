@@ -1,418 +1,487 @@
 import Link from "next/link";
 
-const calculators = [
+const calculatorSections = [
   {
-    title: "Concrete Short Load Fee Calculator",
+    title: "Concrete Volume & Material",
     description:
-      "Estimate ready-mix short-load charges for small concrete orders and compare paying the fee, ordering supplier minimum yards, or using bagged concrete.",
-    href: "/construction/concrete-short-load-fee-calculator",
-    status: "Live",
+      "Estimate concrete yards, bags, mix ratios, slab thickness, cure time, PSI, waste, and weight.",
+    accent: "bg-[#F97316]",
+    calculators: [
+      {
+        title: "Concrete Calculator",
+        description:
+          "Estimate concrete volume, waste, cost, slabs, footings, piers, walls, stairs, curbs, and more.",
+        href: "/construction/concrete-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Yard Calculator",
+        description:
+          "Calculate cubic yards of concrete for slabs, patios, driveways, footings, walls, piers, pads, and known-volume projects.",
+        href: "/construction/concrete-yard-calculator",
+        status: "Live",
+      },
+      {
+        title: "How Much Concrete Do I Need?",
+        description:
+          "Estimate concrete yards, bags, ready-mix loads, waste allowance, weight, and material cost.",
+        href: "/construction/how-much-concrete-do-i-need",
+        status: "Live",
+      },
+      {
+        title: "Concrete Bag Calculator",
+        description:
+          "Estimate how many 40 lb, 50 lb, 60 lb, or 80 lb bags of concrete you need.",
+        href: "/construction/concrete-bag-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Mix Ratio Calculator",
+        description:
+          "Estimate cement, sand, gravel, water, cement bags, and material quantities for common mix ratios.",
+        href: "/construction/concrete-mix-ratio",
+        status: "Live",
+      },
+      {
+        title: "Concrete Slab Thickness Calculator",
+        description:
+          "Estimate recommended slab thickness, concrete yards, base depth, reinforcement notes, weight, and material cost.",
+        href: "/construction/concrete-slab-thickness",
+        status: "Live",
+      },
+      {
+        title: "Concrete Cure Time Calculator",
+        description:
+          "Estimate when concrete may be ready for walking, light use, vehicles, sealing, form removal, and full cure.",
+        href: "/construction/concrete-cure-time",
+        status: "Live",
+      },
+      {
+        title: "Concrete PSI Calculator",
+        description:
+          "Estimate recommended concrete strength for slabs, driveways, patios, sidewalks, garage floors, footings, and pads.",
+        href: "/construction/concrete-psi-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Waste Calculator",
+        description:
+          "Estimate concrete waste allowance, extra yards, final order quantity, waste cost, truckload impact, and bag count impact.",
+        href: "/construction/concrete-waste-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Weight Calculator",
+        description:
+          "Estimate concrete weight in pounds, tons, kilograms, and metric tons from yards, cubic feet, bags, truckloads, and density.",
+        href: "/construction/concrete-weight-calculator",
+        status: "Live",
+      },
+    ],
   },
   {
-    title: "Concrete Delivery Cost Calculator",
+    title: "Concrete Cost, Delivery & Labor",
     description:
-      "Estimate ready-mix concrete delivery fees, short-load charges, fuel fees, distance fees, waiting time, tax, total delivered cost, and delivered cost per yard.",
-    href: "/construction/concrete-delivery-cost-calculator",
-    status: "Live",
+      "Estimate concrete pricing, delivery fees, short-load charges, pumping, finishing, labor, and total project cost.",
+    accent: "bg-[#FB923C]",
+    calculators: [
+      {
+        title: "Concrete Cost Calculator",
+        description:
+          "Estimate concrete price, cubic yards, base material, rebar, labor, prep, delivery fees, and total project cost.",
+        href: "/construction/concrete-cost-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Cost Per Yard Calculator",
+        description:
+          "Estimate ready-mix concrete price per cubic yard, delivery fees, short-load charges, fuel fees, waste, tax, and total delivered cost.",
+        href: "/construction/concrete-cost-per-yard",
+        status: "Live",
+      },
+      {
+        title: "Concrete Delivery Cost Calculator",
+        description:
+          "Estimate ready-mix delivery fees, short-load charges, fuel fees, distance fees, waiting time, tax, and delivered cost per yard.",
+        href: "/construction/concrete-delivery-cost-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Short Load Fee Calculator",
+        description:
+          "Estimate ready-mix short-load charges for small concrete orders and compare supplier minimums or bagged concrete.",
+        href: "/construction/concrete-short-load-fee-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Truckload Calculator",
+        description:
+          "Estimate ready-mix concrete truckloads, cubic yards to order, truck capacity, delivery fees, short-load fees, weight, and delivery cost.",
+        href: "/construction/concrete-truckload-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Pump Truck Cost Calculator",
+        description:
+          "Estimate line pump or boom pump cost, minimum rental charges, hourly pumping cost, setup fees, travel fees, and yardage charges.",
+        href: "/construction/concrete-pump-truck-cost-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Labor Cost Calculator",
+        description:
+          "Estimate crew hours, person hours, labor rate, production rate, setup, forming, finishing, cleanup, overhead, and total labor cost.",
+        href: "/construction/concrete-labor-cost-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Finishing Cost Calculator",
+        description:
+          "Estimate finishing cost by square footage, finish type, labor rate, crew productivity, curing, sealing, saw cuts, and cost per square foot.",
+        href: "/construction/concrete-finishing-cost-calculator",
+        status: "Live",
+      },
+      {
+        title: "10x10 Concrete Slab Cost Calculator",
+        description:
+          "Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 100 square foot slab.",
+        href: "/construction/10x10-concrete-slab-cost",
+        status: "Live",
+      },
+      {
+        title: "12x12 Concrete Slab Cost Calculator",
+        description:
+          "Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 144 square foot slab.",
+        href: "/construction/12x12-concrete-slab-cost",
+        status: "Live",
+      },
+    ],
   },
   {
-    title: "Concrete PSI Calculator",
+    title: "Flatwork, Forms & Joints",
     description:
-      "Estimate recommended concrete strength for slabs, driveways, patios, sidewalks, garage floors, footings, and pads based on project type, thickness, load, exposure, and reinforcement.",
-    href: "/construction/concrete-psi-calculator",
-    status: "Live",
+      "Estimate slabs, driveways, patios, sidewalks, pads, stairs, forms, saw cuts, control joints, and expansion joints.",
+    accent: "bg-[#FACC15]",
+    calculators: [
+      {
+        title: "Concrete Slab Calculator",
+        description:
+          "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",
+        href: "/construction/concrete-slab-calculator",
+        status: "Guide",
+      },
+      {
+        title: "Concrete Driveway Calculator",
+        description:
+          "Estimate driveway cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total project cost.",
+        href: "/construction/concrete-driveway-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Patio Calculator",
+        description:
+          "Estimate patio cubic yards, slab thickness, gravel base, reinforcement, waste, delivery, labor, finishing, and total project cost.",
+        href: "/construction/concrete-patio-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Sidewalk Calculator",
+        description:
+          "Estimate sidewalk cubic yards, thickness, gravel base, forms, waste, delivery, labor, finishing, and total project cost.",
+        href: "/construction/concrete-sidewalk-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Pad Calculator",
+        description:
+          "Estimate pad cubic yards, thickness, gravel base, forms, reinforcement, waste, delivery, labor, finishing, and total project cost.",
+        href: "/construction/concrete-pad-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Stairs Calculator",
+        description:
+          "Estimate stair cubic yards, step count, riser height, tread depth, forms, reinforcement, waste, delivery, labor, and finishing.",
+        href: "/construction/concrete-stairs-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Formwork Calculator",
+        description:
+          "Estimate form boards, stakes, bracing, screws, form oil, labor, material cost, and total formwork cost.",
+        href: "/construction/concrete-formwork-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Saw Cut Calculator",
+        description:
+          "Calculate saw cut depth, spacing, number of cuts, linear feet, control joint layout, demolition cuts, and saw cutting cost.",
+        href: "/construction/concrete-saw-cut-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Control Joint Spacing Calculator",
+        description:
+          "Estimate control joint spacing, saw cut depth, panel layout, number of cuts, and total cut length.",
+        href: "/construction/concrete-control-joint-spacing",
+        status: "Live",
+      },
+      {
+        title: "Concrete Expansion Joint Spacing Calculator",
+        description:
+          "Estimate expansion joint spacing, joint count, joint layout, isolation joint length, material length, and joint cost.",
+        href: "/construction/concrete-expansion-joint-spacing",
+        status: "Live",
+      },
+    ],
   },
   {
-    title: "Concrete Labor Cost Calculator",
+    title: "Footings, Walls & Piers",
     description:
-      "Estimate concrete labor cost, crew hours, person hours, labor rate, production rate, setup, forming, finishing, cleanup, overhead, and total labor cost.",
-    href: "/construction/concrete-labor-cost-calculator",
-    status: "Live",
+      "Estimate concrete for strip footings, sonotubes, piers, poured walls, foundation walls, and retaining walls.",
+    accent: "bg-[#38BDF8]",
+    calculators: [
+      {
+        title: "Concrete Footing Calculator",
+        description:
+          "Estimate concrete for strip footings, trench footings, wall footings, and grade beams.",
+        href: "/construction/concrete-footing-calculator",
+        status: "Guide",
+      },
+      {
+        title: "Sonotube Concrete Calculator",
+        description:
+          "Estimate concrete for sonotubes, round piers, deck posts, fence posts, and post holes.",
+        href: "/construction/sonotube-concrete-calculator",
+        status: "Guide",
+      },
+      {
+        title: "Concrete Wall Calculator",
+        description:
+          "Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections.",
+        href: "/construction/concrete-wall-calculator",
+        status: "Guide",
+      },
+    ],
   },
   {
-    title: "Concrete Finishing Cost Calculator",
+    title: "Rebar & Reinforcement",
     description:
-      "Estimate concrete finishing cost by square footage, finish type, labor rate, crew productivity, curing, sealing, saw cuts, and total cost per square foot.",
-    href: "/construction/concrete-finishing-cost-calculator",
-    status: "Live",
+      "Estimate rebar grids, spacing, lap splices, weight, welded wire mesh, reinforcement material, and cost.",
+    accent: "bg-[#A855F7]",
+    calculators: [
+      {
+        title: "Rebar Calculator",
+        description:
+          "Estimate rebar pieces, spacing, linear feet, stick count, weight, lap allowance, waste, and material cost.",
+        href: "/construction/rebar-calculator",
+        status: "Live",
+      },
+      {
+        title: "Rebar Lap Splice Calculator",
+        description:
+          "Calculate lap splice length, overlap length, splice quantity, added rebar length, bar weight, and splice material cost.",
+        href: "/construction/rebar-lap-splice-calculator",
+        status: "Live",
+      },
+      {
+        title: "Rebar Spacing for Concrete Slab",
+        description:
+          "Estimate slab rebar spacing, grid layout, bar count, linear feet, lap allowance, waste, weight, and material cost.",
+        href: "/construction/rebar-spacing-for-concrete-slab",
+        status: "Live",
+      },
+      {
+        title: "Rebar Weight Calculator",
+        description:
+          "Estimate rebar weight by size, bar length, quantity, total linear feet, pounds, tons, and material cost.",
+        href: "/construction/rebar-weight-calculator",
+        status: "Live",
+      },
+      {
+        title: "Wire Mesh Calculator",
+        description:
+          "Estimate welded wire mesh sheets or rolls, slab area, overlap, waste, total mesh quantity, material cost, and cost per square foot.",
+        href: "/construction/wire-mesh-calculator",
+        status: "Live",
+      },
+    ],
   },
   {
-    title: "Concrete Pump Truck Cost Calculator",
+    title: "Demolition & Removal",
     description:
-      "Estimate line pump or boom pump cost, minimum rental charges, hourly pumping cost, setup fees, travel fees, yardage charges, and total concrete pumping cost.",
-    href: "/construction/concrete-pump-truck-cost-calculator",
-    status: "Live",
+      "Estimate concrete demolition, removal, disposal, haul-off, equipment, saw cutting, weight, and cleanup.",
+    accent: "bg-[#EF4444]",
+    calculators: [
+      {
+        title: "Concrete Demolition Calculator",
+        description:
+          "Estimate demolition time, crew days, production rate, saw-cut length, concrete weight, and haul-off loads.",
+        href: "/construction/concrete-demolition-calculator",
+        status: "Live",
+      },
+      {
+        title: "Concrete Removal Cost Calculator",
+        description:
+          "Estimate concrete demolition, disposal, haul-off, labor, equipment, slab weight, and total removal cost.",
+        href: "/construction/concrete-removal-cost-calculator",
+        status: "Live",
+      },
+    ],
   },
   {
-    title: "Concrete Saw Cut Calculator",
+    title: "Gravel, Base & Stone",
     description:
-      "Calculate saw cut depth, spacing, number of cuts, linear feet, control joint layout, demolition cuts, and total saw cutting cost.",
-    href: "/construction/concrete-saw-cut-calculator",
-    status: "Live",
+      "Estimate gravel, crushed stone, road base, pea gravel, river rock, decomposed granite, drainage rock, and paver base.",
+    accent: "bg-[#84CC16]",
+    calculators: [
+      {
+        title: "Gravel Calculator",
+        description:
+          "Estimate gravel volume and material needs for driveways, patios, and base layers.",
+        href: "/construction/gravel-calculator",
+        status: "Live",
+      },
+      {
+        title: "Gravel Driveway Calculator",
+        description:
+          "Estimate gravel tons, cubic yards, depth, waste, and material cost for driveway projects.",
+        href: "/construction/gravel-driveway-calculator",
+        status: "Guide",
+      },
+      {
+        title: "Gravel Driveway Cost",
+        description:
+          "Estimate gravel driveway cost using driveway size, gravel depth, tons, price per ton, delivery, and project factors.",
+        href: "/construction/gravel-driveway-cost",
+        status: "Guide",
+      },
+      {
+        title: "Gravel Cost Calculator",
+        description:
+          "Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery factors.",
+        href: "/construction/gravel-cost-calculator",
+        status: "Guide",
+      },
+      {
+        title: "How Much Gravel Do I Need?",
+        description:
+          "Learn how to estimate gravel volume, cubic yards, tons, depth, waste, and material cost.",
+        href: "/construction/how-much-gravel-do-i-need",
+        status: "Guide",
+      },
+      {
+        title: "Gravel Cost Per Ton",
+        description:
+          "Learn how gravel price per ton works and estimate total material cost for gravel projects.",
+        href: "/construction/gravel-cost-per-ton",
+        status: "Guide",
+      },
+      {
+        title: "Pea Gravel Calculator",
+        description:
+          "Estimate pea gravel cubic yards, tons, cost, delivery, and coverage for landscaping, patios, walkways, playgrounds, and drainage.",
+        href: "/construction/pea-gravel-calculator",
+        status: "Live",
+      },
+      {
+        title: "River Rock Calculator",
+        description:
+          "Estimate river rock cubic yards, tons, cost, delivery, and coverage for landscaping beds, dry creek beds, drainage, and borders.",
+        href: "/construction/river-rock-calculator",
+        status: "Live",
+      },
+      {
+        title: "Drainage Rock Calculator",
+        description:
+          "Estimate drainage rock cubic yards, tons, delivery, and cost for French drains, trench drains, dry wells, retaining walls, and drainage beds.",
+        href: "/construction/drainage-rock-calculator",
+        status: "Live",
+      },
+      {
+        title: "Decomposed Granite Calculator",
+        description:
+          "Estimate decomposed granite cubic yards, tons, cost, delivery, stabilizer add-ons, and coverage.",
+        href: "/construction/decomposed-granite-calculator",
+        status: "Live",
+      },
+      {
+        title: "Crushed Stone Calculator",
+        description:
+          "Estimate crushed stone cubic yards, tons, waste, and cost using the upgraded gravel calculator material preset.",
+        href: "/construction/crushed-stone-calculator",
+        status: "Guide",
+      },
+      {
+        title: "Crushed Stone vs Gravel",
+        description:
+          "Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers.",
+        href: "/construction/crushed-stone-vs-gravel",
+        status: "Guide",
+      },
+      {
+        title: "Road Base Calculator",
+        description:
+          "Estimate road base cubic yards, tons, waste, and cost using the upgraded gravel calculator material preset.",
+        href: "/construction/road-base-calculator",
+        status: "Guide",
+      },
+      {
+        title: "Paver Base Calculator",
+        description:
+          "Estimate compacted paver base gravel, bedding sand, cubic yards, tons, delivery, and cost.",
+        href: "/construction/paver-base-calculator",
+        status: "Live",
+      },
+      {
+        title: "Base for Concrete Slab Depth",
+        description:
+          "Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, shed pads, and garage slabs.",
+        href: "/construction/base-for-concrete-slab-depth",
+        status: "Guide",
+      },
+      {
+        title: "How to Prepare Ground for Concrete Slab",
+        description:
+          "Learn how to prepare ground for a concrete slab, including excavation, grading, gravel base, compaction, forms, and final checks.",
+        href: "/construction/how-to-prepare-ground-for-concrete-slab",
+        status: "Guide",
+      },
+    ],
   },
   {
-    title: "Concrete Expansion Joint Spacing Calculator",
+    title: "General Construction Tools",
     description:
-      "Estimate expansion joint spacing, joint count, joint layout, isolation joint length, material length, and joint cost.",
-    href: "/construction/concrete-expansion-joint-spacing",
-    status: "Live",
+      "Use general measurement tools for square footage, project areas, material estimates, and waste-adjusted area.",
+    accent: "bg-[#14B8A6]",
+    calculators: [
+      {
+        title: "Area Calculator",
+        description:
+          "Calculate square feet, square yards, square meters, acres, waste-adjusted area, and estimated material cost for multiple rooms or project areas.",
+        href: "/construction/area-calculator",
+        status: "Live",
+      },
+    ],
   },
-  {
-    title: "Concrete Control Joint Spacing Calculator",
-    description:
-      "Estimate concrete control joint spacing, saw cut depth, panel layout, number of cuts, and total cut length for slabs, driveways, patios, sidewalks, and pads.",
-    href: "/construction/concrete-control-joint-spacing",
-    status: "Live",
-  },
-  {
-    title: "Concrete Waste Calculator",
-    description:
-      "Estimate concrete waste allowance, extra yards, final order quantity, waste cost, truckload impact, and bag count impact.",
-    href: "/construction/concrete-waste-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Weight Calculator",
-    description:
-      "Estimate concrete weight in pounds, tons, kilograms, and metric tons from yards, cubic feet, slab dimensions, bags, truckloads, and density.",
-    href: "/construction/concrete-weight-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Yard Calculator",
-    description:
-      "Calculate cubic yards of concrete for slabs, patios, driveways, footings, walls, piers, pads, and known-volume projects.",
-    href: "/construction/concrete-yard-calculator",
-    status: "Live",
-  },
-  {
-    title: "How Much Concrete Do I Need?",
-    description:
-      "Estimate concrete yards, bags, ready-mix loads, waste allowance, weight, and material cost for slabs, patios, driveways, footings, walls, piers, and more.",
-    href: "/construction/how-much-concrete-do-i-need",
-    status: "Live",
-  },
-  {
-    title: "Concrete Calculator",
-    description:
-      "Estimate concrete volume, waste, cost, slabs, footings, piers, walls, stairs, curbs, and more.",
-    href: "/construction/concrete-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Cost Calculator",
-    description:
-      "Estimate concrete price, cubic yards, base material, rebar, labor, prep, delivery fees, and total project cost.",
-    href: "/construction/concrete-cost-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Bag Calculator",
-    description:
-      "Estimate how many 40 lb, 50 lb, 60 lb, or 80 lb bags of concrete you need for slabs, pads, post holes, footings, patios, and small concrete projects.",
-    href: "/construction/concrete-bag-calculator",
-    status: "Live",
-  },
-  {
-    title: "Rebar Lap Splice Calculator",
-    description:
-      "Calculate rebar lap splice length, overlap length, splice quantity, added rebar length, bar weight, and estimated splice material cost.",
-    href: "/construction/rebar-lap-splice-calculator",
-    status: "Live",
-  },
-  {
-    title: "Rebar Calculator",
-    description:
-      "Estimate rebar pieces, spacing, linear feet, stick count, weight, lap allowance, waste, and material cost for slabs, footings, patios, and concrete reinforcement grids.",
-    href: "/construction/rebar-calculator",
-    status: "Live",
-  },
-  {
-    title: "Rebar Spacing for Concrete Slab",
-    description:
-      "Estimate slab rebar spacing, grid layout, bar count, linear feet, lap allowance, waste, weight, and material cost.",
-    href: "/construction/rebar-spacing-for-concrete-slab",
-    status: "Live",
-  },
-  {
-    title: "Rebar Weight Calculator",
-    description:
-      "Estimate rebar weight by size, bar length, quantity, total linear feet, pounds, tons, and material cost.",
-    href: "/construction/rebar-weight-calculator",
-    status: "Live",
-  },
-  {
-    title: "Wire Mesh Calculator",
-    description:
-      "Estimate welded wire mesh sheets or rolls, slab area, overlap, waste, total mesh quantity, material cost, and cost per square foot.",
-    href: "/construction/wire-mesh-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Driveway Calculator",
-    description:
-      "Estimate concrete driveway cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total project cost.",
-    href: "/construction/concrete-driveway-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Patio Calculator",
-    description:
-      "Estimate concrete patio cubic yards, slab thickness, gravel base, reinforcement, waste, delivery, labor, finishing, and total project cost.",
-    href: "/construction/concrete-patio-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Sidewalk Calculator",
-    description:
-      "Estimate concrete sidewalk cubic yards, thickness, gravel base, forms, waste, delivery, labor, finishing, and total project cost.",
-    href: "/construction/concrete-sidewalk-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Pad Calculator",
-    description:
-      "Estimate concrete pad cubic yards, thickness, gravel base, forms, reinforcement, waste, delivery, labor, finishing, and total project cost.",
-    href: "/construction/concrete-pad-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Stairs Calculator",
-    description:
-      "Estimate concrete stair cubic yards, step count, riser height, tread depth, forms, reinforcement, waste, delivery, labor, finishing, and total project cost.",
-    href: "/construction/concrete-stairs-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Truckload Calculator",
-    description:
-      "Estimate ready-mix concrete truckloads, cubic yards to order, truck capacity, delivery fees, short-load fees, concrete weight, and total delivery cost.",
-    href: "/construction/concrete-truckload-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Mix Ratio Calculator",
-    description:
-      "Estimate cement, sand, gravel, water, cement bags, and material quantities for common concrete mix ratios.",
-    href: "/construction/concrete-mix-ratio",
-    status: "Live",
-  },
-  {
-    title: "Concrete Slab Thickness Calculator",
-    description:
-      "Estimate recommended slab thickness, concrete yards, base depth, reinforcement notes, weight, and material cost for common concrete slab projects.",
-    href: "/construction/concrete-slab-thickness",
-    status: "Live",
-  },
-  {
-    title: "Concrete Cure Time Calculator",
-    description:
-      "Estimate when new concrete may be ready for walking, light use, vehicles, sealing, form removal, and full cure based on temperature and weather.",
-    href: "/construction/concrete-cure-time",
-    status: "Live",
-  },
-  {
-    title: "Concrete Cost Per Yard Calculator",
-    description:
-      "Estimate ready-mix concrete price per cubic yard, delivery fees, short-load charges, fuel fees, waste, tax, and total delivered cost.",
-    href: "/construction/concrete-cost-per-yard",
-    status: "Live",
-  },
-  {
-    title: "10x10 Concrete Slab Cost Calculator",
-    description:
-      "Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 100 square foot slab.",
-    href: "/construction/10x10-concrete-slab-cost",
-    status: "Live",
-  },
-  {
-    title: "12x12 Concrete Slab Cost Calculator",
-    description:
-      "Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 144 square foot slab.",
-    href: "/construction/12x12-concrete-slab-cost",
-    status: "Live",
-  },
-  {
-    title: "Concrete Slab Calculator",
-    description:
-      "Estimate concrete for slabs, patios, driveways, sidewalks, garage floors, and shed pads.",
-    href: "/construction/concrete-slab-calculator",
-    status: "Guide",
-  },
-  {
-    title: "Concrete Demolition Calculator",
-    description:
-      "Estimate concrete demolition time, crew days, production rate, saw-cut length, concrete weight, and haul-off loads.",
-    href: "/construction/concrete-demolition-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Removal Cost Calculator",
-    description:
-      "Estimate concrete demolition, disposal, haul-off, labor, equipment, slab weight, and total removal cost.",
-    href: "/construction/concrete-removal-cost-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Formwork Calculator",
-    description:
-      "Estimate concrete form boards, stakes, bracing, screws, form oil, labor, material cost, and total formwork cost.",
-    href: "/construction/concrete-formwork-calculator",
-    status: "Live",
-  },
-  {
-    title: "Concrete Footing Calculator",
-    description:
-      "Estimate concrete for strip footings, trench footings, wall footings, and grade beams.",
-    href: "/construction/concrete-footing-calculator",
-    status: "Guide",
-  },
-  {
-    title: "Sonotube Concrete Calculator",
-    description:
-      "Estimate concrete for sonotubes, round piers, deck posts, fence posts, and post holes.",
-    href: "/construction/sonotube-concrete-calculator",
-    status: "Guide",
-  },
-  {
-    title: "Concrete Wall Calculator",
-    description:
-      "Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections.",
-    href: "/construction/concrete-wall-calculator",
-    status: "Guide",
-  },
-  {
-  title: "Gravel Calculator",
-  description:
-    "Estimate gravel volume and material needs for driveways, patios, and base layers.",
-  href: "/construction/gravel-calculator",
-  status: "Live",
-},
-{
-  title: "Gravel Driveway Calculator",
-  description:
-    "Estimate gravel tons, cubic yards, depth, waste, and material cost for driveway projects.",
-  href: "/construction/gravel-driveway-calculator",
-  status: "Guide",
-},
-{
-  title: "Gravel Driveway Cost",
-  description:
-    "Estimate gravel driveway cost using driveway size, gravel depth, tons, price per ton, delivery, and project factors.",
-  href: "/construction/gravel-driveway-cost",
-  status: "Guide",
-},
-{
-  title: "Gravel Cost Calculator",
-  description:
-    "Estimate gravel project cost using area, depth, cubic yards, tons, waste, price per ton, and delivery factors.",
-  href: "/construction/gravel-cost-calculator",
-  status: "Guide",
-},
-{
-  title: "How Much Gravel Do I Need?",
-  description:
-    "Learn how to estimate gravel volume, cubic yards, tons, depth, waste, and material cost.",
-  href: "/construction/how-much-gravel-do-i-need",
-  status: "Guide",
-},
-{
-  title: "Gravel Cost Per Ton",
-  description:
-    "Learn how gravel price per ton works and estimate total material cost for gravel projects.",
-  href: "/construction/gravel-cost-per-ton",
-  status: "Guide",
-},
-{
-  title: "Pea Gravel Calculator",
-  description:
-    "Estimate pea gravel cubic yards, tons, cost, delivery, and coverage for landscaping, patios, walkways, playground areas, and drainage projects.",
-  href: "/construction/pea-gravel-calculator",
-  status: "Live",
-},
-{
-  title: "River Rock Calculator",
-  description:
-    "Estimate river rock cubic yards, tons, cost, delivery, and coverage for landscaping beds, dry creek beds, drainage areas, borders, and decorative ground cover.",
-  href: "/construction/river-rock-calculator",
-  status: "Live",
-},
-{
-  title: "Drainage Rock Calculator",
-  description:
-    "Estimate drainage rock cubic yards, tons, delivery, and cost for French drains, trench drains, dry wells, retaining walls, and landscape drainage beds.",
-  href: "/construction/drainage-rock-calculator",
-  status: "Live",
-},
-{
-  title: "Decomposed Granite Calculator",
-  description:
-    "Estimate decomposed granite cubic yards, tons, cost, delivery, stabilizer add-ons, and coverage for patios, walkways, dog runs, garden paths, and compacted landscape surfaces.",
-  href: "/construction/decomposed-granite-calculator",
-  status: "Live",
-},
-{
-  title: "Crushed Stone vs Gravel",
-  description:
-    "Compare crushed stone and gravel for driveways, drainage, landscaping, patios, and base layers.",
-  href: "/construction/crushed-stone-vs-gravel",
-  status: "Guide",
-},
-{
-  title: "Crushed Stone Calculator",
-  description:
-    "Estimate crushed stone cubic yards, tons, waste, and cost using the upgraded gravel calculator material preset.",
-  href: "/construction/crushed-stone-calculator",
-  status: "Guide",
-},
-{
-  title: "Road Base Calculator",
-  description:
-    "Estimate road base cubic yards, tons, waste, and cost using the upgraded gravel calculator material preset.",
-  href: "/construction/road-base-calculator",
-  status: "Guide",
-},
-{
-  title: "Paver Base Calculator",
-  description:
-    "Estimate compacted paver base gravel, bedding sand, cubic yards, tons, delivery, and cost for patios, walkways, driveways, and hardscape projects.",
-  href: "/construction/paver-base-calculator",
-  status: "Live",
-},
-{
-  title: "Base for Concrete Slab Depth",
-  description:
-    "Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, shed pads, and garage slabs.",
-  href: "/construction/base-for-concrete-slab-depth",
-  status: "Guide",
-},
-{
-  title: "How to Prepare Ground for Concrete Slab",
-  description:
-    "Learn how to prepare ground for a concrete slab, including excavation, grading, gravel base, compaction, forms, and final checks.",
-  href: "/construction/how-to-prepare-ground-for-concrete-slab",
-  status: "Guide",
-},
-{
-   title: "Area Calculator",
-  description:
-    "Calculate square feet, square yards, square meters, acres, waste-adjusted area, and estimated material cost for multiple rooms or project areas.",
-  href: "/construction/area-calculator",
-  status: "Live",
-},
 ];
 
+const totalCalculators = calculatorSections.reduce(
+  (total, section) => total + section.calculators.length,
+  0,
+);
+
 export const metadata = {
-  title: "Construction Calculators | Concrete, Gravel & Project Tools",
+  title: "Construction Calculators | Concrete, Gravel, Rebar & Project Tools",
   description:
-    "Use Numeravo construction calculators to estimate concrete, gravel, square footage, materials, measurements, and project planning costs.",
+    "Use Numeravo construction calculators to estimate concrete, gravel, rebar, square footage, materials, delivery, labor, demolition, and project planning costs.",
   alternates: {
     canonical: "https://numeravo.com/construction",
   },
   openGraph: {
     title: "Construction Calculators | Numeravo",
     description:
-      "Estimate concrete, gravel, square footage, materials, measurements, and construction project numbers with Numeravo.",
+      "Estimate concrete, gravel, rebar, square footage, materials, measurements, and construction project numbers with Numeravo.",
     url: "https://numeravo.com/construction",
     siteName: "Numeravo",
     type: "website",
@@ -421,7 +490,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Construction Calculators | Numeravo",
     description:
-      "Fast construction calculators for concrete, gravel, square footage, and project planning.",
+      "Fast construction calculators for concrete, gravel, rebar, square footage, and project planning.",
   },
 };
 
@@ -430,191 +499,129 @@ export default function ConstructionPage() {
     <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
       <section className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
+          <Link
+            href="/"
+            className="mb-5 inline-flex rounded-full border border-[#1F2937] bg-[#121826] px-4 py-2 text-sm font-medium text-[#A0AEC0] transition hover:border-[#F97316] hover:text-white"
+          >
+            ← Numeravo home
+          </Link>
+
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
             Construction Calculators
           </p>
 
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Construction calculators for concrete, materials, measurements, and
-            project planning.
+            Construction calculators for concrete, gravel, rebar, materials, and project planning.
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-[#A0AEC0]">
-            Estimate concrete, footings, slabs, piers, walls, gravel, square
-            footage, and other construction project numbers with fast,
-            easy-to-use calculators and guides.
+            Estimate concrete, rebar, gravel, base material, square footage,
+            labor, delivery, finishing, pumping, demolition, and other construction
+            project numbers with fast, focused calculators and guides.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {calculators.map((calculator) => (
-            <Link
-              key={calculator.href}
-              href={calculator.href}
-              className="rounded-2xl border border-[#1F2937] bg-[#121826] p-6 transition hover:border-[#F97316]"
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <StatCard label="Calculator groups" value={calculatorSections.length.toString()} />
+          <StatCard label="Construction tools" value={totalCalculators.toString()} />
+          <StatCard label="Concrete focus" value="Volume + cost" />
+          <StatCard label="Rebar + base" value="Material planning" />
+        </div>
+
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {calculatorSections.map((section) => (
+            <a
+              key={section.title}
+              href={`#${section.title.toLowerCase().replaceAll(" ", "-").replaceAll("&", "and")}`}
+              className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4 text-sm font-semibold text-[#A0AEC0] transition hover:border-[#F97316] hover:text-white"
             >
-              <div className="mb-4 h-2 w-12 rounded-full bg-[#F97316]" />
-
-              <div className="flex items-start justify-between gap-4">
-                <h2 className="text-xl font-semibold text-white">
-                  {calculator.title}
-                </h2>
-
-                <span className="rounded-full border border-[#1F2937] px-3 py-1 text-xs text-[#A0AEC0]">
-                  {calculator.status}
-                </span>
-              </div>
-
-              <p className="mt-4 text-sm leading-6 text-[#A0AEC0]">
-                {calculator.description}
-              </p>
-            </Link>
+              {section.title}
+            </a>
           ))}
         </div>
 
-        <section className="mt-12 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
-          <h2 className="text-2xl font-semibold text-white">
-            Concrete calculators and guides
-          </h2>
+        <div className="mt-12 space-y-12">
+          {calculatorSections.map((section) => (
+            <section
+              key={section.title}
+              id={section.title.toLowerCase().replaceAll(" ", "-").replaceAll("&", "and")}
+              className="scroll-mt-8"
+            >
+              <div className="mb-5 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+                <div>
+                  <div className={`mb-4 h-2 w-14 rounded-full ${section.accent}`} />
+                  <h2 className="text-2xl font-bold text-white">{section.title}</h2>
+                  <p className="mt-3 max-w-3xl text-sm leading-7 text-[#A0AEC0]">
+                    {section.description}
+                  </p>
+                </div>
+                <span className="w-fit rounded-full border border-[#1F2937] bg-[#121826] px-4 py-2 text-xs font-semibold text-[#A0AEC0]">
+                  {section.calculators.length} tools
+                </span>
+              </div>
 
-          <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
-            Start with the main concrete calculator for a full estimate across
-            slabs, pads, circular pads, L-shaped slabs, footings, trenches,
-            round piers, sonotubes, walls, stairs, curbs, and columns. Use the
-            specialized concrete pages when you want a focused explanation for a
-            specific project type.
-          </p>
-
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <QuickLink
-              href="/construction/concrete-calculator"
-              label="Full Concrete Calculator"
-            />
-            <QuickLink
-              href="/construction/concrete-slab-calculator"
-              label="Concrete Slab Calculator"
-            />
-            <QuickLink
-              href="/construction/concrete-footing-calculator"
-              label="Concrete Footing Calculator"
-            />
-            <QuickLink
-              href="/construction/sonotube-concrete-calculator"
-              label="Sonotube Concrete Calculator"
-            />
-            <QuickLink
-              href="/construction/concrete-wall-calculator"
-              label="Concrete Wall Calculator"
-            />
-            <QuickLink
-  href="/construction/crushed-stone-vs-gravel"
-  label="Crushed Stone vs Gravel"
-/>
-<QuickLink
-  href="/construction/crushed-stone-calculator"
-  label="Crushed Stone Calculator"
-/>
-<QuickLink
-  href="/construction/road-base-calculator"
-  label="Road Base Calculator"
-/>
-<QuickLink
-  href="/construction/paver-base-calculator"
-  label="Paver Base Calculator"
-/>
-<QuickLink
-  href="/construction/base-for-concrete-slab-depth"
-  label="Base for Concrete Slab Depth"
-/>
-<QuickLink
-  href="/construction/how-to-prepare-ground-for-concrete-slab"
-  label="How to Prepare Ground for Concrete Slab"
-/>
-<QuickLink
-  href="/construction/gravel-cost-per-ton"
-  label="Gravel Cost Per Ton"
-/>
-<QuickLink
-  href="/construction/pea-gravel-calculator"
-  label="Pea Gravel Calculator"
-/>
-<QuickLink
-  href="/construction/river-rock-calculator"
-  label="River Rock Calculator"
-/>
-<QuickLink
-  href="/construction/decomposed-granite-calculator"
-  label="Decomposed Granite Calculator"
-/>
-<QuickLink
-  href="/construction/paver-base-calculator"
-  label="Paver Base Calculator"
-/>
-          </div>
-        </section>
-
-        <section className="mt-8 rounded-2xl border border-[#1F2937] bg-[#121826] p-6">
-          <h2 className="text-2xl font-semibold text-white">
-            Gravel calculators and guides
-          </h2>
-
-          <p className="mt-4 text-sm leading-7 text-[#A0AEC0]">
-            Use the gravel calculator to estimate volume, tons, waste, and
-            material cost. Use the driveway guide when planning gravel depth,
-            driveway size, and common residential driveway material needs.
-          </p>
-
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <QuickLink
-              href="/construction/gravel-calculator"
-              label="Full Gravel Calculator"
-            />
-            <QuickLink
-              href="/construction/gravel-driveway-calculator"
-              label="Gravel Driveway Calculator"
-            />
-            <QuickLink
-  href="/construction/gravel-driveway-cost"
-  label="Gravel Driveway Cost"
-/>
-<QuickLink
-  href="/construction/gravel-cost-calculator"
-  label="Gravel Cost Calculator"
-/>
-            <QuickLink
-  href="/construction/how-much-gravel-do-i-need"
-  label="How Much Gravel Do I Need?"
-/>
-<QuickLink
-  href="/construction/gravel-cost-per-ton"
-  label="Gravel Cost Per Ton"
-/>
-<QuickLink
-  href="/construction/pea-gravel-calculator"
-  label="Pea Gravel Calculator"
-/>
-<QuickLink
-  href="/construction/river-rock-calculator"
-  label="River Rock Calculator"
-/>
-<QuickLink
-  href="/construction/decomposed-granite-calculator"
-  label="Decomposed Granite Calculator"
-/>
-          </div>
-        </section>
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {section.calculators.map((calculator) => (
+                  <CalculatorCard
+                    key={calculator.href}
+                    title={calculator.title}
+                    description={calculator.description}
+                    href={calculator.href}
+                    status={calculator.status}
+                    accent={section.accent}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
       </section>
     </main>
   );
 }
 
-function QuickLink({ href, label }: { href: string; label: string }) {
+function StatCard({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-5">
+      <p className="text-sm text-[#A0AEC0]">{label}</p>
+      <p className="mt-2 text-2xl font-bold text-white">{value}</p>
+    </div>
+  );
+}
+
+function CalculatorCard({
+  title,
+  description,
+  href,
+  status,
+  accent,
+}: {
+  title: string;
+  description: string;
+  href: string;
+  status: string;
+  accent: string;
+}) {
   return (
     <Link
       href={href}
-      className="rounded-xl border border-[#1F2937] bg-[#0B0F19] px-4 py-3 text-sm font-semibold text-[#A0AEC0] transition hover:border-[#F97316] hover:text-white"
+      className="group rounded-2xl border border-[#1F2937] bg-[#121826] p-6 transition hover:-translate-y-1 hover:border-[#F97316] hover:shadow-2xl hover:shadow-orange-950/20"
     >
-      {label}
+      <div className={`mb-4 h-2 w-12 rounded-full ${accent}`} />
+
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="text-lg font-semibold text-white">{title}</h3>
+
+        <span className="rounded-full border border-[#1F2937] px-3 py-1 text-xs text-[#A0AEC0]">
+          {status}
+        </span>
+      </div>
+
+      <p className="mt-4 text-sm leading-6 text-[#A0AEC0]">{description}</p>
+
+      <p className="mt-5 text-sm font-semibold text-[#F97316] transition group-hover:text-orange-300">
+        Open calculator →
+      </p>
     </Link>
   );
 }
