@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/rebar-spacing-for-concrete-slab",
     "/construction/rebar-weight-calculator",
     "/construction/wire-mesh-calculator",
+    "/construction/lumber-calculator",
     "/construction/concrete-delivery-cost-calculator",
     "/construction/concrete-driveway-calculator",
     "/construction/concrete-patio-calculator",
@@ -105,10 +106,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("concrete-cost-calculator") ||
               route.includes("concrete-bag-calculator") ||
               route.includes("rebar-calculator") ||
-          route.includes("rebar-lap-splice-calculator") ||
+              route.includes("rebar-lap-splice-calculator") ||
               route.includes("rebar-spacing-for-concrete-slab") ||
               route.includes("rebar-weight-calculator") ||
               route.includes("wire-mesh-calculator") ||
+              route.includes("lumber-calculator") ||
               route.includes("concrete-driveway-calculator") ||
               route.includes("concrete-patio-calculator") ||
               route.includes("concrete-sidewalk-calculator") ||

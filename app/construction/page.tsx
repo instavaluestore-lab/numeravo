@@ -308,6 +308,21 @@ const calculatorSections = [
     ],
   },
   {
+    title: "Lumber & Framing",
+    description:
+      "Estimate lumber pieces, board feet, linear feet, waste allowance, and material cost for construction and woodworking projects.",
+    accent: "bg-[#F59E0B]",
+    calculators: [
+      {
+        title: "Lumber Calculator",
+        description:
+          "Calculate lumber purchase quantity, linear feet, board feet, waste allowance, and estimated material cost.",
+        href: "/construction/lumber-calculator",
+        status: "Live",
+      },
+    ],
+  },
+  {
     title: "Demolition & Removal",
     description:
       "Estimate concrete demolition, removal, disposal, haul-off, equipment, saw cutting, weight, and cleanup.",
@@ -472,16 +487,16 @@ const totalCalculators = calculatorSections.reduce(
 );
 
 export const metadata = {
-  title: "Construction Calculators | Concrete, Gravel, Rebar & Project Tools",
+  title: "Construction Calculators | Concrete, Lumber, Gravel & Rebar",
   description:
-    "Use Numeravo construction calculators to estimate concrete, gravel, rebar, square footage, materials, delivery, labor, demolition, and project planning costs.",
+    "Use Numeravo construction calculators to estimate concrete, lumber, gravel, rebar, square footage, materials, delivery, labor, demolition, and project costs.",
   alternates: {
     canonical: "https://numeravo.com/construction",
   },
   openGraph: {
     title: "Construction Calculators | Numeravo",
     description:
-      "Estimate concrete, gravel, rebar, square footage, materials, measurements, and construction project numbers with Numeravo.",
+      "Estimate concrete, lumber, gravel, rebar, square footage, materials, measurements, and construction project costs with Numeravo.",
     url: "https://numeravo.com/construction",
     siteName: "Numeravo",
     type: "website",
@@ -490,7 +505,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Construction Calculators | Numeravo",
     description:
-      "Fast construction calculators for concrete, gravel, rebar, square footage, and project planning.",
+      "Fast construction calculators for concrete, lumber, gravel, rebar, square footage, materials, and project planning.",
   },
 };
 
@@ -511,11 +526,11 @@ export default function ConstructionPage() {
           </p>
 
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Construction calculators for concrete, gravel, rebar, materials, and project planning.
+            Construction calculators for concrete, lumber, gravel, rebar, and project planning.
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-[#A0AEC0]">
-            Estimate concrete, rebar, gravel, base material, square footage,
+            Estimate concrete, lumber, rebar, gravel, base material, square footage,
             labor, delivery, finishing, pumping, demolition, and other construction
             project numbers with fast, focused calculators and guides.
           </p>
@@ -525,7 +540,7 @@ export default function ConstructionPage() {
           <StatCard label="Calculator groups" value={calculatorSections.length.toString()} />
           <StatCard label="Construction tools" value={totalCalculators.toString()} />
           <StatCard label="Concrete focus" value="Volume + cost" />
-          <StatCard label="Rebar + base" value="Material planning" />
+          <StatCard label="Lumber + rebar" value="Material planning" />
         </div>
 
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
