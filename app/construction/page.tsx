@@ -320,6 +320,13 @@ const calculatorSections = [
         href: "/construction/lumber-calculator",
         status: "Live",
       },
+      {
+        title: "Stud Calculator",
+        description:
+          "Estimate wall studs, spacing, corner and opening allowances, plates, waste, linear feet, and framing material cost.",
+        href: "/construction/stud-calculator",
+        status: "Live",
+      },
     ],
   },
   {

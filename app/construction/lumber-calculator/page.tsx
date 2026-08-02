@@ -300,6 +300,10 @@ export default function LumberCalculatorPage() {
 
           <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             <RelatedLink
+              href="/construction/stud-calculator"
+              label="Stud Calculator"
+            />
+            <RelatedLink
               href="/construction/area-calculator"
               label="Area Calculator"
             />
