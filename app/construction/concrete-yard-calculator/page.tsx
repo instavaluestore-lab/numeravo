@@ -244,6 +244,7 @@ export default function ConcreteYardCalculatorPage() {
             <RelatedLink href="/construction/concrete-removal-cost-calculator" label="Concrete Removal Cost Calculator" />
             <RelatedLink href="/construction/concrete-formwork-calculator" label="Concrete Formwork Calculator" />
             <RelatedLink href="/construction/concrete-waste-calculator" label="Concrete Waste Calculator" />
+            <RelatedLink href="/construction/concrete-pump-truck-cost-calculator" label="Concrete Pump Truck Cost Calculator" />
             <RelatedLink href="/construction/concrete-delivery-cost-calculator" label="Concrete Delivery Cost Calculator" />
             <RelatedLink href="/construction/concrete-truckload-calculator" label="Concrete Truckload Calculator" />
             <RelatedLink href="/construction/concrete-bag-calculator" label="Concrete Bag Calculator" />

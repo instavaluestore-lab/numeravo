@@ -23,6 +23,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Pump Truck Cost Calculator",
+    description:
+      "Estimate line pump or boom pump cost, minimum rental charges, hourly pumping cost, setup fees, travel fees, yardage charges, and total concrete pumping cost.",
+    href: "/construction/concrete-pump-truck-cost-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Saw Cut Calculator",
     description:
       "Calculate saw cut depth, spacing, number of cuts, linear feet, control joint layout, demolition cuts, and total saw cutting cost.",

@@ -385,6 +385,12 @@ export default function ConcreteCostCalculatorClient() {
             />
 
             <RelatedLink
+              href="/construction/concrete-pump-truck-cost-calculator"
+              title="Concrete Pump Truck Cost Calculator"
+              text="Estimate line pump or boom pump cost, hourly pumping charges, setup fees, travel fees, and total concrete pumping cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-delivery-cost-calculator"
               title="Concrete Delivery Cost Calculator"
               text="Estimate ready-mix delivery fees, short-load charges, distance fees, waiting time, tax, and delivered cost per yard."

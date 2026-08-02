@@ -192,6 +192,7 @@ export default function ConcreteSidewalkCalculatorPage() {
             <RelatedLink href="/construction/concrete-expansion-joint-spacing" label="Concrete Expansion Joint Spacing" />
             <RelatedLink href="/construction/concrete-demolition-calculator" label="Concrete Demolition Calculator" />
             <RelatedLink href="/construction/concrete-removal-cost-calculator" label="Concrete Removal Cost Calculator" />
+            <RelatedLink href="/construction/concrete-pump-truck-cost-calculator" label="Concrete Pump Truck Cost Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-cure-time" label="Concrete Cure Time Calculator" />
             <RelatedLink href="/construction/concrete-psi-calculator" label="Concrete PSI Calculator" />

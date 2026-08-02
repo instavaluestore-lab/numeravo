@@ -233,6 +233,7 @@ export default function ConcreteShortLoadFeeCalculatorPage() {
           <h2 className="text-2xl font-semibold text-white">Related concrete calculators</h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <RelatedLink href="/construction/concrete-waste-calculator" label="Concrete Waste Calculator" />
+            <RelatedLink href="/construction/concrete-pump-truck-cost-calculator" label="Concrete Pump Truck Cost Calculator" />
             <RelatedLink href="/construction/concrete-delivery-cost-calculator" label="Concrete Delivery Cost Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-cost-per-yard" label="Concrete Cost Per Yard Calculator" />

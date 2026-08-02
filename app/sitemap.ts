@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/concrete-yard-calculator",
     "/construction/how-much-concrete-do-i-need",
     "/construction/concrete-calculator",
+    "/construction/concrete-pump-truck-cost-calculator",
     "/construction/concrete-saw-cut-calculator",
     "/construction/concrete-expansion-joint-spacing",
     "/construction/concrete-control-joint-spacing",
@@ -79,6 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : route.includes("concrete-short-load-fee-calculator") ||
           route.includes("concrete-delivery-cost-calculator") ||
           route.includes("concrete-psi-calculator") ||
+          route.includes("concrete-pump-truck-cost-calculator") ||
           route.includes("concrete-saw-cut-calculator") ||
           route.includes("concrete-expansion-joint-spacing") ||
           route.includes("concrete-control-joint-spacing") ||

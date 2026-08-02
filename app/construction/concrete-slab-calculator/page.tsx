@@ -430,6 +430,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-pump-truck-cost-calculator"
+              title="Concrete Pump Truck Cost Calculator"
+              text="Estimate line pump or boom pump cost, hourly pumping charges, setup fees, travel fees, and total concrete pumping cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-cost-calculator"
               title="Concrete Cost Calculator"
               text="Estimate concrete price, base material, rebar, labor, prep, delivery fees, and total slab project cost."
