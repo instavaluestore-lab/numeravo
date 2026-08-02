@@ -23,6 +23,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Finishing Cost Calculator",
+    description:
+      "Estimate concrete finishing cost by square footage, finish type, labor rate, crew productivity, curing, sealing, saw cuts, and total cost per square foot.",
+    href: "/construction/concrete-finishing-cost-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Pump Truck Cost Calculator",
     description:
       "Estimate line pump or boom pump cost, minimum rental charges, hourly pumping cost, setup fees, travel fees, yardage charges, and total concrete pumping cost.",

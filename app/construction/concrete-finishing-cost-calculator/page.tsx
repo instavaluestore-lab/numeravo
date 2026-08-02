@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ConcretePumpTruckCostCalculatorClient from "./ConcretePumpTruckCostCalculatorClient";
+import ConcreteFinishingCostCalculatorClient from "./ConcreteFinishingCostCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Pump Truck Cost Calculator | Pumping Estimate",
+  title: "Concrete Finishing Cost Calculator | Slab, Driveway & Patio Finish",
   description:
-    "Estimate concrete pump truck cost, pump rental, hourly charges, setup fees, line pump or boom pump pricing, yardage charges, travel fees, and total concrete pumping cost.",
+    "Estimate concrete finishing cost by square footage, finish type, labor rate, crew size, saw cuts, curing, sealing, broom finish, trowel finish, stamped finish, and total project cost.",
   alternates: {
-    canonical: "https://numeravo.com/construction/concrete-pump-truck-cost-calculator",
+    canonical: "https://numeravo.com/construction/concrete-finishing-cost-calculator",
   },
   openGraph: {
-    title: "Concrete Pump Truck Cost Calculator",
+    title: "Concrete Finishing Cost Calculator",
     description:
-      "Calculate concrete pumping cost for slabs, driveways, patios, footings, walls, and hard-to-reach concrete pours.",
-    url: "https://numeravo.com/construction/concrete-pump-truck-cost-calculator",
+      "Calculate concrete finishing cost for slabs, driveways, patios, sidewalks, pads, broom finish, trowel finish, stamped concrete, curing, and sealing.",
+    url: "https://numeravo.com/construction/concrete-finishing-cost-calculator",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Pump Truck Cost Calculator",
+    title: "Concrete Finishing Cost Calculator",
     description:
-      "Estimate pump truck rental, setup, hourly pumping cost, travel fees, yardage charges, and total concrete pumping cost.",
+      "Estimate concrete finishing labor, finish type costs, curing, sealing, saw cuts, and total finishing cost.",
   },
 };
 
@@ -31,38 +31,38 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How much does a concrete pump truck cost?",
+      name: "How much does concrete finishing cost?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Concrete pump truck cost depends on pump type, minimum hours, hourly rate, setup fees, travel charges, concrete volume, hose or boom requirements, and job complexity.",
+          "Concrete finishing cost depends on square footage, finish type, crew labor rate, project complexity, access, slab thickness, timing, curing, sealing, saw cuts, and whether decorative finishing is included.",
       },
     },
     {
       "@type": "Question",
-      name: "When do you need a concrete pump truck?",
+      name: "What affects concrete finishing labor cost?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "A concrete pump truck is commonly used when the concrete truck cannot reach the pour area directly, when wheelbarrow access is inefficient, or when concrete must be placed over a long distance, uphill, behind a structure, or into forms with limited access.",
+          "Concrete finishing labor cost is affected by area, finish difficulty, crew size, production rate, weather, concrete set time, edge work, control joints, surface texture, and cleanup requirements.",
       },
     },
     {
       "@type": "Question",
-      name: "What is the difference between a line pump and a boom pump?",
+      name: "Is broom finish cheaper than stamped concrete?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "A line pump moves concrete through hoses and is often used for smaller residential pours or limited-access areas. A boom pump uses a hydraulic boom to place concrete faster over obstacles or at greater reach, usually at a higher cost.",
+          "Yes. Broom finish is usually one of the lower-cost exterior concrete finishes, while stamped concrete typically costs more because it requires additional labor, timing, coloring, stamping tools, release agent, and sealing.",
       },
     },
     {
       "@type": "Question",
-      name: "Is concrete pumping cost included in concrete delivery?",
+      name: "Does concrete finishing include sealing?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Usually concrete pumping is separate from ready-mix concrete delivery. Concrete delivery covers the concrete truck and material, while pumping covers the pump truck, operator, hose or boom setup, pumping time, and related fees.",
+          "Not always. Some estimates include curing compound or basic finishing only, while sealing may be priced separately. This calculator lets you add curing, sealing, saw cuts, and other finishing-related costs.",
       },
     },
   ],
@@ -71,12 +71,12 @@ const faqJsonLd = {
 const appJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "Concrete Pump Truck Cost Calculator",
+  name: "Concrete Finishing Cost Calculator",
   applicationCategory: "ConstructionApplication",
   operatingSystem: "Any",
-  url: "https://numeravo.com/construction/concrete-pump-truck-cost-calculator",
+  url: "https://numeravo.com/construction/concrete-finishing-cost-calculator",
   description:
-    "Estimate concrete pump truck cost, pump type, setup fees, hourly charges, yardage fees, travel fees, and total pumping cost.",
+    "Estimate concrete finishing cost by area, finish type, labor rate, crew production, curing, sealing, saw cuts, and total project cost.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -84,7 +84,7 @@ const appJsonLd = {
   },
 };
 
-export default function ConcretePumpTruckCostCalculatorPage() {
+export default function ConcreteFinishingCostCalculatorPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
       <script
@@ -107,34 +107,34 @@ export default function ConcretePumpTruckCostCalculatorPage() {
             </Link>
 
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
-              Concrete placement and pumping cost
+              Concrete labor, finish, curing, and sealing
             </p>
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
-              Concrete Pump Truck Cost Calculator
+              Concrete Finishing Cost Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate line pump or boom pump cost, minimum rental charges,
-              hourly pumping cost, setup fees, travel fees, yardage charges, hose
-              labor, standby time, and total concrete pumping cost.
+              Estimate concrete finishing cost by square footage, finish type,
+              labor rate, crew productivity, curing, sealing, saw cuts, edge
+              work, decorative finish add-ons, and total cost per square foot.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Pump type</p>
+                <p className="text-sm text-[#A0AEC0]">Finish type</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Line / boom
+                  Broom / trowel
                 </p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Charges</p>
+                <p className="text-sm text-[#A0AEC0]">Labor</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Hourly + fees
+                  Crew hours
                 </p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Estimate</p>
+                <p className="text-sm text-[#A0AEC0]">Cost</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Total cost
+                  $/sq ft
                 </p>
               </div>
             </div>
@@ -144,56 +144,55 @@ export default function ConcretePumpTruckCostCalculatorPage() {
             <h2 className="text-xl font-semibold">What this calculator includes</h2>
             <div className="mt-5 space-y-4 text-sm leading-6 text-[#A0AEC0]">
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Concrete volume</span>
-                <span className="font-semibold text-white">cubic yards</span>
+                <span>Surface area</span>
+                <span className="font-semibold text-white">square feet</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Pump rental</span>
-                <span className="font-semibold text-white">minimum hours</span>
+                <span>Finish labor</span>
+                <span className="font-semibold text-white">crew hours</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Placement time</span>
-                <span className="font-semibold text-white">pump rate</span>
+                <span>Add-ons</span>
+                <span className="font-semibold text-white">cuts + sealing</span>
               </div>
               <div className="flex justify-between gap-4">
                 <span>Total estimate</span>
-                <span className="font-semibold text-white">fees + labor</span>
+                <span className="font-semibold text-white">cost / sq ft</span>
               </div>
             </div>
           </div>
         </div>
 
-        <ConcretePumpTruckCostCalculatorClient />
+        <ConcreteFinishingCostCalculatorClient />
 
         <section className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8">
-          <h2 className="text-2xl font-bold">How concrete pump truck cost is estimated</h2>
+          <h2 className="text-2xl font-bold">How concrete finishing cost is estimated</h2>
           <p className="mt-4 leading-7 text-[#A0AEC0]">
-            Concrete pumping cost is usually driven by the pump type, minimum
-            charge, hourly rate, setup time, pumping time, travel fees, extra
-            hose or boom requirements, standby time, washout, and jobsite access.
-            This calculator separates those items so you can build a realistic
-            budget before ordering concrete.
+            Concrete finishing cost is usually based on slab area, finish
+            difficulty, labor productivity, crew rate, surface texture, edge
+            work, saw cutting, curing, sealing, and cleanup. Decorative finishes
+            such as stamped concrete often require more labor, materials, timing,
+            and sealing than a basic broom or trowel finish.
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">1. Estimate yardage</h3>
+              <h3 className="font-semibold">1. Enter area</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Enter concrete volume or use your slab, driveway, footing, or
-                wall calculator result.
+                Use length and width to calculate the finishing surface area.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">2. Choose pump type</h3>
+              <h3 className="font-semibold">2. Choose finish</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Line pumps are common for smaller residential jobs. Boom pumps
-                are useful for reach, speed, and difficult placement.
+                Select broom, trowel, exposed aggregate, stamped, or custom
+                finish pricing.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">3. Add fees</h3>
+              <h3 className="font-semibold">3. Add extras</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Include minimum rental time, travel, setup, hose labor, standby,
-                washout, and any yardage surcharge.
+                Add curing, sealing, saw cuts, edge work, cleanup, and minimum
+                job charges.
               </p>
             </div>
           </div>
@@ -202,23 +201,22 @@ export default function ConcretePumpTruckCostCalculatorPage() {
         <section className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8">
           <h2 className="text-2xl font-bold">Related concrete calculators</h2>
           <p className="mt-3 text-[#A0AEC0]">
-            Use these tools to estimate concrete volume, delivery, short load
-            charges, slab cost, driveway cost, labor, and placement planning.
+            Use these tools to estimate concrete volume, total slab cost,
+            pumping cost, saw cutting, and project-specific concrete work.
           </p>
           <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            <RelatedLink href="/construction/concrete-yard-calculator" label="Concrete Yard Calculator" />
-            <RelatedLink href="/construction/how-much-concrete-do-i-need" label="How Much Concrete Do I Need?" />
-            <RelatedLink href="/construction/concrete-delivery-cost-calculator" label="Concrete Delivery Cost Calculator" />
-            <RelatedLink href="/construction/concrete-short-load-fee-calculator" label="Concrete Short Load Fee Calculator" />
-            <RelatedLink href="/construction/concrete-finishing-cost-calculator" label="Concrete Finishing Cost Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
-            <RelatedLink href="/construction/concrete-footing-calculator" label="Concrete Footing Calculator" />
-            <RelatedLink href="/construction/concrete-wall-calculator" label="Concrete Wall Calculator" />
-            <RelatedLink href="/construction/concrete-truckload-calculator" label="Concrete Truckload Calculator" />
+            <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
+            <RelatedLink href="/construction/concrete-saw-cut-calculator" label="Concrete Saw Cut Calculator" />
+            <RelatedLink href="/construction/concrete-pump-truck-cost-calculator" label="Concrete Pump Truck Cost Calculator" />
+            <RelatedLink href="/construction/concrete-yard-calculator" label="Concrete Yard Calculator" />
+            <RelatedLink href="/construction/concrete-waste-calculator" label="Concrete Waste Calculator" />
+            <RelatedLink href="/construction/concrete-cure-time" label="Concrete Cure Time Calculator" />
+            <RelatedLink href="/construction/concrete-psi-calculator" label="Concrete PSI Calculator" />
           </div>
         </section>
       </section>

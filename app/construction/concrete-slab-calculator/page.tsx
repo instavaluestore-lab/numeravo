@@ -430,6 +430,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-finishing-cost-calculator"
+              title="Concrete Finishing Cost Calculator"
+              text="Estimate concrete finishing labor, finish type costs, curing, sealing, saw cuts, and total finishing cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-pump-truck-cost-calculator"
               title="Concrete Pump Truck Cost Calculator"
               text="Estimate line pump or boom pump cost, hourly pumping charges, setup fees, travel fees, and total concrete pumping cost."

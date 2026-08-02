@@ -245,6 +245,7 @@ export default function ConcretePsiCalculatorPage() {
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
             <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
+            <RelatedLink href="/construction/concrete-finishing-cost-calculator" label="Concrete Finishing Cost Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-yard-calculator" label="Concrete Yard Calculator" />
