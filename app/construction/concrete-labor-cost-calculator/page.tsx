@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ConcreteRemovalCostCalculatorClient from "./ConcreteRemovalCostCalculatorClient";
+import ConcreteLaborCostCalculatorClient from "./ConcreteLaborCostCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Removal Cost Calculator | Demo & Haul-Off Cost",
+  title: "Concrete Labor Cost Calculator | Crew Hours & Labor Estimate",
   description:
-    "Estimate concrete removal cost by area, slab thickness, concrete weight, demolition labor, equipment, dumpster, disposal, haul-off, and total cost per square foot.",
+    "Estimate concrete labor cost, crew hours, person hours, labor rate, production rate, setup, forming, finishing, cleanup, overhead, and total labor cost.",
   alternates: {
-    canonical: "https://numeravo.com/construction/concrete-removal-cost-calculator",
+    canonical: "https://numeravo.com/construction/concrete-labor-cost-calculator",
   },
   openGraph: {
-    title: "Concrete Removal Cost Calculator",
+    title: "Concrete Labor Cost Calculator",
     description:
-      "Calculate concrete demolition, disposal, haul-off, equipment, labor, and total removal cost.",
-    url: "https://numeravo.com/construction/concrete-removal-cost-calculator",
+      "Calculate concrete labor cost for slabs, driveways, patios, sidewalks, pads, formwork, finishing, removal, demolition, and placement work.",
+    url: "https://numeravo.com/construction/concrete-labor-cost-calculator",
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Concrete Removal Cost Calculator",
+    title: "Concrete Labor Cost Calculator",
     description:
-      "Estimate concrete removal cost, concrete weight, disposal, haul-off, and demolition labor.",
+      "Estimate crew hours, person hours, labor rate, productivity, overhead, minimum charge, and total concrete labor cost.",
   },
 };
 
@@ -31,38 +31,38 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "How do you estimate concrete removal cost?",
+      name: "How do you calculate concrete labor cost?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Concrete removal cost is commonly estimated by calculating the square footage, slab thickness, concrete volume, concrete weight, labor, equipment, disposal, haul-off, and any access or difficulty adjustments.",
+          "Concrete labor cost can be estimated by multiplying crew hours by crew size to get person hours, then multiplying person hours by the labor rate. Additional costs may include setup, forming, finishing, cleanup, overhead, and minimum job charges.",
       },
     },
     {
       "@type": "Question",
-      name: "What affects concrete demolition cost?",
+      name: "What affects concrete labor cost?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Major cost drivers include slab thickness, reinforcement, access, saw cutting, disposal fees, haul distance, equipment needs, labor rate, and whether the concrete is broken up by hand or machine.",
+          "Concrete labor cost is affected by project size, crew size, productivity, finish type, access, formwork, reinforcement, pump or chute placement, weather, demolition, cleanup, and local wage rates.",
       },
     },
     {
       "@type": "Question",
-      name: "How much does removed concrete weigh?",
+      name: "Is concrete labor priced per square foot or per hour?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Normal concrete weighs about 145 to 150 pounds per cubic foot. A thicker slab can add significant disposal and hauling weight even when the surface area is modest.",
+          "Concrete labor may be estimated by the hour, by person hour, by square foot, by cubic yard, or as a minimum job charge. This calculator uses crew productivity and labor rate to estimate both total labor cost and cost per square foot.",
       },
     },
     {
       "@type": "Question",
-      name: "Is concrete removal priced per square foot?",
+      name: "Does concrete labor include materials?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Many small concrete removal jobs are discussed as a cost per square foot, but the actual estimate should also account for thickness, weight, labor, equipment, disposal, hauling, and site access.",
+          "Usually labor estimates are separate from concrete material, delivery, pumping, reinforcement, and other supplies. This calculator focuses on labor and labor-related charges, while related Numeravo calculators estimate concrete volume, delivery, forms, finishing, saw cuts, and removal.",
       },
     },
   ],
@@ -71,12 +71,12 @@ const faqJsonLd = {
 const appJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "Concrete Removal Cost Calculator",
+  name: "Concrete Labor Cost Calculator",
   applicationCategory: "ConstructionApplication",
   operatingSystem: "Any",
-  url: "https://numeravo.com/construction/concrete-removal-cost-calculator",
+  url: "https://numeravo.com/construction/concrete-labor-cost-calculator",
   description:
-    "Estimate concrete demolition, disposal, haul-off, labor, equipment, and total removal cost.",
+    "Estimate concrete labor cost, crew hours, person hours, labor rate, production rate, setup, forming, finishing, cleanup, overhead, and total labor cost.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -84,7 +84,7 @@ const appJsonLd = {
   },
 };
 
-export default function ConcreteRemovalCostCalculatorPage() {
+export default function ConcreteLaborCostCalculatorPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
       <script
@@ -107,35 +107,34 @@ export default function ConcreteRemovalCostCalculatorPage() {
             </Link>
 
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
-              Concrete demolition and haul-off
+              Concrete crew hours and labor estimating
             </p>
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
-              Concrete Removal Cost Calculator
+              Concrete Labor Cost Calculator
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate concrete removal cost from square footage, slab thickness,
-              concrete weight, labor, equipment, dumpster or disposal fees,
-              haul-off, and site difficulty. Use it for patios, driveways,
-              sidewalks, pads, garage slabs, and small demolition jobs.
+              Estimate concrete labor cost using project area, crew size,
+              production rate, labor rate, setup time, forming labor, finishing
+              labor, cleanup, overhead, minimum charge, and cost per square foot.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Core output</p>
+                <p className="text-sm text-[#A0AEC0]">Crew</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Total cost
+                  Person hrs
                 </p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Weight planning</p>
+                <p className="text-sm text-[#A0AEC0]">Productivity</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  Tons removed
+                  Sq ft / hr
                 </p>
               </div>
               <div className="rounded-2xl border border-[#1F2937] bg-[#121826] p-4">
-                <p className="text-sm text-[#A0AEC0]">Bid comparison</p>
+                <p className="text-sm text-[#A0AEC0]">Labor cost</p>
                 <p className="mt-2 text-2xl font-bold text-white">
-                  $/sq ft
+                  Total + unit
                 </p>
               </div>
             </div>
@@ -145,56 +144,56 @@ export default function ConcreteRemovalCostCalculatorPage() {
             <h2 className="text-xl font-semibold">What this calculator includes</h2>
             <div className="mt-5 space-y-4 text-sm leading-6 text-[#A0AEC0]">
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Concrete quantity</span>
-                <span className="font-semibold text-white">sq ft × thickness</span>
+                <span>Project size</span>
+                <span className="font-semibold text-white">sq ft + yd³</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Weight</span>
-                <span className="font-semibold text-white">lb + tons</span>
+                <span>Crew labor</span>
+                <span className="font-semibold text-white">person hours</span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#1F2937] pb-3">
-                <span>Cost drivers</span>
-                <span className="font-semibold text-white">labor + equipment</span>
+                <span>Labor phases</span>
+                <span className="font-semibold text-white">setup + finish</span>
               </div>
               <div className="flex justify-between gap-4">
-                <span>Disposal</span>
-                <span className="font-semibold text-white">dumpster + haul-off</span>
+                <span>Total estimate</span>
+                <span className="font-semibold text-white">cost / sq ft</span>
               </div>
             </div>
           </div>
         </div>
 
-        <ConcreteRemovalCostCalculatorClient />
+        <ConcreteLaborCostCalculatorClient />
 
         <section className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8">
-          <h2 className="text-2xl font-bold">How the concrete removal estimate works</h2>
+          <h2 className="text-2xl font-bold">How concrete labor cost is estimated</h2>
           <p className="mt-4 leading-7 text-[#A0AEC0]">
-            The calculator converts the demolition area and slab thickness into
-            cubic feet and cubic yards, then estimates concrete weight using the
-            selected density. It then adds labor, equipment, disposal, hauling,
-            and site difficulty so the result is more useful than a flat
-            square-foot estimate.
+            Concrete labor cost is usually driven by crew size, production rate,
+            wage rate, site access, project complexity, forming, reinforcement,
+            placement method, finishing requirements, cleanup, and minimum job
+            charges. This calculator separates labor phases so you can estimate
+            crew time and total labor cost more clearly.
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">1. Measure the slab</h3>
+              <h3 className="font-semibold">1. Enter project size</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Enter length, width, and thickness. Thicker slabs create more
-                weight and higher disposal costs.
+                Use length, width, and thickness to estimate surface area and
+                concrete volume.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">2. Add demolition costs</h3>
+              <h3 className="font-semibold">2. Set crew productivity</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Include labor hours, labor rate, equipment rental, saw cutting,
-                and site access difficulty.
+                Adjust crew size, production rate, labor rate, and extra phase
+                hours for forming, finishing, and cleanup.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5">
-              <h3 className="font-semibold">3. Add disposal and hauling</h3>
+              <h3 className="font-semibold">3. Review labor cost</h3>
               <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
-                Estimate dumpster, landfill, concrete recycling, haul-off, and
-                cost per ton.
+                Compare direct labor, overhead, minimum charge, cost per square
+                foot, and cost per cubic yard.
               </p>
             </div>
           </div>
@@ -203,26 +202,22 @@ export default function ConcreteRemovalCostCalculatorPage() {
         <section className="rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8">
           <h2 className="text-2xl font-bold">Related concrete calculators</h2>
           <p className="mt-3 text-[#A0AEC0]">
-            Use these tools to estimate replacement concrete, forms, waste,
-            delivery, reinforcement, and slab costs.
+            Use these tools to estimate concrete material, delivery, pumping,
+            finishing, formwork, removal, demolition, and total project cost.
           </p>
           <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            <RelatedLink href="/construction/concrete-saw-cut-calculator" label="Concrete Saw Cut Calculator" />
-            <RelatedLink href="/construction/concrete-expansion-joint-spacing" label="Concrete Expansion Joint Spacing" />
-            <RelatedLink href="/construction/concrete-labor-cost-calculator" label="Concrete Labor Cost Calculator" />
-            <RelatedLink href="/construction/concrete-demolition-calculator" label="Concrete Demolition Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
+            <RelatedLink href="/construction/concrete-finishing-cost-calculator" label="Concrete Finishing Cost Calculator" />
+            <RelatedLink href="/construction/concrete-formwork-calculator" label="Concrete Formwork Calculator" />
+            <RelatedLink href="/construction/concrete-pump-truck-cost-calculator" label="Concrete Pump Truck Cost Calculator" />
+            <RelatedLink href="/construction/concrete-saw-cut-calculator" label="Concrete Saw Cut Calculator" />
+            <RelatedLink href="/construction/concrete-removal-cost-calculator" label="Concrete Removal Cost Calculator" />
+            <RelatedLink href="/construction/concrete-demolition-calculator" label="Concrete Demolition Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-driveway-calculator" label="Concrete Driveway Calculator" />
             <RelatedLink href="/construction/concrete-patio-calculator" label="Concrete Patio Calculator" />
             <RelatedLink href="/construction/concrete-sidewalk-calculator" label="Concrete Sidewalk Calculator" />
-            <RelatedLink href="/construction/concrete-pad-calculator" label="Concrete Pad Calculator" />
-            <RelatedLink href="/construction/concrete-formwork-calculator" label="Concrete Formwork Calculator" />
-            <RelatedLink href="/construction/concrete-waste-calculator" label="Concrete Waste Calculator" />
-            <RelatedLink href="/construction/concrete-weight-calculator" label="Concrete Weight Calculator" />
             <RelatedLink href="/construction/concrete-yard-calculator" label="Concrete Yard Calculator" />
-            <RelatedLink href="/construction/concrete-delivery-cost-calculator" label="Concrete Delivery Cost Calculator" />
-            <RelatedLink href="/construction/concrete-short-load-fee-calculator" label="Concrete Short Load Fee Calculator" />
           </div>
         </section>
       </section>

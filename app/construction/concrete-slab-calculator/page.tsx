@@ -430,6 +430,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/concrete-labor-cost-calculator"
+              title="Concrete Labor Cost Calculator"
+              text="Estimate crew hours, person hours, labor rate, productivity, setup, forming, finishing, cleanup, overhead, and total concrete labor cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-finishing-cost-calculator"
               title="Concrete Finishing Cost Calculator"
               text="Estimate concrete finishing labor, finish type costs, curing, sealing, saw cuts, and total finishing cost."

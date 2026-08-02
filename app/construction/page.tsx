@@ -23,6 +23,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Concrete Labor Cost Calculator",
+    description:
+      "Estimate concrete labor cost, crew hours, person hours, labor rate, production rate, setup, forming, finishing, cleanup, overhead, and total labor cost.",
+    href: "/construction/concrete-labor-cost-calculator",
+    status: "Live",
+  },
+  {
     title: "Concrete Finishing Cost Calculator",
     description:
       "Estimate concrete finishing cost by square footage, finish type, labor rate, crew productivity, curing, sealing, saw cuts, and total cost per square foot.",

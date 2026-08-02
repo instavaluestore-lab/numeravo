@@ -210,6 +210,7 @@ export default function ConcretePumpTruckCostCalculatorPage() {
             <RelatedLink href="/construction/how-much-concrete-do-i-need" label="How Much Concrete Do I Need?" />
             <RelatedLink href="/construction/concrete-delivery-cost-calculator" label="Concrete Delivery Cost Calculator" />
             <RelatedLink href="/construction/concrete-short-load-fee-calculator" label="Concrete Short Load Fee Calculator" />
+            <RelatedLink href="/construction/concrete-labor-cost-calculator" label="Concrete Labor Cost Calculator" />
             <RelatedLink href="/construction/concrete-finishing-cost-calculator" label="Concrete Finishing Cost Calculator" />
             <RelatedLink href="/construction/concrete-cost-calculator" label="Concrete Cost Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
