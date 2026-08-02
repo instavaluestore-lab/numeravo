@@ -83,7 +83,7 @@ const calculatorSections = [
     title: "Concrete Cost, Delivery & Labor",
     description:
       "Estimate concrete pricing, delivery fees, short-load charges, pumping, finishing, labor, and total project cost.",
-    accent: "bg-[#FB923C]",
+    accent: "bg-[#F97316]",
     calculators: [
       {
         title: "Concrete Cost Calculator",
@@ -161,7 +161,7 @@ const calculatorSections = [
     title: "Flatwork, Forms & Joints",
     description:
       "Estimate slabs, driveways, patios, sidewalks, pads, stairs, forms, saw cuts, control joints, and expansion joints.",
-    accent: "bg-[#FACC15]",
+    accent: "bg-[#F97316]",
     calculators: [
       {
         title: "Concrete Slab Calculator",
@@ -239,7 +239,7 @@ const calculatorSections = [
     title: "Footings, Walls & Piers",
     description:
       "Estimate concrete for strip footings, sonotubes, piers, poured walls, foundation walls, and retaining walls.",
-    accent: "bg-[#38BDF8]",
+    accent: "bg-[#F97316]",
     calculators: [
       {
         title: "Concrete Footing Calculator",
@@ -268,7 +268,7 @@ const calculatorSections = [
     title: "Rebar & Reinforcement",
     description:
       "Estimate rebar grids, spacing, lap splices, weight, welded wire mesh, reinforcement material, and cost.",
-    accent: "bg-[#A855F7]",
+    accent: "bg-[#F97316]",
     calculators: [
       {
         title: "Rebar Calculator",
@@ -311,7 +311,7 @@ const calculatorSections = [
     title: "Lumber & Framing",
     description:
       "Estimate lumber pieces, board feet, linear feet, waste allowance, and material cost for construction and woodworking projects.",
-    accent: "bg-[#F59E0B]",
+    accent: "bg-[#F97316]",
     calculators: [
       {
         title: "Lumber Calculator",
@@ -333,7 +333,7 @@ const calculatorSections = [
     title: "Demolition & Removal",
     description:
       "Estimate concrete demolition, removal, disposal, haul-off, equipment, saw cutting, weight, and cleanup.",
-    accent: "bg-[#EF4444]",
+    accent: "bg-[#F97316]",
     calculators: [
       {
         title: "Concrete Demolition Calculator",
@@ -355,7 +355,7 @@ const calculatorSections = [
     title: "Gravel, Base & Stone",
     description:
       "Estimate gravel, crushed stone, road base, pea gravel, river rock, decomposed granite, drainage rock, and paver base.",
-    accent: "bg-[#84CC16]",
+    accent: "bg-[#F97316]",
     calculators: [
       {
         title: "Gravel Calculator",
@@ -475,7 +475,7 @@ const calculatorSections = [
     title: "General Construction Tools",
     description:
       "Use general measurement tools for square footage, project areas, material estimates, and waste-adjusted area.",
-    accent: "bg-[#14B8A6]",
+    accent: "bg-[#F97316]",
     calculators: [
       {
         title: "Area Calculator",
