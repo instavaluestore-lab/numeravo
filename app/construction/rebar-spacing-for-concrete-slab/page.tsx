@@ -189,6 +189,7 @@ export default function RebarSpacingForConcreteSlabPage() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <RelatedLink href="/construction/wire-mesh-calculator" label="Wire Mesh Calculator" />
             <RelatedLink href="/construction/rebar-weight-calculator" label="Rebar Weight Calculator" />
+            <RelatedLink href="/construction/rebar-lap-splice-calculator" label="Rebar Lap Splice Calculator" />
             <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
             <RelatedLink href="/construction/concrete-slab-calculator" label="Concrete Slab Calculator" />
             <RelatedLink href="/construction/concrete-calculator" label="Concrete Calculator" />

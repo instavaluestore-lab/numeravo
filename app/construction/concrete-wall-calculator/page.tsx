@@ -297,6 +297,12 @@ export default function ConcreteWallCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-lap-splice-calculator"
+              title="Rebar Lap Splice Calculator"
+              text="Calculate rebar overlap length, lap splice quantity, added rebar length, bar weight, and estimated splice material cost."
+            />
+
+            <RelatedLink
               href="/construction/rebar-calculator"
               title="Rebar Calculator"
               text="Estimate rebar quantity, spacing, weight, stock length, waste, and material cost for concrete reinforcement."

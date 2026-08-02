@@ -430,6 +430,12 @@ export default function ConcreteSlabCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-lap-splice-calculator"
+              title="Rebar Lap Splice Calculator"
+              text="Calculate rebar overlap length, lap splice quantity, added rebar length, bar weight, and estimated splice material cost."
+            />
+
+            <RelatedLink
               href="/construction/concrete-labor-cost-calculator"
               title="Concrete Labor Cost Calculator"
               text="Estimate crew hours, person hours, labor rate, productivity, setup, forming, finishing, cleanup, overhead, and total concrete labor cost."

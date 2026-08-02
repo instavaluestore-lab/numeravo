@@ -301,6 +301,12 @@ export default function ConcreteFootingCalculatorPage() {
             />
 
             <RelatedLink
+              href="/construction/rebar-lap-splice-calculator"
+              title="Rebar Lap Splice Calculator"
+              text="Calculate rebar overlap length, lap splice quantity, added rebar length, bar weight, and estimated splice material cost."
+            />
+
+            <RelatedLink
               href="/construction/rebar-calculator"
               title="Rebar Calculator"
               text="Estimate rebar runs, stock length, total feet, weight, waste, and cost for concrete footings."

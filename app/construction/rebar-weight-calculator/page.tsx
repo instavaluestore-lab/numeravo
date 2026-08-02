@@ -183,6 +183,7 @@ export default function RebarWeightCalculatorPage() {
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6">
           <h2 className="text-2xl font-semibold text-white">Related calculators</h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <RelatedLink href="/construction/rebar-lap-splice-calculator" label="Rebar Lap Splice Calculator" />
             <RelatedLink href="/construction/rebar-calculator" label="Rebar Calculator" />
             <RelatedLink href="/construction/wire-mesh-calculator" label="Wire Mesh Calculator" />
             <RelatedLink href="/construction/rebar-spacing-for-concrete-slab" label="Rebar Spacing for Concrete Slab" />

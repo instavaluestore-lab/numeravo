@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/concrete-cost-calculator",
     "/construction/concrete-bag-calculator",
     "/construction/rebar-calculator",
+    "/construction/rebar-lap-splice-calculator",
     "/construction/rebar-spacing-for-concrete-slab",
     "/construction/rebar-weight-calculator",
     "/construction/wire-mesh-calculator",
@@ -104,6 +105,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("concrete-cost-calculator") ||
               route.includes("concrete-bag-calculator") ||
               route.includes("rebar-calculator") ||
+          route.includes("rebar-lap-splice-calculator") ||
               route.includes("rebar-spacing-for-concrete-slab") ||
               route.includes("rebar-weight-calculator") ||
               route.includes("wire-mesh-calculator") ||
