@@ -1,75 +1,75 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FlooringCalculatorClient from "./FlooringCalculatorClient";
+import TileCalculatorClient from "./TileCalculatorClient";
 
 const canonicalUrl =
-  "https://numeravo.com/construction/flooring-calculator";
+  "https://numeravo.com/construction/tile-calculator";
 
 export const metadata: Metadata = {
-  title: "Flooring Calculator | Cartons, Waste, Coverage & Cost",
+  title: "Tile Calculator | Boxes, Thinset, Grout & Cost",
   description:
-    "Estimate flooring area, waste, planks, cartons, underlayment rolls, baseboard, purchased coverage, overage, and material cost.",
+    "Estimate tile area, waste, tiles, boxes, thinset, grout, backer board, edge trim, purchased coverage, overage, and material cost.",
   alternates: {
     canonical: canonicalUrl,
   },
   openGraph: {
-    title: "Flooring Calculator | Numeravo",
+    title: "Tile Calculator | Numeravo",
     description:
-      "Calculate flooring cartons, pieces, waste, underlayment, baseboard, coverage, and project material cost.",
+      "Calculate tile boxes, pieces, waste, thinset, grout, backer board, trim, coverage, and material cost.",
     url: canonicalUrl,
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flooring Calculator | Numeravo",
+    title: "Tile Calculator | Numeravo",
     description:
-      "Estimate flooring area, cartons, planks, underlayment, baseboard, waste, and cost.",
+      "Estimate tile quantities, setting materials, grout, backer board, trim, and cost.",
   },
 };
 
 const faqItems = [
   {
-    question: "How do I calculate how much flooring I need?",
+    question: "How do I calculate how much tile I need?",
     answer:
-      "Calculate the net floor area, add an appropriate waste allowance, divide by the coverage printed on one flooring carton, and round up to a whole carton.",
+      "Calculate the net tile area, add a suitable waste allowance, divide by the coverage printed on one tile box, and round up to a whole box.",
   },
   {
-    question: "How much flooring waste should I add?",
+    question: "How much waste should I add for tile?",
     answer:
-      "Ten percent is a common planning allowance for straightforward installations. Diagonal layouts, patterned flooring, irregular rooms, numerous cuts, damaged material, and future repairs may require more.",
+      "Ten percent is common for straightforward layouts. Diagonal patterns, mosaics, complex cuts, matching veins or patterns, breakage, tile variation, and future repairs may require more.",
   },
   {
-    question: "Should I calculate flooring by plank or by carton?",
+    question: "Should I buy tile by piece or by box?",
     answer:
-      "Use carton coverage for the purchase quantity because flooring is normally sold in complete cartons. Individual plank dimensions are useful for estimating pieces and understanding layout.",
+      "Use the exact square-foot coverage per box for purchasing. Individual tile dimensions are useful for estimating pieces, but boxes may contain different quantities.",
   },
   {
-    question: "Do I need underlayment beneath new flooring?",
+    question: "How much thinset or tile adhesive do I need?",
     answer:
-      "Underlayment requirements depend on the flooring product, subfloor, installation method, moisture conditions, sound requirements, and manufacturer warranty. Some flooring includes an attached pad.",
+      "Coverage depends on the product, trowel notch, tile size, substrate flatness, application method, and required mortar thickness. Enter the coverage specified for the exact installation.",
   },
   {
-    question: "Should flooring be ordered from the same production batch?",
+    question: "How much grout do I need?",
     answer:
-      "When possible, order enough flooring at one time and verify matching dye lots, production runs, colors, or batch numbers. Appearance can vary between separate manufacturing runs.",
+      "Grout coverage varies significantly with tile dimensions, tile thickness, grout-joint width, and product density. Use the manufacturer's coverage chart for the selected tile and joint.",
   },
   {
-    question: "How is baseboard calculated?",
+    question: "Do I need backer board or waterproofing?",
     answer:
-      "Baseboard begins with the room perimeter or a known linear measurement. Door and opening deductions are removed, waste is added, and the final length is divided by the purchasable piece length.",
+      "Requirements depend on the substrate, installation location, moisture exposure, tile assembly, manufacturer instructions, and local code. Backer board alone is not automatically a waterproofing system.",
   },
 ];
 
 const applicationJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "Flooring Calculator",
+  name: "Tile Calculator",
   url: canonicalUrl,
   applicationCategory: "UtilitiesApplication",
   operatingSystem: "Any",
   description:
-    "Estimate flooring cartons, pieces, waste, underlayment, baseboard, coverage, overage, and material cost.",
+    "Estimate tile boxes, pieces, waste, thinset, grout, backer board, edge trim, coverage, and material cost.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -90,7 +90,7 @@ const faqJsonLd = {
   })),
 };
 
-export default function FlooringCalculatorPage() {
+export default function TileCalculatorPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
       <script
@@ -117,23 +117,23 @@ export default function FlooringCalculatorPage() {
             </Link>
 
             <p className="mt-8 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
-              Flooring quantity and cost planning
+              Tile quantity and material planning
             </p>
 
             <h1 className="mt-4 text-5xl font-bold tracking-tight sm:text-6xl">
-              Flooring Calculator
+              Tile Calculator
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate flooring cartons, planks, waste, purchased coverage,
-              underlayment rolls, baseboard pieces, whole-package overage,
-              supplies, tax, and material cost.
+              Estimate floor, wall, backsplash, shower, and countertop tile.
+              Calculate pieces, boxes, waste, thinset, grout, backer board,
+              edge trim, purchased coverage, overage, and material cost.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <SummaryCard label="Floor area" value="Rooms + known area" />
-              <SummaryCard label="Purchase order" value="Pieces + cartons" />
-              <SummaryCard label="Accessories" value="Pad + baseboard" />
+              <SummaryCard label="Tile surfaces" value="Floor + wall" />
+              <SummaryCard label="Purchase order" value="Tiles + boxes" />
+              <SummaryCard label="Installation" value="Mortar + grout" />
             </div>
           </div>
 
@@ -143,126 +143,126 @@ export default function FlooringCalculatorPage() {
             </h2>
 
             <div className="mt-6 space-y-4">
-              <FeatureRow label="Floor quantity" value="area + waste" />
-              <FeatureRow label="Flooring order" value="pieces + cartons" />
-              <FeatureRow label="Underlayment" value="coverage + rolls" />
-              <FeatureRow label="Baseboard" value="length + pieces" />
+              <FeatureRow label="Tile quantity" value="area + waste" />
+              <FeatureRow label="Tile order" value="pieces + boxes" />
+              <FeatureRow label="Setting materials" value="mortar + grout" />
+              <FeatureRow label="Substrate and trim" value="board + edges" />
               <FeatureRow label="Cost estimate" value="materials + fees" />
             </div>
           </section>
         </section>
 
         <div className="mt-12">
-          <FlooringCalculatorClient />
+          <TileCalculatorClient />
         </div>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-10">
           <h2 className="text-3xl font-bold">
-            How to calculate flooring for a room
+            How to calculate tile for a project
           </h2>
 
           <p className="mt-4 max-w-4xl leading-8 text-[#A0AEC0]">
-            Measure the floor, subtract areas that will not receive flooring,
+            Measure the surfaces that will receive tile, subtract openings,
             add waste, and divide the purchase area by the exact coverage
-            printed on one carton. Always round cartons, rolls, and trim pieces
-            up to complete purchasable packages.
+            printed on one box. Calculate mortar, grout, backer board, and
+            trim using the coverage or package information for each product.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             <StepCard
               step="Step 1"
-              title="Measure floor area"
-              text="Enter room dimensions, identical-room quantity, additional areas, or a known floor area."
+              title="Measure tile area"
+              text="Enter surface dimensions, identical-surface quantity, additional area, deductions, or a known tile area."
             />
             <StepCard
               step="Step 2"
-              title="Add waste and coverage"
-              text="Use an appropriate waste percentage and the exact square-foot coverage per carton."
+              title="Add tile and waste"
+              text="Enter tile dimensions, grout-joint width, waste, and exact square-foot coverage per box."
             />
             <StepCard
               step="Step 3"
-              title="Complete the order"
-              text="Add underlayment, baseboard, accessories, supplier prices, tax, delivery, and fees."
+              title="Add installation materials"
+              text="Enter mortar, grout, backer-board, trim, accessory, pricing, tax, delivery, and fee information."
             />
           </div>
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-10">
           <h2 className="text-3xl font-bold">
-            Flooring calculation formulas
+            Tile calculation formulas
           </h2>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             <FormulaCard
-              title="Room floor area"
-              formula="room length × room width × number of rooms"
-              text="Additional areas can be added and permanent uninstalled areas can be deducted."
+              title="Tile surface area"
+              formula="surface length × surface width × number of surfaces"
+              text="Additional tile areas can be added and openings or permanent areas deducted."
             />
             <FormulaCard
-              title="Purchase floor area"
-              formula="net floor area × (1 + waste percentage ÷ 100)"
-              text="Waste helps cover cuts, layout changes, damaged pieces, and future repairs."
+              title="Purchase tile area"
+              formula="net tile area × (1 + waste percentage ÷ 100)"
+              text="Waste helps cover cuts, breakage, layout, variation, and future repairs."
             />
             <FormulaCard
-              title="Flooring cartons"
-              formula="purchase floor area ÷ carton coverage, rounded up"
-              text="Use the exact carton coverage rather than an assumed number of pieces."
+              title="Tile boxes"
+              formula="purchase tile area ÷ box coverage, rounded up"
+              text="Use the exact square-foot coverage shown on the selected product."
             />
             <FormulaCard
-              title="Estimated flooring pieces"
-              formula="purchase area ÷ individual piece area, rounded up"
-              text="This is a layout estimate; carton coverage controls the actual purchase quantity."
+              title="Estimated individual tiles"
+              formula="purchase tile area ÷ tile face area, rounded up"
+              text="Box coverage controls purchasing even when an individual piece estimate is displayed."
             />
             <FormulaCard
-              title="Underlayment rolls"
-              formula="purchase floor area ÷ roll coverage, rounded up"
-              text="Confirm overlaps, seams, moisture protection, and product-specific requirements."
+              title="Mortar and grout packages"
+              formula="purchase tile area ÷ applicable product coverage, rounded up"
+              text="Coverage must correspond to the tile size, joint, trowel, substrate, and installation."
             />
             <FormulaCard
-              title="Baseboard pieces"
-              formula="waste-adjusted baseboard length ÷ piece length, rounded up"
-              text="The room perimeter is reduced by the entered door and opening deduction."
+              title="Edge-trim pieces"
+              formula="required trim length ÷ piece length, rounded up"
+              text="Measure exposed tile edges and use the purchasable length of the selected trim."
             />
           </div>
         </section>
 
         <section className="mt-12 grid gap-6 md:grid-cols-2">
-          <InfoCard title="Use exact carton coverage">
+          <InfoCard title="Use product-specific coverage">
             <p>
-              Cartons with similarly sized planks can contain different piece
-              counts and square-foot coverage. Use the coverage printed on the
-              specific carton or supplier listing.
+              Tile box coverage and piece counts differ by manufacturer and
+              product. Mortar and grout coverage also changes with tile size,
+              thickness, trowel notch, joint width, and substrate condition.
             </p>
             <p className="mt-4">
-              Purchase all required material together when possible and verify
-              color, style, lot, and production-run information.
+              Use packaging, technical data sheets, and manufacturer coverage
+              tools for the products being installed.
             </p>
           </InfoCard>
 
-          <InfoCard title="Plan the installation layout">
+          <InfoCard title="Plan pattern and color variation">
             <p>
-              Waste requirements increase with diagonal placement, repeating
-              patterns, narrow rooms, closets, hallways, stairs, offsets, and
-              complex transitions.
+              Diagonal layouts, borders, mosaics, offsets, niches, corners,
+              vein matching, and patterned tile can substantially increase
+              cuts and waste.
             </p>
             <p className="mt-4">
-              Check minimum plank-length, stagger, expansion-gap, acclimation,
-              moisture, subfloor-flatness, and transition requirements.
+              Confirm caliber, shade, dye lot, production run, and acceptable
+              variation before installation begins.
             </p>
           </InfoCard>
         </section>
 
         <section className="mt-12 rounded-3xl border border-orange-500/50 bg-orange-500/10 p-6 md:p-8">
           <h2 className="text-2xl font-bold text-orange-300">
-            Product and installation notice
+            Substrate and waterproofing notice
           </h2>
 
           <p className="mt-4 leading-8 text-[#A0AEC0]">
-            This calculator provides a planning estimate. Confirm subfloor
-            preparation, moisture testing, underlayment, vapor protection,
-            expansion gaps, fastening or adhesive requirements, acclimation,
-            transitions, warranty conditions, and safe installation practices
-            with the flooring manufacturer and qualified professionals.
+            This calculator provides a material-planning estimate. Confirm
+            structural support, substrate preparation, deflection, movement
+            joints, waterproofing, drainage, mortar compatibility, grout,
+            sealant, cure times, and installation requirements with product
+            manufacturers, local code, and qualified tile professionals.
           </p>
         </section>
 
@@ -292,22 +292,18 @@ export default function FlooringCalculatorPage() {
           </h2>
 
           <p className="mt-3 text-[#A0AEC0]">
-            Continue planning floor area, paint, drywall, framing, and other
-            interior construction materials.
+            Continue planning flooring, area, drywall, and other interior
+            construction materials.
           </p>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <RelatedLink
-              href="/construction/tile-calculator"
-              label="Tile Calculator"
+              href="/construction/flooring-calculator"
+              label="Flooring Calculator"
             />
             <RelatedLink
               href="/construction/area-calculator"
               label="Area Calculator"
-            />
-            <RelatedLink
-              href="/construction/paint-calculator"
-              label="Paint Calculator"
             />
             <RelatedLink
               href="/construction/drywall-calculator"

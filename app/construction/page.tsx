@@ -385,6 +385,13 @@ const calculatorSections = [
         href: "/construction/flooring-calculator",
         status: "Live",
       },
+      {
+        title: "Tile Calculator",
+        description:
+          "Estimate floor, wall, backsplash, and shower tile, boxes, waste, thinset, grout, backer board, edge trim, coverage, and material cost.",
+        href: "/construction/tile-calculator",
+        status: "Live",
+      },
     ],
   },
   {
