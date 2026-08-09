@@ -428,6 +428,11 @@ export default function RoofingCalculatorPage() {
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <RelatedLink
+              href="/construction/shingle-calculator"
+              label="Shingle Calculator"
+            />
+
+            <RelatedLink
               href="/construction/roof-pitch-calculator"
               label="Roof Pitch Calculator"
             />

@@ -349,6 +349,13 @@ const calculatorSections = [
         href: "/construction/roofing-calculator",
         status: "Live",
       },
+      {
+        title: "Shingle Calculator",
+        description:
+          "Calculate asphalt shingle bundles, roofing squares, underlayment, starter strips, ridge caps, drip edge, nails, waste, and material cost.",
+        href: "/construction/shingle-calculator",
+        status: "Live",
+      },
     ],
   },
   {
