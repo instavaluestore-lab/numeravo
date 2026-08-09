@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/wire-mesh-calculator",
     "/construction/lumber-calculator",
     "/construction/stud-calculator",
+    "/construction/roof-pitch-calculator",
     "/construction/concrete-delivery-cost-calculator",
     "/construction/concrete-driveway-calculator",
     "/construction/concrete-patio-calculator",
@@ -113,6 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("wire-mesh-calculator") ||
               route.includes("lumber-calculator") ||
               route.includes("stud-calculator") ||
+              route.includes("roof-pitch-calculator") ||
               route.includes("concrete-driveway-calculator") ||
               route.includes("concrete-patio-calculator") ||
               route.includes("concrete-sidewalk-calculator") ||

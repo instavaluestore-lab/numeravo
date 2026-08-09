@@ -330,6 +330,21 @@ const calculatorSections = [
     ],
   },
   {
+    title: "Roofing",
+    description:
+      "Calculate roof pitch, slope, angle, roof area, roofing squares, shingles, materials, and project quantities.",
+    accent: "bg-[#F97316]",
+    calculators: [
+      {
+        title: "Roof Pitch Calculator",
+        description:
+          "Convert roof rise and run into pitch ratio, angle, percent slope, multiplier, roof area, roofing squares, and common-rafter length.",
+        href: "/construction/roof-pitch-calculator",
+        status: "Live",
+      },
+    ],
+  },
+  {
     title: "Demolition & Removal",
     description:
       "Estimate concrete demolition, removal, disposal, haul-off, equipment, saw cutting, weight, and cleanup.",

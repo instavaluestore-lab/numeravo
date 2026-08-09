@@ -312,6 +312,10 @@ export default function StudCalculatorPage() {
               href="/construction/lumber-calculator"
               label="Lumber Calculator"
             />
+        <RelatedLink
+          href="/construction/roof-pitch-calculator"
+          label="Roof Pitch Calculator"
+        />
             <RelatedLink
               href="/construction/area-calculator"
               label="Area Calculator"
