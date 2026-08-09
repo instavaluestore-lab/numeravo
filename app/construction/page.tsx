@@ -378,6 +378,13 @@ const calculatorSections = [
         href: "/construction/paint-calculator",
         status: "Live",
       },
+      {
+        title: "Flooring Calculator",
+        description:
+          "Estimate floor area, flooring pieces, cartons, waste, underlayment rolls, baseboard, purchased coverage, overage, and material cost.",
+        href: "/construction/flooring-calculator",
+        status: "Live",
+      },
     ],
   },
   {
