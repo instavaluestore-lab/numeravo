@@ -317,6 +317,10 @@ export default function StudCalculatorPage() {
           label="Roof Pitch Calculator"
         />
             <RelatedLink
+              href="/construction/drywall-calculator"
+              label="Drywall Calculator"
+            />
+            <RelatedLink
               href="/construction/area-calculator"
               label="Area Calculator"
             />

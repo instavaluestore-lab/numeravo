@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/roof-pitch-calculator",
     "/construction/roofing-calculator",
     "/construction/shingle-calculator",
+    "/construction/drywall-calculator",
     "/construction/concrete-delivery-cost-calculator",
     "/construction/concrete-driveway-calculator",
     "/construction/concrete-patio-calculator",
@@ -119,6 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("roof-pitch-calculator") ||
               route.includes("roofing-calculator") ||
               route.includes("shingle-calculator") ||
+              route.includes("drywall-calculator") ||
               route.includes("concrete-driveway-calculator") ||
               route.includes("concrete-patio-calculator") ||
               route.includes("concrete-sidewalk-calculator") ||

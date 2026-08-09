@@ -359,6 +359,21 @@ const calculatorSections = [
     ],
   },
   {
+    title: "Interior Finishes",
+    description:
+      "Estimate drywall, paint, flooring, tile, wall coverings, finish materials, waste, accessories, and project costs.",
+    accent: "bg-[#F97316]",
+    calculators: [
+      {
+        title: "Drywall Calculator",
+        description:
+          "Estimate drywall sheets, wall and ceiling area, waste, screws, joint tape, compound, corner bead, coverage, and material cost.",
+        href: "/construction/drywall-calculator",
+        status: "Live",
+      },
+    ],
+  },
+  {
     title: "Demolition & Removal",
     description:
       "Estimate concrete demolition, removal, disposal, haul-off, equipment, saw cutting, weight, and cleanup.",
