@@ -371,6 +371,13 @@ const calculatorSections = [
         href: "/construction/drywall-calculator",
         status: "Live",
       },
+      {
+        title: "Paint Calculator",
+        description:
+          "Estimate interior and exterior paint, wall and ceiling area, opening deductions, coats, primer, gallons, quarts, supplies, and material cost.",
+        href: "/construction/paint-calculator",
+        status: "Live",
+      },
     ],
   },
   {

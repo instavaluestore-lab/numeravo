@@ -1,70 +1,75 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import DrywallCalculatorClient from "./DrywallCalculatorClient";
+import PaintCalculatorClient from "./PaintCalculatorClient";
 
 const canonicalUrl =
-  "https://numeravo.com/construction/drywall-calculator";
+  "https://numeravo.com/construction/paint-calculator";
 
 export const metadata: Metadata = {
-  title: "Drywall Calculator | Sheets, Screws, Tape & Cost",
+  title: "Paint Calculator | Gallons, Primer, Coverage & Cost",
   description:
-    "Estimate drywall sheets, wall and ceiling area, waste, screws, joint tape, compound, corner bead, material coverage, and project cost.",
+    "Estimate interior or exterior paint, primer, wall and ceiling area, coats, gallons, quarts, trim paint, supplies, and material cost.",
   alternates: {
     canonical: canonicalUrl,
   },
   openGraph: {
-    title: "Drywall Calculator | Numeravo",
+    title: "Paint Calculator | Numeravo",
     description:
-      "Calculate drywall sheets, screws, tape, joint compound, corner bead, waste, and estimated material cost.",
+      "Calculate paint and primer quantities for walls, ceilings, trim, rooms, and exterior building surfaces.",
     url: canonicalUrl,
     siteName: "Numeravo",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Drywall Calculator | Numeravo",
+    title: "Paint Calculator | Numeravo",
     description:
-      "Estimate drywall quantities and material costs for walls and ceilings.",
+      "Estimate paintable area, coats, gallons, quarts, primer, supplies, and material cost.",
   },
 };
 
 const faqItems = [
   {
-    question: "How do I calculate how many drywall sheets I need?",
+    question: "How do I calculate how much paint I need?",
     answer:
-      "Calculate the net wall and ceiling area, add a waste allowance, divide by the coverage of one drywall sheet, and round the result up to a whole sheet.",
+      "Calculate the net paintable area, multiply it by the number of coats, add a waste allowance, and divide by the paint manufacturer's coverage per gallon. Round the result to purchasable gallon and quart containers.",
   },
   {
-    question: "Should doors and windows be deducted from drywall area?",
+    question: "How much area does one gallon of paint cover?",
     answer:
-      "Doors and windows can be deducted for a more precise material estimate. For small projects, some estimators leave minor openings included because the extra material can help cover cuts and damaged sheets.",
+      "Many paints advertise coverage near 350 to 400 square feet per gallon for one coat, but actual coverage varies with the product, surface texture, porosity, color change, application method, and surface condition.",
   },
   {
-    question: "How much waste should I add for drywall?",
+    question: "Should doors and windows be deducted from wall area?",
     answer:
-      "A waste allowance of about 10% is common for straightforward rooms. Complicated layouts, angled walls, numerous openings, short pieces, or inexperienced installation may require a higher allowance.",
+      "Large doors and windows can be deducted for a more precise estimate. Small openings are sometimes left included because touch-ups, spills, surface texture, and leftover paint can consume the difference.",
   },
   {
-    question: "How many drywall screws and how much compound do I need?",
+    question: "How many coats of paint should I calculate?",
     answer:
-      "Requirements vary with framing spacing, sheet orientation, fastening schedules, finish level, and product coverage. This calculator uses editable coverage inputs so you can match the products and installation requirements for your project.",
+      "Two finish coats are common, but the required number depends on the existing color, new color, paint quality, sheen, substrate, repairs, and manufacturer instructions. Primer may be required separately.",
   },
   {
-    question: "What drywall sheet size should I use?",
+    question: "Should I buy gallons or quarts?",
     answer:
-      "Four-foot-wide sheets are common, with lengths such as 8, 10, and 12 feet. Longer sheets can reduce seams but are heavier and more difficult to transport and install. Confirm the thickness, fire rating, moisture resistance, and sheet size required for the application.",
+      "Use gallons for most of the required volume and quarts for smaller remaining quantities when that combination is economical and available. Compare container prices because four quarts may cost more than one gallon.",
+  },
+  {
+    question: "Do I need primer?",
+    answer:
+      "Primer is commonly used on new drywall, bare or porous surfaces, repaired areas, stains, major color changes, and surfaces requiring improved adhesion. Follow the coating manufacturer's system requirements.",
   },
 ];
 
 const applicationJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "Drywall Calculator",
+  name: "Paint Calculator",
   url: canonicalUrl,
   applicationCategory: "UtilitiesApplication",
   operatingSystem: "Any",
   description:
-    "Estimate drywall sheets, screws, tape, compound, corner bead, waste, and material cost.",
+    "Estimate wall, ceiling, trim, exterior paint, primer, gallons, quarts, coverage, supplies, and material cost.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -85,7 +90,7 @@ const faqJsonLd = {
   })),
 };
 
-export default function DrywallCalculatorPage() {
+export default function PaintCalculatorPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] px-6 py-16 text-white">
       <script
@@ -112,31 +117,31 @@ export default function DrywallCalculatorPage() {
             </Link>
 
             <p className="mt-8 text-sm font-semibold uppercase tracking-[0.25em] text-[#F97316]">
-              Drywall material and cost planning
+              Paint quantity and cost planning
             </p>
 
             <h1 className="mt-4 text-5xl font-bold tracking-tight sm:text-6xl">
-              Drywall Calculator
+              Paint Calculator
             </h1>
 
             <p className="mt-6 max-w-3xl text-lg leading-8 text-[#A0AEC0]">
-              Estimate drywall sheets for walls and ceilings, subtract doors
-              and windows, add waste, and calculate screws, tape, joint
-              compound, corner bead, coverage, and material cost.
+              Estimate paint and primer for interior rooms, exterior walls,
+              ceilings, and trim. Calculate coats, gallons, quarts, opening
+              deductions, supplies, tax, and material cost.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <SummaryCard
-                label="Drywall area"
-                value="Walls + ceiling"
+                label="Project modes"
+                value="Interior + exterior"
               />
               <SummaryCard
-                label="Sheet quantity"
-                value="Coverage + waste"
+                label="Paint quantity"
+                value="Gallons + quarts"
               />
               <SummaryCard
-                label="Materials"
-                value="Fasteners + finish"
+                label="Project estimate"
+                value="Materials + cost"
               />
             </div>
           </div>
@@ -147,135 +152,128 @@ export default function DrywallCalculatorPage() {
             </h2>
 
             <div className="mt-6 space-y-4">
-              <FeatureRow label="Surface area" value="walls + ceilings" />
+              <FeatureRow label="Surface modes" value="room + exterior" />
               <FeatureRow label="Openings" value="doors + windows" />
-              <FeatureRow label="Drywall order" value="sheets + waste" />
-              <FeatureRow
-                label="Accessories"
-                value="screws + tape + compound"
-              />
-              <FeatureRow label="Project estimate" value="materials + cost" />
+              <FeatureRow label="Coatings" value="paint + primer" />
+              <FeatureRow label="Containers" value="gallons + quarts" />
+              <FeatureRow label="Cost estimate" value="materials + fees" />
             </div>
           </section>
         </section>
 
         <div className="mt-12">
-          <DrywallCalculatorClient />
+          <PaintCalculatorClient />
         </div>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-10">
           <h2 className="text-3xl font-bold">
-            How to calculate drywall for a room
+            How to calculate paint for a project
           </h2>
 
           <p className="mt-4 max-w-4xl leading-8 text-[#A0AEC0]">
-            Start by calculating the wall and ceiling surfaces that will
-            receive drywall. Subtract applicable door and window openings,
-            add a waste allowance, and divide the purchase area by the
-            coverage of the selected sheet size. Always round material
-            packages up to whole purchasable quantities.
+            Measure each paintable surface, subtract applicable openings,
+            multiply the net area by the required number of coats, add an
+            allowance for waste and touch-ups, and divide by the product&apos;s
+            stated coverage. Paint and primer should be calculated separately.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             <StepCard
               step="Step 1"
-              title="Measure the surfaces"
-              text="Enter the room dimensions or use a known net drywall area."
+              title="Measure surfaces"
+              text="Enter room or building dimensions, or begin with a known paintable area."
             />
             <StepCard
               step="Step 2"
-              title="Deduct openings"
-              text="Enter doors and windows when you want their areas removed from the estimate."
+              title="Select coats and coverage"
+              text="Enter the required finish and primer coats using the exact product coverage."
             />
             <StepCard
               step="Step 3"
-              title="Add waste and materials"
-              text="Select a sheet size, add waste, and enter product coverage and pricing."
+              title="Add pricing"
+              text="Enter gallon, quart, primer, supply, delivery, fee, and tax amounts."
             />
           </div>
         </section>
 
         <section className="mt-12 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-10">
           <h2 className="text-3xl font-bold">
-            Drywall calculation formulas
+            Paint calculation formulas
           </h2>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             <FormulaCard
-              title="Wall area"
-              formula="2 × (room length + room width) × wall height"
+              title="Interior wall area"
+              formula="2 × (length + width) × wall height × rooms"
               text="This calculates the gross area of four rectangular walls."
             />
             <FormulaCard
-              title="Ceiling area"
-              formula="room length × room width"
-              text="Include this area when the ceiling will also receive drywall."
+              title="Exterior wall area"
+              formula="2 × (building length + width) × exterior height"
+              text="This estimates the rectangular exterior perimeter-wall area."
             />
             <FormulaCard
-              title="Net drywall area"
-              formula="gross selected area − door area − window area"
-              text="Opening deductions cannot reduce the result below zero."
+              title="Net wall area"
+              formula="gross wall area − applicable opening area"
+              text="Door and window deductions are limited so the result cannot become negative."
             />
             <FormulaCard
-              title="Purchase area"
-              formula="net area × (1 + waste percentage ÷ 100)"
-              text="Waste helps account for cuts, breakage, defects, and layout changes."
+              title="Coated area"
+              formula="net area × coats × (1 + waste percentage ÷ 100)"
+              text="Separate coated areas are calculated for wall paint, ceiling paint, primer, and trim."
             />
             <FormulaCard
-              title="Drywall sheets"
-              formula="purchase area ÷ sheet coverage, rounded up"
-              text="Sheets are rounded up because partial sheets cannot normally be purchased."
+              title="Paint required"
+              formula="coated area ÷ manufacturer coverage per gallon"
+              text="Coverage must match the selected product and the surface being painted."
             />
             <FormulaCard
-              title="Estimated material cost"
-              formula="component costs + tax + delivery + additional fees"
-              text="Enter current supplier prices for a location-specific planning estimate."
+              title="Material total"
+              formula="paint + primer + supplies + tax + delivery + fees"
+              text="The estimate excludes labor unless labor is included manually as an additional fee."
             />
           </div>
         </section>
 
         <section className="mt-12 grid gap-6 md:grid-cols-2">
-          <InfoCard title="Choosing drywall sheet size">
+          <InfoCard title="Why actual paint coverage varies">
             <p>
-              Standard four-foot-wide sheets are commonly available in
-              several lengths. Longer sheets can reduce seams and finishing
-              work, but they require more room for delivery, handling, and
-              installation.
+              Rough, textured, porous, unfinished, repaired, or absorbent
+              surfaces may use more coating than smooth previously painted
+              surfaces. Spraying can also have different transfer efficiency
+              than rolling or brushing.
             </p>
             <p className="mt-4">
-              Verify sheet thickness, edge type, fire rating, moisture
-              resistance, mold resistance, and local code requirements before
-              purchasing.
+              Coverage can change with paint formulation, sheen, application
+              thickness, color contrast, temperature, and surface preparation.
             </p>
           </InfoCard>
 
-          <InfoCard title="Improving estimate accuracy">
+          <InfoCard title="Buying gallons and quarts">
             <p>
-              Divide irregular rooms into measurable rectangular surfaces.
-              Measure large openings individually when their sizes differ
-              substantially from the averages entered in the calculator.
+              The calculator uses gallons for the whole portion of the
+              requirement and quarts for the remaining fractional amount.
+              Four required quarts are converted into another gallon.
             </p>
             <p className="mt-4">
-              Use the coverage and package information printed on the exact
-              screws, tape, compound, and corner-bead products being
-              purchased.
+              Compare actual package prices and product availability before
+              purchasing. Keeping matching leftover paint can be useful for
+              future touch-ups.
             </p>
           </InfoCard>
         </section>
 
         <section className="mt-12 rounded-3xl border border-orange-500/50 bg-orange-500/10 p-6 md:p-8">
           <h2 className="text-2xl font-bold text-orange-300">
-            Planning and installation notice
+            Product and safety notice
           </h2>
 
           <p className="mt-4 leading-8 text-[#A0AEC0]">
-            This calculator provides a planning estimate, not a structural,
-            code, fire-rating, or installation specification. Drywall
-            requirements vary by assembly, framing, occupancy, moisture
-            exposure, manufacturer instructions, and local building code.
-            Confirm material selection, fastening schedules, finishing
-            requirements, and safe lifting practices with qualified
-            professionals.
+            This calculator provides a planning estimate. Verify preparation,
+            primer compatibility, coverage, recoat times, ventilation,
+            protective equipment, application conditions, lead-paint
+            precautions, disposal requirements, and safety instructions with
+            the product manufacturer and qualified professionals.
           </p>
         </section>
 
@@ -305,14 +303,14 @@ export default function DrywallCalculatorPage() {
           </h2>
 
           <p className="mt-3 text-[#A0AEC0]">
-            Continue planning interior surfaces, framing, lumber, and other
+            Continue planning surface area, drywall, framing, and interior
             construction materials.
           </p>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <RelatedLink
-              href="/construction/paint-calculator"
-              label="Paint Calculator"
+              href="/construction/drywall-calculator"
+              label="Drywall Calculator"
             />
             <RelatedLink
               href="/construction/area-calculator"
@@ -321,10 +319,6 @@ export default function DrywallCalculatorPage() {
             <RelatedLink
               href="/construction/stud-calculator"
               label="Stud Calculator"
-            />
-            <RelatedLink
-              href="/construction/lumber-calculator"
-              label="Lumber Calculator"
             />
             <RelatedLink
               href="/construction"
