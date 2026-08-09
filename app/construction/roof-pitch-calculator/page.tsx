@@ -464,6 +464,11 @@ export default function RoofPitchCalculatorPage() {
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <RelatedLink
+              href="/construction/roofing-calculator"
+              label="Roofing Calculator"
+            />
+
+            <RelatedLink
               href="/construction/area-calculator"
               label="Area Calculator"
             />

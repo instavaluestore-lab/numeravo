@@ -342,6 +342,13 @@ const calculatorSections = [
         href: "/construction/roof-pitch-calculator",
         status: "Live",
       },
+      {
+        title: "Roofing Calculator",
+        description:
+          "Estimate roof area, waste-adjusted roofing squares, material, labor, tear-off, disposal, fees, tax, and total project cost.",
+        href: "/construction/roofing-calculator",
+        status: "Live",
+      },
     ],
   },
   {
