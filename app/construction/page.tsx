@@ -395,6 +395,21 @@ const calculatorSections = [
     ],
   },
   {
+    title: "Decks & Fences",
+    description:
+      "Estimate deck boards, framing, posts, footings, concrete, fasteners, railing, stairs, fencing, gates, waste, and project costs.",
+    accent: "bg-[#F97316]",
+    calculators: [
+      {
+        title: "Deck Materials Calculator",
+        description:
+          "Estimate deck boards, preliminary joists, beams, posts, footings, concrete, ledger, fasteners, railing, stairs, waste, and material cost.",
+        href: "/construction/deck-materials-calculator",
+        status: "Live",
+      },
+    ],
+  },
+  {
     title: "Demolition & Removal",
     description:
       "Estimate concrete demolition, removal, disposal, haul-off, equipment, saw cutting, weight, and cleanup.",

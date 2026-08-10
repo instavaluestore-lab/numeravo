@@ -308,6 +308,10 @@ export default function LumberCalculatorPage() {
           label="Roof Pitch Calculator"
         />
             <RelatedLink
+              href="/construction/deck-materials-calculator"
+              label="Deck Materials Calculator"
+            />
+            <RelatedLink
               href="/construction/area-calculator"
               label="Area Calculator"
             />
