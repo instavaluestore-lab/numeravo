@@ -5,6 +5,36 @@ import { useMemo, useState } from "react";
 
 type UnitSystem = "imperial" | "metric";
 type ConcreteOrderMode = "readyMix" | "bags";
+type MeasurementUnit = "ft" | "in" | "m" | "cm";
+
+type MeasurementKey =
+  | "slabLength"
+  | "slabWidth"
+  | "slabThickness"
+  | "circleDiameter"
+  | "circleThickness"
+  | "lShapeLengthOne"
+  | "lShapeWidthOne"
+  | "lShapeLengthTwo"
+  | "lShapeWidthTwo"
+  | "lShapeThickness"
+  | "footingLength"
+  | "footingWidth"
+  | "footingDepth"
+  | "roundPierDiameter"
+  | "roundPierDepth"
+  | "rectPierLength"
+  | "rectPierWidth"
+  | "rectPierHeight"
+  | "wallLength"
+  | "wallHeight"
+  | "wallThickness"
+  | "stairWidth"
+  | "stairRun"
+  | "stairRise"
+  | "curbLength"
+  | "curbWidth"
+  | "curbHeight";
 
 type ProjectType =
   | "slab"
@@ -169,6 +199,38 @@ export default function ConcreteCalculatorPage() {
   const [curbWidth, setCurbWidth] = useState("6");
   const [curbHeight, setCurbHeight] = useState("6");
 
+  const [measurementUnits, setMeasurementUnits] = useState<
+    Record<MeasurementKey, MeasurementUnit>
+  >({
+    slabLength: "ft",
+    slabWidth: "ft",
+    slabThickness: "in",
+    circleDiameter: "ft",
+    circleThickness: "in",
+    lShapeLengthOne: "ft",
+    lShapeWidthOne: "ft",
+    lShapeLengthTwo: "ft",
+    lShapeWidthTwo: "ft",
+    lShapeThickness: "in",
+    footingLength: "ft",
+    footingWidth: "in",
+    footingDepth: "in",
+    roundPierDiameter: "in",
+    roundPierDepth: "ft",
+    rectPierLength: "ft",
+    rectPierWidth: "ft",
+    rectPierHeight: "ft",
+    wallLength: "ft",
+    wallHeight: "ft",
+    wallThickness: "in",
+    stairWidth: "ft",
+    stairRun: "in",
+    stairRise: "in",
+    curbLength: "ft",
+    curbWidth: "in",
+    curbHeight: "in",
+  });
+
   const [wastePercent, setWastePercent] = useState("10");
   const [pricePerUnit, setPricePerUnit] = useState("150");
   const [concreteOrderMode, setConcreteOrderMode] =
@@ -178,6 +240,142 @@ export default function ConcreteCalculatorPage() {
   const [copied, setCopied] = useState(false);
 
   const selectedProject = projectTypes.find((type) => type.id === projectType);
+
+  function changeMeasurementUnit(
+    key: MeasurementKey,
+    value: string,
+    setValue: (value: string) => void,
+    nextUnit: MeasurementUnit,
+  ) {
+    const currentUnit = measurementUnits[key];
+
+    if (currentUnit === nextUnit) {
+      return;
+    }
+
+    setValue(
+      formatInputNumber(
+        convertMeasurement(toNumber(value), currentUnit, nextUnit),
+      ),
+    );
+    setMeasurementUnits((current) => ({ ...current, [key]: nextUnit }));
+  }
+
+  function changeUnitSystem(nextSystem: UnitSystem) {
+    if (unitSystem === nextSystem) {
+      return;
+    }
+
+    const fields: Array<{
+      key: MeasurementKey;
+      value: string;
+      setValue: (value: string) => void;
+    }> = [
+      { key: "slabLength", value: slabLength, setValue: setSlabLength },
+      { key: "slabWidth", value: slabWidth, setValue: setSlabWidth },
+      {
+        key: "slabThickness",
+        value: slabThickness,
+        setValue: setSlabThickness,
+      },
+      {
+        key: "circleDiameter",
+        value: circleDiameter,
+        setValue: setCircleDiameter,
+      },
+      {
+        key: "circleThickness",
+        value: circleThickness,
+        setValue: setCircleThickness,
+      },
+      {
+        key: "lShapeLengthOne",
+        value: lShapeLengthOne,
+        setValue: setLShapeLengthOne,
+      },
+      {
+        key: "lShapeWidthOne",
+        value: lShapeWidthOne,
+        setValue: setLShapeWidthOne,
+      },
+      {
+        key: "lShapeLengthTwo",
+        value: lShapeLengthTwo,
+        setValue: setLShapeLengthTwo,
+      },
+      {
+        key: "lShapeWidthTwo",
+        value: lShapeWidthTwo,
+        setValue: setLShapeWidthTwo,
+      },
+      {
+        key: "lShapeThickness",
+        value: lShapeThickness,
+        setValue: setLShapeThickness,
+      },
+      {
+        key: "footingLength",
+        value: footingLength,
+        setValue: setFootingLength,
+      },
+      { key: "footingWidth", value: footingWidth, setValue: setFootingWidth },
+      { key: "footingDepth", value: footingDepth, setValue: setFootingDepth },
+      {
+        key: "roundPierDiameter",
+        value: roundPierDiameter,
+        setValue: setRoundPierDiameter,
+      },
+      {
+        key: "roundPierDepth",
+        value: roundPierDepth,
+        setValue: setRoundPierDepth,
+      },
+      {
+        key: "rectPierLength",
+        value: rectPierLength,
+        setValue: setRectPierLength,
+      },
+      {
+        key: "rectPierWidth",
+        value: rectPierWidth,
+        setValue: setRectPierWidth,
+      },
+      {
+        key: "rectPierHeight",
+        value: rectPierHeight,
+        setValue: setRectPierHeight,
+      },
+      { key: "wallLength", value: wallLength, setValue: setWallLength },
+      { key: "wallHeight", value: wallHeight, setValue: setWallHeight },
+      {
+        key: "wallThickness",
+        value: wallThickness,
+        setValue: setWallThickness,
+      },
+      { key: "stairWidth", value: stairWidth, setValue: setStairWidth },
+      { key: "stairRun", value: stairRun, setValue: setStairRun },
+      { key: "stairRise", value: stairRise, setValue: setStairRise },
+      { key: "curbLength", value: curbLength, setValue: setCurbLength },
+      { key: "curbWidth", value: curbWidth, setValue: setCurbWidth },
+      { key: "curbHeight", value: curbHeight, setValue: setCurbHeight },
+    ];
+
+    const nextUnits = { ...measurementUnits };
+
+    for (const field of fields) {
+      const currentUnit = measurementUnits[field.key];
+      const nextUnit = equivalentUnit(currentUnit, nextSystem);
+      field.setValue(
+        formatInputNumber(
+          convertMeasurement(toNumber(field.value), currentUnit, nextUnit),
+        ),
+      );
+      nextUnits[field.key] = nextUnit;
+    }
+
+    setMeasurementUnits(nextUnits);
+    setUnitSystem(nextSystem);
+  }
 
   const unitLabels =
     unitSystem === "imperial"
@@ -206,12 +404,12 @@ export default function ConcreteCalculatorPage() {
     let formulaLabel = "";
 
     if (projectType === "slab") {
-      const length = toNumber(slabLength);
-      const width = toNumber(slabWidth);
-      const thickness =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(slabThickness))
-          : centimetersToMeters(toNumber(slabThickness));
+      const length = toBaseLength(slabLength, measurementUnits.slabLength);
+      const width = toBaseLength(slabWidth, measurementUnits.slabWidth);
+      const thickness = toBaseLength(
+        slabThickness,
+        measurementUnits.slabThickness,
+      );
       const quantity = toNumber(slabQuantity);
 
       baseVolume = length * width * thickness * quantity;
@@ -219,12 +417,15 @@ export default function ConcreteCalculatorPage() {
     }
 
     if (projectType === "circularPad") {
-      const diameter = toNumber(circleDiameter);
+      const diameter = toBaseLength(
+        circleDiameter,
+        measurementUnits.circleDiameter,
+      );
       const radius = diameter / 2;
-      const thickness =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(circleThickness))
-          : centimetersToMeters(toNumber(circleThickness));
+      const thickness = toBaseLength(
+        circleThickness,
+        measurementUnits.circleThickness,
+      );
       const quantity = toNumber(circleQuantity);
 
       baseVolume = Math.PI * radius * radius * thickness * quantity;
@@ -232,14 +433,26 @@ export default function ConcreteCalculatorPage() {
     }
 
     if (projectType === "lShapedSlab") {
-      const lengthOne = toNumber(lShapeLengthOne);
-      const widthOne = toNumber(lShapeWidthOne);
-      const lengthTwo = toNumber(lShapeLengthTwo);
-      const widthTwo = toNumber(lShapeWidthTwo);
-      const thickness =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(lShapeThickness))
-          : centimetersToMeters(toNumber(lShapeThickness));
+      const lengthOne = toBaseLength(
+        lShapeLengthOne,
+        measurementUnits.lShapeLengthOne,
+      );
+      const widthOne = toBaseLength(
+        lShapeWidthOne,
+        measurementUnits.lShapeWidthOne,
+      );
+      const lengthTwo = toBaseLength(
+        lShapeLengthTwo,
+        measurementUnits.lShapeLengthTwo,
+      );
+      const widthTwo = toBaseLength(
+        lShapeWidthTwo,
+        measurementUnits.lShapeWidthTwo,
+      );
+      const thickness = toBaseLength(
+        lShapeThickness,
+        measurementUnits.lShapeThickness,
+      );
 
       baseVolume =
         lengthOne * widthOne * thickness + lengthTwo * widthTwo * thickness;
@@ -248,15 +461,12 @@ export default function ConcreteCalculatorPage() {
     }
 
     if (projectType === "footing") {
-      const length = toNumber(footingLength);
-      const width =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(footingWidth))
-          : centimetersToMeters(toNumber(footingWidth));
-      const depth =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(footingDepth))
-          : centimetersToMeters(toNumber(footingDepth));
+      const length = toBaseLength(
+        footingLength,
+        measurementUnits.footingLength,
+      );
+      const width = toBaseLength(footingWidth, measurementUnits.footingWidth);
+      const depth = toBaseLength(footingDepth, measurementUnits.footingDepth);
       const quantity = toNumber(footingQuantity);
 
       baseVolume = length * width * depth * quantity;
@@ -264,12 +474,15 @@ export default function ConcreteCalculatorPage() {
     }
 
     if (projectType === "roundPier") {
-      const diameter =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(roundPierDiameter))
-          : centimetersToMeters(toNumber(roundPierDiameter));
+      const diameter = toBaseLength(
+        roundPierDiameter,
+        measurementUnits.roundPierDiameter,
+      );
       const radius = diameter / 2;
-      const depth = toNumber(roundPierDepth);
+      const depth = toBaseLength(
+        roundPierDepth,
+        measurementUnits.roundPierDepth,
+      );
       const quantity = toNumber(roundPierQuantity);
 
       baseVolume = Math.PI * radius * radius * depth * quantity;
@@ -277,9 +490,15 @@ export default function ConcreteCalculatorPage() {
     }
 
     if (projectType === "rectangularPier") {
-      const length = toNumber(rectPierLength);
-      const width = toNumber(rectPierWidth);
-      const height = toNumber(rectPierHeight);
+      const length = toBaseLength(
+        rectPierLength,
+        measurementUnits.rectPierLength,
+      );
+      const width = toBaseLength(rectPierWidth, measurementUnits.rectPierWidth);
+      const height = toBaseLength(
+        rectPierHeight,
+        measurementUnits.rectPierHeight,
+      );
       const quantity = toNumber(rectPierQuantity);
 
       baseVolume = length * width * height * quantity;
@@ -287,27 +506,21 @@ export default function ConcreteCalculatorPage() {
     }
 
     if (projectType === "wall") {
-      const length = toNumber(wallLength);
-      const height = toNumber(wallHeight);
-      const thickness =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(wallThickness))
-          : centimetersToMeters(toNumber(wallThickness));
+      const length = toBaseLength(wallLength, measurementUnits.wallLength);
+      const height = toBaseLength(wallHeight, measurementUnits.wallHeight);
+      const thickness = toBaseLength(
+        wallThickness,
+        measurementUnits.wallThickness,
+      );
 
       baseVolume = length * height * thickness;
       formulaLabel = "Length × height × thickness";
     }
 
     if (projectType === "stairs") {
-      const width = toNumber(stairWidth);
-      const run =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(stairRun))
-          : centimetersToMeters(toNumber(stairRun));
-      const rise =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(stairRise))
-          : centimetersToMeters(toNumber(stairRise));
+      const width = toBaseLength(stairWidth, measurementUnits.stairWidth);
+      const run = toBaseLength(stairRun, measurementUnits.stairRun);
+      const rise = toBaseLength(stairRise, measurementUnits.stairRise);
       const count = toNumber(stairCount);
 
       baseVolume = width * run * rise * count;
@@ -315,15 +528,9 @@ export default function ConcreteCalculatorPage() {
     }
 
     if (projectType === "curb") {
-      const length = toNumber(curbLength);
-      const width =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(curbWidth))
-          : centimetersToMeters(toNumber(curbWidth));
-      const height =
-        unitSystem === "imperial"
-          ? inchesToFeet(toNumber(curbHeight))
-          : centimetersToMeters(toNumber(curbHeight));
+      const length = toBaseLength(curbLength, measurementUnits.curbLength);
+      const width = toBaseLength(curbWidth, measurementUnits.curbWidth);
+      const height = toBaseLength(curbHeight, measurementUnits.curbHeight);
 
       baseVolume = length * width * height;
       formulaLabel = "Length × width × height";
@@ -364,11 +571,9 @@ export default function ConcreteCalculatorPage() {
         ? Math.ceil(recommendedCubicYards / sixtyLbBagYieldYards)
         : 0;
 
-    const eightyLbPallets =
-      eightyLbBags > 0 ? Math.ceil(eightyLbBags / 42) : 0;
+    const eightyLbPallets = eightyLbBags > 0 ? Math.ceil(eightyLbBags / 42) : 0;
 
-    const sixtyLbPallets =
-      sixtyLbBags > 0 ? Math.ceil(sixtyLbBags / 56) : 0;
+    const sixtyLbPallets = sixtyLbBags > 0 ? Math.ceil(sixtyLbBags / 56) : 0;
 
     const eightyLbBagCost = eightyLbBags * toNumber(pricePer80LbBag);
     const sixtyLbBagCost = sixtyLbBags * toNumber(pricePer60LbBag);
@@ -395,6 +600,7 @@ export default function ConcreteCalculatorPage() {
     };
   }, [
     unitSystem,
+    measurementUnits,
     projectType,
     slabLength,
     slabWidth,
@@ -449,8 +655,11 @@ Cubic Yards Before Waste: ${formatNumber(results.baseCubicYards)} yd³
 Concrete With Waste: ${formatNumber(results.volumeWithWaste)} yd³
 Recommended Order: ${formatNumber(results.recommendedOrder)} yd³
 Estimated Material Cost: ${formatCurrency(results.estimatedCost)}
-${concreteOrderMode === "readyMix" ? `Standard Truck Capacity: 10 yd³ maximum legal load
-Estimated Truck Loads: ${results.truckLoads}` : `80 lb Bags Needed: ${results.eightyLbBags}
+${
+  concreteOrderMode === "readyMix"
+    ? `Standard Truck Capacity: 10 yd³ maximum legal load
+Estimated Truck Loads: ${results.truckLoads}`
+    : `80 lb Bags Needed: ${results.eightyLbBags}
 80 lb Pallets: ${results.eightyLbPallets} pallet${results.eightyLbPallets === 1 ? "" : "s"} at 42 bags per pallet
 Cost Per 80 lb Bag: ${formatCurrency(toNumber(pricePer80LbBag))}
 Estimated 80 lb Bag Cost: ${formatCurrency(results.eightyLbBagCost)}
@@ -458,7 +667,8 @@ Estimated 80 lb Bag Cost: ${formatCurrency(results.eightyLbBagCost)}
 60 lb Pallets: ${results.sixtyLbPallets} pallet${results.sixtyLbPallets === 1 ? "" : "s"} at 56 bags per pallet
 Cost Per 60 lb Bag: ${formatCurrency(toNumber(pricePer60LbBag))}
 Estimated 60 lb Bag Cost: ${formatCurrency(results.sixtyLbBagCost)}
-Recommendation: ${results.exceedsOnePickupPallet ? "This exceeds one pickup-load pallet. Consider ready-mix truck delivery." : "This is within one common pickup-load pallet."}`}`
+Recommendation: ${results.exceedsOnePickupPallet ? "This exceeds one pickup-load pallet. Consider ready-mix truck delivery." : "This is within one common pickup-load pallet."}`
+}`
         : `Numeravo Concrete Estimate
 Project Type: ${projectLabel}
 Unit System: Metric
@@ -618,14 +828,14 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 isActive={unitSystem === "imperial"}
                 label="Imperial"
                 description="Feet, inches, cubic yards"
-                onClick={() => setUnitSystem("imperial")}
+                onClick={() => changeUnitSystem("imperial")}
               />
 
               <ToggleButton
                 isActive={unitSystem === "metric"}
                 label="Metric"
                 description="Meters, centimeters, cubic meters"
-                onClick={() => setUnitSystem("metric")}
+                onClick={() => changeUnitSystem("metric")}
               />
             </div>
           </div>
@@ -671,7 +881,8 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 Concrete Order Method
               </p>
               <p className="mt-1 text-sm text-[#A0AEC0]">
-                Show results as ready-mix cubic yards or concrete bags and pallets.
+                Show results as ready-mix cubic yards or concrete bags and
+                pallets.
               </p>
             </div>
 
@@ -723,23 +934,50 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
               {projectType === "slab" && (
                 <>
-                  <NumberInput
+                  <MeasurementInput
                     label="Length"
                     value={slabLength}
                     onChange={setSlabLength}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.slabLength}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "slabLength",
+                        slabLength,
+                        setSlabLength,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Width"
                     value={slabWidth}
                     onChange={setSlabWidth}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.slabWidth}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "slabWidth",
+                        slabWidth,
+                        setSlabWidth,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Thickness"
                     value={slabThickness}
                     onChange={setSlabThickness}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.slabThickness}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "slabThickness",
+                        slabThickness,
+                        setSlabThickness,
+                        unit,
+                      )
+                    }
                   />
                   <NumberInput
                     label="Quantity"
@@ -752,17 +990,35 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
               {projectType === "circularPad" && (
                 <>
-                  <NumberInput
+                  <MeasurementInput
                     label="Diameter"
                     value={circleDiameter}
                     onChange={setCircleDiameter}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.circleDiameter}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "circleDiameter",
+                        circleDiameter,
+                        setCircleDiameter,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Thickness"
                     value={circleThickness}
                     onChange={setCircleThickness}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.circleThickness}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "circleThickness",
+                        circleThickness,
+                        setCircleThickness,
+                        unit,
+                      )
+                    }
                   />
                   <NumberInput
                     label="Quantity"
@@ -775,58 +1031,130 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
               {projectType === "lShapedSlab" && (
                 <>
-                  <NumberInput
+                  <MeasurementInput
                     label="Rectangle 1 Length"
                     value={lShapeLengthOne}
                     onChange={setLShapeLengthOne}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.lShapeLengthOne}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "lShapeLengthOne",
+                        lShapeLengthOne,
+                        setLShapeLengthOne,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Rectangle 1 Width"
                     value={lShapeWidthOne}
                     onChange={setLShapeWidthOne}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.lShapeWidthOne}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "lShapeWidthOne",
+                        lShapeWidthOne,
+                        setLShapeWidthOne,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Rectangle 2 Length"
                     value={lShapeLengthTwo}
                     onChange={setLShapeLengthTwo}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.lShapeLengthTwo}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "lShapeLengthTwo",
+                        lShapeLengthTwo,
+                        setLShapeLengthTwo,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Rectangle 2 Width"
                     value={lShapeWidthTwo}
                     onChange={setLShapeWidthTwo}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.lShapeWidthTwo}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "lShapeWidthTwo",
+                        lShapeWidthTwo,
+                        setLShapeWidthTwo,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Thickness"
                     value={lShapeThickness}
                     onChange={setLShapeThickness}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.lShapeThickness}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "lShapeThickness",
+                        lShapeThickness,
+                        setLShapeThickness,
+                        unit,
+                      )
+                    }
                   />
                 </>
               )}
 
               {projectType === "footing" && (
                 <>
-                  <NumberInput
+                  <MeasurementInput
                     label="Total Length"
                     value={footingLength}
                     onChange={setFootingLength}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.footingLength}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "footingLength",
+                        footingLength,
+                        setFootingLength,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Footing Width"
                     value={footingWidth}
                     onChange={setFootingWidth}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.footingWidth}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "footingWidth",
+                        footingWidth,
+                        setFootingWidth,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Footing Depth"
                     value={footingDepth}
                     onChange={setFootingDepth}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.footingDepth}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "footingDepth",
+                        footingDepth,
+                        setFootingDepth,
+                        unit,
+                      )
+                    }
                   />
                   <NumberInput
                     label="Quantity"
@@ -839,17 +1167,35 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
               {projectType === "roundPier" && (
                 <>
-                  <NumberInput
+                  <MeasurementInput
                     label="Diameter"
                     value={roundPierDiameter}
                     onChange={setRoundPierDiameter}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.roundPierDiameter}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "roundPierDiameter",
+                        roundPierDiameter,
+                        setRoundPierDiameter,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Depth"
                     value={roundPierDepth}
                     onChange={setRoundPierDepth}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.roundPierDepth}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "roundPierDepth",
+                        roundPierDepth,
+                        setRoundPierDepth,
+                        unit,
+                      )
+                    }
                   />
                   <NumberInput
                     label="Quantity"
@@ -862,23 +1208,50 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
               {projectType === "rectangularPier" && (
                 <>
-                  <NumberInput
+                  <MeasurementInput
                     label="Length"
                     value={rectPierLength}
                     onChange={setRectPierLength}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.rectPierLength}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "rectPierLength",
+                        rectPierLength,
+                        setRectPierLength,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Width"
                     value={rectPierWidth}
                     onChange={setRectPierWidth}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.rectPierWidth}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "rectPierWidth",
+                        rectPierWidth,
+                        setRectPierWidth,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Height"
                     value={rectPierHeight}
                     onChange={setRectPierHeight}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.rectPierHeight}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "rectPierHeight",
+                        rectPierHeight,
+                        setRectPierHeight,
+                        unit,
+                      )
+                    }
                   />
                   <NumberInput
                     label="Quantity"
@@ -891,46 +1264,100 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
               {projectType === "wall" && (
                 <>
-                  <NumberInput
+                  <MeasurementInput
                     label="Length"
                     value={wallLength}
                     onChange={setWallLength}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.wallLength}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "wallLength",
+                        wallLength,
+                        setWallLength,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Height"
                     value={wallHeight}
                     onChange={setWallHeight}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.wallHeight}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "wallHeight",
+                        wallHeight,
+                        setWallHeight,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Thickness"
                     value={wallThickness}
                     onChange={setWallThickness}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.wallThickness}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "wallThickness",
+                        wallThickness,
+                        setWallThickness,
+                        unit,
+                      )
+                    }
                   />
                 </>
               )}
 
               {projectType === "stairs" && (
                 <>
-                  <NumberInput
+                  <MeasurementInput
                     label="Step Width"
                     value={stairWidth}
                     onChange={setStairWidth}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.stairWidth}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "stairWidth",
+                        stairWidth,
+                        setStairWidth,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Step Run"
                     value={stairRun}
                     onChange={setStairRun}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.stairRun}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "stairRun",
+                        stairRun,
+                        setStairRun,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Step Rise"
                     value={stairRise}
                     onChange={setStairRise}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.stairRise}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "stairRise",
+                        stairRise,
+                        setStairRise,
+                        unit,
+                      )
+                    }
                   />
                   <NumberInput
                     label="Number of Steps"
@@ -943,23 +1370,50 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
 
               {projectType === "curb" && (
                 <>
-                  <NumberInput
+                  <MeasurementInput
                     label="Length"
                     value={curbLength}
                     onChange={setCurbLength}
-                    suffix={unitLabels.long}
+                    unit={measurementUnits.curbLength}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "curbLength",
+                        curbLength,
+                        setCurbLength,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Curb Width"
                     value={curbWidth}
                     onChange={setCurbWidth}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.curbWidth}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "curbWidth",
+                        curbWidth,
+                        setCurbWidth,
+                        unit,
+                      )
+                    }
                   />
-                  <NumberInput
+                  <MeasurementInput
                     label="Curb Height"
                     value={curbHeight}
                     onChange={setCurbHeight}
-                    suffix={unitLabels.short}
+                    unit={measurementUnits.curbHeight}
+                    units={measurementUnitsFor(unitSystem)}
+                    onUnitChange={(unit) =>
+                      changeMeasurementUnit(
+                        "curbHeight",
+                        curbHeight,
+                        setCurbHeight,
+                        unit,
+                      )
+                    }
                   />
                 </>
               )}
@@ -1082,19 +1536,20 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 highlight
               />
 
-              {unitSystem === "imperial" && concreteOrderMode === "readyMix" && (
-                <>
-                  <ResultRow
-                    label="Standard Truck Capacity"
-                    value="10 yd³ maximum legal load"
-                  />
-                  <ResultRow
-                    label="Estimated Truck Loads"
-                    value={`${results.truckLoads} load${results.truckLoads === 1 ? "" : "s"}`}
-                    highlight={results.truckLoads > 1}
-                  />
-                </>
-              )}
+              {unitSystem === "imperial" &&
+                concreteOrderMode === "readyMix" && (
+                  <>
+                    <ResultRow
+                      label="Standard Truck Capacity"
+                      value="10 yd³ maximum legal load"
+                    />
+                    <ResultRow
+                      label="Estimated Truck Loads"
+                      value={`${results.truckLoads} load${results.truckLoads === 1 ? "" : "s"}`}
+                      highlight={results.truckLoads > 1}
+                    />
+                  </>
+                )}
 
               {unitSystem === "imperial" && concreteOrderMode === "bags" && (
                 <>
@@ -1138,11 +1593,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                       Pallet weight warning
                     </p>
                     <p className="mt-2">
-                      A full pallet of bagged concrete is heavy. 42 bags of
-                      80 lb concrete or 56 bags of 60 lb concrete equals about
+                      A full pallet of bagged concrete is heavy. 42 bags of 80
+                      lb concrete or 56 bags of 60 lb concrete equals about
                       3,360 lb before the wood pallet weight. With the pallet
                       included, expect roughly 3,400 to 3,450 lb. Always check
-                      your pickup truck or trailer payload rating before loading.
+                      your pickup truck or trailer payload rating before
+                      loading.
                     </p>
                   </div>
 
@@ -1153,10 +1609,10 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                       </p>
                       <p className="mt-2">
                         This estimate exceeds one pickup-load pallet. One pallet
-                        is commonly 42 bags of 80 lb concrete or 56 bags of 60 lb
-                        concrete. For more than one pallet, consider ready-mix
-                        truck delivery instead of pickup from a home improvement
-                        store.
+                        is commonly 42 bags of 80 lb concrete or 56 bags of 60
+                        lb concrete. For more than one pallet, consider
+                        ready-mix truck delivery instead of pickup from a home
+                        improvement store.
                       </p>
                     </div>
                   )}
@@ -1191,8 +1647,8 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
                   Good for small projects. This calculator estimates both 80 lb
-                  and 60 lb bag counts, including pallet quantities and estimated
-                  bag cost.
+                  and 60 lb bag counts, including pallet quantities and
+                  estimated bag cost.
                 </p>
               </div>
 
@@ -1202,8 +1658,9 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                 </h3>
                 <p className="mt-2 text-sm leading-6 text-[#A0AEC0]">
                   One common pickup-load pallet is about 42 bags of 80 lb
-                  concrete or 56 bags of 60 lb concrete. If your estimate exceeds
-                  one pallet, truck delivery may be safer and more practical.
+                  concrete or 56 bags of 60 lb concrete. If your estimate
+                  exceeds one pallet, truck delivery may be safer and more
+                  practical.
                 </p>
               </div>
 
@@ -1273,12 +1730,12 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                   How many bags of concrete are on a pallet?
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-[#A0AEC0]">
-                  A common pallet contains about 42 bags of 80 lb concrete or
-                  56 bags of 60 lb concrete. Both pallet types contain about
-                  3,360 lb of concrete before adding the wood pallet weight.
-                  With the pallet included, a loaded pallet is commonly around
-                  3,400 to 3,450 lb. Always check your truck or trailer payload
-                  rating before pickup.
+                  A common pallet contains about 42 bags of 80 lb concrete or 56
+                  bags of 60 lb concrete. Both pallet types contain about 3,360
+                  lb of concrete before adding the wood pallet weight. With the
+                  pallet included, a loaded pallet is commonly around 3,400 to
+                  3,450 lb. Always check your truck or trailer payload rating
+                  before pickup.
                 </p>
               </div>
 
@@ -1290,7 +1747,8 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                   Concrete bags are usually best for small pours, post holes,
                   small pads, patch work, and projects where a truck cannot
                   easily access the site. If the estimate exceeds one pallet of
-                  bags, ready-mix truck delivery may be safer and more practical.
+                  bags, ready-mix truck delivery may be safer and more
+                  practical.
                 </p>
               </div>
 
@@ -1299,10 +1757,10 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                   How many cubic yards does one bag of concrete make?
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-[#A0AEC0]">
-                  This calculator uses approximate planning yields of 0.022 cubic
-                  yards per 80 lb bag and 0.0167 cubic yards per 60 lb bag.
-                  Actual yield can vary by product, mix design, water amount,
-                  compaction, waste, and manufacturer.
+                  This calculator uses approximate planning yields of 0.022
+                  cubic yards per 80 lb bag and 0.0167 cubic yards per 60 lb
+                  bag. Actual yield can vary by product, mix design, water
+                  amount, compaction, waste, and manufacturer.
                 </p>
               </div>
 
@@ -1311,10 +1769,10 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
                   How many cubic yards fit in a standard concrete truck?
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-[#A0AEC0]">
-                  A standard concrete truck is commonly limited to about 10 cubic
-                  yards per legal load. Larger projects may require multiple
-                  loads, while very small orders may involve short-load fees from
-                  the supplier.
+                  A standard concrete truck is commonly limited to about 10
+                  cubic yards per legal load. Larger projects may require
+                  multiple loads, while very small orders may involve short-load
+                  fees from the supplier.
                 </p>
               </div>
             </div>
@@ -1339,186 +1797,186 @@ Estimated Material Cost: ${formatCurrency(results.estimatedCost)}`;
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-  <GuideLink
-    href="/construction/area-calculator"
-    title="Area Calculator"
-    text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating concrete volume."
-  />
+            <GuideLink
+              href="/construction/area-calculator"
+              title="Area Calculator"
+              text="Calculate square feet, square yards, square meters, acres, waste-adjusted area, and material cost before estimating concrete volume."
+            />
 
-  <GuideLink
-    href="/construction/concrete-cost-calculator"
-    title="Concrete Cost Calculator"
-    text="Estimate concrete price, cubic yards, base material, rebar, labor, prep, delivery fees, and total project cost."
-  />
+            <GuideLink
+              href="/construction/concrete-cost-calculator"
+              title="Concrete Cost Calculator"
+              text="Estimate concrete price, cubic yards, base material, rebar, labor, prep, delivery fees, and total project cost."
+            />
 
-  <GuideLink
-    href="/construction/wire-mesh-calculator"
-    title="Wire Mesh Calculator"
-    text="Estimate welded wire mesh sheets or rolls, slab area, overlap, waste, total mesh, and material cost."
-  />
+            <GuideLink
+              href="/construction/wire-mesh-calculator"
+              title="Wire Mesh Calculator"
+              text="Estimate welded wire mesh sheets or rolls, slab area, overlap, waste, total mesh, and material cost."
+            />
 
-  <GuideLink
-    href="/construction/rebar-weight-calculator"
-    title="Rebar Weight Calculator"
-    text="Estimate rebar weight by size, length, quantity, total linear feet, pounds, tons, and material cost."
-  />
+            <GuideLink
+              href="/construction/rebar-weight-calculator"
+              title="Rebar Weight Calculator"
+              text="Estimate rebar weight by size, length, quantity, total linear feet, pounds, tons, and material cost."
+            />
 
-  <GuideLink
-    href="/construction/rebar-spacing-for-concrete-slab"
-    title="Rebar Spacing for Concrete Slab"
-    text="Estimate slab rebar spacing, grid layout, bar count, linear feet, lap allowance, waste, weight, and material cost."
-  />
+            <GuideLink
+              href="/construction/rebar-spacing-for-concrete-slab"
+              title="Rebar Spacing for Concrete Slab"
+              text="Estimate slab rebar spacing, grid layout, bar count, linear feet, lap allowance, waste, weight, and material cost."
+            />
 
-  <GuideLink
-    href="/construction/concrete-weight-calculator"
-    title="Concrete Weight Calculator"
-    text="Estimate concrete weight in pounds, tons, kilograms, and metric tons from yards, cubic feet, slab dimensions, bags, truckloads, and density."
-  />
+            <GuideLink
+              href="/construction/concrete-weight-calculator"
+              title="Concrete Weight Calculator"
+              text="Estimate concrete weight in pounds, tons, kilograms, and metric tons from yards, cubic feet, slab dimensions, bags, truckloads, and density."
+            />
 
-  <GuideLink
-    href="/construction/concrete-yard-calculator"
-    title="Concrete Yard Calculator"
-    text="Calculate cubic yards of concrete for slabs, patios, driveways, footings, walls, piers, pads, and known-volume projects."
-  />
+            <GuideLink
+              href="/construction/concrete-yard-calculator"
+              title="Concrete Yard Calculator"
+              text="Calculate cubic yards of concrete for slabs, patios, driveways, footings, walls, piers, pads, and known-volume projects."
+            />
 
-  <GuideLink
-    href="/construction/how-much-concrete-do-i-need"
-    title="How Much Concrete Do I Need?"
-    text="Estimate concrete yards, bags, ready-mix loads, waste allowance, weight, and material cost for common concrete projects."
-  />
+            <GuideLink
+              href="/construction/how-much-concrete-do-i-need"
+              title="How Much Concrete Do I Need?"
+              text="Estimate concrete yards, bags, ready-mix loads, waste allowance, weight, and material cost for common concrete projects."
+            />
 
-  <GuideLink
-    href="/construction/12x12-concrete-slab-cost"
-    title="12x12 Concrete Slab Cost Calculator"
-    text="Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 144 square foot slab."
-  />
+            <GuideLink
+              href="/construction/12x12-concrete-slab-cost"
+              title="12x12 Concrete Slab Cost Calculator"
+              text="Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 144 square foot slab."
+            />
 
-  <GuideLink
-    href="/construction/10x10-concrete-slab-cost"
-    title="10x10 Concrete Slab Cost Calculator"
-    text="Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 100 square foot slab."
-  />
+            <GuideLink
+              href="/construction/10x10-concrete-slab-cost"
+              title="10x10 Concrete Slab Cost Calculator"
+              text="Estimate concrete yards, ready-mix cost, base material, reinforcement, forms, labor, delivery fees, and total cost for a 100 square foot slab."
+            />
 
-  <GuideLink
-    href="/construction/concrete-cost-per-yard"
-    title="Concrete Cost Per Yard Calculator"
-    text="Estimate ready-mix concrete price per cubic yard, delivery fees, short-load charges, fuel fees, waste, tax, and total delivered cost."
-  />
+            <GuideLink
+              href="/construction/concrete-cost-per-yard"
+              title="Concrete Cost Per Yard Calculator"
+              text="Estimate ready-mix concrete price per cubic yard, delivery fees, short-load charges, fuel fees, waste, tax, and total delivered cost."
+            />
 
-  <GuideLink
-    href="/construction/concrete-cure-time"
-    title="Concrete Cure Time Calculator"
-    text="Estimate when new concrete may be ready for walking, light use, vehicles, sealing, and full cure."
-  />
+            <GuideLink
+              href="/construction/concrete-cure-time"
+              title="Concrete Cure Time Calculator"
+              text="Estimate when new concrete may be ready for walking, light use, vehicles, sealing, and full cure."
+            />
 
-  <GuideLink
-    href="/construction/concrete-slab-thickness"
-    title="Concrete Slab Thickness Calculator"
-    text="Estimate recommended slab thickness, concrete yards, base depth, reinforcement notes, weight, and material cost."
-  />
+            <GuideLink
+              href="/construction/concrete-slab-thickness"
+              title="Concrete Slab Thickness Calculator"
+              text="Estimate recommended slab thickness, concrete yards, base depth, reinforcement notes, weight, and material cost."
+            />
 
-  <GuideLink
-    href="/construction/concrete-mix-ratio"
-    title="Concrete Mix Ratio Calculator"
-    text="Estimate cement, sand, gravel, water, cement bags, and material quantities for common concrete mix ratios."
-  />
+            <GuideLink
+              href="/construction/concrete-mix-ratio"
+              title="Concrete Mix Ratio Calculator"
+              text="Estimate cement, sand, gravel, water, cement bags, and material quantities for common concrete mix ratios."
+            />
 
-  <GuideLink
-    href="/construction/concrete-truckload-calculator"
-    title="Concrete Truckload Calculator"
-    text="Estimate ready-mix concrete truckloads, cubic yards to order, delivery fees, short-load fees, concrete weight, and total delivery cost."
-  />
+            <GuideLink
+              href="/construction/concrete-truckload-calculator"
+              title="Concrete Truckload Calculator"
+              text="Estimate ready-mix concrete truckloads, cubic yards to order, delivery fees, short-load fees, concrete weight, and total delivery cost."
+            />
 
-  <GuideLink
-    href="/construction/concrete-stairs-calculator"
-    title="Concrete Stairs Calculator"
-    text="Estimate concrete stair cubic yards, step count, riser height, tread depth, forms, reinforcement, waste, delivery, labor, and total cost."
-  />
+            <GuideLink
+              href="/construction/concrete-stairs-calculator"
+              title="Concrete Stairs Calculator"
+              text="Estimate concrete stair cubic yards, step count, riser height, tread depth, forms, reinforcement, waste, delivery, labor, and total cost."
+            />
 
-  <GuideLink
-    href="/construction/concrete-pad-calculator"
-    title="Concrete Pad Calculator"
-    text="Estimate concrete pad cubic yards, thickness, gravel base, forms, reinforcement, waste, delivery, labor, finishing, and total project cost."
-  />
+            <GuideLink
+              href="/construction/concrete-pad-calculator"
+              title="Concrete Pad Calculator"
+              text="Estimate concrete pad cubic yards, thickness, gravel base, forms, reinforcement, waste, delivery, labor, finishing, and total project cost."
+            />
 
-  <GuideLink
-    href="/construction/concrete-sidewalk-calculator"
-    title="Concrete Sidewalk Calculator"
-    text="Estimate concrete sidewalk cubic yards, thickness, gravel base, forms, waste, delivery, labor, finishing, and total project cost."
-  />
+            <GuideLink
+              href="/construction/concrete-sidewalk-calculator"
+              title="Concrete Sidewalk Calculator"
+              text="Estimate concrete sidewalk cubic yards, thickness, gravel base, forms, waste, delivery, labor, finishing, and total project cost."
+            />
 
-  <GuideLink
-    href="/construction/concrete-patio-calculator"
-    title="Concrete Patio Calculator"
-    text="Estimate concrete patio cubic yards, slab thickness, gravel base, reinforcement, waste, delivery, labor, finishing, and total project cost."
-  />
+            <GuideLink
+              href="/construction/concrete-patio-calculator"
+              title="Concrete Patio Calculator"
+              text="Estimate concrete patio cubic yards, slab thickness, gravel base, reinforcement, waste, delivery, labor, finishing, and total project cost."
+            />
 
-  <GuideLink
-    href="/construction/concrete-driveway-calculator"
-    title="Concrete Driveway Calculator"
-    text="Estimate concrete driveway cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total project cost."
-  />
+            <GuideLink
+              href="/construction/concrete-driveway-calculator"
+              title="Concrete Driveway Calculator"
+              text="Estimate concrete driveway cubic yards, slab thickness, gravel base, rebar, waste, delivery, labor, finishing, and total project cost."
+            />
 
-  <GuideLink
-    href="/construction/rebar-calculator"
-    title="Rebar Calculator"
-    text="Estimate rebar size, spacing, linear feet, stick count, weight, lap allowance, waste, and material cost."
-  />
+            <GuideLink
+              href="/construction/rebar-calculator"
+              title="Rebar Calculator"
+              text="Estimate rebar size, spacing, linear feet, stick count, weight, lap allowance, waste, and material cost."
+            />
 
-  <GuideLink
-    href="/construction/concrete-bag-calculator"
-    title="Concrete Bag Calculator"
-    text="Estimate how many 40 lb, 50 lb, 60 lb, or 80 lb bags of concrete you need for slabs, pads, footings, and post holes."
-  />
+            <GuideLink
+              href="/construction/concrete-bag-calculator"
+              title="Concrete Bag Calculator"
+              text="Estimate how many 40 lb, 50 lb, 60 lb, or 80 lb bags of concrete you need for slabs, pads, footings, and post holes."
+            />
 
-  <GuideLink
-    href="/construction/concrete-slab-calculator"
-    title="Concrete Slab Calculator"
-    text="Estimate concrete for patios, driveways, sidewalks, garage floors, and shed pads."
-  />
+            <GuideLink
+              href="/construction/concrete-slab-calculator"
+              title="Concrete Slab Calculator"
+              text="Estimate concrete for patios, driveways, sidewalks, garage floors, and shed pads."
+            />
 
-  <GuideLink
-    href="/construction/base-for-concrete-slab-depth"
-    title="Base for Concrete Slab Depth"
-    text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."
-  />
+            <GuideLink
+              href="/construction/base-for-concrete-slab-depth"
+              title="Base for Concrete Slab Depth"
+              text="Learn common gravel, crushed stone, and road base depths for concrete slabs, patios, driveways, and shed pads."
+            />
 
-  <GuideLink
-    href="/construction/how-to-prepare-ground-for-concrete-slab"
-    title="How to Prepare Ground for Concrete Slab"
-    text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."
-  />
+            <GuideLink
+              href="/construction/how-to-prepare-ground-for-concrete-slab"
+              title="How to Prepare Ground for Concrete Slab"
+              text="Learn excavation, grading, gravel base, compaction, forms, and final slab prep steps."
+            />
 
-  <GuideLink
-    href="/construction/gravel-calculator"
-    title="Gravel Calculator"
-    text="Estimate gravel base material for concrete slabs, patios, driveways, walkways, and pads."
-  />
+            <GuideLink
+              href="/construction/gravel-calculator"
+              title="Gravel Calculator"
+              text="Estimate gravel base material for concrete slabs, patios, driveways, walkways, and pads."
+            />
 
-  <GuideLink
-    href="/construction/road-base-calculator"
-    title="Road Base Calculator"
-    text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
-  />
+            <GuideLink
+              href="/construction/road-base-calculator"
+              title="Road Base Calculator"
+              text="Estimate road base cubic yards, tons, waste, and cost using the Road Base material preset."
+            />
 
-  <GuideLink
-    href="/construction/concrete-footing-calculator"
-    title="Concrete Footing Calculator"
-    text="Estimate concrete for strip footings, trenches, wall footings, and grade beams."
-  />
+            <GuideLink
+              href="/construction/concrete-footing-calculator"
+              title="Concrete Footing Calculator"
+              text="Estimate concrete for strip footings, trenches, wall footings, and grade beams."
+            />
 
-  <GuideLink
-    href="/construction/sonotube-concrete-calculator"
-    title="Sonotube Concrete Calculator"
-    text="Estimate concrete for sonotubes, deck posts, fence posts, round piers, and post holes."
-  />
+            <GuideLink
+              href="/construction/sonotube-concrete-calculator"
+              title="Sonotube Concrete Calculator"
+              text="Estimate concrete for sonotubes, deck posts, fence posts, round piers, and post holes."
+            />
 
-  <GuideLink
-    href="/construction/concrete-wall-calculator"
-    title="Concrete Wall Calculator"
-    text="Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections."
-  />
-</div>
+            <GuideLink
+              href="/construction/concrete-wall-calculator"
+              title="Concrete Wall Calculator"
+              text="Estimate concrete for foundation walls, retaining walls, stem walls, and poured wall sections."
+            />
+          </div>
         </section>
       </section>
     </main>
@@ -1549,6 +2007,54 @@ function ToggleButton({
       <span className="block text-sm font-semibold text-white">{label}</span>
       <span className="mt-1 block text-xs text-[#A0AEC0]">{description}</span>
     </button>
+  );
+}
+
+function MeasurementInput({
+  label,
+  value,
+  onChange,
+  unit,
+  units,
+  onUnitChange,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  unit: MeasurementUnit;
+  units: readonly MeasurementUnit[];
+  onUnitChange: (unit: MeasurementUnit) => void;
+}) {
+  return (
+    <label className="block">
+      <span className="text-sm font-medium text-[#A0AEC0]">{label}</span>
+
+      <div className="mt-2 flex overflow-hidden rounded-xl border border-[#1F2937] bg-[#0B0F19] focus-within:border-[#F97316]">
+        <input
+          type="number"
+          min="0"
+          step="any"
+          value={value}
+          onChange={(event) => onChange(event.target.value)}
+          className="min-w-0 flex-1 bg-transparent px-4 py-3 text-white outline-none"
+        />
+
+        <select
+          aria-label={`${label} unit`}
+          value={unit}
+          onChange={(event) =>
+            onUnitChange(event.target.value as MeasurementUnit)
+          }
+          className="border-l border-[#1F2937] bg-[#121826] px-3 py-3 text-sm font-semibold text-white outline-none"
+        >
+          {units.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+    </label>
   );
 }
 
@@ -1655,12 +2161,49 @@ function toNumber(value: string) {
   return number;
 }
 
-function inchesToFeet(value: number) {
-  return value / 12;
+function measurementUnitsFor(
+  unitSystem: UnitSystem,
+): readonly MeasurementUnit[] {
+  return unitSystem === "imperial" ? ["ft", "in"] : ["m", "cm"];
 }
 
-function centimetersToMeters(value: number) {
-  return value / 100;
+function measurementToMeters(value: number, unit: MeasurementUnit) {
+  if (unit === "ft") return value * 0.3048;
+  if (unit === "in") return value * 0.0254;
+  if (unit === "cm") return value / 100;
+  return value;
+}
+
+function metersToMeasurement(value: number, unit: MeasurementUnit) {
+  if (unit === "ft") return value / 0.3048;
+  if (unit === "in") return value / 0.0254;
+  if (unit === "cm") return value * 100;
+  return value;
+}
+
+function convertMeasurement(
+  value: number,
+  fromUnit: MeasurementUnit,
+  toUnit: MeasurementUnit,
+) {
+  return metersToMeasurement(measurementToMeters(value, fromUnit), toUnit);
+}
+
+function equivalentUnit(unit: MeasurementUnit, system: UnitSystem) {
+  if (system === "imperial") {
+    return unit === "cm" ? "in" : "ft";
+  }
+
+  return unit === "in" ? "cm" : "m";
+}
+
+function toBaseLength(value: string, unit: MeasurementUnit) {
+  const meters = measurementToMeters(toNumber(value), unit);
+  return unit === "ft" || unit === "in" ? meters / 0.3048 : meters;
+}
+
+function formatInputNumber(value: number) {
+  return Number(value.toFixed(4)).toString();
 }
 
 function roundUpToIncrement(value: number, increment: number) {
