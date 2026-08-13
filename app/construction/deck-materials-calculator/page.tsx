@@ -298,6 +298,10 @@ export default function DeckMaterialsCalculatorPage() {
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <RelatedLink
+              href="/construction/fence-calculator"
+              label="Fence Calculator"
+            />
+            <RelatedLink
               href="/construction/lumber-calculator"
               label="Lumber Calculator"
             />

@@ -407,6 +407,13 @@ const calculatorSections = [
         href: "/construction/deck-materials-calculator",
         status: "Live",
       },
+      {
+        title: "Fence Calculator",
+        description:
+          "Estimate fence posts, sections, rails, pickets, panels, gates, post-hole concrete, fasteners, waste, and material cost.",
+        href: "/construction/fence-calculator",
+        status: "Live",
+      },
     ],
   },
   {

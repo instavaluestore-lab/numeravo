@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/flooring-calculator",
     "/construction/tile-calculator",
     "/construction/deck-materials-calculator",
+    "/construction/fence-calculator",
     "/construction/concrete-delivery-cost-calculator",
     "/construction/concrete-driveway-calculator",
     "/construction/concrete-patio-calculator",
@@ -129,6 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("flooring-calculator") ||
               route.includes("tile-calculator") ||
               route.includes("deck-materials-calculator") ||
+              route.includes("fence-calculator") ||
               route.includes("concrete-driveway-calculator") ||
               route.includes("concrete-patio-calculator") ||
               route.includes("concrete-sidewalk-calculator") ||
