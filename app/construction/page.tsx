@@ -327,6 +327,13 @@ const calculatorSections = [
         href: "/construction/stud-calculator",
         status: "Live",
       },
+      {
+        title: "Wall Sheathing Calculator",
+        description:
+          "Estimate wall area, opening deductions, OSB or plywood panels, waste, fasteners, housewrap, seam tape, coverage, and material cost.",
+        href: "/construction/wall-sheathing-calculator",
+        status: "Live",
+      },
     ],
   },
   {
