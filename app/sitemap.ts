@@ -78,6 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/finance/loan-calculator",
     "/finance/mortgage-calculator",
     "/finance/compound-interest-calculator",
+    "/finance/auto-loan-calculator",
     "/student",
     "/business",
     "/converters",
@@ -116,6 +117,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           : route.includes("loan-calculator") ||
               route.includes("mortgage-calculator") ||
               route.includes("compound-interest-calculator") ||
+              route.includes("auto-loan-calculator") ||
               route.includes("concrete-slab-calculator") ||
               route.includes("concrete-footing-calculator") ||
               route.includes("sonotube-concrete-calculator") ||

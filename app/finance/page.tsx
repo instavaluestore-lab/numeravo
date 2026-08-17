@@ -22,6 +22,13 @@ const calculators = [
     href: "/finance/mortgage-calculator",
     status: "Live",
   },
+  {
+    title: "Auto Loan Calculator",
+    description:
+      "Estimate a car payment, amount financed, trade equity, sales tax, rebates, fees, total interest, and extra-payment savings.",
+    href: "/finance/auto-loan-calculator",
+    status: "Live",
+  },
 ];
 
 export const metadata = {
