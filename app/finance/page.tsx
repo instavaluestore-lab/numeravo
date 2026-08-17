@@ -4,9 +4,9 @@ const calculators = [
   {
     title: "Compound Interest Calculator",
     description:
-      "Estimate future value, interest earned, and long-term growth.",
+      "Estimate future balance, recurring contributions, compound interest earned, contribution growth, and long-term savings scenarios.",
     href: "/finance/compound-interest-calculator",
-    status: "Planned",
+    status: "Live",
   },
   {
     title: "Loan Calculator",
