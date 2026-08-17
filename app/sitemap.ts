@@ -75,6 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/base-for-concrete-slab-depth",
     "/construction/how-to-prepare-ground-for-concrete-slab",
     "/finance",
+    "/finance/loan-calculator",
     "/student",
     "/business",
     "/converters",
@@ -110,7 +111,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
           route.includes("how-much-concrete-do-i-need") ||
           route.includes("concrete-calculator")
           ? 0.9
-          : route.includes("concrete-slab-calculator") ||
+          : route.includes("loan-calculator") ||
+              route.includes("concrete-slab-calculator") ||
               route.includes("concrete-footing-calculator") ||
               route.includes("sonotube-concrete-calculator") ||
               route.includes("concrete-wall-calculator") ||

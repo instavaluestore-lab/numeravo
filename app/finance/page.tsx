@@ -11,9 +11,9 @@ const calculators = [
   {
     title: "Loan Calculator",
     description:
-      "Calculate monthly payments, total interest, and total loan cost.",
+      "Calculate monthly payments, total interest, total borrowing cost, payoff time, extra-payment savings, and an amortization schedule.",
     href: "/finance/loan-calculator",
-    status: "Planned",
+    status: "Live",
   },
   {
     title: "Mortgage Calculator",
