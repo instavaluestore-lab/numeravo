@@ -18,9 +18,9 @@ const calculators = [
   {
     title: "Mortgage Calculator",
     description:
-      "Estimate mortgage payments, interest, and home affordability numbers.",
+      "Estimate principal, interest, property taxes, homeowners insurance, HOA dues, PMI, cash needed, payoff time, and extra-payment savings.",
     href: "/finance/mortgage-calculator",
-    status: "Planned",
+    status: "Live",
   },
 ];
 

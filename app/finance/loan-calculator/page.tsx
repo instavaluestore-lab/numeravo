@@ -42,7 +42,21 @@ export default function LoanCalculatorPage() {
 
       <section className="mt-14 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8"><h2 className="text-2xl font-bold">Loan calculator FAQs</h2><div className="mt-6 grid gap-4 md:grid-cols-2">{faqs.map((item) => <article key={item.question} className="rounded-2xl border border-[#1F2937] bg-[#0B0F19] p-5"><h3 className="font-semibold">{item.question}</h3><p className="mt-3 text-sm leading-6 text-[#A0AEC0]">{item.answer}</p></article>)}</div></section>
       <section className="mt-10 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8"><h2 className="text-2xl font-bold">Methodology and disclaimer</h2><p className="mt-4 leading-7 text-[#A0AEC0]">Numeravo calculates estimates using the inputs you provide and a standard monthly fixed-rate amortization model. This calculator is for educational and planning purposes only and does not provide financial, lending, tax, or legal advice. Verify all figures, fees, payment rules, and loan terms with the lender before making a financial decision.</p><p className="mt-4 text-sm text-[#718096]">Created and maintained by Numeravo Technologies LLC.</p></section>
-      <section className="mt-10 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8"><h2 className="text-2xl font-bold">Related finance calculators</h2><p className="mt-3 text-[#A0AEC0]">More finance calculators will be linked here as they become available.</p><Link href="/finance" className="mt-5 inline-flex rounded-xl border border-[#374151] px-5 py-3 font-semibold hover:border-[#22C55E]">All Finance Calculators</Link></section>
+      <section className="mt-10 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8"><h2 className="text-2xl font-bold">Related finance calculators</h2><p className="mt-3 text-[#A0AEC0]">More finance calculators will be linked here as they become available.</p><div className="mt-5 flex flex-wrap gap-3">
+        <Link
+          href="/finance/mortgage-calculator"
+          className="rounded-xl border border-[#374151] px-5 py-3 font-semibold hover:border-[#22C55E]"
+        >
+          Mortgage Calculator
+        </Link>
+
+        <Link
+          href="/finance"
+          className="rounded-xl border border-[#374151] px-5 py-3 font-semibold hover:border-[#22C55E]"
+        >
+          All Finance Calculators
+        </Link>
+      </div></section>
     </div>
   </main>;
 }

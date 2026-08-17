@@ -76,6 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/construction/how-to-prepare-ground-for-concrete-slab",
     "/finance",
     "/finance/loan-calculator",
+    "/finance/mortgage-calculator",
     "/student",
     "/business",
     "/converters",
@@ -112,6 +113,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           route.includes("concrete-calculator")
           ? 0.9
           : route.includes("loan-calculator") ||
+              route.includes("mortgage-calculator") ||
               route.includes("concrete-slab-calculator") ||
               route.includes("concrete-footing-calculator") ||
               route.includes("sonotube-concrete-calculator") ||
