@@ -36,6 +36,13 @@ const calculators = [
     href: "/finance/credit-card-payoff-calculator",
     status: "Live",
   },
+  {
+    title: "Savings Calculator",
+    description:
+      "Calculate required monthly savings, future balances, goal progress, compound growth, inflation-adjusted value, and contribution scenarios.",
+    href: "/finance/savings-calculator",
+    status: "Live",
+  },
 ];
 
 export const metadata = {

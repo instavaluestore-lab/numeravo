@@ -80,6 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/finance/compound-interest-calculator",
     "/finance/auto-loan-calculator",
     "/finance/credit-card-payoff-calculator",
+    "/finance/savings-calculator",
     "/student",
     "/business",
     "/converters",
@@ -120,6 +121,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("compound-interest-calculator") ||
               route.includes("auto-loan-calculator") ||
               route.includes("credit-card-payoff-calculator") ||
+              route.includes("savings-calculator") ||
               route.includes("concrete-slab-calculator") ||
               route.includes("concrete-footing-calculator") ||
               route.includes("sonotube-concrete-calculator") ||

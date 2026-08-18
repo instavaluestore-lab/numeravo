@@ -44,6 +44,13 @@ export default function LoanCalculatorPage() {
       <section className="mt-10 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8"><h2 className="text-2xl font-bold">Methodology and disclaimer</h2><p className="mt-4 leading-7 text-[#A0AEC0]">Numeravo calculates estimates using the inputs you provide and a standard monthly fixed-rate amortization model. This calculator is for educational and planning purposes only and does not provide financial, lending, tax, or legal advice. Verify all figures, fees, payment rules, and loan terms with the lender before making a financial decision.</p><p className="mt-4 text-sm text-[#718096]">Created and maintained by Numeravo Technologies LLC.</p></section>
       <section className="mt-10 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8"><h2 className="text-2xl font-bold">Related finance calculators</h2><p className="mt-3 text-[#A0AEC0]">More finance calculators will be linked here as they become available.</p><div className="mt-5 flex flex-wrap gap-3">
         <Link
+          href="/finance/savings-calculator"
+          className="rounded-xl border border-[#374151] px-5 py-3 font-semibold hover:border-[#22C55E]"
+        >
+          Savings Calculator
+        </Link>
+
+        <Link
           href="/finance/credit-card-payoff-calculator"
           className="rounded-xl border border-[#374151] px-5 py-3 font-semibold hover:border-[#22C55E]"
         >
