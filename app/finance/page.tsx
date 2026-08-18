@@ -29,6 +29,13 @@ const calculators = [
     href: "/finance/auto-loan-calculator",
     status: "Live",
   },
+  {
+    title: "Credit Card Payoff Calculator",
+    description:
+      "Estimate payoff time, target monthly payments, total interest, minimum-payment comparisons, and savings from paying more.",
+    href: "/finance/credit-card-payoff-calculator",
+    status: "Live",
+  },
 ];
 
 export const metadata = {
