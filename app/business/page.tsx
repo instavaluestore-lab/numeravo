@@ -4,9 +4,9 @@ const calculators = [
   {
     title: "Profit Margin Calculator",
     description:
-      "Calculate profit margin, markup, cost, revenue, and profit dollars.",
+      "Calculate gross margin, markup, selling price, allowable cost, transaction fees, break-even price, discounts, and total profit.",
     href: "/business/profit-margin-calculator",
-    status: "Planned",
+    status: "Live",
   },
   {
     title: "Break-Even Calculator",
