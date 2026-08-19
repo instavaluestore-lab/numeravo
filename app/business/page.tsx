@@ -9,6 +9,13 @@ const calculators = [
     status: "Live",
   },
   {
+    title: "Markup Calculator",
+    description:
+      "Calculate selling price, markup, equivalent margin, transaction fees, discounts, break-even price, and quantity profit.",
+    href: "/business/markup-calculator",
+    status: "Live",
+  },
+  {
     title: "Break-Even Calculator",
     description:
       "Estimate how many sales are needed to cover costs and become profitable.",
