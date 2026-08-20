@@ -85,6 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/business",
     "/business/profit-margin-calculator",
     "/business/markup-calculator",
+    "/business/break-even-calculator",
     "/converters",
     "/tools",
     "/about",
@@ -126,6 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               route.includes("savings-calculator") ||
               route.includes("profit-margin-calculator") ||
               route.includes("markup-calculator") ||
+              route.includes("break-even-calculator") ||
               route.includes("concrete-slab-calculator") ||
               route.includes("concrete-footing-calculator") ||
               route.includes("sonotube-concrete-calculator") ||

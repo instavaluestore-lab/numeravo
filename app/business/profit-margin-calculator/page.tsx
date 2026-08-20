@@ -53,7 +53,7 @@ export default function ProfitMarginCalculatorPage() {
 
       <section className="mt-10 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8"><h2 className="text-2xl font-bold">Business-planning disclaimer</h2><p className="mt-4 leading-7 text-[#A0AEC0]">Results are educational estimates and are not financial, accounting, tax, legal, or pricing advice. Actual profitability depends on complete and accurate costs, returns, discounts, overhead, taxes, market conditions, and other business factors. Verify calculations and consult qualified professionals when appropriate.</p><p className="mt-4 text-sm text-[#718096]">Created and maintained by Numeravo Technologies LLC.</p></section>
 
-      <section className="mt-10 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8"><h2 className="text-2xl font-bold">Related business calculators</h2><div className="mt-5 flex flex-wrap gap-3"><Related href="/business/markup-calculator">Markup Calculator</Related><Related href="/business">All Business Calculators</Related></div></section>
+      <section className="mt-10 rounded-3xl border border-[#1F2937] bg-[#121826] p-6 md:p-8"><h2 className="text-2xl font-bold">Related business calculators</h2><div className="mt-5 flex flex-wrap gap-3"><Related href="/business/markup-calculator">Markup Calculator</Related><Related href="/business/break-even-calculator">Break-Even Calculator</Related><Related href="/business">All Business Calculators</Related></div></section>
     </div>
   </main>;
 }

@@ -18,9 +18,9 @@ const calculators = [
   {
     title: "Break-Even Calculator",
     description:
-      "Estimate how many sales are needed to cover costs and become profitable.",
+      "Calculate break-even units and revenue, contribution margin, target-profit volume, margin of safety, daily sales requirements, and capacity.",
     href: "/business/break-even-calculator",
-    status: "Planned",
+    status: "Live",
   },
   {
     title: "Sales Tax Calculator",
